@@ -1,0 +1,1 @@
+{"name":"Local: a","url":"c:\\Users\\mouse\\Desktop\\project\\c++\\牛客\\寒假1\\a.cpp","tests":[{"id":1770218185064,"input":"3\n0\n100 100 100 0 100 100 100\n0\n100 100 100 0 50 100 100\n34\n24 54 10 12 33 1 99","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\mouse\\Desktop\\project\\c++\\牛客\\寒假1\\a.cpp","group":"local","local":true}

@@ -1,0 +1,1 @@
+{"name":"Local: E-树形地铺","url":"c:\\Users\\mouse\\Desktop\\project\\c++\\2025武汉联\\E-树形地铺.cpp","tests":[{"id":1769247017396,"input":"5\n1 2\n1 3\n2 4\n2 5\n3\n1 2\n2 3\n4 1\n","output":"3\n2\n4\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\mouse\\Desktop\\project\\c++\\2025武汉联\\E-树形地铺.cpp","group":"local","local":true}
