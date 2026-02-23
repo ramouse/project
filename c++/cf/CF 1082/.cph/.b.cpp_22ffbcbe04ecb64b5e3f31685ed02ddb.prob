@@ -1,0 +1,1 @@
+{"name":"Local: b","url":"c:\\Users\\mouse\\Desktop\\project\\c++\\cf\\CF 1082\\b.cpp","tests":[{"id":1771859395964,"input":"4\n5\nababa\n5\nbaaba\n5\n?b?ab\n6\naa?b?b\n","output":"YES\r\nNO\r\nYES\r\nNO\r\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\mouse\\Desktop\\project\\c++\\cf\\CF 1082\\b.cpp","group":"local","local":true}
