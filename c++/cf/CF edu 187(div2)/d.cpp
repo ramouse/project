@@ -8,8 +8,10 @@ void solve()
     int n, m;
     cin >> n >> m;
     vector<int> a(n), b(m);
-    for (int i = 0; i < n; i++) cin >> a[i];
-    for (int i = 0; i < m; i++)  cin >> b[i];
+    for (int i = 0; i < n; i++)
+        cin >> a[i];
+    for (int i = 0; i < m; i++)
+        cin >> b[i];
     int maxx = n + m;
 
     vector<int> unique_a = a;
@@ -17,21 +19,20 @@ void solve()
     unique_a.erase(unique(unique_a.begin(), unique_a.end()), unique_a.end());
     int k = unique_a.size();
 
-    
     vector<int> c(maxx + 1, 0);
     for (int x : unique_a)
     {
-        if (x > maxx) continue;
-        
+        if (x > maxx)
+            continue;
+
         for (int multi = x; multi <= maxx; multi += x)
         {
             c[multi]++;
         }
     }
 
-    
     int aa = 0;
-    int bb = 0;  
+    int bb = 0;
     int both = 0;
 
     for (int i = 0; i < m; i++)
@@ -47,11 +48,10 @@ void solve()
         }
         else
         {
-            both++; 
+            both++;
         }
     }
 
-    
     if (both % 2 == 1)
     {
         if (aa >= bb)
