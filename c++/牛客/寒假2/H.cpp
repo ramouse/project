@@ -9,17 +9,12 @@ void solve(){
     ll n;
     cin>>n;
     ll ans = 0;
-    vector<ll> a(n+1,0);
-    vector<ll> pre(n+2,0);
+    map<ll,ll> pos;
     for(int i = 1;i<=n;i++){
-        cin>>a[i];
-        pre[i] = pre[i-1] + a[i];
-    }
-    for(int i = 1;i<=n;i++){
-        for(int j = 1;j<i;j++){
-            ans+=pre[i]-pre[j];
-        }
-        ans+=pre[i];
+        ll x;
+        cin>>x;
+        ans+=(i-pos[x]) * ((n-i+1) * (n-i+2)) / 2;
+        pos[x] = i;
     }
     cout<<ans<<endl;
 }

@@ -540,7 +540,7 @@ void bfs(int st) {
 
 
 
-### dijkstra
+### dijkstra(处理非负权边的最短路)
 
 标准模板
 
@@ -650,6 +650,218 @@ int main() {
         }
     }
     cout << endl;
+
+    return 0;
+}
+```
+
+
+
+### 全源最短路(处理含负权边) (SPFA)
+
+- 核心思想：首先创建一个虚拟超级 $0$ 节点，向所有节点连一条权值为 $0$ 的边,跑一次 $SPFA$ 求出势能函数后，利用他把所有边转换成非负权边，接着按照题意把需要求的最短路用 $dijkstra$ 求出即可
+
+```c++
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long;
+#define endl '\n'
+
+const ll INF = 1e18; // 设置一个足够大的无穷大值，防止累加时溢出
+
+// 边的结构体
+struct node {
+    ll to; // 目标节点
+    ll w;  // 边权
+};
+
+int main() {
+    // ---------------------------------------------------------
+    // 0. 基础设置与建图
+    // ---------------------------------------------------------
+    ios::sync_with_stdio(0); // 优化 C++ 输入输出流，防止大数据读写超时
+    cin.tie(0);
+
+    ll n, m;
+    cin >> n >> m;
+    
+    // 使用 vector 的 vector，兼容所有 C++ 标准，避免 VLA (变长数组) 报错
+    vector<vector<node>> adj(n + 1);
+
+    for (int i = 1; i <= m; i++) {
+        ll u, v, w;
+        cin >> u >> v >> w;
+        adj[u].push_back({v, w}); // 构建有向图
+    }
+
+    // ---------------------------------------------------------
+    // 1. SPFA 求势能数组 h (隐式建立虚拟节点 0)
+    // ---------------------------------------------------------
+    vector<ll> cnt(n + 1, 0);     // cnt[i] 记录节点 i 入队的次数，用于判负环
+    vector<bool> vis(n + 1, false); // vis[i] 表示节点 i 当前是否在队列中 (SPFA核心)
+    
+    //h 初始必须为 0！等价于虚拟节点 0 到各点的距离为 0
+    vector<ll> h(n + 1, 0);       
+    queue<ll> q;
+
+    // 隐式从虚拟源点出发：将所有真实节点压入队列，初始距离(势能)全为 0
+    for (int i = 1; i <= n; i++) {
+        q.push(i);
+        vis[i] = true; // 标记已在队列中
+        cnt[i] = 1;    // 相当于所有点已经入队 1 次
+    }
+
+    // SPFA 主循环
+    while (!q.empty()) {
+        auto u = q.front();
+        q.pop();
+        vis[u] = false; // 节点出队，取消标记
+
+        for (auto &edge : adj[u]) {
+            ll v = edge.to;
+            ll w = edge.w;
+
+            // 松弛操作
+            if (h[v] > h[u] + w) {
+                h[v] = h[u] + w;
+                
+                // 只有当 v 不在队列中时，才需要将其入队
+                if (!vis[v]) {
+                    vis[v] = true;
+                    cnt[v]++; // 记录入队次数
+                    
+                    // 如果某个点入队次数超过图的总节点数 n，说明在无限绕负权环
+                    if (cnt[v] > n) {
+                        cout << -1 << endl;
+                        return 0; // 发现负环，直接结束程序
+                    }
+                    
+                    //q.push 必须放在 if(!vis[v]) 内部！防止重复无意义入队
+                    q.push(v);
+                }
+            }
+        }
+    }
+    
+    //将所有边转换为非负
+    for(int i = 1;i<=n;i++){
+        for(auto &edge : adj[i]){
+            edge.w = edge.w + h[i] - h[edge.to];
+        }
+    }
+
+    //后面根据题目进行dijkstra即可，注意最后要对边权进行还原
+    //真实 w = dist[j] + h[j] - h[i]
+    
+    return 0;
+}
+```
+
+
+
+### 分册图+回溯寻找路径
+
+[P1266 [BalticOI 2002\] 速度限制 - 洛谷](https://www.luogu.com.cn/problem/P1266)
+
+1. 分册图
+
+   - **分层图最短路**，本质上是**图论与动态规划（DP）的结合**（所以也常被称为“状态机最短路”）。
+
+   - 因为到达某一个节点时会因为上一个节点的结果不同而可能导致当前节点的结果不同，那么这种情况下我们需要对 $dist$ 数组进行升维，二维或者三维，根据题目限制条件而定2
+
+2. 回溯找最短路对应的节点
+
+   - 可根据 $dist$ 创建对应数量和维度的 $pre$ 数组，用来存放谁更新了当前最优的状态，最后倒序查找即可
+
+```c++
+#include<bits/stdc++.h>
+using namespace std;
+using ll = long long;
+#define endl '\n'
+
+const ll INF = 1e18;
+
+struct Node{
+    int to;
+    int l;
+    int v;
+};
+
+int main(){
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    int n,m,d;
+    cin>>n>>m>>d;
+    vector<Node> adj[n];
+    for(int i = 1;i<=m;i++){
+        int u,v,s,l;
+        cin>>u>>v>>s>>l;
+        adj[u].push_back({v,l,s});
+    }
+
+    //本题的边权，也就是时间并非固定不变，所有需要再开一维来进行表示，dist[u][se]表示到达u节点且速度为se时的最短路径
+    vector<vector<double>> dist(n,vector<double>(505,INF));
+    priority_queue<tuple<double,ll,ll>,vector<tuple<double,ll,ll>>,greater<tuple<double,ll,ll>>> pq;
+    vector<vector<int>> pre_pos(n,vector<int>(505,-1));//表示到达对应状态的上一个路口
+    vector<vector<int>> pre_sp(n,vector<int>(505,-1));//表示到达对应状态的上一个速度
+    pq.push({0.0,70,0});
+    dist[0][70] = 0;
+
+    while(!pq.empty()){
+        auto [t,se,u] = pq.top();
+        pq.pop();
+
+        if(t>dist[u][se]) continue;
+
+        for(auto &edge : adj[u]){
+            int v = edge.to;
+            int l = edge.l;
+            int se1 = edge.v;
+            double t1 = 0.0;
+           
+            if(se1 == 0){
+                t1 = (double)l / se;
+                se1 = se;
+            }else{
+                t1 = (double)l / se1;
+            }
+            
+            if(dist[v][se1]>dist[u][se]+t1){
+                dist[v][se1] = dist[u][se] + t1;
+                pq.push({dist[v][se1],se1,v});
+                pre_pos[v][se1] = u;
+                pre_sp[v][se1] = se;
+            }
+        }
+    }
+
+    double minn = INF;
+    vector<int> ans;
+    int sp = -1;
+    for(int i = 0;i<=500;i++){
+        if(minn>dist[d][i]){
+            minn = dist[d][i];
+            sp = i;
+        }
+    }
+
+    int cur_u = d;
+    int cur_sp = sp;
+
+    while(cur_u != -1){
+        ans.push_back(cur_u);
+
+        int next_u = pre_pos[cur_u][cur_sp];
+        int next_sp = pre_sp[cur_u][cur_sp];
+
+        cur_u = next_u;
+        cur_sp = next_sp;
+    }
+    reverse(ans.begin(),ans.end());
+
+    for(int i = 0;i<ans.size();i++){
+        cout<<ans[i]<<" ";
+    }
 
     return 0;
 }
@@ -1182,6 +1394,15 @@ ll A(ll n,llk){
     if(k<0 || k>n) return 0;
     return fact[n] * inv[n-k] %
 }
+```
+
+
+
+## 位运算
+
+```c++
+__builtin_ctz(x) //获取x二进制后缀0的长度
+__builtin_clz(x) //获取x二进制前缀0的长度  //二者皆为接受int类型，接受ll需要后面加ll //_
 ```
 
 

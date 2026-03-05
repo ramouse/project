@@ -6,36 +6,43 @@ using ll = long long;
 void solve(){
     ll s,m;
     cin>>s>>m;
-    vector<ll> ve;
-    set<ll> se;
-    ll len = 0;
-    string mmm = to_string(m);
-    ll ss = stoll(mmm,0,2);
-    string mm = to_string(ss);
-    for(int i = 1;i<=mm.length();i++){
-        string t = string(i,'1');
-        ll tt = stoll(t);
-        ll ttt = tt&m;
-        ve.push_back(ttt);
-        se.insert(ttt);
-    }
-    ve.erase(unique(ve.begin(), ve.end()), ve.end());
-    sort(ve.begin(),ve.end(),greater<ll>());
+    ll low = __builtin_ctzll(m);
 
-    ll ans = 0;
-    ll index = 0;
-    cout<<ve[index]<<endl;
-    while(s>0){
-        if(s>=ve[index]){
-            s-=ve[index];
-            ans++;
-        }else{
-            index++;
-        }
-        if(s<ve.back()) break;
+    if(s%(1LL<<low) != 0){
+        cout<<-1<<endl;
+        return;
     }
-    
+
+    vector<ll> pos;
+    for(int i = 0;i<=63;i++){
+        if((m>>i)&1){
+            pos.push_back(i);
+        }
+    }
+
+    auto check =[&](ll n){
+        ll sh = s;
+        for(int i = pos.size()-1;i>=0;i--){
+            ll val = 1LL<<pos[i];
+            sh -= min(n,sh/val)*val;
+        }
+        return sh==0;
+    };
+
+    ll R = s;
+    ll L = 1;
+    ll ans = -1;
+    while(L<=R){
+        ll mid = (L+R)>>1;
+        if(check(mid)){
+            R = mid-1;
+            ans = mid;
+        }else{
+            L = mid+1;
+        }
+    }
     cout<<ans<<endl;
+
 }
 
 int main(){
