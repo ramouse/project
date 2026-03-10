@@ -2,78 +2,62 @@
 using namespace std;
 using ll = long long;
 #define endl '\n'
+#define pll pair<ll,ll>
+#define T tuple<ll,ll,int>
+
+// int dx[] = {-2,-1,1,2,2,1,-1,-2};
+// int dy[] = {1,2,2,1,-1,-2,-2,-1};
+
+
+const ll MOD = 998244353;
+
 
 void solve()
 {
-    int n, m;
-    cin >> n >> m;
-    vector<int> a(n), b(m);
-    for (int i = 0; i < n; i++) cin >> a[i];
-    for (int i = 0; i < m; i++)  cin >> b[i];
-    int maxx = n + m;
+    ll n,h;
+    cin>>n>>h;
+    vector<ll> a(n+1,0);
+    for(int i = 1;i<=n;i++){
+        cin>>a[i];
+    }
 
-    vector<int> unique_a = a;
-    sort(unique_a.begin(), unique_a.end());
-    unique_a.erase(unique(unique_a.begin(), unique_a.end()), unique_a.end());
-    int k = unique_a.size();
-
-    
-    vector<int> c(maxx + 1, 0);
-    for (int x : unique_a)
-    {
-        if (x > maxx) continue;
-        
-        for (int multi = x; multi <= maxx; multi += x)
-        {
-            c[multi]++;
+    vector<ll> v(n+1,0);
+    for(int i = 1;i<=n;i++){
+        ll cur = a[i];
+        v[i] = h - cur;
+        for(int j = i+1;j<=n;j++){
+            cur = max(a[j],cur);
+            v[i] += h - cur;
+        }
+        cur = a[i];
+        for(int j = i-1;j;--j){
+            cur = max(a[j],cur);
+            v[i] += h - cur;
         }
     }
 
-    
-    int aa = 0;
-    int bb = 0;  
-    int both = 0;
-
-    for (int i = 0; i < m; i++)
-    {
-        int y = b[i];
-        if (c[y] == k)
-        {
-            aa++;
-        }
-        else if (c[y] == 0)
-        {
-            bb++;
-        }
-        else
-        {
-            both++; 
+    ll ans = 0;
+    for(int i = 1;i<=n;i++){
+        ll idx = i;
+        ll cur = a[i];
+        for(int j = i;j<=n;j++){
+            if(a[j]>cur){
+                idx = j;
+                cur = a[j];
+            }
+            ans = max(ans,v[i]+v[j]-v[idx]);
         }
     }
-
-    
-    if (both % 2 == 1)
-    {
-        if (aa >= bb)
-            cout << "Alice" << endl;
-        else
-            cout << "Bob" << endl;
-    }
-    else
-    {
-        if (aa > bb)
-            cout << "Alice" << endl;
-        else
-            cout << "Bob" << endl;
-    }
+    cout<<ans<<endl;
 }
 
 int main()
 {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    int t;
+    int t = 1;
     cin >> t;
+
     while (t--)
     {
         solve();
