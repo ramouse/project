@@ -448,6 +448,141 @@ int query(string s) {
 
 
 
+### 3.5.4 LCS && LIS
+
+### 最长公共子序列(LCS)
+
+```c++
+int dp[5010][3010];
+string s, t;
+cin >> s >> t;
+    
+for (int i = 1; i <= s.length(); i++)
+{
+    for (int j = 1; j <= t.length(); j++)
+    {
+        if (s[i-1] == t[j-1])
+        {
+            dp[i][j] = dp[i - 1][j - 1] + 1;
+        }
+        else
+        {
+            dp[i][j] = max(dp[i - 1][j], dp[i][j - 1]);
+        }
+    }
+}
+cout<<dp[s.length()][t.length()]; //输出最长公共子序列长度
+
+//反向追踪出最长的公共子序列
+string res = "";
+int i = s.length(),j = t.length();
+while(i>0 && j>0){
+    if(s[i - 1] == t[j-1] ){
+        res+=s[i-1];
+        i--,j--;
+    }else{
+        if(dp[i-1][j] >= dp[i][j-1]) i--;
+        else j--;
+    }
+}
+cout<<res;
+
+```
+
+
+
+
+
+### 最长上升子序列(LIS)
+
+设计$dp_i$为以$a_i$为结尾的最长上升子序列，计算时，尝试将$a_i$接到之前的最长不下降子序列后面
+
+```c++
+dp[1] = 1;
+ll ans = 1;
+for(int i = 2;i<=n;i++){
+    dp[i] = 1;
+    for(int j = 1;j<i;j++){
+        if(a[j]<a[i]){
+            dp[i] = max(dp[i],dp[j]+1);
+            ans = max(ans,1LL*dp[i]);
+        }
+    }
+}
+cout<<ans;
+```
+
+$n^2$的算法如果对$1e5$及以上的数据来说有点慢，我们可以进行优化，可优化为$O(n\,logn)$,如下
+
+```c++
+vector<int> low(n + 1, 0);
+    int len = 0;
+    for (int i = 1; i <= n; i++)
+    {
+        if (b[i] > low[len])
+        {
+            len++;
+            low[len] = b[i];
+        }
+        else
+        {
+            int idx = lower_bound(low.begin()+1, low.begin()+len+1, b[i]) - low.begin();
+            low[idx] = b[i];
+        }
+    }
+
+    cout << len;
+```
+
+**解释**: $low_i$表示长度为 i 的最长上升子序列；我们从1开始遍历到n，如果遇到当前数组的数值大于low中最后的元素，我们就可以把当前的数值接到后面；如果遇到严格小于low中最后的元素，我们就可以将其替换到第一个大于他的位置上，可以证明，这是更优的，因为如果后面的值越小，就更容易接上更多的值
+
+
+
+求 **LCS ** 的问题部分也可转化为求 **LIS** 的问题，例如，如果对应两个数组中的元素范围相同且每个数只出现一次，我们就可以把其中一个数组当作基准来调整另一个数组中的元素；
+
+更具体的说，如果现在给你两个数组a，b，他们都是n的排列，让你求出a和b的最长公共子序列，我们就可以以a为基准，对b进行映射，那么问题就**等价**于对映射后的b求最长上升子序列
+
+如下
+
+```c++
+ int n;
+    cin >> n;
+    vector<int> pos(n+1,0);
+    vector<int> b(n + 1, 0);
+    for (int i = 1; i <= n; i++)
+    {
+        int a;
+        cin>>a;
+        pos[a] = i;
+    }
+    for (int i = 1; i <= n; i++)
+    {
+        cin >> b[i];
+        b[i] = pos[b[i]];
+    }
+
+    vector<int> low(n + 1, 0);
+    int len = 0;
+    for (int i = 1; i <= n; i++)
+    {
+        if (b[i] > low[len])
+        {
+            len++;
+            low[len] = b[i];
+        }
+        else
+        {
+            int idx = lower_bound(low.begin()+1, low.begin()+len+1, b[i]) - low.begin();
+            low[idx] = b[i];
+        }
+    }
+
+    cout << len;
+
+```
+
+
+
 ## 3.6 搜索 && 数据结构
 
 ```c++
@@ -960,7 +1095,8 @@ struct DSU {
 
 树状数组是一种支持 **单点修改** 和 **区间查询** 的，代码量小的数据结构．
 
-树状数组利用数的**二进制特征**来定义“管辖范围”。
+树状数组利用数的**二进制特征**来定义“管辖范围”,即一个数的二进制的最后一位 `1` 以及其后所有的`0`所构成的二进制大小，就是该数所管辖的区间范围。例如 `8` 的二进制为 `1000`，那么`a[8]` 所管辖的范围就是`1-8`这个区间，再例如 `7`，`a[7]`所管辖的范围就只有`7`
+
 lowbit(x) 用于提取 x 在二进制表示下最低位的 1 及其后面的 0 构成的数值。
 
 ```c++
@@ -1000,9 +1136,137 @@ struct BIT {
 
 
 
-# 3.7 数学
+### 线段树
 
-## 3.7.1 快速幂
+#### 区间修改+区间查询
+
+```c++
+ll arr[MAXN];      // 原数组
+ll tree[MAXN * 4]; // 线段树数组
+ll tag[MAXN * 4];  // 懒标记(加)
+vector<ll> tag1(MAXN*4,1); // 懒标记(乘)
+
+// 向上更新 (Push Up): 用子节点算父节点
+void push_up(ll p) {
+    tree[p] = tree[p << 1] + tree[p << 1 | 1];
+}
+
+// 向下下放 (Push Down)，每当要访问数据的时候都要下放
+// p: 当前节点, len: 当前节点管辖的区间长度
+void push_down(ll p, ll len) {
+    //如果存在修改乘上某值，需要先对乘法的标记进行下放
+    if(tag1[p] != 1){
+        tag1[p<<1] *= tag1[p];
+        tag1[p<<1 | 1] *= tag1[p];
+        
+        //需要对加法的标记进行倍增
+        tag[p<<1] *= tag1[p];
+        tag[p<<1 | 1] *= tag1[p];
+        
+        tree[p<<1] *= tag1[p];
+        tree[p<<1 | 1] *= tag1[p];
+        
+        tag1[p] = 1;
+    }
+    if (tag[p]) {
+        // 1. 传给左子 (p<<1) 和 右子 (p<<1|1)
+        tag[p << 1] += tag[p];
+        tag[p << 1 | 1] += tag[p];
+        
+        // 2. 更新子节点的值 (增量 = tag * 区间长度)
+        tree[p << 1] += tag[p] * (len - len / 2);
+        tree[p << 1 | 1] += tag[p] * (len / 2);
+        
+        // 3. 清除当前标记
+        tag[p] = 0;
+    }
+}
+
+// 建树
+void build(ll p, ll l, ll r) {
+    tag[p] = 0;
+    if (l == r) {
+        tree[p] = arr[l];
+        return;
+    }
+    ll mid = (l + r) >> 1;
+    build(p << 1, l, mid);
+    build(p << 1 | 1, mid + 1, r);
+    push_up(p);
+}
+
+// 区间修改: [ql, qr] 范围全加 k
+void update(ll p, ll l, ll r, ll ql, ll qr, ll k) {
+    // 1. 完全覆盖，直接更新并打标，不递归
+    if (ql <= l && r <= qr) {
+        tree[p] += k * (r - l + 1);
+        tag[p] += k;
+        return;
+    }
+    
+    // 2. 未完全覆盖，先下放标记，再递归
+    push_down(p, r - l + 1);
+    ll mid = (l + r) >> 1;
+    if (ql <= mid) update(p << 1, l, mid, ql, qr, k);
+    if (qr > mid) update(p << 1 | 1, mid + 1, r, ql, qr, k);
+    push_up(p);
+}
+
+void update1(ll p,ll l,ll r,ll ql,ll qr,ll k){
+    if(ql <= l && r<=qr){
+        tree[p] *= k;
+        tag1[p] *= k;
+        tag[p] *= k;
+        return;
+    }
+    
+    push_down(p,r-l+1);
+    ll mid = (l+r)>>1;
+    if(ql <= mid) update(p<<1,l,mid,ql,qr,k);
+    if(qr>mid) update(p<<1 | 1,mid+1,r,ql,qr,k);
+    push_up(p);
+}
+
+// 区间查询: 求 [ql, qr] 的和
+ll query(ll p, ll l, ll r, ll ql, ll qr) {
+    if (ql <= l && r <= qr) return tree[p];
+    
+    push_down(p, r - l + 1); // 查之前也要下放
+    ll mid = (l + r) >> 1;
+    ll res = 0;
+    if (ql <= mid) res += query(p << 1, l, mid, ql, qr);
+    if (qr > mid) res += query(p << 1 | 1, mid + 1, r, ql, qr);
+    return res;
+}
+```
+
+
+
+## 3.7 数学
+
+### 一些定理？以及一些遇到的数学技巧
+
+#### 唯一分解定理
+
+是指大于1的正整数n，都可以唯一地表示为有限个素数的乘积
+
+$n = p_1^{a_1} \times p_2^{a_2} \times ... \times p_n^{a_n}$
+
+
+
+#### 叉积求三角形面积
+
+1. 利用向量的叉积
+
+<img src="D:\mouse\Pictures\screenshots\屏幕截图 2026-02-08 014012.png" alt="屏幕截图 2026-02-08 014012" style="zoom:50%;" />
+
+2. 推广
+
+<img src="D:\mouse\Pictures\screenshots\屏幕截图 2026-02-08 014258.png" alt="屏幕截图 2026-02-08 014258" style="zoom:50%;" />
+
+
+
+### 3.7.1 快速幂
 
 快速幂是求解 的问题，其中a,b限定为整。如求3的 1e18 次方，直接递推肯定超时。
 
@@ -1035,7 +1299,7 @@ int main()
 }
 ```
 
-## 3.7.2 矩阵快速幂
+### 3.7.2 矩阵快速幂
 
 问题：快速求解n*n的矩阵A，求$A^b$
 
@@ -1105,7 +1369,7 @@ int main()
 
 
 
-## 3.7.3 高精度
+### 3.7.3 高精度
 
 1. 加法高精度
 
@@ -1267,7 +1531,7 @@ int main() {
 
 
 
-## 3.7.4离散化
+### 3.7.4离散化
 
 1. **离散化差分**（Discretized Difference Array）是解决**“大范围坐标、少操作次数”**区间问题的核心算法。
 
@@ -1311,7 +1575,7 @@ for(auto& [pos, val] : diff) {
 
 
 
-## 3.7.5 欧拉筛
+### 3.7.5 欧拉筛
 
 ```C++
 #include <iostream>
@@ -1364,7 +1628,7 @@ int main()
 
 
 
-## 3.7.6 逆元 取模 最大公约数(gcd) 最小公倍数(lcm)
+### 3.7.6 逆元 取模 最大公约数(gcd) 最小公倍数(lcm)
 
 取模最主要的是要注意步步取模，避免爆值，例如
 
@@ -1478,6 +1742,8 @@ __builtin_clz(x) //获取x二进制前缀0的长度  //二者皆为接受int类�
 
 
 
+## 3.8 dp
+
 
 
 # 4. 一些类型题的处理思路
@@ -1494,9 +1760,161 @@ __builtin_clz(x) //获取x二进制前缀0的长度  //二者皆为接受int类�
 
 
 
+# 5. 优化技巧
+
+## 线段树优化建图
+
+如果遇到 **点到区间** 连边或 **区间到点** 连边，且总边数和总操作数都很大的时候，且需要跑**最短路**等算法的时候一般都会使用这种技巧
+
+例：[Problem - B - Codeforces](https://codeforces.com/contest/786/problem/B)
+
+```c++
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long;
+#define endl '\n'
+#define pll pair<ll,ll>
+#define T tuple<ll,ll,ll>
+
+const ll INF = 1e18;
+
+struct Node{
+    ll to;
+    ll w;
+};
+
+void solve()
+{
+    ll n,q,s;
+    cin>>n>>q>>s;
+    vector<vector<Node>> adj(4*n);
+    vector<ll> in(4*n,0); //入树，点到区间
+    vector<ll> out(4*n,0); //出树，区间到点
+    ll cnt = n; //虚拟节点编号需大于所有真实点
+
+    //建树过程
+    auto build = [&](auto &&self,ll p,ll l,ll r) -> void{
+        if(l == r){
+            in[p] = l;
+            out[p] = l;
+            return;
+        }
+
+        ll ls = p<<1;
+        ll rs = p<<1 | 1;
+        ll mid = (l+r)>>1;
+
+        in[p] = ++cnt;
+        out[p] = ++cnt;
+
+        self(self,ls,l,mid);
+        self(self,rs,mid+1,r);
+
+        adj[in[p]].push_back({in[ls],0});
+        adj[in[p]].push_back({in[rs],0});
+
+        adj[out[ls]].push_back({out[p],0});
+        adj[out[rs]].push_back({out[p],0});
+    };
+
+    //点到区间连边
+    auto v_to_range = [&](auto &&self,ll p,ll v,ll w,ll l,ll r,ll ql,ll qr) ->void{
+        if(ql<=l && r<=qr){
+            adj[v].push_back({in[p],w});
+            return;
+        }
+
+        ll ls = p << 1;
+        ll rs = p << 1 | 1;
+        ll mid = (l + r) >> 1;
+
+        if(ql<=mid) self(self,ls,v,w,l,mid,ql,qr);
+        if(qr>mid) self(self,rs,v,w,mid+1,r,ql,qr);
+    };
+
+    auto range_to_v = [&](auto &&self,ll p,ll v,ll w,ll l,ll r,ll ql,ll qr) -> void{
+        if(ql<=l && r<=qr){
+            adj[out[p]].push_back({v,w});
+            return;
+        }
+
+        ll ls = p << 1;
+        ll rs = p << 1 | 1;
+        ll mid = (l + r) >> 1;
+
+        if(ql<=mid) self(self,ls,v,w,l,mid,ql,qr);
+        if(qr>mid) self(self,rs,v,w,mid+1,r,ql,qr);
+    };
+
+    build(build,1,1,n);
+    
+    while(q--){
+        ll t;
+        cin>>t;
+        if(t==1){
+            ll v,u,w;
+            cin>>v>>u>>w;
+            adj[v].push_back({u,w});
+        }else{
+            ll v,l,r,w;
+            cin>>v>>l>>r>>w;
+            if(t==2){
+                v_to_range(v_to_range,1,v,w,1,n,l,r);
+            }else if(t == 3){
+                range_to_v(range_to_v,1,v,w,1,n,l,r);
+            }
+        }
+    }
+
+    vector<ll> dist(cnt+1,INF);
+    priority_queue<pll,vector<pll>,greater<pll>> pq;
+    pq.push({0,s});
+    dist[s] = 0;
+
+    while(!pq.empty()){
+        auto [d,u] = pq.top();
+        pq.pop();
+
+        if(d>dist[u]) continue;
+
+        for(auto &edge : adj[u]){
+            ll v = edge.to;
+            ll w = edge.w;
+            if(dist[v]>dist[u]+w){
+                dist[v] = dist[u] + w;
+                pq.push({dist[v],v});
+            }
+        }
+    }
+
+    for(ll i = 1;i<=n;i++){
+        if(dist[i] == INF){
+            cout<<-1<<" ";
+        }else{
+            cout<<dist[i]<<" ";
+        }
+    }
+
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll t = 1;
+    // cin >> t;
+
+    while (t--)
+    {
+        solve();
+    }
+    return 0;
+}
+```
 
 
-###小点
+
+#小点
 
 ```c++
 ceil(x)//取第一个不小于x的整数 <cmath>
@@ -1537,9 +1955,9 @@ i $\equiv$j(modx) 意味着i和j关于x同余，那么集合可表示为{${1+x,1
 
 只由0或1组成的二维矩阵，只要该点为1(或0)且1(或0)的总数大于等于2时，总能找到一个终点，使得路径上排成的字符为回文串
 
+对于一组升序排序的数组，如果任意两个数之差小于等于某一个值，那么整个数组中的数据可以被两两配对，且之差不大于那个值
 
-
-#### 好用函数
+## 好用函数
 
 `std::is_sorted(a.begin(),a.end());` //判断数组是否是非降序的 既检查是否满足 $a_i<=a_{i+1}$,是返回true，否则返回false
 
