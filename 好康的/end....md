@@ -450,7 +450,7 @@ int query(string s) {
 
 ### 3.5.4 LCS && LIS
 
-### 最长公共子序列(LCS)
+#### 最长公共子序列(LCS)
 
 ```c++
 int dp[5010][3010];
@@ -493,7 +493,7 @@ cout<<res;
 
 
 
-### 最长上升子序列(LIS)
+#### 最长上升子序列(LIS)
 
 设计$dp_i$为以$a_i$为结尾的最长上升子序列，计算时，尝试将$a_i$接到之前的最长不下降子序列后面
 
@@ -579,6 +579,31 @@ vector<int> low(n + 1, 0);
 
     cout << len;
 
+```
+
+### 进制转换
+
+#### 十进制转2-16进制
+
+```c++
+int n;
+string s;
+int x;
+char c;
+for(int i = 2;i<=16;i++){
+     int nu = n;
+	 while(nu){
+         x = nu%i;
+         if(x<10){
+             c = x+'0';
+         }else{
+             c = x+'A'-10;
+         }
+         nu/=i;
+         s = s +c;
+     }
+    cout<<s<<endl;
+}
 ```
 
 
@@ -1046,25 +1071,25 @@ for (k = 1; k <= n; k++) {
 struct DSU {
     std::vector<int> parent;
     std::vector<int> siz; // 记录每个集合的大小
-    int count;            // 记录连通分量的数量
+    ll count;            // 记录连通分量的数量
 
     // 初始化：n 为节点数量
-    DSU(int n) : parent(n + 1), siz(n + 1, 1), count(n) {
+    DSU(ll n) : parent(n + 1), siz(n + 1, 1), count(n) {
         // 初始时每个节点的父节点是自己
         std::iota(parent.begin(), parent.end(), 0); 
     }
 
     // 查找 (Find) - 路径压缩
-    int find(int x) {
+    ll find(ll x) {
         // 如果 x 不是根节点，递归找根，并进行路径压缩
         return parent[x] == x ? x : parent[x] = find(parent[x]);
     }
 
     // 合并 (Union) - 按大小合并
     // 返回值：true 表示合并成功（原本不在一组），false 表示原本就在一组
-    bool merge(int x, int y) {
-        int rootX = find(x);
-        int rootY = find(y);
+    bool merge(ll x, ll y) {
+        ll rootX = find(x);
+        ll rootY = find(y);
 
         if (rootX == rootY) return false; // 已经在同一个集合
 
@@ -1078,12 +1103,12 @@ struct DSU {
     }
 
     // 判断是否连通
-    bool connected(int x, int y) {
+    bool connected(ll x, ll y) {
         return find(x) == find(y);
     }
 
     // 获取某个节点所在集合的大小
-    int getSize(int x) {
+    int getSize(ll x) {
         return siz[find(x)];
     }
 };
@@ -1266,6 +1291,22 @@ $n = p_1^{a_1} \times p_2^{a_2} \times ... \times p_n^{a_n}$
 
 
 
+### 枚举因数
+
+```c++
+vector<ll> a;
+for(int i = 1;i*i<=n;i++){
+    if(n%i == 0){
+        a.push_back(i);
+        if(i * i != n){
+            a.push_back(n)
+        }
+    }
+}
+```
+
+
+
 ### 3.7.1 快速幂
 
 快速幂是求解 的问题，其中a,b限定为整。如求3的 1e18 次方，直接递推肯定超时。
@@ -1283,7 +1324,7 @@ ll qpow(ll a, ll b)
     ll res = 1;
     while (b != 0)
     {
-        if (b % 2 == 1)
+        if (b & 1)
             res *= a;
         a *= a;
         b /= 2;
@@ -1727,7 +1768,7 @@ ll C(ll n,ll k){//n中选k
 
 ll A(ll n,llk){
     if(k<0 || k>n) return 0;
-    return fact[n] * inv[n-k] %
+    return fact[n] * inv[n-k] % MOD;
 }
 ```
 
@@ -1938,7 +1979,7 @@ a.erase(unique(a.begin(), a.end()), a.end()); /
 //row+i 表示同一副对角线
 //row-i 表示同一主对角线  因为会出现负值，所以我们通常会加一个常数，
    //row-i+n
-
+cout << setprecision(8) << value << endl; // 改成8精度
 
 //整数向上取整可以 (a+b-1)/b
 

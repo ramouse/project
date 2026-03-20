@@ -1,0 +1,1 @@
+{"name":"Local: 3","url":"c:\\Users\\mouse\\Desktop\\project\\c++\\成都信息工程选拔\\3.cpp","tests":[{"id":1773564777329,"input":"3 4  \nzbs  \nzssb","output":""},{"id":1773565005391,"input":"3 4\nzbs\nzzbz","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\mouse\\Desktop\\project\\c++\\成都信息工程选拔\\3.cpp","group":"local","local":true}

@@ -19,112 +19,52 @@ struct Node{
 
 void solve()
 {
-    ll n,q,s;
-    cin>>n>>q>>s;
-    vector<vector<Node>> adj(4*n);
-    vector<ll> in(4*n,0);
-    vector<ll> out(4*n,0);
-    ll cnt = n;
-
-    auto build = [&](auto &&self,ll p,ll l,ll r) -> void{
-        if(l == r){
-            in[p] = l;
-            out[p] = l;
-            return;
-        }
-
-        ll ls = p<<1;
-        ll rs = p<<1 | 1;
-        ll mid = (l+r)>>1;
-
-        in[p] = ++cnt;
-        out[p] = ++cnt;
-
-        self(self,ls,l,mid);
-        self(self,rs,mid+1,r);
-
-        adj[in[p]].push_back({in[ls],0});
-        adj[in[p]].push_back({in[rs],0});
-
-        adj[out[ls]].push_back({out[p],0});
-        adj[out[rs]].push_back({out[p],0});
-    };
-
-    auto v_to_range = [&](auto &&self,ll p,ll v,ll w,ll l,ll r,ll ql,ll qr) ->void{
-        if(ql<=l && r<=qr){
-            adj[v].push_back({in[p],w});
-            return;
-        }
-
-        ll ls = p << 1;
-        ll rs = p << 1 | 1;
-        ll mid = (l + r) >> 1;
-
-        if(ql<=mid) self(self,ls,v,w,l,mid,ql,qr);
-        if(qr>mid) self(self,rs,v,w,mid+1,r,ql,qr);
-    };
-
-    auto range_to_v = [&](auto &&self,ll p,ll v,ll w,ll l,ll r,ll ql,ll qr) -> void{
-        if(ql<=l && r<=qr){
-            adj[out[p]].push_back({v,w});
-            return;
-        }
-
-        ll ls = p << 1;
-        ll rs = p << 1 | 1;
-        ll mid = (l + r) >> 1;
-
-        if(ql<=mid) self(self,ls,v,w,l,mid,ql,qr);
-        if(qr>mid) self(self,rs,v,w,mid+1,r,ql,qr);
-    };
-
-    build(build,1,1,n);
-    
-    while(q--){
+    ll n,m;
+    cin>>n>>m;
+    priority_queue<ll> pq_a,pq_b;
+    for(int i =1;i<=n;i++){
         ll t;
         cin>>t;
-        if(t==1){
-            ll v,u,w;
-            cin>>v>>u>>w;
-            adj[v].push_back({u,w});
-        }else{
-            ll v,l,r,w;
-            cin>>v>>l>>r>>w;
-            if(t==2){
-                v_to_range(v_to_range,1,v,w,1,n,l,r);
-            }else if(t == 3){
-                range_to_v(range_to_v,1,v,w,1,n,l,r);
-            }
-        }
+        pq_a.push(t);
+    }
+    for(int i = 1;i<=m;i++){
+        ll t;
+        cin >> t;
+        pq_b.push(t);
     }
 
-    vector<ll> dist(cnt+1,INF);
-    priority_queue<pll,vector<pll>,greater<pll>> pq;
-    pq.push({0,s});
-    dist[s] = 0;
-
-    while(!pq.empty()){
-        auto [d,u] = pq.top();
-        pq.pop();
-
-        if(d>dist[u]) continue;
-
-        for(auto &edge : adj[u]){
-            ll v = edge.to;
-            ll w = edge.w;
-            if(dist[v]>dist[u]+w){
-                dist[v] = dist[u] + w;
-                pq.push({dist[v],v});
+    ll t = 1;
+    while(1){
+        if(pq_a.empty()){
+            break;
+        }
+        if(pq_b.empty()){
+            break;
+        }
+        ll a = pq_a.top();
+        ll b = pq_b.top();
+        pq_b.pop();
+        pq_a.pop();
+        if(t&1){
+            if(a<b){
+                b -= a;
+                pq_b.push(b);
             }
+            pq_a.push(a);
+            t++;
+        }else{
+            if(b<a){
+                a -= b;
+                pq_a.push(a);
+            }
+            pq_b.push(b);
+            t++;
         }
     }
-
-    for(ll i = 1;i<=n;i++){
-        if(dist[i] == INF){
-            cout<<-1<<" ";
-        }else{
-            cout<<dist[i]<<" ";
-        }
+    if(pq_a.empty()){
+        cout<<"Bob"<<endl;
+    }else{
+        cout<<"Alice"<<endl;
     }
 
 }
@@ -134,7 +74,7 @@ int main()
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     ll t = 1;
-    // cin >> t;
+    cin >> t;
 
     while (t--)
     {
