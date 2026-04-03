@@ -1,0 +1,1 @@
+{"name":"Local: b","url":"c:\\Users\\mouse\\Desktop\\project\\c++\\牛客\\练习赛\\150\\b.cpp","tests":[{"id":1774610791619,"input":"3\n1 2\n4 4\n5 6","output":""},{"id":1774610796831,"input":"2\n24 24\n36 36","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\mouse\\Desktop\\project\\c++\\牛客\\练习赛\\150\\b.cpp","group":"local","local":true}

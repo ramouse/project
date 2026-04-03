@@ -8,19 +8,18 @@ using ll = long long;
 void solve(){
     ll n;
     cin>>n;
-    vector<pair<int,int>> vec(n+1);
+    vector<double> p(n+1,0.0);
+    vector<double> c(n+1,0.0);
     for(int i = 1;i<=n;i++){
-        int c,p;
-        cin>>c>>p;
-        vec[i].first = c;
-        vec[i].second = p;
+        cin>>c[i]>>p[i];
     }
 
-    double ans = 0.0;
+    vector<double> dp(n+2,0.0);
     for(int i = n;i;--i){
-      
+        dp[i] = max(dp[i+1],c[i]+(double)(1-p[i]/100)*dp[i+1]);
     }
-    
+    printf("%.10lf\n",dp[1]);
+
 }
 
 int main(){

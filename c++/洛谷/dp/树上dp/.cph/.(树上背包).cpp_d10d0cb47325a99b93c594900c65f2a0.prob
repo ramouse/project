@@ -1,0 +1,1 @@
+{"name":"Local: (树上背包)","url":"c:\\Users\\mouse\\Desktop\\project\\c++\\洛谷\\dp\\树上dp\\(树上背包).cpp","tests":[{"id":1775136635489,"input":"7 4\n2 2\n0 1\n0 4\n2 1\n7 1\n7 6\n2 2","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\mouse\\Desktop\\project\\c++\\洛谷\\dp\\树上dp\\(树上背包).cpp","group":"local","local":true}
