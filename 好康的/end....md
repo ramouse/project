@@ -208,6 +208,30 @@ s.size();//获取大小
     }//输出长度为k窗口下的最大值
 ```
 
+
+
+## 子数组最大 / 最小
+
+```c++
+ll cur = -1e18;
+ll ans = -1e18;
+for(int i = 1;i<=n;i++){
+	cur = max(a[i],cur+a[i]);
+    ans = max(ans,cur);
+}
+cout<<ans<<endl; //最大
+
+ll cur = 0;
+ll ans = 0;
+for(int i = 1;i<=n;i++){
+    cur = min(a[i],cur+a[i]);
+    ans = min(ans,cur);
+}
+cout<<ans<<endl; //最小
+```
+
+
+
 ## 3.1.1 找出一定范围内不定长度的最大值
 
 [P1714 切蛋糕 - 洛谷](https://www.luogu.com.cn/problem/P1714?contestId=290509)
@@ -1058,6 +1082,86 @@ for (k = 1; k <= n; k++) {
 
 
 
+#### 处理任意k个点中任意两点间的最短路
+
+```c++
+void solve()
+{
+    int n, m;
+    cin >> n >> m;
+    
+    // 使用 pair 存储图：{目标节点 v, 边权 w}
+    vector<vector<pair<int, ll>>> adj(n + 1);
+    for(int i = 0; i < m; i++){
+        int u, v;
+        ll w;
+        cin >> u >> v >> w;
+        adj[u].push_back({v, w});
+        adj[v].push_back({u, w}); // 无向图，双向建边
+    }
+
+    int k;
+    cin >> k;
+    
+    // dist 记录某个节点距离离它最近的特殊点的距离
+    vector<ll> dist(n + 1, INF);
+    // color 记录离该节点最近的特殊点是哪一个（即势力的 ID）
+    vector<int> color(n + 1, 0); 
+    
+    // priority_queue 存储：{距离, 当前节点ID}，默认大根堆，用 greater 变成小根堆
+    priority_queue<pair<ll, int>, vector<pair<ll, int>>, greater<pair<ll, int>>> pq;
+
+    // 将所有特殊点作为多源 BFS/Dijkstra 的起点同时入队
+    for(int i = 0; i < k; i++){
+        int start_node;
+        cin >> start_node;
+        dist[start_node] = 0;
+        color[start_node] = start_node; // 自己染自己的色
+        pq.push({0, start_node});
+    }
+
+    ll ans = INF;
+
+    // 开始多源 Dijkstra 扩张
+    while(!pq.empty()){
+        ll d = pq.top().first;
+        ll u = pq.top().second;
+        pq.pop();
+
+        // 剪枝：如果当前取出的距离不是最优的，直接跳过
+        if(d > dist[u]) continue;
+
+        for(auto &edge : adj[u]){
+            ll v = edge.first;
+            ll w = edge.second;
+
+            // 状态 1：目标节点 v 还是无主之地（没被染色）
+            if(color[v] == 0){
+                color[v] = color[u]; // 插上和 u 一样的旗帜
+                dist[v] = dist[u] + w;
+                pq.push({dist[v], v});
+            }
+            // 状态 2：目标节点 v 已经被别的势力占领了！两军相遇！
+            else if(color[v] != color[u]){
+                // 不入队，直接用相遇距离更新全局最小答案
+                ans = min(ans, dist[u] + dist[v] + w);
+            }
+            // 状态 3：目标节点 v 已经是自己势力的地盘了，看看能不能找到更短的巡逻路线
+            else if(color[v] == color[u]){
+                if(dist[v] > dist[u] + w){
+                    dist[v] = dist[u] + w;
+                    pq.push({dist[v], v});
+                }
+            }
+        }
+    }
+
+    cout << ans << "\n";
+}   
+```
+
+
+
 ### 并查集
 
 专门用来处理一些**不相交集合的合并与查询**问题
@@ -1794,7 +1898,7 @@ ll A(ll n,llk){
 
 
 
-## 位运算
+#3.8 位运算
 
 ```c++
 __builtin_ctz(x) //获取x二进制后缀0的长度
@@ -1803,7 +1907,66 @@ __builtin_clz(x) //获取x二进制前缀0的长度  //二者皆为接受int类�
 
 
 
-# 3.8 dp
+## 1. 线性基
+
+```c++
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long;
+
+struct LinearBasis {
+    ll d[64];       // 存储线性基的数组，d[i] 表示最高位为第 i 位的基向量
+    bool has_zero;  // 记录原序列中是否能异或出 0（即是否存在线性相关的元素）
+
+    // 构造函数，初始化
+    LinearBasis() {
+        memset(d, 0, sizeof(d));
+        has_zero = false;
+    }
+
+    // 1. 插入一个元素 x
+    void insert(ll x) {
+        for (int i = 62; i >= 0; i--) { // 从最高位向下枚举（long long 最大 62 位）
+            if ((x >> i) & 1) {         // 如果 x 的第 i 位是 1
+                if (!d[i]) {            // 如果这一位还没有基向量
+                    d[i] = x;           // x 成为这一位的基向量
+                    return;             // 插入成功，立刻退出
+                }
+                x ^= d[i];              // 如果这一位已经被占了，就用 d[i] 把 x 的第 i 位消成 0
+            }
+        }
+        // 如果 x 被消成了 0，说明 x 可以由之前的基向量异或得到（线性相关）
+        has_zero = true; 
+    }
+
+    // 2. 查询原数组能异或出的最大值
+    ll query_max() {
+        ll res = 0;
+        for (int i = 62; i >= 0; i--) {
+            // 贪心策略：如果异或上 d[i] 能让结果变大，就异或它
+            if ((res ^ d[i]) > res) {
+                res ^= d[i];
+            }
+        }
+        return res;
+    }
+
+    // 3. 判断 x 能否由原数组的元素异或得到
+    bool check(ll x) {
+        for (int i = 62; i >= 0; i--) {
+            if ((x >> i) & 1) {
+                if (!d[i]) return false; // x 在第 i 位是 1，但线性基没有这一位的基，无法消去
+                x ^= d[i];               // 消去第 i 位
+            }
+        }
+        return x == 0; // 如果 x 最终被消成 0，说明它可以由线性基表出
+    }
+};
+```
+
+
+
+# 3.9 dp
 
 ## 1 树上dp
 
@@ -1943,7 +2106,147 @@ for(int j = M; j >= 0; j--) { // u 的总容量
   }   
   ```
 
-  
+
+
+
+## 2.基础dp
+
+
+
+### 最长公共子序列(LCS)
+
+```c++
+int dp[5010][3010];
+string s, t;
+cin >> s >> t;
+    
+for (int i = 1; i <= s.length(); i++)
+{
+    for (int j = 1; j <= t.length(); j++)
+    {
+        if (s[i-1] == t[j-1])
+        {
+            dp[i][j] = dp[i - 1][j - 1] + 1;
+        }
+        else
+        {
+            dp[i][j] = max(dp[i - 1][j], dp[i][j - 1]);
+        }
+    }
+}
+cout<<dp[s.length()][t.length()]; //输出最长公共子序列长度
+
+//反向追踪出最长的公共子序列
+string res = "";
+int i = s.length(),j = t.length();
+while(i>0 && j>0){
+    if(s[i - 1] == t[j-1] ){
+        res+=s[i-1];
+        i--,j--;
+    }else{
+        if(dp[i-1][j] >= dp[i][j-1]) i--;
+        else j--;
+    }
+}
+cout<<res;
+
+```
+
+
+
+
+
+### 最长上升子序列(LIS)
+
+设计$dp_i$为以$a_i$为结尾的最长上升子序列，计算时，尝试将$a_i$接到之前的最长不下降子序列后面
+
+```c++
+dp[1] = 1;
+ll ans = 1;
+for(int i = 2;i<=n;i++){
+    dp[i] = 1;
+    for(int j = 1;j<i;j++){
+        if(a[j]<a[i]){
+            dp[i] = max(dp[i],dp[j]+1);
+            ans = max(ans,1LL*dp[i]);
+        }
+    }
+}
+cout<<ans;
+```
+
+$n^2$的算法如果对$1e5$及以上的数据来说有点慢，我们可以进行优化，可优化为$O(n\,logn)$,如下
+
+```c++
+vector<int> low(n + 1, 0);
+    int len = 0;
+    for (int i = 1; i <= n; i++)
+    {
+        if (b[i] > low[len])
+        {
+            len++;
+            low[len] = b[i];
+        }
+        else
+        {
+            int idx = lower_bound(low.begin()+1, low.begin()+len+1, b[i]) - low.begin();
+            low[idx] = b[i];
+        }
+    }
+
+    cout << len;
+```
+
+**解释**: $low_i$表示长度为 i 的最长上升子序列；我们从1开始遍历到n，如果遇到当前数组的数值大于low中最后的元素，我们就可以把当前的数值接到后面；如果遇到严格小于low中最后的元素，我们就可以将其替换到第一个大于他的位置上，可以证明，这是更优的，因为如果后面的值越小，就更容易接上更多的值
+
+
+
+求 **LCS ** 的问题部分也可转化为求 **LIS** 的问题，例如，如果对应两个数组中的元素范围相同且每个数只出现一次，我们就可以把其中一个数组当作基准来调整另一个数组中的元素；
+
+更具体的说，如果现在给你两个数组a，b，他们都是n的排列，让你求出a和b的最长公共子序列，我们就可以以a为基准，对b进行映射，那么问题就**等价**于对映射后的b求最长上升子序列
+
+如下
+
+```c++
+ int n;
+    cin >> n;
+    vector<int> pos(n+1,0);
+    vector<int> b(n + 1, 0);
+    for (int i = 1; i <= n; i++)
+    {
+        int a;
+        cin>>a;
+        pos[a] = i;
+    }
+    for (int i = 1; i <= n; i++)
+    {
+        cin >> b[i];
+        b[i] = pos[b[i]];
+    }
+
+    vector<int> low(n + 1, 0);
+    int len = 0;
+    for (int i = 1; i <= n; i++)
+    {
+        if (b[i] > low[len])
+        {
+            len++;
+            low[len] = b[i];
+        }
+        else
+        {
+            int idx = lower_bound(low.begin()+1, low.begin()+len+1, b[i]) - low.begin();
+            low[idx] = b[i];
+        }
+    }
+
+    cout << len;
+
+```
+
+
+
+为什么正确？ 因为我们强行把a映射成了一个递增序列，将映射关系应用到b后；我们不难想到公共子序列的本质就是要求元素在两个数组中出现的相对顺序一致，那么由于这层映射关系，a单调递增了，那我们只用找出映射后的b中最长的单调递增序列即可；还可以知道，b中只要是单调递增的序列，那么这一段序列一定是a的一个合法子序列
 
 # 4. 一些类型题的处理思路
 
@@ -2176,6 +2479,9 @@ cout << setprecision(8) << value << endl; // 改成8精度
 对于矩阵中的任意2*2子块，想要其合为合数，只需顺序填入值
     
 cout << setprecision(8) << value << endl; // 改成8精度
+
+//对于一个矩阵有一点(r,c),顺时针旋转后为(c,len-1-r),逆时针旋转后为(len-1-c,r),len为矩阵边长
+//当然这里的坐标是相对坐标并不是全局坐标，即左上角为(0,0)
 ```
 
 

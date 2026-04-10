@@ -2,61 +2,67 @@
 using namespace std;
 using ll = long long;
 #define endl '\n'
+#define T tuple<ll,ll,ll>
+#define pll pair<ll,ll>
 
 const ll MOD = 998244353;
+const ll INF = 1e18;
 
-
-
+struct Node{
+    ll to;
+    ll w;
+};
 
 void solve()
 {
-    ll n;
-    cin>>n;
-    vector<vector<ll>> adj(n+1);
-    for(int i= 1;i<=n-1;i++){
-        ll u,v;
-        cin>>u>>v;
-        adj[u].push_back(v);
-        adj[v].push_back(u);
+    ll n,m;
+    cin>>n>>m;
+    vector<vector<Node>> adj(n+1);
+    for(int i = 1;i<=m;i++){
+        ll u,v,w;
+        cin>>u>>v>>w;
+        adj[u].push_back({v,w});
+        adj[v].push_back({u,w});
     }
 
-    vector<ll> dept(n+1,0);
-    vector<ll> sz(n+1,0);
-    vector<ll> p(n+1,0);
-    auto dfs1 = [&](auto &&self,ll u,ll fa,ll d) ->void{
-        dept[u] = d;
-        sz[u] = 1;
-        for(ll v : adj[u]){
-            if(v != fa){
-                self(self,v,u,d+1);
-                sz[u]+=sz[v];
+    ll k;
+    cin>>k;
+    vector<ll> a(k+1,0);
+    vector<ll> dist(n+1,INF);
+    vector<ll> vis(n+1,-1);
+    priority_queue<pll,vector<pll>,greater<pll>> pq;
+    for(int i = 1;i<=k;i++){
+        cin>>a[i];
+        pq.push({0,a[i]});
+        dist[a[i]] = 0;
+        vis[a[i]] = a[i];
+    }
+
+    ll ans = INF;
+    while(!pq.empty()){
+        ll d = pq.top().first;
+        ll u = pq.top().second;
+        pq.pop();
+
+        if(d>dist[u]) continue;
+
+        for(Node &edge : adj[u]){
+            ll to = edge.to;
+            ll w = edge.w;
+
+            if(vis[to] != -1 || vis[to] != vis[u]){
+                ans = min(ans, dist[to] + dist[u] + w);
+            }
+            if (dist[to] > dist[u] + w)
+            {
+                dist[to] = dist[u] + w;
+                vis[to] = vis[u];
+                pq.push({dist[to], to});
             }
         }
-    };
-    dfs1(dfs1,1,0,1);
-
-    for(int i = 1;i<=n;i++){
-        p[1]+=dept[i];
     }
-    auto dfs2 = [&](auto &&self,ll u,ll fa) ->void{
-        for(ll v : adj[u]){
-            if(v != fa){
-                p[v] = p[u] - sz[v] + n - sz[v];
-                self(self,v,u);
-            }
-        }
-    };
-    dfs2(dfs2,1,0);
 
-    ll ans = -1;
-    ll id = -1;
-    for(int i = 1;i<=n;i++){
-        if(p[i]>ans){
-            ans = p[i];
-            id = i;
-        }
-    }
-    cout<<id<<endl;
+    cout<<ans<<endl;
 }   
 
 int main()
@@ -64,7 +70,7 @@ int main()
     ios::sync_with_stdio(0);
     cin.tie(0);
     int t = 1;
-    // cin >> t;
+    cin >> t;
     while (t--)
     {
         solve();

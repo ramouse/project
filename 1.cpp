@@ -5,47 +5,81 @@ using ll = long long;
 
 const ll MOD = 998244353;
 
-
-
-
 void solve()
 {
-    ll n,m;
-    cin>>n>>m;
-    vector<vector<ll>> adj(n+1);
-    for(int i = 1;i<=n-1;i++){
-        ll u,v;
-        adj[u].push_back(v);
-        adj[v].push_back(u);
-    }
-    vector<ll> dep(n+1,0);
-    ll D = 0;
-    auto dfs1 = [&](auto &&self,ll u,ll fa,ll d) ->void {
-        dep[u] = d;
-        D = max(D,d);
-        for(auto v : adj[u]){
-            if(v != fa){
-                self(self,v,u,d+1);
-            }
-        }
-    };
-    dfs1(dfs1,1,0,0);
-
-    vector<ll> f(n+1,0);
-    f[1] = D+1;
-    auto dfs2 = [&](auto &&self,ll u,ll fa) -> void{
-        for(auto v : adj[u]){
-            if(v != fa){
-                f[v] = D-dep[v]+dep[u]+2;
-                self(self,v,u);
-            }
-        }
-    };
-    dfs2(dfs2,1,0);
+    ll n,k;
+    cin>>n>>k;
+    vector<ll> a(n+1,0);
+    ll maxx = 0;
+    ll id = 0;
+    deque<ll> dq;
+    vector<ll> pre(n+1,0);
     for(int i = 1;i<=n;i++){
-        cout<<f[i]<<" ";
+        cin>>a[i];
     }
+    for(int i = 1;i<=n;i++){
+        if(a[i]>a[pre[i-1]]){
+            pre[i] = i;
+        }else{
+            pre[i] = pre[i-1];
+        }
+    }
+    
+    ll idx = pre[min(k+1,n)];
+    for(int i = idx;i<=n;i++){
+        cout<<a[i]<<" ";
+    }
+    for(int i = 1;i<idx;i++){
+        dq.push_back(a[i]);
+    }
+    for(int i = 1;i<=k-1;i++){
+        ll f = dq.front();
+        dq.pop_front();
+        ll se = dq.front();
+        dq.pop_front();
 
+        if(f>se){
+            cout<<se<<" ";
+            dq.push_front(f);
+        }else{
+            cout<<f<<" ";
+            dq.push_front(se);
+        }
+    }
+    while(!dq.empty()){
+        cout << dq.front() << " ";
+        dq.pop_front();
+    }
+    cout<<endl;
+    // if(k>=id){
+    //     for(int i = id;i<=n;i++){
+    //         cout<<a[i]<<" ";
+    //     }
+    //     for(int i = 1;i<id;i++){
+    //         cout<<a[i]<<" ";
+    //     }
+    // }else{
+    //     ll p = 1;
+    //     for(int i = 1;i<=k;i++){
+    //         ll f = dq.front();
+    //         dq.pop_front();
+    //         ll se = dq.front();
+    //         dq.pop_front();
+
+    //         if(f>se){
+    //             dq.push_back(se);
+    //             dq.push_front(f);
+    //         }else{
+    //             dq.push_back(f);
+    //             dq.push_front(se);
+    //         }
+    //     }
+    //     while(!dq.empty()){
+    //         cout<<dq.front()<<" ";
+    //         dq.pop_front();
+    //     }
+    // }
+    // cout<<endl;
 }
 
 int main()
@@ -53,7 +87,7 @@ int main()
     ios::sync_with_stdio(0);
     cin.tie(0);
     int t = 1;
-    // cin >> t;
+    cin >> t;
     while (t--)
     {
         solve();
