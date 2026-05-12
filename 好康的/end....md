@@ -92,14 +92,14 @@ vec.size();//获取大小
 
 集合 (set)，满足所有元素在里面只会出现至多一次且默认有序
 
-- 
+- 定义
 
 ```c++
 std::set<T> s; // 构造一个空集合
 std::set<T> s(s_); // 将集合 s_ 的内容复制到 s 中
 ```
 
-- 
+- 常用成员
 
 ```c++
 std::set<T> s;
@@ -117,7 +117,7 @@ s.size();//获取大小
 
 多重集 (multiset)，也是一个集合，但是一种元素可以出现多次
 
-- 
+- 常用成员
 
 ```c++
 std::multiset<T> s;
@@ -129,7 +129,7 @@ s.empty();//检查是否为空,空返回1否则返回0
 s.size();//获取大小
 ```
 
-
+- set类可以很方便的取出最大值和最小值，在遇到存在多次插入取出，求当前最大最小值时可以考虑
 
 ## 2.4pair(<utility>)
 
@@ -137,7 +137,7 @@ s.size();//获取大小
 
 当一个函数需要返回2个数据的时候，可以选择pair
 
-- 
+- 定义
 
 ```c++
 std::pair<T1, T2> p；//T1和T2b
@@ -151,7 +151,7 @@ p1.second;// 返回对象p1中名为second的公有数据成员
 
 `map` 容器中的元素是按照键的顺序自动排序的，这使得它非常适合需要快速查找和有序数据的场景。
 
-- 
+- 定义
 
 ```c++
 std::map<key_type，value_type> myMap  
@@ -163,7 +163,7 @@ for (auto [key, value] : f) {
 }
 ```
 
-- 
+- 常用成员
 
 ```c++
 mp[x];//返回键x对应的值
@@ -179,7 +179,7 @@ myMap.count("Bob"); // key 是否存在存在返回1，否则返回0
 
 栈 (stack)，一种后进先出的数据结构，能高效匹配括号，也能处理递归问题等
 
-- 
+- 常用成员
 
 ```c++
 std::stack<T> st;
@@ -734,6 +734,83 @@ void bfs(int st) {
 ```
 
  
+
+### 判环
+
+​	1.无向图：如果遇到一个已经访问过的点，那么说明有环
+
+- dfs:递归访问，记录vis。如果邻居节点v访问过且不是父节点，则有环
+- 并查集：遍历每一条边，如果`find(u)==find(v)`，说明有环
+- bfs：同理dfs
+
+2. 有向图：不能简单看是否访问过
+
+- dfs+三色标记：
+
+  - 0表示未访问，1表示正在递归中，没有判断完，2表示已完全递归完毕，该节点不在环内
+
+  ```c++
+  bool dfs(ll u){
+      vis[u] = 1;
+      for(ll &v : adj[u]){
+          if(vis[v]==1){
+              return true;
+          }
+          if(vis[v]==0 && dfs(v)) return true;
+      }
+      
+      vis[u] = 2;
+      return false;
+  }
+  ```
+
+- 拓扑
+
+  - **逻辑**：
+    1. 统计所有点入度。
+    2. 将入度为 0 的点入队。
+    3. 不断弹出队首，将其邻居入度减 1。若邻居入度减为 0，则入队。
+  - **判定**：如果最后**处理过的节点总数 < 图中节点总数**，说明剩下的点入度永远减不到 0（互相死锁），**有环**。
+  - **优点**：逻辑清晰，还能顺便求出拓扑序。
+
+  ```c++
+  vector<ll> deg(n+1,0)//存节点入度
+  for(int i = 1;i<=n;i++){
+      for(ll v : adj[i]){
+          deg[v]++;
+      }
+  }
+  
+  queue<ll> q;
+  for(int i = 1;i<=n;i++){
+      if(deg[i]==0) q.push(i);
+  }
+  
+  ll count = 0;
+  
+  while(!q.empty()){
+      ll u = q.front();
+      q.pop();
+      count++;
+      
+      for(ll v : adj[u]){
+          deg[v]--;
+          if(deg[v]==0) q.push(v);
+      }
+  }
+  
+  if(count == n){
+      //无环
+  }else{
+      //有环
+  }
+  ```
+
+​	3.负权环
+
+- 详情见最短路中的SPFA
+
+​         
 
 ### 最短路
 
@@ -1371,6 +1448,192 @@ ll query(ll p, ll l, ll r, ll ql, ll qr) {
 
 
 
+### 珂朵莉树(odt)
+
+它**并不是一种传统的树形数据结构**（如线段树、平衡树），而是一种基于 C++ STL 中的 std::set 来维护**连续区间相同值**的暴力数据结构/思想
+
+1. 核心思想与适用场景
+
+**适用条件（极其苛刻但极其重要）：**
+
+1. 题目必须有**区间平推（区间推平/区间赋值）**操作，即 将区间 [L, R] 内的所有数字修改为同一个值 V。
+2. 题目的数据最好是**随机生成的**。
+
+```c++
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long;
+#define endl '\n'
+
+struct Node {
+    ll l, r;
+    mutable ll v;
+    bool operator<(const Node& o) const { return l < o.l; }
+};
+
+set<Node> odt;
+ll n;
+
+// 核心1：分裂区间
+auto split(ll x) {
+    if (x > n) return odt.end();
+    auto it = --odt.upper_bound({x, 0, 0});
+    if (it->l == x) return it;
+    ll l = it->l, r = it->r;
+    ll v = it->v;
+    odt.erase(it);
+    odt.insert({l, x - 1, v});
+    return odt.insert({x, r, v}).first;
+}
+
+// 核心2：区间推平 (灵魂所在，降维打击)
+void assign(ll l, ll r, ll v) {
+    auto itr = split(r + 1);
+    auto itl = split(l);
+    odt.erase(itl, itr);
+    odt.insert({l, r, v});
+}
+
+// 应用1：区间加法
+void range_add(ll l, ll r, ll val) {
+    auto itr = split(r + 1);
+    auto itl = split(l);
+    for (auto it = itl; it != itr; ++it) {
+        it->v += val; // 因为有 mutable，直接改
+    }
+}
+
+// 应用2：区间求和
+ll range_sum(ll l, ll r,ll x,ll mod) {
+    auto itr = split(r + 1);
+    auto itl = split(l);
+    ll res = 0;
+    for (auto it = itl; it != itr; ++it) {
+        res += (it->r - it->l + 1) * it->v; 
+    }
+    return res;
+}
+
+// 扩展：区间求第 K 小 (非常典型的 ODT 应用)
+ll kth_smallest(ll l, ll r, ll k) {
+    auto itr = split(r + 1);
+    auto itl = split(l);
+    // 把区间抽出来排序
+    vector<pair<ll, ll>> vec;
+    for (auto it = itl; it != itr; ++it) {
+        vec.push_back({it->v, it->r - it->l + 1});
+    }
+    sort(vec.begin(), vec.end());
+    for (auto& p : vec) {
+        k -= p.second;
+        if (k <= 0) return p.first;
+    }
+}
+
+void solve()
+{
+     // 初始化时，把整个数组插入 ODT
+    // 假设初始数组全是 0
+    n = 100000;
+    odt.insert({1, n, 0});
+    
+    // 如果初始数组有初值，例如 a[1...n]
+    for(int i=1; i<=n; ++i) {
+        odt.insert({i, i, a[i]}); 
+    }
+}
+
+int main()
+{
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    int t = 1;
+    // cin >> t;
+    while (t--)
+    {
+        solve();
+    }
+    return 0;
+}
+```
+
+
+
+### 二分图
+
+#### 1.二分冲突模型
+
+当题目中包含以下三个特征时
+
+- **分成两组**：题目要求将一堆物品、人或节点，划分到**恰好两个**集合中（比如：分到 A 学院和 B 学院、分到两座监狱、染成黑白两色）。
+
+- **两两关系**：任意两个元素之间存在某种“代价、反应值、冲突值”。
+
+- **最值的最值**：
+
+- 题目的最终提问一定是以下两种句式之一：
+
+  - 求同一组内的最大值，使其**尽可能小**。（最大值最小化）
+    - **场景**：同一组内的人会打架，你要让同一组内打架最厉害的那对，伤害值尽可能小。
+    - **二分目标X**：我们要让同组的最大冲突$\leq$ $X$;
+    - **连边条件**：所有冲突值 $> X$ 的两人不能放在一起，所以连边后判断是否为二分图  
+  - 求同一组内的最小值，使其**尽可能大**。（最小值最大化）
+    - **场景**：同一组内的人要合作，你要让同一组内最拉胯的那对，默契值尽可能大。
+    - **二分目标X**：我们要让同组的最小默契$\geq$ $X$;
+    - **连边条件**：所有默契值 $< X$ 的两人不能放在一起，所以连边后判断是否为二分图  
+
+- 模板：
+
+  ```c++
+  	vector<ll> vis(n+1,-1);
+  	//判断是否为二分图
+      auto isg = [&](auto &&self,ll u,ll c,vector<vector<ll>> &vec) -> bool{
+          vis[u] = c;
+          for(ll v : vec[u]){
+              if(vis[v]==c) return false;
+              if(vis[v] == -1 && !self(self,v,c^1,vec)) return false;
+          }
+          return true;
+      };
+  	// 二分检查
+      auto check = [&](ll lim) -> bool{
+          vector<vector<ll>> vec(n+1);
+          for(auto [u,v,w] : adj){
+              if(w>lim){
+                  vec[u].push_back(v);
+                  vec[v].push_back(u);
+              }
+          }
+  
+          vis.assign(n+1,-1);
+          for(int i = 1;i<=n;i++){
+              if(vis[i] == -1){
+                  if (!isg(isg,i, 1, vec))
+                      return false;
+              }
+              
+          }
+          return true;
+      };
+  
+      ll ans = 0;
+      ll l = 0,r = a.size()-1;//所有值的个数，要记得去重
+      while(l<=r){
+          ll mid = (l+r)>>1;
+          if(check(a[mid])){
+              // 依据情况逼近：
+              // 变体 A (求最小): R = mid - 1; 
+              // 变体 B (求最大): L = mid + 1;
+              ans = a[mid];
+              // cout<<a[mid]<<" ";
+          }else{
+              //反向进行
+          }
+      }
+  ```
+
+  
+
 ## 3.7 数学
 
 ### 一些定理？以及一些遇到的数学技巧
@@ -1890,7 +2153,7 @@ ll C(ll n,ll k){//n中选k
     return fact[n] * inv[k] % MOD * inv[n-k] % MOD;
 }
 
-ll A(ll n,llk){
+ll A(ll n,ll k){
     if(k<0 || k>n) return 0;
     return fact[n] * inv[n-k] % MOD;
 }
@@ -2182,7 +2445,7 @@ vector<int> low(n + 1, 0);
     int len = 0;
     for (int i = 1; i <= n; i++)
     {
-        if (b[i] > low[len])
+        if (b[i] > low[len]) //如果是最长不降就是>=,也就是允许相等的情况
         {
             len++;
             low[len] = b[i];
@@ -2198,6 +2461,34 @@ vector<int> low(n + 1, 0);
 ```
 
 **解释**: $low_i$表示长度为 i 的最长上升子序列；我们从1开始遍历到n，如果遇到当前数组的数值大于low中最后的元素，我们就可以把当前的数值接到后面；如果遇到严格小于low中最后的元素，我们就可以将其替换到第一个大于他的位置上，可以证明，这是更优的，因为如果后面的值越小，就更容易接上更多的值
+
+1. 求【最长上升子序列 (严格递增 <)】
+
+- **数组状态：** 升序。
+- **延长条件：**` if (x > dp[len])`
+- **替换位置：** 找第一个 `≥x`的数替换掉它。
+- **使用函数：** **`lower_bound(..., x)`** （默认就是升序）
+
+2. 求【最长不下降子序列 (允许相等 `≤`)】
+
+- **数组状态：** 升序。
+- **延长条件：**` if (x >= dp[len])`
+- **替换位置：** 找第一个 `>x` 的数替换掉它。
+- **使用函数：** **`upper_bound(..., x)`**
+
+3. 求【最长下降子序列 (严格递减 >)】
+
+- **数组状态：** 降序。
+- **延长条件：** `if (x < dp[len])`
+- **替换位置：** 找第一个 `≤x` 的数替换掉它。
+- **使用函数：** **`lower_bound(..., x, greater<ll>())`**
+
+4. 求【最长不上升子序列 (允许相等 `≥`)】
+
+- **数组状态：** 降序。
+- **延长条件：** `if (x <= dp[len])`
+- **替换位置：** 找第一个 `<x `的数替换掉它。
+- **使用函数：** **`upper_bound(..., x, greater<ll>())`**
 
 
 
@@ -2247,6 +2538,158 @@ vector<int> low(n + 1, 0);
 
 
 为什么正确？ 因为我们强行把a映射成了一个递增序列，将映射关系应用到b后；我们不难想到公共子序列的本质就是要求元素在两个数组中出现的相对顺序一致，那么由于这层映射关系，a单调递增了，那我们只用找出映射后的b中最长的单调递增序列即可；还可以知道，b中只要是单调递增的序列，那么这一段序列一定是a的一个合法子序列
+
+
+
+## 3.11 杂项
+
+### 莫队
+
+#### 莫队基础
+
+**莫队算法**本质上是一种**极其优雅的暴力**，其本质是**分块**。它用于解决**离线区间查询**问题（“离线”意味着我们可以一次性读入所有查询，打乱顺序计算后再按原顺序输出）
+
+如果已知区间$[L,R]$ 的答案，能够快速的得到其相邻区间的答案，即可使用莫队算法来求解
+
+莫队算法的精髓就在于：**通过对查询区间进行巧妙的排序，严格限制双指针移动的步数总和，将其优化到**$O(N\sqrt{N})$ ，为了做到这一点，我们需要分块，也就是把长度为 **$N$** 的的数组分为 **$\sqrt{N}$** 的块，每个块的长度为**$\sqrt{N}$**。
+
+1. 常规排序（基础版）
+
+- **第一关键字：** 左端点 L 所在的**块编号**从小到大排序。
+- **第二关键字：** 右端点 R 的位置从小到大排序。
+
+2. 奇偶排序
+
+- **第一关键字：** 左端点 L 所在的块编号从小到大排序。
+- **第二关键字：** 如果 L 所在的块编号是**奇数**，则 R **从小到大**排序；如果 L 所在的块编号是**偶数**，则 R **从大到小**排序。
+
+在莫队中，指针移动代码如下：
+
+```c++
+while (l > q.l) add(--l); // L左移，区间变大
+while (r < q.r) add(++r); // R右移，区间变大
+while (l < q.l) del(l++); // L右移，区间变小
+while (r > q.r) del(r--); // R左移，区间变小
+```
+
+模板示例(以查询区间不同数字的个数为例)
+
+```c++
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long;
+
+const int N = 200005; // 根据题目修改范围
+int a[N];         // 原数组
+int cnt[N];       // 记录元素的出现次数
+int ans[N];       // 记录每个查询的最终答案
+int current_ans;  // 维护当前窗口内的答案
+int block;        // 分块大小
+
+// 1. 定义查询结构体
+struct Query {
+    int l, r, id;
+};
+vector<Query> q;
+
+// 2. 排序函数（奇偶排序，极力推荐！）
+bool cmp_oddeven(const Query& x, const Query& y) {
+    if (x.l / block != y.l / block) {
+        return x.l / block < y.l / block; // 第一关键字：L所在的块
+    }
+    // 第二关键字：奇数块升序，偶数块降序
+    if ((x.l / block) & 1) return x.r < y.r; 
+    else return x.r > y.r;
+}
+
+// （备用）常规排序（最容易懂的写法）
+bool cmp_standard(const Query& x, const Query& y) {
+    if (x.l / block != y.l / block) {
+        return x.l / block < y.l / block;
+    }
+    return x.r < y.r;
+}
+
+// 3. 扩大区间时的状态转移（根据题目逻辑修改）
+inline void add(int pos) {
+    if (cnt[a[pos]] == 0) {
+        current_ans++; // 如果加入前数量为0，说明出现了一个新数字
+    }
+    cnt[a[pos]]++;
+}
+
+// 4. 缩小区间时的状态转移（根据题目逻辑修改）
+inline void del(int pos) {
+    cnt[a[pos]]--;
+    if (cnt[a[pos]] == 0) {
+        current_ans--; // 如果移出后数量为0，说明少了一种数字
+    }
+}
+
+void solve() {
+    int n, m;
+    if (!(cin >> n >> m)) return; // 应对多组输入
+
+    for (int i = 1; i <= n; i++) {
+        cin >> a[i];
+    }
+
+    // 设定块的大小，通常设定为 sqrt(N)
+    block = max(1.0, sqrt(n)); 
+    // 注：若 N 和 M 差距极大，理论最优块大小是 max(1.0, n / sqrt(m))
+
+    q.resize(m + 1);
+    for (int i = 1; i <= m; i++) {
+        cin >> q[i].l >> q[i].r;
+        q[i].id = i; // 记录原始查询顺序
+    }
+
+    // 将查询数组进行排序 (下标从1开始到m结束)
+    sort(q.begin() + 1, q.begin() + 1 + m, cmp_oddeven);
+
+    // 5. 初始化双指针（极其重要：设置为一个空区间）
+    int l = 1, r = 0; 
+    current_ans = 0;
+    // 注意：如果需要多组测试数据清空，还要 memset(cnt, 0, sizeof(cnt));
+
+    // 6. 执行莫队主循环
+    for (int i = 1; i <= m; i++) {
+        int ql = q[i].l;
+        int qr = q[i].r;
+        int id = q[i].id;
+
+        // 核心：先扩大（add），再缩小（del）
+        // 前缀自减、前缀自加、后缀自增、后缀自减千万别写错！
+        while (l > ql) add(--l);
+        while (r < qr) add(++r);
+        while (l < ql) del(l++);
+        while (r > qr) del(r--);
+
+        // 记录离线答案
+        ans[id] = current_ans;
+    }
+
+    // 7. 按原顺序输出答案
+    for (int i = 1; i <= m; i++) {
+        cout << ans[i] << '\n';
+    }
+}
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+
+    int t = 1;
+    // cin >> t;
+    while (t--) {
+        solve();
+    }
+    return 0;
+}
+```
+
+
 
 # 4. 一些类型题的处理思路
 
@@ -2478,10 +2921,22 @@ cout << setprecision(8) << value << endl; // 改成8精度
 
 对于矩阵中的任意2*2子块，想要其合为合数，只需顺序填入值
     
-cout << setprecision(8) << value << endl; // 改成8精度
+
 
 //对于一个矩阵有一点(r,c),顺时针旋转后为(c,len-1-r),逆时针旋转后为(len-1-c,r),len为矩阵边长
 //当然这里的坐标是相对坐标并不是全局坐标，即左上角为(0,0)
+    
+勾股数的构造：给定一个数x，满足x^2+y^2=z^2;
+if(x&1){
+	y = (x*x)/2;
+	z = (x*x+1)/2;
+}else{
+    y = (x*x)/4-1;
+    z = (x*x)/4+1;
+}
+
+//读数据时内容中含有空格等制表符不能用cin，要用getline(cin,s);
+//一个长度为n的字符串能产生n(n+1)/2个子串
 ```
 
 
@@ -2523,6 +2978,38 @@ i $\equiv$j(modx) 意味着i和j关于x同余，那么集合可表示为{${1+x,1
 
 
 `std::binary_search(起始迭代器，结束迭代器，要查找的值)` 该函数返回一个bool值，可查找数组中是否存在特点的值，存在返回 $true$ 否则 返回 $false$ ，当然数组得是单调的  该函数复杂度为 $O(log\,n)$
+
+
+
+`std::transform`(<algorithm>)  复杂度:$O(n)$ ,因为底层由`for`循环实现 
+
+```c++
+//第一种用法：一元操作（处理单个区间）
+//这是最常用的情况：将一个区间里的每个元素，经过某种转换后，存入目标区间。
+//transform(起始迭代器1, 结束迭代器1, 目标起始迭代器, 一元操作函数);
+transform(s.begin(),s.end(),s.begin(),::toupper);//将字符串从开始到结尾的字符全都转换为大写，再存回s；::tolower,可转换为小写，注意都是::,而并非是std::
+
+//第二种用法：二元操作，可结合lambda使用
+//transform(起始1, 结束1, 起始2, 目标起始, 二元操作函数);
+vector<int> a = {1, 2, 3};
+vector<int> b = {4, 5, 6};
+
+// 提前分配好结果数组的空间！
+vector<int> res(3);
+
+// 将 a 和 b 对应位置相加，结果存入 res
+// std::plus<int>() 是标准库提供的一个仿函数，等价于返回 x + y
+transform(a.begin(), a.end(), b.begin(), res.begin(), plus<int>());
+//transform(a.begin(), a.end(), b.begin(), res.begin(), [](int x,int y){
+//   return x+y;
+//});
+//若不想提前分配空间，可在目标起始填入 std::back_inserter(res)
+for(auto x:res){
+   cout<<x<<" ";
+}
+```
+
+
 
 
 #自己的小壁画

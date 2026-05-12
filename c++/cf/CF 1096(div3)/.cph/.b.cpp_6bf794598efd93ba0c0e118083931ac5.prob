@@ -1,0 +1,1 @@
+{"name":"Local: b","url":"c:\\Users\\mouse\\Desktop\\project\\c++\\cf\\CF 1096(div3)\\b.cpp","tests":[{"id":1777560063286,"input":"6\n2\n()\n2\n)(\n3\n(((\n6\n())(()\n4\n(()(\n5\n)()()\n","output":"\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\mouse\\Desktop\\project\\c++\\cf\\CF 1096(div3)\\b.cpp","group":"local","local":true}
