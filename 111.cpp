@@ -4,68 +4,39 @@ using ll = long long;
 #define endl '\n'
 
 const ll N = 1e9+5;
+const ll MOD = 10007;
 
 void solve(){
-    ll n,x;
-    cin>>n>>x;
-    vector<ll> a(n+1,0);
+    ll n,m;
+    cin>>n>>m;
+    vector<vector<int>> vec(n+1,vector<int>(m+1,0)),pre(n+1,vector<int>(m+1,0));
     for(int i = 1;i<=n;i++){
-        cin>>a[i];
-    }
-    
-    vector<vector<ll>> bit(n+1,vector<ll>(32,0));
-    vector<int> vis(32,0);
-    ll co = 0;
-    for (int j = 0; j <= 31; j++)
-    {
-        if((x>>j)&1){
-            vis[j]=1;
-            co++;
+        for(int j = 1;j<=m;j++){
+            cin>>vec[i][j];
+            pre[i][j] = pre[i-1][j] + pre[i][j-1] - pre[i-1][j-1] + vec[i][j];
         }
     }
+
+    ll ans = 0;
     for(int i = 1;i<=n;i++){
-        
-        for(int j = 0;j<=31;j++){
-            if((a[i]>>j)&1){
-                bit[i][j]++;
-            }
-        }
-        bool ok = true;
-        for (int j = 0; j <= 31; j++)
-        {
-            if ((a[i] >> j) & 1)
-            {
-                if(!vis[j]){
-                    ok = false;
-                    break;
-                }
-            }
-        }
-        if(ok){
-            for (int j = 0; j <= 31; j++)
-            {
-                if ((a[i] >> j) & 1)
-                {
-                    if(vis[j]==1){
-                        vis[j]=2;
-                        co--;
+        for(int j = 1;j<=m;j++){
+            for(int ii = i;ii<=n;ii++){
+                for(int jj = j;jj<=m;jj++){
+                    if((pre[ii][jj]-pre[i-1][jj] - pre[ii][j-1] + pre[i-1][j-1]) * 2> (ii-i+1)*(jj-j+1)){
+                        ans++;
                     }
                 }
             }
         }
-        if(co==0){
-            cout<<"YES"<<endl;
-            return;
-        }
     }
-    cout<<"NO"<<endl;
+    cout<<ans<<endl;
 }
 
 int main(){
     ios::sync_with_stdio(0);
     cin.tie(0);
     int t = 1;
-    cin>>t;
+    // cin>>t;
     while(t--){
         solve();
     }

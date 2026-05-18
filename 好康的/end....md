@@ -1,6 +1,6 @@
-#1.队列
+# 1.队列
 
-##queue (<queue>)
+## queue (<queue>)
 
 队列 (queue)，是一种先进先出的数据结构
 
@@ -17,7 +17,7 @@ q.size();//获取大小
 
 
 
-##deque (<deque>)
+## deque (<deque>)
 
 双端队列  (deque)，可以理解为一个双端数组
 
@@ -37,7 +37,7 @@ dq.size();//获取大小
 
 
 
-##priority_queue (<priority_queue>)
+## priority_queue (<priority_queue>)
 
 优先队列 (priority_queue)，也是一种堆，可以方便获取最值。
 
@@ -1445,6 +1445,10 @@ ll query(ll p, ll l, ll r, ll ql, ll qr) {
     return res;
 }
 ```
+
+
+
+
 
 
 
@@ -2937,6 +2941,10 @@ if(x&1){
 
 //读数据时内容中含有空格等制表符不能用cin，要用getline(cin,s);
 //一个长度为n的字符串能产生n(n+1)/2个子串
+//对于二维前缀和
+pre[i][j] = pre[i-1][j] + pre[i][j-1] - pre[i-1][j-1] + vec[i][j];
+//对于其局部，当左上角坐标为(i,j),右下角为(ii,jj)时
+sum = pre[ii][jj] - pre[i-1][jj] - pre[ii][j-1] + pre[i-1][j-1];
 ```
 
 

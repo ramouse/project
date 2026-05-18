@@ -8,42 +8,72 @@ using ll = long long;
 const ll MOD = 998244353;
 const ll INF = 1e18;
 const ll LOG = 30;
+const ll N = 1e6+10;
+
+struct Node{
+    ll l,r,id;
+};
 
 void solve()
 {
-    ll n,k;
-    cin>>n>>k;
-    vector<ll> a(n+1);
+    ll n,q;
+    cin>>n>>q;
+    vector<ll> a(n+1,0);
     for(int i = 1;i<=n;i++){
         cin>>a[i];
     }
+    ll block = sqrt(n);
+    vector<ll> cnt(N,0);
+    vector<ll> sum(N,0);
+    vector<ll> ans(q+1,0);
+    ll maxx = 0;
 
-    auto check = [&](ll x){
-        ll cur = 0;
-        for(int i = 1;i<=n;i++){
-            if(a[i]<x){
-                ll t = (x-a[i]+i-1)/i;
-                cur += t;
-            }
-            if(cur>k){
-                return false;
-            }
-        }
-        return true;
+    vector<Node> qu(q+1);
+    for(int i = 1;i<=q;i++){
+        cin>>qu[i].l>>qu[i].r;
+        qu[i].id = i;
+    }
+    sort(qu.begin(),qu.end(),[&](const Node&x,const Node&y){
+        if(x.l/block != y.l/block) return x.l/block < y.l/block;
+        else return x.r<y.r;
+    });
+
+    auto add = [&](ll pos) ->void{
+        ll x = a[pos];
+        sum[cnt[x]]--;
+        cnt[x]++;
+        sum[cnt[x]]++;
+        maxx = max(maxx,cnt[x]);
     };
 
-    ll l = 1,r = 2*INF;
-    ll ans = 1;
-    while(l<=r){
-        ll mid = (l+r)>>1;
-        if(check(mid)){
-            l = mid+1;
-            ans = mid;
-        }else{
-            r = mid -1;
+    auto del = [&](ll pos) -> void{
+        ll x = a[pos];
+        sum[cnt[x]]--;
+        if(cnt[x] == maxx && sum[cnt[x]] == 0) maxx--;
+        cnt[x]--;
+        sum[cnt[x]]++;
+    };
+
+    ll l = 1,r = 0;
+    for(int i = 1;i<=q;i++){
+        ll ql = qu[i].l;
+        ll qr = qu[i].r;
+        ll id = qu[i].id;
+
+        while(l>ql) add(--l);
+        while(r<qr) add(++r);
+        while(l<ql) del(l++);
+        while(r>qr) del(r--);
+
+        // ans[id] = maxx;
+        for(auto nu : cnt){
+            ans[id] = max(ans[id],nu);
         }
     }
-    cout<<ans<<endl;
+
+    for(int i = 1;i<=q;i++){
+        cout<<ans[i]<<endl;
+    }
     
 }   
 
