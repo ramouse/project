@@ -605,6 +605,226 @@ vector<int> low(n + 1, 0);
 
 ```
 
+### 3.5.5 KMP
+
+KMP 的核心任务是解决单模式串在主串中的匹配问题。当你用模式串 $P$ 去匹配主串 $T$ 时，如果中途在 $P[j]$ 处失配了，暴力算法会把主串指针回溯。而 KMP 告诉你：主串指针永远不回头，只移动模式串指针
+
+核心数组：next（或 pi 数组）定义：next[i] 表示前缀 $P[0 \dots i]$ 的最长相等**前后**缀的长度（不能是它本身）。用途：当模式串在 $P[j]$ 失配时，说明前面的 $P[0 \dots j-1]$ 已经匹配成功。由于有 next 数组的存在，我们可以直接把模式串向右滑，让 $P[\text{next}[j-1]]$ 对齐刚才失配的位置继续比对。
+
+**模板**：
+
+```c++
+// 计算最长相等前后缀 pi 数组 (即通常说的 next 数组)
+vector<int> compute_pi(const string& s) {
+    int n = s.size();
+    vector<int> pi(n, 0);
+    for (int i = 1; i < n; i++) {
+        int j = pi[i - 1];
+        while (j > 0 && s[i] != s[j]) j = pi[j - 1];
+        if (s[i] == s[j]) j++;
+        pi[i] = j;
+    }
+    return pi;
+}
+
+// KMP 匹配：返回所有匹配成功的起始下标（0-indexed）
+vector<int> kmp_match(const string& text, const string& pattern) {
+    if (pattern.empty()) return {};
+    vector<int> pi = compute_pi(pattern);
+    vector<int> matches;
+    int j = 0;
+    for (int i = 0; i < text.size(); i++) {
+        while (j > 0 && text[i] != pattern[j]) j = pi[j - 1];
+        if (text[i] == pattern[j]) j++;
+        if (j == pattern.size()) {
+            matches.push_back(i - j + 1);
+            j = pi[j - 1]; // 继续找下一个匹配
+        }
+    }
+    return matches;
+}
+```
+**KMP扩展**
+1. **寻找最小循环节**（极其经典）对于一个长度为 $n$ 的字符串 $S$，计算出它的 pi 数组。定理：若 $n \pmod{n - \text{pi}[n-1]} == 0$ 且 $\text{pi}[n-1] > 0$，则 $S$ 具有常数周期的循环节，其最小循环元长度为 $L = n - \text{pi}[n-1]$，循环次数为 $\frac{n}{L}$。如果不能整除，说明它尾部缺了一点。但 $n - \text{pi}[n-1]$ 依然代表补齐后可能形成的最小周期。
+
+```c++
+int L = n - pi[n - 1];
+        
+// 3. 判定是否能完美整除
+if (n % L == 0 && pi[n - 1] > 0) {
+    cout << n / L << "\n";
+} else {
+    cout << 1 << "\n";
+}
+```
+
+2. **前缀出现次数统计怎么在 $O(n)$ 时间内求出字符串 $S$ 的所有前缀在 $S$ 自身中出现了多少次?** 每一个 `pi[i]` 都代表一个前缀的结束。我们可以建立一张图，从 $i$ 向 $\text{pi}[i-1]$ 连边。这本质上是一棵 KMP 树（失配树）。通过在树上从叶子到根进行拓扑求和（或者简单的倒序递推 `ans[pi[i-1]] += ans[i]`），就可以一次性统计出所有前缀的全局出现次数。
+```c++
+// 统计 S 的所有前缀在 S 自身中的出现次数
+    vector<int> count_prefix_occurrences(const string& s) {
+    int n = s.size();
+    vector<int> pi = compute_pi(s); // 使用之前的 KMP 模板
+    
+    // ans[len] 表示长度为 len 的前缀出现的总次数
+    vector<int> ans(n + 1, 0);
+    
+    // 步骤 1：每个位置先自主贡献 1 次
+    for (int i = 0; i < n; i++) {
+        ans[i + 1] = 1;
+    }
+    
+    // 步骤 2：从大到小倒序递推，相当于在失配树上从叶子向根节点求后缀和
+    for (int i = n; i > 0; i--) {
+        if (pi[i - 1] > 0) {
+            ans[pi[i - 1]] += ans[i];
+        }
+    }
+    
+    // 此时 ans[len] 里存的就是长度为 len 的前缀在全局出现的绝对次数
+    return ans; 
+}
+```
+
+
+
+### 3.5.6 exKMP(Z函数)
+exKMP 是 KMP 的全方位升级版。它的核心任务是：求文本串 $T$ 的每一个后缀与模式串 $P$ 的最长公共前缀 (LCP)。
+
+**核心数组**：z 数组与 ext 数组竞赛中为了代码复用，通常分为两步：
+1. z 数组（对 $P$ 自身求）：z[i] 表示以 $P[i]$ 开头的后缀 $P[i \dots m-1]$ 与整个 $P$ 的 LCP 长度。
+2. ext 数组（$T$ 与 $P$ 匹配）：ext[i] 表示以 $T[i]$ 开头的后缀 $T[i \dots n-1]$ 与整个 $P$ 的 LCP 长度。
+
+**工作机制**：Z-box（匹配盒子）exKMP 在维护过程中，会记录一个当前拓展到最右端的匹配区间 $[l, r]$（即 $T[l \dots r]$ 完全匹配了 $P[0 \dots r-l]$）。
+- 当我们计算 $i$ 位置时，如果 $i \le r$，根据对称性，$T[i \dots r]$ 的信息完全等于 $P[i-l \dots r-l]$。
+- 我们可以直接利用之前算好的 z[i-l] 来一刀切掉大段的重复匹配，直接从不需要比对的地方继续向外暴力外扩。
+
+**模板**：
+```c++
+// 计算 P 自身的 Z 数组（即 exKMP 中的 nxt 数组）
+vector<int> compute_z(const string& p) {
+    int m = p.size();
+    vector<int> z(m, 0);
+    z[0] = m; // 自全匹配
+    for (int i = 1, l = 0, r = 0; i < m; ++i) {
+        if (i <= r) z[i] = min(r - i + 1, z[i - l]);
+        while (i + z[i] < m && p[z[i]] == p[i + z[i]]) ++z[i];
+        if (i + z[i] - 1 > r) {
+            l = i;
+            r = i + z[i] - 1;
+        }
+    }
+    return z;
+}
+
+// 计算 T 的每个后缀与 P 的 LCP (ext 数组)
+vector<int> exkmp(const string& t, const string& p) {
+    int n = t.size(), m = p.size();
+    vector<int> z = compute_z(p);
+    vector<int> ext(n, 0);
+    for (int i = 0, l = 0, r = 0; i < n; ++i) {
+        if (i <= r) ext[i] = min(r - i + 1, z[i - l]);
+        while (i + ext[i] < n && ext[i] < m && p[ext[i]] == t[i + ext[i]]) ++ext[i];
+        if (i + ext[i] - 1 > r) {
+            l = i;
+            r = i + ext[i] - 1;
+        }
+    }
+    return ext;
+}
+```
+
+**exKMP扩展**：
+1. **任意位置的周期判定**
+KMP 只能很方便地判定整个串的周期。而 exKMP 拥有无死角的视角：
+- 如果你想判断以 $i$ 开头的后缀是否是原串的一个周期，只需看 z[i] 是否等于 $n - i$。如果是，说明 $S[i \dots n-1]$ 与原串前缀完全一致，意味着整个串在 $i$ 处发生了完美的错位重合。
+2. **字符串拼接与前后缀重合问题**
+比如题目要求：找出所有既是 $S$ 的前缀、又是 $S$ 的后缀、并且在 $S$ 中间还出现过至少一次的子串。z 数组天然包含了“既是前缀又是后缀”的信息（只要 $i + z[i] == n$ 即可）。我们只需要遍历中间部分的 $z$ 值，看看有没有大于等于当前后缀长度的值即可。配合线段树或简单的树状数组，能秒杀各种复杂的子串计数问题。
+`-------------------------------------------------------
+    解答：
+    **如何判断“是后缀”？**
+    如果从位置 $i$ 开始的匹配一直顶到了字符串的最后一个字符，说明它就是原串的一个后缀。
+    **Z 数组翻译**： i + z[i] == n。此时这个后缀的长度就是 z[i]。
+    **如何判断“在中间出现过”？**如果这个长度为 z[i] 的后缀/前缀，在 $i$ 之前还出现过，说明它在中间也有过匹配。这意味着在 $1 \dots i-1$ 之间，必然存在某个位置 $j$，使得从 $j$ 开始的匹配长度至少能覆盖 z[i]。 
+    **Z 数组翻译**： 存在 $j < i$，使得 z[j] >= z[i]。
+**code:**
+```c++
+// 引入计算 Z 数组的模板 (与上文一致)
+vector<int> compute_z(const string& s) {
+    int n = s.size();
+    vector<int> z(n, 0);
+    z[0] = n;
+    for (int i = 1, l = 0, r = 0; i < n; ++i) {
+        if (i <= r) z[i] = min(r - i + 1, z[i - l]);
+        while (i + z[i] < n && s[z[i]] == s[i + z[i]]) ++z[i];
+        if (i + z[i] - 1 > r) {
+            l = i;
+            r = i + z[i] - 1;
+        }
+    }
+    return z;
+}
+
+string find_password(const string& s) {
+    int n = s.size();
+    vector<int> z = compute_z(s);
+    
+    int max_z = 0;     // 记录在当前 i 之前，出现过的最大 z 值
+    int ans_len = 0;   // 记录满足条件的最长子串长度
+    
+    for (int i = 1; i < n; i++) {
+        // 条件 1: 是后缀 (i + z[i] == n)
+        // 条件 2: 在中间出现过 (max_z >= z[i])
+        if (i + z[i] == n && max_z >= z[i]) {
+            ans_len = max(ans_len, z[i]);
+        }
+        
+        // 更新之前出现过的最大匹配长度
+        max_z = max(max_z, z[i]);
+    }
+    
+    if (ans_len > 0) {
+        return s.substr(0, ans_len);
+    } else {
+        return "Just a legend"; // 题目要求的无解输出
+    }
+}    
+```
+
+任务：给定长度为 $n$ 的字符串 $S$，我们在第 $i$ 个位置切一刀，把前缀 $S[0 \dots i-1]$ 拼接到后缀 $S[i \dots n-1]$ 的后面。怎么快速判断拼接后的新串是否和原串 $S$ 依然一模一样？
+
+**核心逻辑**：假设我们在下标 $i$ 处切一刀，原串 $S$ 被分成了两部分：
+- 前部 A：$S[0 \dots i-1]$，长度为 $i$。
+- 后部 B：$S[i \dots n-1]$，长度为 $n-i$。拼接后的新串是 B + A。我们要求 B + A == S。
+既然 $S$ 本身就是 A + B 构成的，要想 B + A == A + B，必须同时满足两个极其严苛的条件：
+1. B 必须和 $S$ 的前部完全一样：也就是说，后缀 $S[i \dots n-1]$ 必须和原串前缀匹配。
+    - Z 数组翻译：z[i] == n - i
+2. A 必须和 $S$ 的后部完全一样：也就是说，原串前缀 $S[0 \dots i-1]$ 必须和后缀 $S[n-i \dots n-1]$ 匹配。
+    - Z 数组翻译：z[n - i] >= i （因为 $S[n-i]$ 开头的后缀的最长公共前缀至少得覆盖长度 $i$）。
+
+```c++
+// 纯 Z 数组原地判定法
+    vector<int> find_valid_cuts_inplace(const string& s) {
+    int n = s.size();
+    vector<int> z = compute_z(s); // 只需要对原串求一次 Z 数组
+    vector<int> valid_cuts;
+    
+    // 0 处切分（不切）默认算一种，如果要排除可以从 1 开始
+    if (n > 0) valid_cuts.push_back(0); 
+    
+    for (int i = 1; i < n; i++) {
+        // 条件1: 后部 B (长度 n-i) 必须和 S 的前缀匹配
+        bool cond1 = (z[i] == n - i);
+        // 条件2: 前部 A (长度 i) 必须和 S 的后缀(起点为 n-i)匹配
+        bool cond2 = (z[n - i] >= i);
+        
+        if (cond1 && cond2) {
+            valid_cuts.push_back(i);
+        }
+    }
+    return valid_cuts;
+}
+```
+
 ### 进制转换
 
 #### 十进制转2-16进制
@@ -709,6 +929,44 @@ int getChildTowards(int u, int v) {  //获取u-1
         }
     }
     return v;
+}
+
+//寻找u,v的lca
+// 假设 MAX_LOG 一般取 20 (因为 2^20 > 10^5)
+int get_lca(int u, int v) {
+    // 步骤 1：始终保持 u 是更深的那个节点 (方便后面把 u 往上提)
+    if (depth[u] < depth[v]) {
+        swap(u, v);
+    }
+    
+    // 步骤 2：让 u 往上跳，直到 u 和 v 处于同一深度
+    // 从大步到小步尝试
+    for (int i = MAX_LOG; i >= 0; i--) {
+        // 如果 u 跳 2^i 步之后，高度仍然 >= v 的高度，那就跳
+        // (注：如果跳过头了，到了 0 号节点，depth[0] 一般是 0，条件自然不成立)
+        if (depth[up[u][i]] >= depth[v]) {
+            u = up[u][i];
+        }
+    }
+    
+    // 步骤 3：特判。如果齐平后 u 和 v 重合了，说明原来的 v 就是 u 的祖先
+    if (u == v) {
+        return u;
+    }
+    
+    // 步骤 4：u 和 v 同时往上跳，寻找 LCA 的“正下方”那个节点
+    for (int i = MAX_LOG; i >= 0; i--) {
+        // 如果 u 和 v 跳 2^i 步后，到达的节点【不一样】
+        // 说明还没有到达 LCA（或者还没越过 LCA），那就可以跳！
+        if (up[u][i] != up[v][i]) {
+            u = up[u][i];
+            v = up[v][i];
+        }
+    }
+    
+    // 步骤 5：循环结束后，u 和 v 必定处于 LCA 的直接子节点位置
+    // 所以它们的父节点 up[u][0] 就是 LCA
+    return up[u][0];
 }
 ```
 
@@ -1294,7 +1552,164 @@ struct DSU {
     }
 };
 ```
+#### 带删除并查集
+基础并查集基于树形结构，一旦某个节点被合并，它可能成为很多其他节点的父节点。如果直接删除它或把它移到别的集合，整棵树就断开了。
 
+**核心思想：虚拟节点（映射法）**
+既然真实的节点不能乱动，我们就给每一个真实节点分配一个“虚拟信箱”（虚拟节点）。
+- 合并操作：我们实际上是在合并“虚拟节点”。
+- 删除操作：当我们要删除节点 $x$ 时，我们不改动原本树中的结构，而是直接给节点 $x$ 分配一个新的、独立的虚拟节点。
+- 原来的节点就变成了一个没人用的“空壳”（僵尸节点），这不会影响其他依赖它的子节点。
+
+**适用场景**：
+ - 需要将某个节点从当前连通块中分离出来（删除）。
+
+ - 需要将某个节点从集合 A 移动到集合 B。
+
+ - 动态图连通性问题中，涉及节点失效的场景。
+``` c++
+/**
+ * 带删除的并查集
+ * 核心原理：使用 id 数组将真实节点映射到虚拟节点，删除即重新映射。
+ */
+struct DeletableDSU {
+    std::vector<int> parent;
+    std::vector<int> siz;
+    std::vector<int> id; // id[x] 表示真实节点 x 当前对应的虚拟节点编号
+    int virtual_cnt;     // 虚拟节点分配计数器
+
+    // 初始化：n 为初始节点数，max_ops 为预估的最大删除/移动操作次数
+    DeletableDSU(int n, int max_ops) : 
+        parent(n + max_ops + 1), 
+        siz(n + max_ops + 1, 1), 
+        id(n + 1) 
+    {
+        virtual_cnt = n;
+        // 初始时，真实节点 1~n 映射到虚拟节点 1~n
+        for (int i = 1; i <= n; i++) {
+            id[i] = i;
+        }
+        // 初始化所有的虚拟节点
+        std::iota(parent.begin(), parent.end(), 0);
+    }
+
+    // 查找：注意这里查找的是 id[x] 映射到的虚拟节点
+    int find(int x) {
+        int v = id[x]; // 先找到它当前的虚拟节点
+        return parent[v] == v ? v : parent[v] = find(parent[v]);
+    }
+
+    // 内部查找：直接针对虚拟节点查找
+    int find_virtual(int v) {
+        return parent[v] == v ? v : parent[v] = find_virtual(parent[v]);
+    }
+
+    // 合并 x 和 y
+    bool merge(int x, int y) {
+        int rootX = find(x);
+        int rootY = find(y);
+        if (rootX == rootY) return false;
+
+        if (siz[rootX] < siz[rootY]) std::swap(rootX, rootY);
+        
+        parent[rootY] = rootX;
+        siz[rootX] += siz[rootY];
+        return true;
+    }
+
+    // 删除/孤立 节点 x
+    void remove(int x) {
+        int rootX = find(x);
+        siz[rootX]--; // 原集合大小减一
+        
+        // 给 x 分配一个新的独立虚拟节点
+        id[x] = ++virtual_cnt; 
+        parent[id[x]] = id[x];
+        siz[id[x]] = 1;
+    }
+
+    // 将节点 x 移动到节点 y 所在的集合
+    void move(int x, int y) {
+        if (find(x) == find(y)) return;
+        remove(x); // 先把 x 独立出来
+        merge(x, y); // 再把 x 融进 y
+    }
+};
+```
+
+#### 带权并查集
+基础并查集只能回答“$x$ 和 $y$ 是不是一伙的”，但无法回答“在同一伙里，$x$ 和 $y$ 之间有什么具体关系”。
+
+**核心思想：边权维护（向量运算）**
+我们在节点指向父节点的边上增加一个权值 (weight)。
+- 权值表示：weight[x] 记录的是节点 $x$ 到其父节点的某种相对关系（比如距离差、分数差、胜负关系）。
+- 路径压缩：在 find 时，不仅要把 $x$ 挂到根节点上，还要把 weight[x] 更新为 $x$ 到根节点的关系。
+- 合并计算：在 merge 时，如果已知 $x$ 到 $y$ 的关系为 $w$，通过向量加减法推导出根节点 $rootX$ 到 $rootY$ 的关系，从而连接两个树。
+
+**适用场景**：
+- 维护区间和（如：已知区间 $[l, r]$ 的和，问能否推断出另一区间的和）。
+- 种类并查集/相对关系推断（如经典题：POJ 食物链、给出 $x-y=c$ 的多个方程判断是否冲突）。
+- 在同一个连通块内，计算任意两点之间的差值/距离
+```c++
+/**
+ * 带权并查集
+ * 权值定义：weight[x] 表示节点 x 相对于其父节点的差值/距离
+ */
+struct WeightedDSU {
+    std::vector<int> parent;
+    std::vector<ll> weight; // 记录到父节点的权值
+
+    WeightedDSU(int n) : parent(n + 1), weight(n + 1, 0) {
+        std::iota(parent.begin(), parent.end(), 0);
+    }
+
+    // 查找：路径压缩，同时更新权值
+    int find(int x) {
+        if (parent[x] == x) return x;
+        
+        int old_parent = parent[x];
+        parent[x] = find(parent[x]); // 递归找根
+        
+        // 核心：x 到新根的权值 = x 到旧父节点的权值 + 旧父节点到根的权值
+        weight[x] += weight[old_parent]; 
+        
+        return parent[x];
+    }
+
+    // 合并：已知 x 相对于 y 的权值为 w (例如：x - y = w)
+    // 规定方向：y 指向 x 的值为 w
+    bool merge(int x, int y, ll w) {
+        int rootX = find(x);
+        int rootY = find(y);
+
+        if (rootX == rootY) return false; // 已经在同一集合
+
+        // 将 rootX 挂在 rootY 下
+        parent[rootX] = rootY;
+
+        // 核心数学推导：向量加法
+        // x -> rootX (权值为 weight[x])
+        // y -> rootY (权值为 weight[y])
+        // 已知关系: x 相对于 y 是 w 
+        // 所以 rootX 相对于 rootY 的权值应该如何推导？
+        // rootX_to_rootY = weight[y] - weight[x] + w; 
+        weight[rootX] = weight[y] - weight[x] + w; 
+        
+        return true;
+    }
+
+    // 判断两个点是否在同一集合，并返回它们之间的权值差
+    // 假设查询 x 相对于 y 的差值
+    bool query(int x, int y, ll &result) {
+        if (find(x) != find(y)) {
+            return false; // 不连通，无法推断关系
+        }
+        // result = x_to_root - y_to_root
+        result = weight[x] - weight[y]; 
+        return true;
+    }
+};
+```
 
 
 ### 树状数组
@@ -1446,7 +1861,9 @@ ll query(ll p, ll l, ll r, ll ql, ll qr) {
 }
 ```
 
+#### 区间最大值
 
+只需在`push_up` 中改为取 `max` 即可
 
 
 
@@ -2123,7 +2540,7 @@ ll lcm(ll a, ll b)
 
 
 
-## 3.7.7排列数和组合数
+### 3.7.7排列数和组合数
 
 ```c++
 vector<ll> fact(n+1),inv(n+1);//阶乘和逆元
@@ -2919,7 +3336,7 @@ a.erase(unique(a.begin(), a.end()), a.end()); /
 //row+i 表示同一副对角线
 //row-i 表示同一主对角线  因为会出现负值，所以我们通常会加一个常数，
    //row-i+n
-cout << setprecision(8) << value << endl; // 改成8精度
+cout <<fixed<< setprecision(8) << value << endl; // 改成8精度
 
 //整数向上取整可以 (a+b-1)/b
 
@@ -2951,11 +3368,9 @@ sum = pre[ii][jj] - pre[i-1][jj] - pre[ii][j-1] + pre[i-1][j-1];
 
 ## 图论
 
-对于任何森林（没有环的图），连通块数量  C 满足
+1. 对于任何森林（没有环的图），连通块数量  C 满足 $c = deg[u] - deg[v] - 1 - is\_adj(u,v)$ 其中 $$is\_adj(u,v)$$ 表示u和v是否为连边，是则为1，反之为0；
 
-$c = deg[u] - deg[v] - 1 - is\_adj(u,v)$ 其中 $$is\_adj(u,v)$$ 表示u和v是否为连边，是则为1，反之为0；
-
-
+2. 对树上任意三个点 $u,v,w$ ，一定存在唯一一个点 $m$（**可能是 $u,v,w$之一，也可能是中间的某个点**），使得从 $m$ 出发有三条互不相交的"手臂"分别通向 $u,v,w$ 。这个 $m$ 就叫**中位点**
 
 
 

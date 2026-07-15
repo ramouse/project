@@ -1,0 +1,1 @@
+{"name":"Local: 2","url":"c:\\Users\\mouse\\Desktop\\project\\c++\\马蹄省 3\\2.cpp","tests":[{"id":1779610046928,"input":"5 5\nabc abe ddf ccd ce\nab\ncc\nc\nddfg\nabef","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\mouse\\Desktop\\project\\c++\\马蹄省 3\\2.cpp","group":"local","local":true}

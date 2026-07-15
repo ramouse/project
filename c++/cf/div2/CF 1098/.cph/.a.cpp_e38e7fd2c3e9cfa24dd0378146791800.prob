@@ -1,0 +1,1 @@
+{"name":"Local: a","url":"c:\\Users\\mouse\\Desktop\\project\\c++\\cf\\CF 1098\\a.cpp","tests":[{"id":1779109743786,"input":"3\n4\n0 0 0 0\n3\n1 2 0\n5\n1 2 1 2 1\n","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\mouse\\Desktop\\project\\c++\\cf\\CF 1098\\a.cpp","group":"local","local":true}

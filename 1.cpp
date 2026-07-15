@@ -3,84 +3,69 @@ using namespace std;
 using ll = long long;
 #define endl '\n'
 
+const ll INF = 1e18;
+const ll MAXN = 2e5 * 32;
+const ll MOD = 1e9+7;
+
+ll trie[MAXN][2];
+ll cnt[MAXN];
+
 void solve()
-{
-    ll n,m,k;
-    cin>>n>>m>>k;
-    vector<int> a(n+1,0);
-    vector<vector<ll>> adj(n+1);
-    for(int i = 1;i<=k;i++){
-        ll t;
-        cin>>t;
-        a[t] = 1;
-    }
-
-    for(int i = 1;i<=m;i++){
-        ll u,v;
-        cin>>u>>v;
-        adj[u].push_back(v);
-        adj[v].push_back(u);
-    }
-
-    if(k == n){
-        cout<<"No"<<endl;
-        return;
-    }
-
-    queue<ll> q;
-    vector<bool> vis(n+1,0);
-    ll index = -1;
+{   
+    ll n,k1,k2;
+    cin>>n>>k1>>k2;
+    ll k = k1 ^ k2;
+    vector<ll> a(n+1,0),b(n+1,0),c(n+1,0);
+    // ll trie[MAXN][2] = {0};
+    // vector<vector<ll>> trie(MAXN,vector<ll>(2,0));
+    // vector<ll> cnt(MAXN,0);
+    ll node = 0;
     for(int i = 1;i<=n;i++){
-        if(!a[i]){
-            index = i;
-            break;
-        }
+        cin>>a[i];
     }
 
-    q.push(index);
-    vis[index] = 1;
-    ll coun = 1;
-    vector<vector<ll>> ans;
+    ll ans = 0;
+    for(int i = 1;i<=n;i++){
+        cin>>b[i];
+        c[i] = a[i] ^ b[i];
 
-    while(!q.empty()){
-        ll u = q.front();
-        q.pop();
+        ll sum = 0;
+        ll cur = 0;
+        ll num = c[i];
+        for(int j = 30;j>=0;j--){
+            ll bit = ((num >> j) & 1);
+            ll bitk = ((k>>j) & 1);
 
-        vector<ll> vec;
+            int same = bit ^ bitk;
+            int diff = same ^ 1;
 
-        for(ll v : adj[u]){
-            if(!vis[v]){
-                coun++;
-                vis[v] = 1;
-                vec.push_back(v);
-                if(!a[v]){
-                    q.push(v);
+            if(same){
+                if(trie[cur][diff]){
+                    ans += cnt[trie[cur][diff]];
                 }
+                cur = trie[cur][0];
+            }else{
+                cur = trie[cur][0];
             }
+
+            if(!cur) break;
         }
 
-        if(!vec.empty()){
-            vector<ll> step;
-            step.push_back(u),step.push_back(vec.size());
-            for(auto v : vec){
-                step.push_back(v);
+        cur = 0;
+        for(int j = 30;j>=0;j--){
+            ll bit = ((num >> j) & 1);
+            if(!trie[cur][bit]){
+                trie[cur][bit] = ++node;
             }
-            ans.push_back(step);
+            cur = trie[cur][bit];
+            cnt[cur]++;
         }
+        
     }
+    
+    cout<<ans<<endl;
 
-    if(coun != n){
-        cout<<"No"<<endl;
-    }else{
-        cout<<"Yes"<<endl;
-        cout<<ans.size()<<endl;
-        for(auto &vec : ans){
-            for(auto v : vec){
-                cout<<v<<" ";
-            }
-            cout<<endl;
-        }
-    }
+
 }
 
 int main()
