@@ -1,0 +1,1 @@
+{"name":"Local: d","url":"c:\\Users\\mouse\\Desktop\\project\\c++\\atcoder\\abc\\abc 467\\d.cpp","tests":[{"id":1784389375154,"input":"3\n2 0 1 1 -1 0 1 2\n1 0 -1 0 0 1 0 -1\n4 0 3 1 2 0 1 1\n","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\mouse\\Desktop\\project\\c++\\atcoder\\abc\\abc 467\\d.cpp","group":"local","local":true}

@@ -5,20 +5,25 @@ using ll = long long;
 
 const ll N = 1e9;
 const ll MOD = 676767677;
+const ll INF = 1e18;
+
 
 void solve()
 {
     ll n;
     cin>>n;
-    bool ok = true;
+    ll ans = 0;
     for(int i = 1;i<=n;i++){
-        ll x;
-        cin>>x;
-        if(x >= 0 ) ok = false;
-    }
+        ll a,b;
+        cin>>a>>b;
+        string s;
+        cin>>s;
 
-    if(ok) cout<<"Yes"<<endl;
-    else cout<<"No"<<endl;
+        if(s == "keep"){
+            ans += b-a;
+        }
+    }
+    cout<<ans<<endl;
 }
 
 int main()

@@ -1711,7 +1711,6 @@ struct WeightedDSU {
 };
 ```
 
-
 ### 树状数组
 
 树状数组是一种支持 **单点修改** 和 **区间查询** 的，代码量小的数据结构．
@@ -2053,7 +2052,126 @@ int main()
       }
   ```
 
-  
+
+
+
+
+
+### ST表
+
+**ST 表（Sparse Table，稀疏表）** 是一种非常经典且优雅的静态数据结构，专门用于解决**可重复贡献问题**（最常见的就是 **RMQ：区间最值查询**）。
+
+它的核心优势在于极其变态的查询速度：只需一次 $O(N \log N)$ 的预处理，就能在 $O(1)$ 的时间复杂度内回答任意区间的查询。
+
+
+
+#### 一、 核心思想：倍增（Doubling）与 DP
+
+ST 表的本质是**动态规划（DP）\**结合\**倍增**思想。
+
+普通的暴力查询是逐个遍历区间内的元素，而 ST 表通过预先计算好长度为 $2^0, 2^1, 2^2, \dots$ 的区间的答案，在查询时用两个长度为 $2^k$ 的区间“拼凑”出目标区间。
+
+##### 1. 状态定义
+
+我们设二维数组 $st[i][j]$ 表示：**从下标 $i$ 开始，长度为 $2^j$ 的区间内的最值**。
+
+- 也就是区间 $[i, i + 2^j - 1]$ 的最值。
+- 当 $j=0$ 时，长度为 $2^0 = 1$，即 $st[i][0]$ 就是元素本身 $A[i]$。
+
+##### 2. 状态转移（预处理）
+
+如何求长度为 $2^j$ 的区间的最值呢？
+
+我们可以把它等分成两半，每半的长度正好是 $2^{j-1}$。
+
+- 前一半的区间是 $[i, i + 2^{j-1} - 1]$，对应的状态是 $st[i][j-1]$。
+- 后一半的区间是从 $i + 2^{j-1}$ 开始，长度也是 $2^{j-1}$，对应的状态是 $st[i + 2^{j-1}][j-1]$。
+
+因此，转移方程（以求最小值为例）非常自然：
+
+$$st[i][j] = \min(st[i][j-1], st[i + 2^{j-1}][j-1])$$
+
+> **注意：** 在写代码时，外层循环必须是枚举区间长度（即 $j$），内层循环枚举起点 $i$，因为长区间的状态依赖于短区间的状态。
+
+##### 3. $O(1)$ 查询（拼凑区间）
+
+假设我们要查询区间 $[L, R]$ 的最小值，区间长度为 $len = R - L + 1$。
+
+我们找到一个最大的整数 $k$，使得 $2^k \le len$（即 $k = \lfloor \log_2(len) \rfloor$）。
+
+我们用两个长度为 $2^k$ 的区间来覆盖目标区间 $[L, R]$：
+
+- 从 $L$ 往右、长度为 $2^k$ 的区间：对应的状态是 $st[L][k]$。
+- 从 $R$ 往左、长度为 $2^k$ 的区间：对应的状态是 $st[R - 2^k + 1][k]$。
+
+这两个区间可能会**重叠**，但绝对不会超出 $[L, R]$ 的范围，并且完全覆盖了 $[L, R]$。
+
+因为我们在求最值（$\min$ 或 $\max$），**一个元素被比较一次还是多次，不影响最终结果**（这就是“可重复贡献问题”的性质）。
+
+所以区间 $[L, R]$ 的最小值就是：
+
+$$\min(st[L][k], st[R - 2^k + 1][k])$$
+
+#### 二、 完整代码模板
+
+以求解 **区间最小值** 为例（下标从 0 开始）：
+
+```c++
+#include <bits/stdc++.h>
+using namespace std;
+
+struct SparseTable {
+    int n;
+    // st[j][i] 表示从 i 开始，长度为 2^j 的区间最小值
+    // 注意：把 j 放在第一维能提高缓存命中率 (Cache Friendly)，常数更小
+    vector<vector<int>> st;
+    vector<int> lg; // 预处理 log2 数组，实现真正的 O(1) 查询
+
+    void init(const vector<int>& a) {
+        n = a.size();
+        int max_log = __lg(n) + 1; // __lg(n) 是 GCC 内置函数，求向下取整的 log2(n)
+        
+        st.assign(max_log, vector<int>(n));
+        lg.assign(n + 1, 0);
+
+        // 预处理 log 数组 (如果不用 __lg 可以用这个)
+        for (int i = 2; i <= n; i++) {
+            lg[i] = lg[i / 2] + 1;
+        }
+
+        // 初始化长度为 2^0 = 1 的区间
+        for (int i = 0; i < n; i++) {
+            st[0][i] = a[i];
+        }
+
+        // DP 预处理
+        for (int j = 1; j < max_log; j++) {
+            // i + (1 << j) <= n 保证右边界不越界
+            for (int i = 0; i + (1 << j) <= n; i++) {
+                st[j][i] = min(st[j - 1][i], st[j - 1][i + (1 << (j - 1))]);
+            }
+        }
+    }
+
+    int query(int l, int r) {
+        if (l > r) swap(l, r);
+        int k = __lg(r - l + 1); // 也可以用预处理的 lg[r - l + 1]
+        // 两个区间求 min
+        return min(st[k][l], st[k][r - (1 << k) + 1]);
+    }
+};
+```
+
+#### 优势：
+
+1. **查询极快**：纯正的 $O(1)$，在查询次数极其庞大（例如 $10^6$ 或 $10^7$ 级别）时，吊打线段树（$O(\log N)$）。
+2. **代码简短**：没有复杂的递归或树形结构维护，常数非常小。
+
+#### 劣势：
+
+1. **必须是静态数组**：一旦初始化完成，**不支持任何修改操作**（单点修改、区间修改都不行）。如果需要修改，只能用线段树或树状数组。
+2. **空间消耗较大**：$O(N \log N)$ 的空间在 $N = 10^7$ 时可能会导致内存超限（MLE）。
+3. **只适用“可重复贡献问题”**：比如最值（$\max, \min$）、最大公约数（$\gcd$）、按位与/或（$\&, \mid$）。对于区间求和（$\sum$），因为重叠部分会被加两次，所以不能用常规的 $O(1)$ 查询 ST 表（求和应使用前缀和或线段树）。
 
 ## 3.7 数学
 
@@ -2076,6 +2194,26 @@ $n = p_1^{a_1} \times p_2^{a_2} \times ... \times p_n^{a_n}$
 2. 推广
 
 <img src="D:\mouse\Pictures\screenshots\屏幕截图 2026-02-08 014258.png" alt="屏幕截图 2026-02-08 014258" style="zoom:50%;" />
+
+
+
+#### 裴蜀定理
+
+设 𝑎,𝑏![a,b](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7) 是不全为零的整数．那么，对于任意整数 𝑥,𝑦![x,y](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)，都有$ gcd(𝑎,𝑏) ∣𝑎𝑥 +𝑏𝑦$![\gcd(a,b)\mid ax+by](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7) 成立；而且，存在整数 𝑥,𝑦![x,y](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)，使得 $𝑎𝑥 +𝑏𝑦 =gcd(𝑎,𝑏)$ 成立．
+
+**推广** ：
+
+设 $𝑎_1,𝑎_2,⋯,𝑎_𝑛$![a_1,a_2,\cdots,a_n](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7) 是不全为零的整数．那么，对于任意整数$ 𝑥_1,𝑥_2,⋯,𝑥_𝑛$![x_1,x_2,\cdots,x_n](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)，都有 $gcd(𝑎1,𝑎2,⋯,𝑎𝑛) ∣𝑎_1𝑥_1 +𝑎_2𝑥_2 +⋯ +𝑎_𝑛𝑥_𝑛$![\gcd(a_1,a_2,\cdots,a_n)\mid a_1x_1+a_2x_2+\cdots+a_nx_n](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7) 成立；而且，存在整数 $𝑥_1,𝑥_2,⋯,𝑥_𝑛$![x_1,x_2,\cdots,x_n](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)，使得 $gcd(𝑎_1,𝑎_2,⋯,𝑎_𝑛) =𝑎_1𝑥_1 +𝑎_2𝑥_2 +⋯ +𝑎_𝑛𝑥_𝑛$ 成立．
+
+**应用**：
+
+题意：给出n张卡片并有一条无限长的纸带，分别有$l_i$和$c_i$,你可以花$c_i$的钱来购买卡片然后选择在纸带上向前或向后跳 $l_i$ 个单位任意次，问你至少花多少钱才能走遍才能跳到纸带上的所有点
+
+解：分析该问题，发现想要跳到每一个格子上，必须使得所选数$ 𝑙_{𝑖_1},⋯,𝑙_{𝑖_𝑘}$![l_{i_1}, \cdots, l_{i_k}](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7) 通过数次相加或相减得出的绝对值为 1![1](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)．也就是说，存在整数 $𝑥_1,⋯,𝑥_𝑘$![x_1, \cdots, x_k](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7) 使得 $𝑙_{𝑖_1}𝑥_1 +⋯ +𝑙_{𝑖_𝑘}𝑥_𝑘 =1$．由多个整数的裴蜀定理，这相当于从数组 $𝑙_1,⋯,𝑙_𝑛$![l_1, \cdots, l_n](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7) 中选择若干个数，满足它们的最大公约数为 1![1](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)，同时要求代价和最小
+
+
+
+如果每次只能向左或向右移动a步或b步，能到达的所有位置一定是起点加上$gcd(a,b)$的倍数；应用到n种可能的位移上也是一样的
 
 
 
@@ -2115,6 +2253,71 @@ if(n > 1){
 
 
 
+### 给定区间内求与n互质的数的个数
+
+#### 1. 核心思想：正难则反
+
+要直接找“互质”的数很难，但找“不互质”的数很容易。
+
+如果一个数 $m$ 与 $n$ 不互质，说明它们有**共同的质因数**。因此，我们只需要算出 $[1, X]$ 内有多少个数是 $n$ 的质因数的倍数，然后用总数 $X$ 减去这些数，剩下的就是互质的数。
+
+#### 2. 数学推导过程
+
+假设 $n$ 的所有**不同质因数**为 $p_1, p_2, \dots, p_k$。
+
+- **步骤一：总数**
+
+  在 $[1, X]$ 范围内，整数的总个数是 $X$。
+
+- **步骤二：减去单个质因数的倍数**
+
+  $[1, X]$ 中，包含因子 $p_i$ 的数有 $\lfloor X / p_i \rfloor$ 个。
+
+  我们要减去这些数。
+
+- **步骤三：加回被重复减去的（两个质因数乘积的倍数）**
+
+  当我们减去 $p_1$ 的倍数和 $p_2$ 的倍数时，那些既是 $p_1$ 又是 $p_2$ 的倍数（也就是 $p_1 \times p_2$ 的倍数）被减了两次。为了平衡，我们需要**加回** $\lfloor X / (p_1 \times p_2) \rfloor$。
+
+- **步骤四：减去加多了的（三个质因数乘积的倍数）**
+
+  同理，三个质因数乘积的倍数在前面“减、加”的过程中算错了，需要再次**减去** $\lfloor X / (p_1 \times p_2 \times p_3) \rfloor$。
+
+以此类推，**奇数个质因数的乘积做减法，偶数个质因数的乘积做加法**。
+
+
+
+```c++
+//求[1,x]内与n互质的数的个数
+ll count_coprime(ll X, const vector<ll>& p_factors) {//p_factors为n中的所有不同质因数
+    if (X == 0) return 0;
+    ll res = 0;
+    int k = p_factors.size();
+    
+    // 用二进制枚举所有的组合
+    for (int mask = 0; mask < (1 << k); mask++) {
+        ll prod = 1;
+        int bits = 0; // 记录当前组合选了几个质因数
+        
+        for (int i = 0; i < k; i++) {
+            if ((mask >> i) & 1) {
+                prod *= p_factors[i];
+                bits++;
+            }
+        }
+        
+        // 奇数个质因数做减法，偶数个做加法
+        if (bits % 2 == 1) res -= X / prod;
+        else res += X / prod;
+    }
+    return res;
+}
+```
+
+
+
+
+
 ### 3.7.1 快速幂
 
 快速幂是求解 的问题，其中a,b限定为整。如求3的 1e18 次方，直接递推肯定超时。
@@ -2147,6 +2350,10 @@ int main()
     return 0;
 }
 ```
+
+
+
+
 
 ### 3.7.2 矩阵快速幂
 
@@ -2587,6 +2794,9 @@ ll A(ll n,ll k){
 ```c++
 __builtin_ctz(x) //获取x二进制后缀0的长度
 __builtin_clz(x) //获取x二进制前缀0的长度  //二者皆为接受int类型，接受ll需要后面加ll //_
+
+A + B = A^B + 2 * (A&B);
+A | B = (A ^ B) ^ (A & B);
 ```
 
 
@@ -2644,6 +2854,171 @@ struct LinearBasis {
             }
         }
         return x == 0; // 如果 x 最终被消成 0，说明它可以由线性基表出
+    }
+};
+```
+
+
+
+对于线性基中的**第 $K$ 小**与**第 $K$ 大**问题，核心在于利用消元重构后的独立性，把“组合问题”转化为“二进制按位选择问题”。
+
+### 一、 先决条件：消元重构（Simplify/Rebuild）
+
+在查询之前，必须先将线性基化为**简化阶梯型**（即前文提到的 `rebuild()`）。
+
+重构的目的是让基元素之间**相互独立**：
+
+- 设重构并提取出的非零基元素从小到大排列为 $d[0], d[1], d[2], \dots, d[m-1]$（共 $m$ 个）。
+- 此时 $d[i]$ 的最高有效位（第 $i$ 个主位）上为 1，且其他更高的 $d[j]\ (j > i)$ 在这个主位上**全为 0**。
+- **核心结论**：这 $m$ 个元素能组合出 $2^m$ 个互不相同的非负整数，并且**这些整数的大小顺序，完全由选取时用到的 $d$ 的下标对应的二进制位决定**。
+
+### 二、 求第 $K$ 小（K-th Smallest）
+
+求第 $K$ 小时，我们需要注意**是否能组合出 $0$**：
+
+- 如果原数组元素个数 $N > m$，说明原数组存在线性相关，可以组合出 0，此时 **0 是第 1 小的数**。
+- 如果 $N = m$，则非空子集无法组合出 0。
+
+#### 算法步骤：
+
+1. **边界判定**：可生成的不同数值总数为 $total = 2^m$（若包含 0）或 $2^m - 1$（若不含 0）。若 $K > total$，无解（返回 -1）。
+2. **偏移修正**：如果可以组合出 0：
+   - $K = 1$ 时直接返回 $0$；
+   - $K > 1$ 时，由于 0 占用了第 1 小的位置，在非零组合中我们要找的是**第 $K-1$ 小**，因此令 $K = K - 1$。
+3. **二进制拆分**：将 $K$ 转化为二进制。若 $K$ 的第 $i$ 位为 1，则结果异或上 $d[i]$。
+
+### 三、 求第 $K$ 大（K-th Largest）
+
+“第 $K$ 大”可以非常自然地**转化为求“第几小”**。
+
+#### 转化逻辑：
+
+假设线性基可以生成 $Total$ 个不同的数（从 1 到 $Total$ 排名）：
+
+- 最大的数（第 1 大）等于 **第 $Total$ 小**。
+- 第 2 大的数等于 **第 $Total - 1$ 小**。
+- **第 $K$ 大的数等于 第 $Total - K + 1$ 小**。
+
+#### 算法步骤：
+
+1. 计算总共能生成的不同数字个数 $Total$：
+   - 可组合出 0 时，$Total = 2^m$；
+   - 不可组合出 0 时，$Total = 2^m - 1$。
+2. 若 $K > Total$，无解（返回 -1）。
+3. 转化为求第 $K' = Total - K + 1$ 小，直接调用第 $K$ 小的逻辑即可。
+
+```c++
+#include <iostream>
+#include <vector>
+#include <cstring>
+
+using namespace std;
+
+struct LinearBasis {
+    static const int MAX_BIT = 60; // 根据题目数据范围调整 (例如 10^18 对应 60)
+    long long p[MAX_BIT + 1];      // 存储原始线性基
+    vector<long long> d;           // 存储重构后的线性基
+    int cnt;                       // 线性基中有效元素的个数 (非零基底数)
+    int n;                         // 尝试插入的总元素个数
+
+    // 初始化
+    LinearBasis() {
+        memset(p, 0, sizeof(p));
+        cnt = 0;
+        n = 0;
+    }
+
+    // 1. 插入一个数
+    // 返回值：true 表示成功插入(线性无关)，false 表示无法插入(线性相关)
+    bool insert(long long x) {
+        n++; // 记录插入的总数
+        for (int i = MAX_BIT; i >= 0; --i) {
+            if ((x >> i) & 1) {
+                if (!p[i]) {
+                    p[i] = x;
+                    cnt++;
+                    return true;
+                }
+                x ^= p[i];
+            }
+        }
+        return false;
+    }
+
+    // 2. 查询能异或出的最大值
+    long long query_max() {
+        long long res = 0;
+        for (int i = MAX_BIT; i >= 0; --i) {
+            if ((res ^ p[i]) > res) {
+                res ^= p[i];
+            }
+        }
+        return res;
+    }
+
+    // 3. 查询能异或出的最小非零值
+    long long query_min() {
+        for (int i = 0; i <= MAX_BIT; ++i) {
+            if (p[i]) return p[i];
+        }
+        return 0; // 只有线性基为空时才会返回 0
+    }
+
+    // 4. 重构线性基 (化为简化阶梯型，用于第 K 大/小查询)
+    // 注意：调用第 K 大/小查询前，必须先调用一次此函数！
+    void rebuild() {
+        d.clear();
+        for (int i = MAX_BIT; i >= 0; --i) {
+            if (p[i]) {
+                for (int j = i - 1; j >= 0; --j) {
+                    if ((p[i] >> j) & 1) {
+                        p[i] ^= p[j];
+                    }
+                }
+            }
+        }
+        // 将重构后的非零元素按从小到大提取出来
+        for (int i = 0; i <= MAX_BIT; ++i) {
+            if (p[i]) {
+                d.push_back(p[i]);
+            }
+        }
+    }
+
+    // 5. 查询能异或出的第 K 小的值
+    // 返回 -1 表示 K 超出了能组合出的总数范围
+    long long query_kth_smallest(long long k) {
+        bool can_be_zero = (n > cnt); // 插入总数 > 基底数，说明存在线性相关，能组合出 0
+        long long total_combinations = (1LL << d.size()) - (can_be_zero ? 0 : 1);
+        
+        if (k > total_combinations) return -1;
+
+        // 如果能组合出 0，那么 0 就是第 1 小
+        if (can_be_zero) {
+            if (k == 1) return 0;
+            k--; // 扣除 0 占用的第 1 小位置
+        }
+
+        long long ans = 0;
+        for (int i = 0; i < d.size(); ++i) {
+            if ((k >> i) & 1) {
+                ans ^= d[i];
+            }
+        }
+        return ans;
+    }
+
+    // 6. 查询能异或出的第 K 大的值
+    // 返回 -1 表示 K 超出了能组合出的总数范围
+    long long query_kth_largest(long long k) {
+        bool can_be_zero = (n > cnt);
+        long long total_combinations = (1LL << d.size()) - (can_be_zero ? 0 : 1);
+        
+        if (k > total_combinations) return -1;
+
+        // 第 K 大 等价于 第 (Total - K + 1) 小
+        long long k_small = total_combinations - k + 1;
+        return query_kth_smallest(k_small);
     }
 };
 ```
@@ -3112,6 +3487,105 @@ int main() {
 
 
 
+
+
+### 双堆维护中位数
+
+```c++
+struct MedianFinder {
+    priority_queue<ll> maxp;                          // 大根堆，存较小的一半（含中位数）
+    priority_queue<ll, vector<ll>, greater<ll>> minp;  // 小根堆，存较大的一半
+
+    unordered_map<ll,int> delMax, delMin; // 分别记录两个堆各自"待懒删除"的值及次数
+    ll szMax = 0, szMin = 0;              // 两个堆各自的真实（未被删除）元素个数
+
+    // 清理 maxp 堆顶已经被标记删除的元素
+    void cleanMax(){
+        while(!maxp.empty()){
+            auto it = delMax.find(maxp.top());
+            if(it == delMax.end() || it->second == 0) break;
+            it->second--;
+            maxp.pop();
+        }
+    }
+    // 清理 minp 堆顶已经被标记删除的元素
+    void cleanMin(){
+        while(!minp.empty()){
+            auto it = delMin.find(minp.top());
+            if(it == delMin.end() || it->second == 0) break;
+            it->second--;
+            minp.pop();
+        }
+    }
+
+    // 根据真实计数 szMax / szMin 重新调整平衡
+    void rebalance(){
+        while(szMax > szMin + 1){
+            cleanMax();
+            minp.push(maxp.top()); maxp.pop();
+            szMax--; szMin++;
+        }
+        while(szMin > szMax){
+            cleanMin();
+            maxp.push(minp.top()); minp.pop();
+            szMin--; szMax++;
+        }
+        cleanMax(); cleanMin();
+    }
+
+    // 插入一个数
+    void add(ll x){
+        cleanMax();
+        if(maxp.empty() || x <= maxp.top()){ maxp.push(x); szMax++; }
+        else { minp.push(x); szMin++; }
+        rebalance();
+    }
+
+    // 删除一个数（要求这个数确实存在于结构中，否则计数会出错）
+    void erase(ll x){
+        cleanMax(); cleanMin();
+        if(!maxp.empty() && x <= maxp.top()){
+            delMax[x]++; szMax--;   // 逻辑上认为 x 属于"较小的一半"
+        } else {
+            delMin[x]++; szMin--;   // 属于"较大的一半"
+        }
+        cleanMax(); cleanMin();      // 如果刚好在堆顶，立刻顺手清掉
+        rebalance();
+    }
+
+    ll size() const {
+        return szMax + szMin;
+    }
+
+    bool empty() const {
+        return size() == 0;
+    }
+
+    // 中位数为浮点数版本（总数为偶数时取两堆堆顶均值）
+    double getMedian(){
+        cleanMax(); cleanMin();
+        if(szMax > szMin) return (double)maxp.top();
+        return (maxp.top() + minp.top()) / 2.0;
+    }
+
+    // 中位数保证是整数时使用
+    ll getMedianInt(){
+        cleanMax(); cleanMin();
+        if(szMax > szMin) return maxp.top();
+        return (maxp.top() + minp.top()); // 需要 /2 的话自行调整
+    }
+
+    // 若元素个数为偶数，分别取两个中位数（下中位数、上中位数）
+    pair<ll,ll> getTwoMedians(){
+        cleanMax(); cleanMin();
+        // 调用前需保证 size() 为偶数且 size() > 0
+        return {maxp.top(), minp.top()};
+    }
+};
+```
+
+
+
 # 4. 一些类型题的处理思路
 
 ### 4.1 存在大量插入，删除以及查询全局最小(大)值的
@@ -3312,6 +3786,27 @@ $$
 
 
 
+# 值得注意的坑
+
+##### sqrt(n)的浮点误差
+
+**用 `sqrt()`（浮点数）直接当数组下标，存在精度问题**
+
+`sqrt(r)` 返回的是 `double`，对于完全平方数，浮点误差可能导致：
+
+- `sqrt(100000000)` 算出 `9999.99999999...`，被截断成 `9999` 而不是 `10000`，少算一个；
+
+```c++
+ll isqrt(ll x){
+    ll r = (ll)sqrtl((long double)x);
+    while (r > 0 && r*r > x) r--;
+    while ((r+1)*(r+1) <= x) r++;
+    return r;
+}
+```
+
+
+
 #小点
 
 ```c++
@@ -3362,6 +3857,8 @@ if(x&1){
 pre[i][j] = pre[i-1][j] + pre[i][j-1] - pre[i-1][j-1] + vec[i][j];
 //对于其局部，当左上角坐标为(i,j),右下角为(ii,jj)时
 sum = pre[ii][jj] - pre[i-1][jj] - pre[ii][j-1] + pre[i-1][j-1];
+
+在 1e7 的数据范围内，相邻质数的最大间隙只有 154
 ```
 
 

@@ -1,0 +1,1 @@
+{"name":"Local: l","url":"c:\\Users\\mouse\\Desktop\\project\\c++\\牛客\\26暑假\\暑假一\\l.cpp","tests":[{"id":1784636094692,"input":"8 2\nabbabaab\n3 -1 4 -1 5 -9 2 -6\nbab\naa","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\mouse\\Desktop\\project\\c++\\牛客\\26暑假\\暑假一\\l.cpp","group":"local","local":true}
