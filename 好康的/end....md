@@ -509,6 +509,7 @@ while(i>0 && j>0){
         else j--;
     }
 }
+reverse(res.begin(),res.end());
 cout<<res;
 
 ```
@@ -824,6 +825,66 @@ string find_password(const string& s) {
     return valid_cuts;
 }
 ```
+
+
+
+### 3.5.7 马拉车算法（处理最长回文串）
+
+马拉车算法（Manacher's Algorithm）是专门为解决“最长回文子串”问题而生的。它通过巧妙地利用回文串的**对称性**，跳过了大量重复的字符比较，将时间复杂度从原本的 O(n²) 压缩到了极其极致的 O(n)。
+
+
+
+```c++
+void solve()
+{
+    string s;
+    cin >> s;
+    
+    // 1. 预处理字符串
+    // 在每个字符之间插入 '#'，并在首尾加入不同的特殊字符（如 '^' 和 '$'）
+    // 这样既统一了奇偶长度问题，又避免了中心扩展时的数组越界检查
+    string t = "^#";
+    for(char c : s) {
+        t += c;
+        t += '#';
+    }
+    t += '$';
+
+    int n = t.length();
+    vector<int> p(n, 0); // p[i] 记录以 t[i] 为中心的最长回文半径
+    int C = 0; // 当前能够向右扩展最远的回文串的中心
+    int R = 0; // 当前能够向右扩展最远的回文串的右边界
+    int max_len = 0;
+
+    for(int i = 1; i < n - 1; i++) {
+        // 2. 利用已知回文串的对称性，初始化 p[i]
+        // 如果 i 在 R 的左侧，可以利用对称点 (2 * C - i) 的信息加速
+        if (i < R) {
+            p[i] = min(R - i, p[2 * C - i]);
+        }
+        
+        // 3. 尝试继续向两边扩展 (由于首尾有 ^ 和 $ 挡着，无需判断越界)
+        while (t[i + 1 + p[i]] == t[i - 1 - p[i]]) {
+            p[i]++;
+        }
+        
+        // 4. 如果新找到的回文串右边界超过了当前的 R，则更新 C 和 R
+        if (i + p[i] > R) {
+            C = i;
+            R = i + p[i];
+        }
+        
+        // p[i] 恰好等于原字符串中对应回文串的总长度
+        max_len = max(max_len, p[i]);
+    }
+
+    cout << max_len << "\n";
+}
+```
+
+
+
+
 
 ### 进制转换
 
@@ -3820,6 +3881,7 @@ cin.tie(0);
 cout.tie(0);
 
 // 2. 去重 unique 会将重复的元素移到末尾，返回去重后最后一个有效元素的下一个位置的迭代器
+//必须先排序
 auto last = unique(a.begin(),a.end());
 a.erase(last,a.end()); //配合vector::erase s
 a.erase(unique(a.begin(), a.end()), a.end()); /

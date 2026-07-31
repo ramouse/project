@@ -1,63 +1,53 @@
-#include<bits/stdc++.h>
-using namespace std;
+#include<bits/stdc++.h> 
 using ll = long long;
+using namespace std;
 #define endl '\n'
 
-const ll N = 1e6+5;
-const ll MOD = 1048576;
+const ll MOD = 998244353;
 const ll INF = 1e18;
+const ll N = 1e5;
 
-ll qpow(ll a, ll b)
-{
-    ll res = 1;
-    while (b != 0)
-    {
-        if (b % 2 == 1)
-            res = res * a ;
-        a = a * a;
-        b /= 2;
-    }
-    return res;
-}
 
 void solve(){
-    ll n,k;
-    cin>>n>>k;
-    vector<ll> h(n+1,0);
-    for(int i = 1;i<=n;i++){
-        cin>>h[i];
+    ll n;
+    cin>>n;
+    vector<ll> a(2*n+1,0);
+    map<ll,ll> mp;
+    for(int i = 1;i<=2*n;i++){
+        cin>>a[i];
+        mp[a[i]]++;
     }
-    vector<ll> dp(n+1,INF);
-    dp[0] = 0;
-    dp[1] = 0;
-    dp[2] = abs(h[1] - h[2]);
-    for(int i = 3;i<=n;i++){
-        // dp[i] = min(dp[i-1] + abs(h[i] - h[i-1]),dp[i-2] + abs(h[i] - h[i-2]));
-        ll cur = INF;
-        ll idx = 0;
-        for(int j = i-1;j>=max(1LL,i-k);j--){
-            if(abs(h[i] - h[j]) + dp[j]< cur){
-                idx = j;
-                cur = abs(h[i] - h[j]) + dp[j];
-            }
-            // cur = min(cur,abs(h[i]-h[j]));
+
+    sort(a.begin() + 1,a.end());
+    a.erase(unique(a.begin() + 1,a.end()),a.end());
+    ll m = a.size();
+    ll last = 0;
+    vector<ll> vec;
+    for(int i = 1;i<m;i++){
+        ll cnt = mp[a[i]];
+        if(cnt&1) vec.push_back(a[i]);
+        if(((cnt/2)&1)) last ^= a[i];
+    }
+
+    if(vec.size() == 0){
+        if(last == 0) cout<<"Menji"<<endl;
+        else cout<<"Bot"<<endl;
+    }else{
+        if(vec.size() == 2){
+            if(vec[0] == last || vec[1] == last) cout<<"Menji"<<endl;
+            else cout<<"Bot"<<endl;
+        }else{
+            cout<<"Bot"<<endl;
         }
-        dp[i] = min(dp[i],cur);
     }
-    // for(int i = 1;i<=n;i++){
-    //     cout<<dp[i]<<" ";
-    // }
-    cout<<dp[n]<<endl;
+
 }
 
-int main(){
-    ios::sync_with_stdio(0);
-    cin.tie(0);
+int main( )
+{
     int t = 1;
-    // cout<<'j'-'0'-'0'<<endl;
-    // cin>>t;
-    while(t--){
-        solve();
-    }
+    cin>>t;
+    while(t--) solve();
+    
     return 0;
 }
