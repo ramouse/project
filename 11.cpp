@@ -1,53 +1,44 @@
-#include<bits/stdc++.h> 
-using ll = long long;
+#include <bits/stdc++.h>
 using namespace std;
+using ll = long long;
 #define endl '\n'
 
-const ll MOD = 998244353;
+const ll MOD = 10000;
 const ll INF = 1e18;
-const ll N = 1e5;
 
+struct Node
+{
+    ll lx, ly, rx, ry;
+};
 
-void solve(){
+void solve()
+{
     ll n;
     cin>>n;
-    vector<ll> a(2*n+1,0);
-    map<ll,ll> mp;
-    for(int i = 1;i<=2*n;i++){
-        cin>>a[i];
-        mp[a[i]]++;
-    }
-
-    sort(a.begin() + 1,a.end());
-    a.erase(unique(a.begin() + 1,a.end()),a.end());
-    ll m = a.size();
-    ll last = 0;
-    vector<ll> vec;
-    for(int i = 1;i<m;i++){
-        ll cnt = mp[a[i]];
-        if(cnt&1) vec.push_back(a[i]);
-        if(((cnt/2)&1)) last ^= a[i];
-    }
-
-    if(vec.size() == 0){
-        if(last == 0) cout<<"Menji"<<endl;
-        else cout<<"Bot"<<endl;
-    }else{
-        if(vec.size() == 2){
-            if(vec[0] == last || vec[1] == last) cout<<"Menji"<<endl;
-            else cout<<"Bot"<<endl;
-        }else{
-            cout<<"Bot"<<endl;
+    ll B = 131;
+    set<ll> se;
+    ll ans = 0;
+    for(int i = 1;i<=n;i++){
+        string s;
+        cin>>s;
+        ll cur = 0;
+        for(int i = 0;i<s.length();i++){
+            cur = cur * B + s[i];
+        }
+        if(!se.count(cur)){
+            ans++;
+            se.insert(cur);
         }
     }
+    cout<<ans<<endl;
+}       
 
-}
-
-int main( )
+int main()
 {
+    ios::sync_with_stdio(0);
+    cin.tie(0);
     int t = 1;
-    cin>>t;
-    while(t--) solve();
-    
-    return 0;
+    // cin >> t;
+    while (t--)
+        solve();
 }
