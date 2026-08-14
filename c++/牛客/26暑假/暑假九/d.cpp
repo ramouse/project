@@ -164,8 +164,8 @@ void solve()
         }else{
             // s+='0';
         }
-    }
-
+    }   
+    cout<<"a"<<endl;
     cout<<s<<endl;
     
 }
