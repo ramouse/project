@@ -7,8 +7,6 @@ using ll = long long;
 #define all1(x) x.begin() + 1, x.end()
 #define all0(x) x.begin(), x.end()
 #define pb(x) push_back(x)
-#define fir first
-#define sec second
 
 const ll MOD = 10000;
 const ll INF = 1e18;
@@ -18,27 +16,40 @@ void solve()
     ll n;
     cin>>n;
     vector<ll> a(n+1,0);
+    map<ll,ll> cnt,ccnt;
+    ll kind = 0;
     for(int i = 1;i<=n;i++){
-        cin >> a[i];
+        cin>>a[i];
+        cnt[a[i]]++;
+    }
+    sort(all1(a));
+
+    vector<ll> vec;
+
+    for(auto [f,s] : cnt){
+        ccnt[s]++;
+        vec.push_back(s);
+    }
+
+    bool ok = true;
+    ll cur = 0;
+    for(auto [f,s] : ccnt){
+        kind++;
+    }
+    // cout<<cur<<endl;
+
+    if (kind == 1 && a.size() == 2)
+    {
+        cout << "NO" << endl;
+        return;
+    }
+
+    ll cur = 0;
+    for(ll u : vec){
+        u -= cur;
+        
     }
     
-    vector<vector<ll>> dp(n+1,vector<ll>(n+1,0));
-
-
-    for(int i = 1;i<=n;i++){
-        for(int j = 1;j + i - 1<=n;j++){
-            ll k = j + i - 1;
-            if(i == 1){
-                dp[j][k] = a[j];
-            }else{
-                dp[j][k] = max(a[j] - dp[j+1][k],a[k] - dp[j][k-1]);
-            }
-        }
-    }
-
-    cout<<dp[1][n]<<endl;
-
-
 }
 
 int main()

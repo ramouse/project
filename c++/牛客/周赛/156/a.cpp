@@ -15,30 +15,15 @@ const ll INF = 1e18;
 
 void solve()
 {
-    ll n;
-    cin>>n;
-    vector<ll> a(n+1,0);
-    for(int i = 1;i<=n;i++){
-        cin >> a[i];
-    }
-    
-    vector<vector<ll>> dp(n+1,vector<ll>(n+1,0));
-
-
-    for(int i = 1;i<=n;i++){
-        for(int j = 1;j + i - 1<=n;j++){
-            ll k = j + i - 1;
-            if(i == 1){
-                dp[j][k] = a[j];
-            }else{
-                dp[j][k] = max(a[j] - dp[j+1][k],a[k] - dp[j][k-1]);
-            }
+    string s;
+    cin>>s;
+    for(auto c : s){
+        if(isdigit(c)){
+            cout<<c<<endl;
+            return;
         }
     }
-
-    cout<<dp[1][n]<<endl;
-
-
+    cout<<-1<<endl;
 }
 
 int main()

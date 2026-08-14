@@ -15,28 +15,34 @@ const ll INF = 1e18;
 
 void solve()
 {
-    ll n;
-    cin>>n;
+    ll n,q,x;
+    cin>>n>>q>>x;
     vector<ll> a(n+1,0);
+    vector<ll> vec(n+1,0);
+    ll sum = 0;
+    vector<ll> pre(n+1,0);
     for(int i = 1;i<=n;i++){
-        cin >> a[i];
+        cin>>a[i];
+        vec[i] = abs(a[i] - x);
+        sum+=vec[i];
+    }
+    sort(all1(vec));
+
+    for(int i = 1;i<=n;i++){
+        pre[i] = pre[i - 1] + vec[i];
     }
     
-    vector<vector<ll>> dp(n+1,vector<ll>(n+1,0));
 
-
-    for(int i = 1;i<=n;i++){
-        for(int j = 1;j + i - 1<=n;j++){
-            ll k = j + i - 1;
-            if(i == 1){
-                dp[j][k] = a[j];
-            }else{
-                dp[j][k] = max(a[j] - dp[j+1][k],a[k] - dp[j][k-1]);
-            }
+    while(q--){
+        ll k;
+        cin>>k;
+        if(sum <= k){
+            cout<<0<<endl;
+        }else{
+            auto idx = upper_bound(all1(pre),k);
+            cout<<n - distance(pre.begin()+1,idx)<<endl;
         }
     }
-
-    cout<<dp[1][n]<<endl;
 
 
 }

@@ -18,27 +18,30 @@ void solve()
     ll n;
     cin>>n;
     vector<ll> a(n+1,0);
+    bool ok = false;
+    ll odd = -1, even = -1;
+    ll cntj = 0,cnto = 0;
     for(int i = 1;i<=n;i++){
-        cin >> a[i];
-    }
-    
-    vector<vector<ll>> dp(n+1,vector<ll>(n+1,0));
-
-
-    for(int i = 1;i<=n;i++){
-        for(int j = 1;j + i - 1<=n;j++){
-            ll k = j + i - 1;
-            if(i == 1){
-                dp[j][k] = a[j];
-            }else{
-                dp[j][k] = max(a[j] - dp[j+1][k],a[k] - dp[j][k-1]);
-            }
+        cin>>a[i];
+        if(a[i] & 1){
+            odd = max(odd,a[i]);
+            cntj++;
+        }else{
+            cnto++;
+            even = max(even,a[i]);
         }
     }
 
-    cout<<dp[1][n]<<endl;
-
-
+    if(cntj == 0){
+        cout<<even/2<<endl;
+        return;
+    }
+    if(cntj & 1){
+        cout<<max(even,odd+1)/2<<endl;
+    }else{
+        cout<<max(odd-1,even)/2<<endl;
+    }
+    
 }
 
 int main()

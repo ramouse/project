@@ -58,7 +58,7 @@ void solve()
         }else{
             // cout<<v[i]<<" "<<cur<<" "<<cnt[i]<<endl; 
             ll val = (v[i] - v[i-1])/cnt[i-1];
-            if(val < last){
+            if(val <= last){
                 cout<<-1<<endl;
                 return;
             }

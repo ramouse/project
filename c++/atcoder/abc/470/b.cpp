@@ -7,8 +7,8 @@ using ll = long long;
 #define all1(x) x.begin() + 1, x.end()
 #define all0(x) x.begin(), x.end()
 #define pb(x) push_back(x)
-#define fir first
-#define sec second
+#define fi first
+#define se second
 
 const ll MOD = 10000;
 const ll INF = 1e18;
@@ -17,28 +17,15 @@ void solve()
 {
     ll n;
     cin>>n;
-    vector<ll> a(n+1,0);
+    ll ma = 0;
+    vector<ll> cnt(n+1,0);
     for(int i = 1;i<=n;i++){
-        cin >> a[i];
+        ll c;
+        cin>>c;
+        cnt[c]++;
+        ma = max(ma,cnt[c]);
     }
-    
-    vector<vector<ll>> dp(n+1,vector<ll>(n+1,0));
-
-
-    for(int i = 1;i<=n;i++){
-        for(int j = 1;j + i - 1<=n;j++){
-            ll k = j + i - 1;
-            if(i == 1){
-                dp[j][k] = a[j];
-            }else{
-                dp[j][k] = max(a[j] - dp[j+1][k],a[k] - dp[j][k-1]);
-            }
-        }
-    }
-
-    cout<<dp[1][n]<<endl;
-
-
+    cout<<n-ma<<endl;
 }
 
 int main()
