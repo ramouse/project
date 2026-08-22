@@ -1,0 +1,1479 @@
+[
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.046,
+                0.08,
+                0.424,
+                0.125
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.046,
+                0.137,
+                0.329,
+                0.16
+            ],
+            "angle": 0,
+            "content": null,
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.048,
+                0.183,
+                0.303,
+                0.209
+            ],
+            "angle": 0,
+            "content": null,
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.047,
+                0.233,
+                0.717,
+                0.26
+            ],
+            "angle": 0,
+            "content": null,
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.046,
+                0.286,
+                0.95,
+                0.344
+            ],
+            "angle": 0,
+            "content": null,
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.047,
+                0.374,
+                0.224,
+                0.41
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.046,
+                0.44,
+                0.476,
+                0.467
+            ],
+            "angle": 0,
+            "content": null,
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.491,
+                0.704,
+                0.517
+            ],
+            "angle": 0,
+            "content": null,
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.541,
+                0.585,
+                0.567
+            ],
+            "angle": 0,
+            "content": null,
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.045,
+                0.593,
+                0.95,
+                0.653
+            ],
+            "angle": 0,
+            "content": null,
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.681,
+                0.537,
+                0.707
+            ],
+            "angle": 0,
+            "content": null,
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.732,
+                0.587,
+                0.76
+            ],
+            "angle": 0,
+            "content": null,
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.785,
+                0.53,
+                0.813
+            ],
+            "angle": 0,
+            "content": null,
+            "merge_prev": false
+        },
+        {
+            "type": "equation",
+            "bbox": [
+                0.341,
+                0.835,
+                0.695,
+                0.865
+            ],
+            "angle": 0,
+            "content": "\\[\nV _ {i n i t} + s z [ x ] - 1 \\geq v \\implies V _ {i n i t} \\geq v - s z [ x ] + 1\n\\]"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.046,
+                0.891,
+                0.448,
+                0.917
+            ],
+            "angle": 0,
+            "content": null,
+            "merge_prev": false
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.635,
+                0.492,
+                0.695,
+                0.515
+            ],
+            "latex": "( \\mathsf { P a r e n t } )",
+            "score": 0.5848
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.238,
+                0.599,
+                0.256,
+                0.618
+            ],
+            "latex": "u ,",
+            "score": 0.7068
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.356,
+                0.632,
+                0.374,
+                0.65
+            ],
+            "latex": "x ,",
+            "score": 0.5601
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.655,
+                0.63,
+                0.669,
+                0.652
+            ],
+            "latex": "p",
+            "score": 0.6613
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.201,
+                0.685,
+                0.219,
+                0.707
+            ],
+            "latex": "^ { p , }",
+            "score": 0.7842
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.289,
+                0.733,
+                0.356,
+                0.76
+            ],
+            "latex": "s z [ x ] - 1",
+            "score": 0.9112
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.401,
+                0.733,
+                0.437,
+                0.76
+            ],
+            "latex": "\\scriptstyle s z [ x ]",
+            "score": 0.9204
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.457,
+                0.738,
+                0.47,
+                0.757
+            ],
+            "latex": "_ x",
+            "score": 0.4509
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.19,
+                0.786,
+                0.313,
+                0.813
+            ],
+            "latex": "V _ { i n i t } + s z [ { \\bf { \\vec { x } } } ] - 1 { \\bf { \\vec { \\tau } } }",
+            "score": 0.9502
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.438,
+                0.792,
+                0.455,
+                0.813
+            ],
+            "latex": "^ { p , }",
+            "score": 0.737
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.05,
+                0.08,
+                0.421,
+                0.125
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.051,
+                0.14,
+                0.325,
+                0.157
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.051,
+                0.185,
+                0.301,
+                0.208
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.051,
+                0.235,
+                0.712,
+                0.257
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.05,
+                0.289,
+                0.948,
+                0.31
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.052,
+                0.321,
+                0.847,
+                0.338
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.37,
+                0.222,
+                0.411
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.052,
+                0.445,
+                0.472,
+                0.463
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.493,
+                0.628,
+                0.514
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.695,
+                0.505,
+                0.702,
+                0.515
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.545,
+                0.581,
+                0.566
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.051,
+                0.598,
+                0.237,
+                0.615
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.256,
+                0.598,
+                0.947,
+                0.615
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.051,
+                0.63,
+                0.355,
+                0.648
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.375,
+                0.63,
+                0.654,
+                0.648
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.669,
+                0.63,
+                0.689,
+                0.648
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.684,
+                0.201,
+                0.704
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.22,
+                0.684,
+                0.533,
+                0.704
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.733,
+                0.286,
+                0.76
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.363,
+                0.731,
+                0.4,
+                0.762
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.438,
+                0.734,
+                0.456,
+                0.759
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.471,
+                0.734,
+                0.585,
+                0.759
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.789,
+                0.187,
+                0.81
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.313,
+                0.788,
+                0.437,
+                0.812
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.456,
+                0.788,
+                0.527,
+                0.812
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.051,
+                0.894,
+                0.444,
+                0.916
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "equation",
+            "bbox": [
+                0.416,
+                0.071,
+                0.584,
+                0.102
+            ],
+            "angle": 0,
+            "content": "\\[\nW (x) = v - s z [ x ] + 1\n\\]"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.047,
+                0.125,
+                0.707,
+                0.153
+            ],
+            "angle": 0,
+            "content": null,
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.047,
+                0.186,
+                0.203,
+                0.222
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.046,
+                0.252,
+                0.572,
+                0.279
+            ],
+            "angle": 0,
+            "content": null,
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.304,
+                0.287,
+                0.33
+            ],
+            "angle": 0,
+            "content": null,
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.353,
+                0.529,
+                0.381
+            ],
+            "angle": 0,
+            "content": null,
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.407,
+                0.464,
+                0.433
+            ],
+            "angle": 0,
+            "content": null,
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.047,
+                0.461,
+                0.216,
+                0.491
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.046,
+                0.518,
+                0.569,
+                0.546
+            ],
+            "angle": 0,
+            "content": null,
+            "merge_prev": false
+        },
+        {
+            "type": "code",
+            "bbox": [
+                0.047,
+                0.565,
+                0.386,
+                0.703
+            ],
+            "angle": 0,
+            "content": "int find(int i) {\n    if (parent[i] == i) return i;\n    int root = find(parent[i]);\n    max_w[i] = max(max_w[i], max_w(parent[i]]);\n    return parent[i] = root;\n}"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.047,
+                0.733,
+                0.181,
+                0.769
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.046,
+                0.8,
+                0.355,
+                0.832
+            ],
+            "angle": 0,
+            "content": null,
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.861,
+                0.708,
+                0.889
+            ],
+            "angle": 0,
+            "content": null,
+            "merge_prev": false
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.051,
+                0.128,
+                0.703,
+                0.151
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.178,
+                0.201,
+                0.224
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.051,
+                0.256,
+                0.569,
+                0.277
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.306,
+                0.283,
+                0.327
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.355,
+                0.526,
+                0.377
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.409,
+                0.461,
+                0.43
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.05,
+                0.462,
+                0.214,
+                0.491
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.05,
+                0.52,
+                0.565,
+                0.544
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.049,
+                0.728,
+                0.18,
+                0.77
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.8,
+                0.354,
+                0.834
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.861,
+                0.705,
+                0.889
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.075,
+                0.642,
+                0.102
+            ],
+            "angle": 0,
+            "content": null,
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.128,
+                0.487,
+                0.154
+            ],
+            "angle": 0,
+            "content": null,
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.179,
+                0.234,
+                0.203
+            ],
+            "angle": 0,
+            "content": null,
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.1,
+                0.229,
+                0.366,
+                0.254
+            ],
+            "angle": 0,
+            "content": null,
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.1,
+                0.279,
+                0.296,
+                0.304
+            ],
+            "angle": 0,
+            "content": null,
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.1,
+                0.33,
+                0.33,
+                0.355
+            ],
+            "angle": 0,
+            "content": null,
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.38,
+                0.625,
+                0.406
+            ],
+            "angle": 0,
+            "content": null,
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.046,
+                0.434,
+                0.404,
+                0.465
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.496,
+                0.326,
+                0.521
+            ],
+            "angle": 0,
+            "content": null,
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.546,
+                0.937,
+                0.603
+            ],
+            "angle": 0,
+            "content": null,
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.626,
+                0.883,
+                0.655
+            ],
+            "angle": 0,
+            "content": null,
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.679,
+                0.498,
+                0.708
+            ],
+            "angle": 0,
+            "content": null,
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.047,
+                0.741,
+                0.181,
+                0.776
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.047,
+                0.805,
+                0.188,
+                0.827
+            ],
+            "angle": 0,
+            "content": null,
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.047,
+                0.828,
+                0.175,
+                0.849
+            ],
+            "angle": 0,
+            "content": null,
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.047,
+                0.851,
+                0.195,
+                0.873
+            ],
+            "angle": 0,
+            "content": null,
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.047,
+                0.897,
+                0.194,
+                0.919
+            ],
+            "angle": 0,
+            "content": null,
+            "merge_prev": false
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.117,
+                0.075,
+                0.157,
+                0.102
+            ],
+            "latex": "( x , y )",
+            "score": 0.5821
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.19,
+                0.23,
+                0.363,
+                0.253
+            ],
+            "latex": "\\mathrm { m a x \\_ w [ r ] \\enspace = \\enspace v \\enspace - \\enspace s z [ r ] \\enspace + \\enspace 1 }",
+            "score": 0.84
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.191,
+                0.281,
+                0.294,
+                0.304
+            ],
+            "latex": "\\mathrm { p a r e n t } [ \\mathrm { r } ] ~ = ~ \\mathrm { i d }",
+            "score": 0.7248
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.219,
+                0.33,
+                0.327,
+                0.354
+            ],
+            "latex": "\\mathrm { \\ s z [ i d ] \\Sigma \\ + = \\ s z [ r ] }",
+            "score": 0.7729
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.544,
+                0.382,
+                0.617,
+                0.404
+            ],
+            "latex": "\\mathrm { \\ s { z } [ i d ] \\ - \\ 1 }",
+            "score": 0.7299
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.617,
+                0.548,
+                0.682,
+                0.572
+            ],
+            "latex": "\\operatorname* { m a x } _ { - } \\mathrm { w } \\big [ \\mathrm { i d } \\big ]",
+            "score": 0.5118
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.402,
+                0.628,
+                0.472,
+                0.652
+            ],
+            "latex": "\\mathrm { s z } \\left[ \\mathrm { R } \\right] \\mathrm { ~ - ~ } 1 )",
+            "score": 0.5807
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.689,
+                0.627,
+                0.876,
+                0.654
+            ],
+            "latex": "\\operatorname* { m a x } ( \\mathrm { s i z e } [ i d ] , \\operatorname* { m a x } _ { - } w [ i d ] )",
+            "score": 0.9256
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.273,
+                0.679,
+                0.49,
+                0.708
+            ],
+            "latex": "\\operatorname* { m a x } ( 0 , \\operatorname* { m a x } _ { - } w [ i d ] - \\mathrm { s i z e } [ i d ] )",
+            "score": 0.9477
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.076,
+                0.116,
+                0.101
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.161,
+                0.078,
+                0.64,
+                0.099
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.132,
+                0.483,
+                0.151
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.18,
+                0.231,
+                0.204
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.102,
+                0.225,
+                0.186,
+                0.257
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.101,
+                0.273,
+                0.186,
+                0.308
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.103,
+                0.327,
+                0.214,
+                0.357
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.382,
+                0.543,
+                0.405
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.617,
+                0.393,
+                0.623,
+                0.405
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.05,
+                0.435,
+                0.402,
+                0.466
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.498,
+                0.323,
+                0.521
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.55,
+                0.614,
+                0.567
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.687,
+                0.55,
+                0.932,
+                0.567
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.577,
+                0.109,
+                0.604
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.63,
+                0.399,
+                0.65
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.475,
+                0.63,
+                0.686,
+                0.65
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.877,
+                0.64,
+                0.883,
+                0.653
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.683,
+                0.271,
+                0.704
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.49,
+                0.693,
+                0.496,
+                0.704
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.049,
+                0.736,
+                0.18,
+                0.778
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.05,
+                0.808,
+                0.185,
+                0.827
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.049,
+                0.83,
+                0.171,
+                0.849
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.05,
+                0.853,
+                0.192,
+                0.872
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.05,
+                0.897,
+                0.192,
+                0.918
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "code",
+            "bbox": [
+                0.048,
+                0.09,
+                0.417,
+                0.919
+            ],
+            "angle": 0,
+            "content": "const int INF = 2e9;\n\nstruct DSU {\n    vector<int> parent;\n    vector<int> max_w;\n    vector<int> sz;\n    vector<int> val; // 记录每条鱼的初始大小 v\n\n    DSU(int n) {\n    parent.resize(n + 1);\n    max_w.assign(n + 1, -INF);\n    sz.assign(n + 1, 1);\n    val.resize(n + 1);\n    for (int i = 0; i <= n; i++) parent[i] = i;\n    }\n\n    int find(int i) {\n    if (parent[i] == i) return i;\n    int root = find(parent[i]);\n    max_w[i] = max(max_w[i], max_w(parent[i]]);\n    return parent[i] = root;\n    }\n\n    void merge(int u, int v_parent, int val_p) {\n    int root_u = find(u);\n    if (root_u != v_parent) {\n    max_w[root_u] = val_p - sz[root_u] + 1;\n    parent[root_u] = v_parent;\n    sz[v_parent] += sz[root_u];\n    }\n    }\n};\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);"
+        }
+    ],
+    [
+        {
+            "type": "code",
+            "bbox": [
+                0.075,
+                0.095,
+                0.69,
+                0.921
+            ],
+            "angle": 0,
+            "content": "int n, m, q;\nif (!(cin >> n >> m >> q)) return 0;\n\n// 用一个二维数组记录网格中每个位置对应的鱼的节点编号，0表示障碍\nvector<vector<int>> grid(n + 1, vector<int>(m + 1, 0));\nDSU dsu(q + 1); // 最多会有 q 条鱼被创建\n\nint fish_cnt = 0;\nint last_ans = 0;\n\nint dx[] = {-1, 1, 0, 0};\nint dy[] = {0, 0, -1, 1};\n\nfor (int i = 0; i < q; i++) {\n    int op;\n    cin >> op;\n    if (op == 1) {\n    int x_prime, y_prime, v;\n    cin >> x_prime >> y_prime >> v;\n    int x = x_prime ^ last_ans;\n    int y = y_prime ^ last_ans;\n\n    fish_cnt++;\n    grid[x][y] = fish_cnt;\n    dsu.val[fish_cnt] = v;\n\n    vector<int> neighbors;\n    for (int d = 0; d < 4; d++) {\n    int nx = x + dx[d], ny = y + dy[d];\n    if (nx >= 1 && nx <= n && ny >= 1 && ny <= m && grid[nx][ny] > 0) {\n    neighbors.push_back(dsu.find(grid[nx][ny]));\n    }\n    }\n    // 去重，防止同一个连通块被多次合并导致 sz 重复计算\n    sort(neighbors.begin(), neighbors.end());\n    neighbors.erase(unique(neighbors.begin(), neighbors.end()), neighbors.end());"
+        }
+    ],
+    [
+        {
+            "type": "code",
+            "bbox": [
+                0.047,
+                0.085,
+                0.944,
+                0.71
+            ],
+            "angle": 0,
+            "content": "for (int r : neighbors) {\n    dsu.merge(r, fish_cnt, v);\n}\n\nlast_ans = dsu.sz[fish_cnt] - 1;\ncout << last_ans << \"\\n\";\n\n} else if (op == 2) {\n    int x_prime, y_prime;\n    cin >> x_prime >> y_prime;\n    int x = x_prime ^ last_ans;\n    int y = y_prime ^ last_ans;\n\n    int id = grid[x][y];\n    dsu.find(id); // 触发路径压缩更新 max_w\n\n    int req_v = max(dsu.val[id], dsu.max_w[id]);\n    last_ans = max(0, req_v - dsu.val[id]);\n    cout << last_ans << \"\\n\";\n}\nreturn 0;\n}\n\n通过这种设计，单次操作的时间复杂度被完美控制在了并查集的几乎常数级别 O(α(q))，总时间复杂度为 O(q · α(q))，面对 5 × 10⁵ 的数据量可以在 0.1 秒内轻松跑完。"
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.714,
+                0.638,
+                0.794,
+                0.668
+            ],
+            "latex": "O ( q \\cdot \\alpha ( q ) )",
+            "score": 0.4805
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.84,
+                0.636,
+                0.897,
+                0.666
+            ],
+            "latex": "5 \\times 1 0 ^ { 5 }",
+            "score": 0.5917
+        }
+    ]
+]

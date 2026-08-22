@@ -1,0 +1,6349 @@
+[
+    {
+        "type": "text",
+        "text": "2026 牛客 暑期多校训练营 5",
+        "text_level": 2,
+        "bbox": [
+            68,
+            368,
+            503,
+            576
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "哈尔滨工业大学命题组",
+        "bbox": [
+            66,
+            682,
+            388,
+            745
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            41,
+            62,
+            205,
+            141
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "HR.NOWCODER.COM",
+        "bbox": [
+            39,
+            890,
+            196,
+            925
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Ã - Echo Prefixes",
+        "text_level": 2,
+        "bbox": [
+            72,
+            121,
+            324,
+            176
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "题目大意",
+        "text_level": 2,
+        "bbox": [
+            72,
+            196,
+            185,
+            250
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "■ 固定字符串 S，每个后缀起点 i 有可修改权值 $a_{i}$ 。",
+        "bbox": [
+            112,
+            305,
+            657,
+            356
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "■ 子串 X 的回声值为所有出现位置起点权值之和:",
+        "bbox": [
+            112,
+            368,
+            646,
+            419
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "equation",
+        "text": "$$\nH (X) = \\sum_ {S [ j.. j + | X | - 1 ] = X} a _ {j}.\n$$",
+        "text_format": "latex",
+        "bbox": [
+            392,
+            458,
+            651,
+            572
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "■ 查询某个后缀的前 $m$ 个前缀回声值之和，或找到前缀和首次达到 $k$ 的长度。",
+        "bbox": [
+            112,
+            639,
+            880,
+            745
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "■ $n, q \\leq 2 \\times 10^{5}$ ，需要支持单点修改与在线查询。",
+        "bbox": [
+            114,
+            760,
+            640,
+            811
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            92,
+            129
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            847,
+            39,
+            973,
+            98
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            72,
+            913,
+            209,
+            945
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "A - Echo Prefixes",
+        "bbox": [
+            441,
+            913,
+            551,
+            945
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "哈尔滨工业大学命题组",
+        "bbox": [
+            781,
+            913,
+            918,
+            941
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Ã - Echo Prefixes",
+        "text_level": 2,
+        "bbox": [
+            72,
+            121,
+            326,
+            176
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "后缀树上的路径模型",
+        "text_level": 2,
+        "bbox": [
+            72,
+            196,
+            317,
+            250
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "■ 用后缀数组和 LCP 建出压缩后缀树；后缀 $S[p..n]$ 对应一片叶子。",
+        "bbox": [
+            112,
+            270,
+            825,
+            325
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "■ 对树结点 v 定义",
+        "bbox": [
+            112,
+            333,
+            320,
+            380
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "equation",
+        "text": "$$\nW _ {v} = \\sum_ {i \\in \\operatorname{subtree} (v)} a _ {i}.\n$$",
+        "text_format": "latex",
+        "bbox": [
+            423,
+            380,
+            624,
+            490
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "它正是结点所代表子串的 H 值。",
+        "bbox": [
+            143,
+            509,
+            481,
+            560
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "■ 压缩边 $(\\mathrm{fa}(v), v)$ 上的所有字符串拥有相同出现集合，因此贡献为",
+        "bbox": [
+            112,
+            572,
+            827,
+            627
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\left(\\mathrm{dep} _ {v} - \\mathrm{dep} _ {\\mathrm{fa} (v)}\\right) W _ {v}.\n$$",
+        "text_format": "latex",
+        "bbox": [
+            412,
+            662,
+            629,
+            721
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "■ 所求前缀和就是根到对应叶子的加权路径和，并在深度 $m$ 处截断。",
+        "bbox": [
+            112,
+            807,
+            843,
+            858
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            92,
+            125
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            847,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            72,
+            913,
+            209,
+            945
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "A - Echo Prefixes",
+        "bbox": [
+            441,
+            913,
+            551,
+            945
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "哈尔滨工业大学命题组",
+        "bbox": [
+            781,
+            913,
+            918,
+            941
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Ã - Echo Prefixes",
+        "text_level": 2,
+        "bbox": [
+            72,
+            121,
+            324,
+            176
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "维护与查询",
+        "text_level": 2,
+        "bbox": [
+            72,
+            196,
+            211,
+            247
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "■ 修改 $a_{i} \\leftarrow a_{i} + \\Delta$ ：后缀叶子 $i$ 到根路径上的所有 $W_{v}$ 加 $\\Delta$ 。",
+        "bbox": [
+            112,
+            360,
+            770,
+            411
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "■ 树链剖分后，线段树维护边长系数和 $\\sum len_{v} W_{v}$ ，支持路径加、路径和。",
+        "bbox": [
+            112,
+            423,
+            898,
+            474
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "■ 倍增找到深度 m 所在压缩边；最后一段按实际长度补贡献。",
+        "bbox": [
+            112,
+            486,
+            770,
+            541
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "■ 第三类询问按根到叶的重链顺序扫描，并在线段树内二分第一个使前缀和达到 k 的位置。",
+        "bbox": [
+            112,
+            552,
+            896,
+            658
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "■ 建树 $\\mathcal{O}(n\\log n)$ ，每次操作 $\\mathcal{O}(\\log^{2}n)$ ，空间 $\\mathcal{O}(n)$ 。",
+        "bbox": [
+            112,
+            670,
+            677,
+            725
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            92,
+            125
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            847,
+            39,
+            973,
+            98
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            75,
+            913,
+            209,
+            941
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "A - Echo Prefixes",
+        "bbox": [
+            443,
+            913,
+            551,
+            945
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "哈尔滨工业大学命题组",
+        "bbox": [
+            781,
+            913,
+            918,
+            941
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "B - Enlarged Badge",
+        "text_level": 2,
+        "bbox": [
+            77,
+            121,
+            362,
+            184
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "题目大意",
+        "text_level": 2,
+        "bbox": [
+            75,
+            196,
+            185,
+            247
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "■ 给定两个整点集的凸包 P, Q。",
+        "bbox": [
+            112,
+            407,
+            452,
+            458
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "■ 对每个 k，统计整数平移向量 t，使得 $(kP + t) \\cap Q \\neq \\varnothing$ 。",
+        "bbox": [
+            112,
+            474,
+            739,
+            525
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "■ 边界相交也计入，k 可达 $10^{18}$ ，询问数可达 $2 \\times 10^{5}$ 。",
+        "bbox": [
+            112,
+            537,
+            695,
+            588
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "关键是把“两个多边形相交”变成一个固定凸多边形中的整点计数。",
+        "bbox": [
+            94,
+            619,
+            785,
+            670
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            847,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            75,
+            913,
+            209,
+            941
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "B - Enlarged Badge",
+        "bbox": [
+            434,
+            909,
+            558,
+            941
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "哈尔滨工业大学命题组",
+        "bbox": [
+            783,
+            913,
+            918,
+            941
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "B - Enlarged Badge",
+        "text_level": 2,
+        "bbox": [
+            75,
+            121,
+            362,
+            184
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Minkowski 和",
+        "text_level": 2,
+        "bbox": [
+            72,
+            200,
+            238,
+            250
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "■ 存在 $p \\in P, q \\in Q$ 使 $kp + t = q$ ，等价于",
+        "bbox": [
+            112,
+            309,
+            569,
+            364
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "equation",
+        "text": "$$\nt \\in Q + (- k P).\n$$",
+        "text_format": "latex",
+        "bbox": [
+            439,
+            407,
+            602,
+            462
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "因而答案是整点多边形 $R_{k} = Q + (-kP)$ 中的格点数。",
+        "bbox": [
+            112,
+            568,
+            706,
+            619
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "先求凸包，再按极角归并两凸多边形边向量，可在线性时间求Minkowski和。",
+        "bbox": [
+            112,
+            631,
+            799,
+            733
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "■ 只需显式计算一次 $R_{1} = Q + (-P)$ ，之后每个询问代入关于 k 的多项式。",
+        "bbox": [
+            112,
+            749,
+            900,
+            803
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            92,
+            129
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            847,
+            39,
+            973,
+            98
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            72,
+            913,
+            209,
+            945
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "B - Enlarged Badge",
+        "bbox": [
+            434,
+            909,
+            558,
+            941
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "哈尔滨工业大学命题组",
+        "bbox": [
+            781,
+            913,
+            918,
+            941
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "B - Enlarged Badge",
+        "text_level": 2,
+        "bbox": [
+            75,
+            121,
+            364,
+            184
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Pick 定理与二次多项式",
+        "text_level": 2,
+        "bbox": [
+            72,
+            196,
+            348,
+            247
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "记 $S(X)$ 为二倍面积， $B(X)$ 为边界格点数。Pick 定理给出",
+        "bbox": [
+            92,
+            258,
+            655,
+            309
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\# (X \\cap \\mathbb {Z} ^ {2}) = \\frac {S (X) + B (X) + 2}{2}.\n$$",
+        "text_format": "latex",
+        "bbox": [
+            342,
+            345,
+            651,
+            439
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Minkowski 混合面积与边界长度满足",
+        "bbox": [
+            94,
+            474,
+            454,
+            521
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\begin{array}{l} S (R _ {k}) = S (Q) + k ^ {2} S (P) + k C, \\\\ B (R _ {k}) = B (Q) + k B (P), \\end{array}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            353,
+            552,
+            642,
+            662
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "其中",
+        "bbox": [
+            94,
+            701,
+            147,
+            749
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "equation",
+        "text": "$$\nC = S (R _ {1}) - S (Q) - S (P).\n$$",
+        "text_format": "latex",
+        "bbox": [
+            370,
+            749,
+            626,
+            800
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "所以答案是关于 k 的二次多项式，模 998244353 直接计算即可。",
+        "bbox": [
+            94,
+            815,
+            706,
+            866
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            92,
+            129
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            847,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            72,
+            913,
+            209,
+            945
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "B - Enlarged Badge",
+        "bbox": [
+            434,
+            909,
+            558,
+            941
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "哈尔滨工业大学命题组",
+        "bbox": [
+            781,
+            913,
+            918,
+            941
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "B - Enlarged Badge 实现细节",
+        "text_level": 2,
+        "bbox": [
+            75,
+            121,
+            362,
+            250
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "■ 凸包去重，并删除边界上的共线中间点。",
+        "bbox": [
+            112,
+            407,
+            569,
+            458
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "■ 面积叉积使用 \\_\\_int128，避免坐标乘法溢出。",
+        "bbox": [
+            112,
+            474,
+            629,
+            525
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "■ 边界格点数：每条边贡献 $\\gcd(|\\Delta x|, |\\Delta y|)$ 。",
+        "bbox": [
+            112,
+            537,
+            584,
+            588
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "■ 预处理 $\\mathcal{O}((n+m)\\log(n+m))$ ；每个询问 $\\mathcal{O}(1)$ ；空间 $\\mathcal{O}(n+m)$ 。",
+        "bbox": [
+            112,
+            603,
+            830,
+            658
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            92,
+            129
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            847,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            75,
+            913,
+            209,
+            941
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "B - Enlarged Badge",
+        "bbox": [
+            434,
+            909,
+            558,
+            941
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "哈尔滨工业大学命题组",
+        "bbox": [
+            781,
+            913,
+            918,
+            941
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "C - Number",
+        "text_level": 2,
+        "bbox": [
+            75,
+            121,
+            251,
+            176
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "题目大意与必要条件",
+        "text_level": 2,
+        "bbox": [
+            72,
+            196,
+            317,
+            250
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "构造三个 $0,1,\\ldots ,B - 1$ 的排列 $P,Q,R$ ，满足 $[P]_B + [Q]_B = [R]_B$ ，且每列三个数字互异。",
+        "bbox": [
+            92,
+            294,
+            900,
+            388
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "令进入第 j 位的进位为 $c_{j}$ ，则",
+        "bbox": [
+            94,
+            388,
+            386,
+            439
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "equation",
+        "text": "$$\np _ {j} + q _ {j} + c _ {j} = r _ {j} + B c _ {j + 1}, \\qquad c _ {0} = c _ {B} = 0.\n$$",
+        "text_format": "latex",
+        "bbox": [
+            289,
+            478,
+            704,
+            529
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "三个排列的数位和均为 $S = B(B - 1) / 2$ 。对所有列求和，设内部进位总数为 $C$ :",
+        "bbox": [
+            94,
+            560,
+            858,
+            611
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "equation",
+        "text": "$$\n2 S + C = S + B C \\Longrightarrow C = \\frac {B}{2}.\n$$",
+        "text_format": "latex",
+        "bbox": [
+            350,
+            643,
+            642,
+            737
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "所以 $B$ 必须为偶数；结合列内互异，只有偶数 $B \\geq 4$ 有解。",
+        "bbox": [
+            94,
+            768,
+            668,
+            815
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            92,
+            129
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            847,
+            39,
+            973,
+            98
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            72,
+            913,
+            209,
+            945
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "C - Number",
+        "bbox": [
+            456,
+            913,
+            536,
+            945
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "哈尔滨工业大学命题组",
+        "bbox": [
+            781,
+            913,
+            918,
+            941
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "C - Number",
+        "text_level": 2,
+        "bbox": [
+            75,
+            121,
+            251,
+            176
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "按列构造",
+        "text_level": 2,
+        "bbox": [
+            72,
+            196,
+            185,
+            250
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "对 $B \\geq 6$ 令 n = B/2，用 $p = 0, \\ldots, B - 1$ 标识列：",
+        "bbox": [
+            92,
+            317,
+            582,
+            364
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "equation",
+        "text": "$$\nq _ {p} = (p - 2) \\bmod B, \\qquad a _ {p} = \\left\\{ \\begin{array}{l l} 1, & p <   n, \\\\ 0, & p \\geq n, \\end{array} \\right.\n$$",
+        "text_format": "latex",
+        "bbox": [
+            289,
+            403,
+            704,
+            529
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "并交换 $a_1, a_{n+1}$ ，从而 $a_{p+n} = 1 - a_p$ 且恰有 $n$ 个入进位。",
+        "bbox": [
+            94,
+            564,
+            651,
+            615
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "equation",
+        "text": "$$\ns _ {p} = p + q _ {p} + a _ {p}, \\qquad r _ {p} = s _ {p} \\bmod B, \\qquad d _ {p} = \\lfloor s _ {p} / B \\rfloor .\n$$",
+        "text_format": "latex",
+        "bbox": [
+            231,
+            654,
+            761,
+            705
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "$B = 4$ 单独给出一组构造。",
+        "bbox": [
+            94,
+            737,
+            350,
+            780
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            92,
+            129
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            847,
+            39,
+            973,
+            98
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            72,
+            913,
+            209,
+            945
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "C - Number",
+        "bbox": [
+            459,
+            917,
+            536,
+            945
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "哈尔滨工业大学命题组",
+        "bbox": [
+            781,
+            913,
+            918,
+            941
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "C - Number为什么三个序列都是排列",
+        "text_level": 2,
+        "bbox": [
+            72,
+            121,
+            368,
+            250
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "$q_{p}=(p-2)\\bmod B$ 显然是排列。",
+        "bbox": [
+            114,
+            356,
+            487,
+            411
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "■ 模 B 有 $r_{p} \\equiv 2p - 2 + a_{p}$ 。把 p = x 与 $p = x + n$ 配对，得到",
+        "bbox": [
+            112,
+            419,
+            777,
+            474
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\left\\{r _ {x}, r _ {x + n} \\right\\} = \\left\\{2 x - 2, 2 x - 1 \\right\\} \\pmod {B}.\n$$",
+        "text_format": "latex",
+        "bbox": [
+            311,
+            517,
+            730,
+            572
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "因而偶数、奇数各遍历一次，R 也是排列。",
+        "bbox": [
+            143,
+            611,
+            593,
+            662
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "■ 特殊调整保证 $p \\neq q_{p}$ 、 $p \\neq r_{p}$ 、 $q_{p} \\neq r_{p}$ 。",
+        "bbox": [
+            112,
+            678,
+            567,
+            737
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            92,
+            129
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            847,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            75,
+            913,
+            209,
+            941
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "C - Number",
+        "bbox": [
+            459,
+            917,
+            536,
+            941
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "哈尔滨工业大学命题组",
+        "bbox": [
+            781,
+            913,
+            918,
+            941
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "C - Number 恢复列顺序",
+        "text_level": 2,
+        "bbox": [
+            75,
+            121,
+            249,
+            250
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "■ 每列看成一条有向边 $a_{p} \\rightarrow d_{p}$ ，相邻列要求“出进位等于下一列入进位”。",
+        "bbox": [
+            112,
+            384,
+            891,
+            439
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "因为 $\\sum a_{p} = \\sum d_{p} = B/2$ ，边 $0 \\rightarrow 1$ 与 $1 \\rightarrow 0$ 数量相等。",
+        "bbox": [
+            112,
+            450,
+            743,
+            505
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "■ 在只有两个点的有向多重图上求一条从 0 出发的欧拉回路，即得到从低位到高位的列顺序。",
+        "bbox": [
+            112,
+            517,
+            896,
+            619
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "构造与恢复均为 $\\mathcal{O}(B)$ 。",
+        "bbox": [
+            112,
+            635,
+            388,
+            686
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            92,
+            129
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            847,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            75,
+            913,
+            209,
+            941
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "C - Number",
+        "bbox": [
+            459,
+            917,
+            536,
+            941
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "哈尔滨工业大学命题组",
+        "bbox": [
+            783,
+            913,
+            918,
+            941
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "D - Half-plane Cover 补集、Helly 与 Farkas",
+        "text_level": 2,
+        "bbox": [
+            72,
+            121,
+            381,
+            254
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "选择若干闭半平面的并覆盖全平面，等价于它们的开补半平面交为空。二维 Helly 定理说明：若交为空，则至多取三个就已经为空，因此最优答案只可能是 2 或 3。Farkas 引理给出等价条件：存在 $\\lambda_{i} \\geq 0$ ，使",
+        "bbox": [
+            92,
+            356,
+            880,
+            501
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\sum_ {i} \\lambda_ {i} a _ {i} = 0, \\quad \\sum_ {i} \\lambda_ {i} b _ {i} = 0, \\quad \\sum_ {i} \\lambda_ {i} c _ {i} \\geq 0.\n$$",
+        "text_format": "latex",
+        "bbox": [
+            267,
+            533,
+            726,
+            631
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "归一化 $\\sum_{i}\\lambda_{i} = 1$ 后，这是一个只有三条等式约束的线性规划。",
+        "bbox": [
+            94,
+            666,
+            701,
+            717
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            92,
+            129
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            847,
+            39,
+            973,
+            98
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            72,
+            913,
+            209,
+            945
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "D - Half-plane Cover",
+        "bbox": [
+            430,
+            909,
+            562,
+            941
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "哈尔滨工业大学命题组",
+        "bbox": [
+            781,
+            913,
+            918,
+            941
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "D - Half-plane Cover 先检查所有二元答案",
+        "text_level": 2,
+        "bbox": [
+            72,
+            121,
+            381,
+            250
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "■ 两个法向量必须平行且方向相反：",
+        "bbox": [
+            112,
+            309,
+            496,
+            360
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "equation",
+        "text": "$$\na _ {i} b _ {j} - b _ {i} a _ {j} = 0, \\qquad a _ {i} a _ {j} + b _ {i} b _ {j} <   0.\n$$",
+        "text_format": "latex",
+        "bbox": [
+            337,
+            411,
+            704,
+            466
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "■ 再按两法向量的缩放比例检查常数项，判断两个闭半平面之间是否没有空隙。",
+        "bbox": [
+            112,
+            568,
+            894,
+            670
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "■ 枚举全部点对，若存在则答案必为最优的 2。",
+        "bbox": [
+            112,
+            686,
+            611,
+            737
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "■ 全程使用整数叉积和乘法，避免斜率与浮点误差。",
+        "bbox": [
+            112,
+            752,
+            666,
+            803
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            92,
+            129
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            847,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            72,
+            913,
+            209,
+            945
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "D - Half-plane Cover",
+        "bbox": [
+            430,
+            909,
+            562,
+            941
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "哈尔滨工业大学命题组",
+        "bbox": [
+            781,
+            913,
+            918,
+            941
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "D - Half-plane Cover",
+        "text_level": 2,
+        "bbox": [
+            77,
+            121,
+            381,
+            180
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "三元答案化为线性规划",
+        "text_level": 2,
+        "bbox": [
+            75,
+            196,
+            342,
+            247
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "若不存在二元解，考虑多面体",
+        "bbox": [
+            94,
+            313,
+            388,
+            360
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\mathcal {P} = \\{\\lambda \\geq 0: \\sum \\lambda_ {i} (a _ {i}, b _ {i}, 1) = (0, 0, 1) \\}.\n$$",
+        "text_format": "latex",
+        "bbox": [
+            298,
+            400,
+            693,
+            466
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "在 $\\mathcal{P}$ 上最大化 $\\sum_{i}\\lambda_{i}c_{i}$ :",
+        "bbox": [
+            94,
+            501,
+            324,
+            556
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "■ 最优值 $\\geq 0$ 当且仅当存在覆盖;",
+        "bbox": [
+            116,
+            572,
+            445,
+            619
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "■ 基可行解至多含三个非零变量，正好给出要输出的三个下标；",
+        "bbox": [
+            114,
+            643,
+            730,
+            690
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "■ 先在法向量凸包中找包含原点的三角形，得到初始基；再做三变量单纯形换基。",
+        "bbox": [
+            114,
+            713,
+            902,
+            760
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            847,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            75,
+            913,
+            209,
+            941
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "footer",
+        "text": "D - Half-plane Cover",
+        "bbox": [
+            430,
+            909,
+            562,
+            941
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "footer",
+        "text": "哈尔滨工业大学命题组",
+        "bbox": [
+            783,
+            913,
+            918,
+            941
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "D - Half-plane Cover 精确实现与复杂度",
+        "text_level": 2,
+        "bbox": [
+            75,
+            121,
+            379,
+            250
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "■ Cramer 法则计算基解、方向和约化费用，只比较行列式与分数。",
+        "bbox": [
+            112,
+            407,
+            823,
+            458
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "■ 使用 Bland 规则选择入基变量，处理退化并避免循环。",
+        "bbox": [
+            112,
+            470,
+            717,
+            521
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "■ 最后再用整数 Farkas 系数验证输出的三元组。",
+        "bbox": [
+            112,
+            537,
+            629,
+            584
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "■ 点对检查 $\\mathcal{O}(n^{2})$ ；单纯形每次换基 $\\mathcal{O}(n)$ ，空间 $\\mathcal{O}(n)$ 。",
+        "bbox": [
+            112,
+            600,
+            710,
+            658
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            847,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            75,
+            913,
+            209,
+            941
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "footer",
+        "text": "D - Half-plane Cover",
+        "bbox": [
+            430,
+            909,
+            562,
+            941
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "footer",
+        "text": "哈尔滨工业大学命题组",
+        "bbox": [
+            781,
+            913,
+            918,
+            941
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "É - Koishi and Function 只与质因子总数有关",
+        "text_level": 2,
+        "bbox": [
+            75,
+            121,
+            415,
+            250
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "■ 记 $\\Omega(n)$ 为 $n$ 的质因子个数（计重数）。",
+        "bbox": [
+            112,
+            313,
+            551,
+            364
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "■ 归纳可证 $g(n)$ 只依赖 $\\Omega(n)$ ，记 $h_{m}=g(n)$ ( $\\Omega(n)=m$ )。",
+        "bbox": [
+            112,
+            380,
+            737,
+            435
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "■ $n$ 的任意非平凡乘法分解对应于 $m$ 的一个至少含两项的正整数拆分；反之可把质因子分组实现任意拆分。",
+        "bbox": [
+            112,
+            443,
+            900,
+            549
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "因而",
+        "bbox": [
+            112,
+            564,
+            198,
+            611
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "equation",
+        "text": "$$\nh _ {m} = \\operatorname{mex} \\left(\\{0 \\} \\cup \\left\\{\\prod_ {j} h _ {x _ {j}}: \\sum_ {j} x _ {j} = m, \\# j \\geq 2 \\right\\}\\right).\n$$",
+        "text_format": "latex",
+        "bbox": [
+            242,
+            603,
+            796,
+            768
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            92,
+            129
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            847,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            75,
+            913,
+            209,
+            941
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "footer",
+        "text": "E - Koishi and Function",
+        "bbox": [
+            423,
+            913,
+            569,
+            945
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "footer",
+        "text": "哈尔滨工业大学命题组",
+        "bbox": [
+            783,
+            913,
+            918,
+            941
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "$\\tilde{E}$ - Koishi and Function",
+        "text_level": 2,
+        "bbox": [
+            77,
+            121,
+            417,
+            176
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "预处理小状态",
+        "text_level": 2,
+        "bbox": [
+            72,
+            196,
+            238,
+            247
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "■ $n \\leq 10^{7}$ , 所以 $\\Omega(n) \\leq \\lfloor \\log_{2} n \\rfloor \\leq 23$ 。",
+        "bbox": [
+            114,
+            407,
+            538,
+            462
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "■ 对每个 m DFS 枚举整数拆分，收集各部分 h 值之积并取 mex。",
+        "bbox": [
+            112,
+            470,
+            803,
+            525
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "■ 状态数极小，这部分可以直接暴力；无需对每个整数枚举因数分解。",
+        "bbox": [
+            112,
+            537,
+            858,
+            588
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "■ 初值 $h_0 = g(1) = 1$ ，质数对应 $h_1 = 1$ 。",
+        "bbox": [
+            112,
+            603,
+            549,
+            654
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            92,
+            129
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            847,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            75,
+            913,
+            209,
+            941
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "footer",
+        "text": "E - Koishi and Function",
+        "bbox": [
+            423,
+            913,
+            569,
+            945
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "footer",
+        "text": "哈尔滨工业大学命题组",
+        "bbox": [
+            781,
+            913,
+            918,
+            941
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "$\\bar{E}$ - Koishi and Function",
+        "text_level": 2,
+        "bbox": [
+            75,
+            121,
+            417,
+            176
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "线性筛统计答案",
+        "text_level": 2,
+        "bbox": [
+            72,
+            196,
+            264,
+            250
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "■ 线性筛维护最小质因子 $\\mathrm{lp}(i)$ ，并递推",
+        "bbox": [
+            112,
+            270,
+            538,
+            325
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\Omega (i) = \\Omega (i / \\mathrm{lp} (i)) + 1.\n$$",
+        "text_format": "latex",
+        "bbox": [
+            403,
+            364,
+            637,
+            419
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "■ 顺序维护 $c^i$ ，累加",
+        "bbox": [
+            112,
+            517,
+            342,
+            564
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\sum_ {i = 1} ^ {N} h _ {\\Omega (i)} c ^ {i} \\pmod {9 9 8 2 4 4 3 5 3}.\n$$",
+        "text_format": "latex",
+        "bbox": [
+            359,
+            603,
+            679,
+            741
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "■ 时间 $\\mathcal{O}(N)$ ，空间 $\\mathcal{O}(N)$ 。",
+        "bbox": [
+            112,
+            803,
+            406,
+            858
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            92,
+            129
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            847,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            72,
+            913,
+            209,
+            945
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "footer",
+        "text": "E - Koishi and Function",
+        "bbox": [
+            423,
+            913,
+            569,
+            945
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "footer",
+        "text": "哈尔滨工业大学命题组",
+        "bbox": [
+            781,
+            913,
+            918,
+            941
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "F - Four 核心恒等式",
+        "text_level": 2,
+        "bbox": [
+            72,
+            125,
+            211,
+            250
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "设 $x = \\gcd(i, j)$ , $y = \\gcd(j, k)$ , $z = \\gcd(k, l)$ 。利用",
+        "bbox": [
+            94,
+            309,
+            558,
+            356
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\operatorname{lcm} (x, y, z) = \\frac {x y z \\operatorname * {g c d} (x , y , z)}{\\operatorname * {g c d} (x , y) \\operatorname * {g c d} (y , z) \\operatorname * {g c d} (x , z)}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            300,
+            392,
+            688,
+            494
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "以及本题中 $\\gcd (x,z) = \\gcd (x,y,z)$ ，得到",
+        "bbox": [
+            97,
+            525,
+            490,
+            576
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\operatorname{lcm} (x, y, z) = \\frac {\\operatorname* {g c d} (i , j) \\operatorname* {g c d} (j , k) \\operatorname* {g c d} (k , l)}{\\operatorname* {g c d} (i , j , k) \\operatorname* {g c d} (j , k , l)}.\n$$",
+        "text_format": "latex",
+        "bbox": [
+            306,
+            611,
+            686,
+            713
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "令 $g = \\gcd(j, k)$ , j = ga, k = gb, $(a, b) = 1$ ，则 i 与 l 两侧完全分离。",
+        "bbox": [
+            94,
+            749,
+            724,
+            800
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            92,
+            129
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            847,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            72,
+            913,
+            209,
+            941
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "footer",
+        "text": "F - Four",
+        "bbox": [
+            470,
+            917,
+            523,
+            945
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "footer",
+        "text": "哈尔滨工业大学命题组",
+        "bbox": [
+            781,
+            913,
+            918,
+            941
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "F - Four",
+        "text_level": 2,
+        "bbox": [
+            75,
+            125,
+            196,
+            176
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "处理单侧求和",
+        "text_level": 2,
+        "bbox": [
+            72,
+            196,
+            238,
+            247
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "定义",
+        "bbox": [
+            94,
+            262,
+            147,
+            305
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "equation",
+        "text": "$$\nF (g, a) = \\sum_ {i = 1} ^ {A} i ^ {p _ {1}} \\operatorname * {g c d} \\left(\\frac {i}{\\operatorname* {g c d} (i , g)}, a\\right).\n$$",
+        "text_format": "latex",
+        "bbox": [
+            326,
+            305,
+            668,
+            427
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "用 $\\gcd (x,a) = \\sum_{d|x,d|a}\\varphi (d)$ ，并定义",
+        "bbox": [
+            94,
+            443,
+            450,
+            505
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "equation",
+        "text": "$$\nQ (g, d) = d \\prod_ {q | d} q ^ {v _ {q} (g)}.\n$$",
+        "text_format": "latex",
+        "bbox": [
+            397,
+            533,
+            598,
+            635
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "逐质因数分析可得",
+        "bbox": [
+            94,
+            670,
+            278,
+            713
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "equation",
+        "text": "$$\nd \\mid \\frac {i}{\\operatorname* {g c d} (i , g)} \\iff Q (g, d) \\mid i.\n$$",
+        "text_format": "latex",
+        "bbox": [
+            359,
+            705,
+            637,
+            807
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "于是问题化为幂和前缀与Dirichlet前缀和；右侧同理。",
+        "bbox": [
+            94,
+            823,
+            624,
+            870
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            92,
+            129
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            847,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            72,
+            913,
+            209,
+            945
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "footer",
+        "text": "F - Four",
+        "bbox": [
+            470,
+            913,
+            523,
+            945
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "footer",
+        "text": "哈尔滨工业大学命题组",
+        "bbox": [
+            781,
+            913,
+            918,
+            941
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "F - Four",
+        "text_level": 2,
+        "bbox": [
+            75,
+            125,
+            196,
+            176
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "合并与 Möbius 反演",
+        "text_level": 2,
+        "bbox": [
+            72,
+            196,
+            315,
+            250
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "最终形式为",
+        "bbox": [
+            94,
+            317,
+            211,
+            364
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\sum_{g}g\\sum_{\\substack{a\\leq B / g, b\\leq C / g\\\\ (a,b) = 1}}(ga)^{p_{2}}(gb)^{p_{3}}F(g,a)G(g,b).\n$$",
+        "text_format": "latex",
+        "bbox": [
+            289,
+            356,
+            704,
+            494
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "使用",
+        "bbox": [
+            94,
+            517,
+            147,
+            560
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "equation",
+        "text": "$$\n[ \\operatorname * {g c d} (a, b) = 1 ] = \\sum_ {t | a, t | b} \\mu (t)\n$$",
+        "text_format": "latex",
+        "bbox": [
+            370,
+            556,
+            626,
+            658
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "消去互质限制，整理后用 Dirichlet 后缀和批量计算。",
+        "bbox": [
+            94,
+            682,
+            604,
+            729
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "总复杂度 $\\mathcal{O}(n\\log n\\log\\log n)$ ，其中 $n=\\max(A,B,C,D)$ 。",
+        "bbox": [
+            94,
+            729,
+            644,
+            780
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            92,
+            129
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            847,
+            39,
+            973,
+            98
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            75,
+            913,
+            209,
+            945
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "footer",
+        "text": "F - Four",
+        "bbox": [
+            470,
+            917,
+            525,
+            945
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "footer",
+        "text": "哈尔滨工业大学命题组",
+        "bbox": [
+            781,
+            913,
+            918,
+            941
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "G - Bipartite Graph 最小点覆盖转最小割",
+        "text_level": 2,
+        "bbox": [
+            75,
+            121,
+            353,
+            250
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "■ 建网络： $s \\rightarrow L$ 容量 1， $L \\rightarrow R$ 容量 $+\\infty$ ， $R \\rightarrow t$ 容量 1。",
+        "bbox": [
+            112,
+            415,
+            750,
+            466
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "■ 最小割与二分图最小点覆盖一一对应。",
+        "bbox": [
+            112,
+            478,
+            547,
+            529
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "■ 左点在汇侧表示被选，右点在源侧表示被选；查询中的“选/不选”因此转成顶点必须位于割的某一侧。",
+        "bbox": [
+            112,
+            545,
+            900,
+            650
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            847,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            75,
+            913,
+            209,
+            945
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "footer",
+        "text": "G - Bipartite Graph",
+        "bbox": [
+            437,
+            909,
+            556,
+            941
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "footer",
+        "text": "哈尔滨工业大学命题组",
+        "bbox": [
+            781,
+            913,
+            918,
+            941
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "G - Bipartite Graph 所有最小割的结构",
+        "text_level": 2,
+        "bbox": [
+            75,
+            121,
+            353,
+            250
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "■ 跑一次最大流后，在残量网络中缩强连通分量，得到 DAG。",
+        "bbox": [
+            112,
+            384,
+            768,
+            435
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "■ 一个源侧集合 S 合法，当且仅当它在残量 DAG 上后继闭合。",
+        "bbox": [
+            112,
+            450,
+            777,
+            498
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "■ 强制某点在 S: 它能到达的所有点都必须在 S。",
+        "bbox": [
+            112,
+            513,
+            635,
+            564
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "■ 强制某点在 T: 所有能到达它的点都必须在 T。",
+        "bbox": [
+            112,
+            580,
+            642,
+            627
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "■ 两类闭包相交则无解，否则存在满足要求的最小点覆盖。",
+        "bbox": [
+            112,
+            643,
+            737,
+            694
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            847,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            75,
+            913,
+            209,
+            941
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "footer",
+        "text": "G - Bipartite Graph",
+        "bbox": [
+            437,
+            909,
+            556,
+            941
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "footer",
+        "text": "哈尔滨工业大学命题组",
+        "bbox": [
+            781,
+            913,
+            918,
+            941
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "G - Bipartite Graph",
+        "text_level": 2,
+        "bbox": [
+            75,
+            121,
+            353,
+            184
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "强制集合计数",
+        "text_level": 2,
+        "bbox": [
+            75,
+            196,
+            238,
+            250
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "■ 对缩点 DAG 预处理可达集合与反向可达集合。",
+        "bbox": [
+            112,
+            333,
+            631,
+            380
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "■ 查询时合并所有要求形成的两类闭包；闭包大小对应“必选”和“必不选”顶点数。",
+        "bbox": [
+            112,
+            396,
+            891,
+            501
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "■ 用 bitset 做 DAG 可达性；内存不足时对点分块，得到根号级空间。",
+        "bbox": [
+            112,
+            517,
+            849,
+            564
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "■ 复杂度",
+        "bbox": [
+            112,
+            580,
+            222,
+            627
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\mathcal {O} \\left((n + m) \\sqrt {n} + \\frac {n + m + \\sum T}{\\omega}\\right).\n$$",
+        "text_format": "latex",
+        "bbox": [
+            339,
+            619,
+            701,
+            733
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            847,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            75,
+            917,
+            209,
+            941
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "footer",
+        "text": "G - Bipartite Graph",
+        "bbox": [
+            437,
+            913,
+            556,
+            941
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "footer",
+        "text": "哈尔滨工业大学命题组",
+        "bbox": [
+            783,
+            913,
+            918,
+            941
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "H - Count it 序列形状与合法性",
+        "text_level": 2,
+        "bbox": [
+            75,
+            121,
+            289,
+            250
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "$P_{i}$ 单调不降， $Q_{i}$ 单调不升，所以 $B_{i} = \\min (P_{i},Q_{i})$ 必须是单峰序列：",
+        "bbox": [
+            94,
+            345,
+            757,
+            396
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "equation",
+        "text": "$$\nB _ {1} \\leq \\dots \\leq B _ {L} = \\dots = B _ {R} \\geq \\dots \\geq B _ {N - 1}.\n$$",
+        "text_format": "latex",
+        "bbox": [
+            295,
+            435,
+            697,
+            482
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "令 $K = \\max B_{i}$ 。还必须满足",
+        "bbox": [
+            94,
+            517,
+            373,
+            564
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "equation",
+        "text": "$$\nB _ {i} \\leq \\min (i, N - i, M).\n$$",
+        "text_format": "latex",
+        "bbox": [
+            392,
+            607,
+            602,
+            654
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "否则答案为0。平台切口为 $L,\\dots ,R$ ，左右两端都必须包含 $0,\\ldots ,K - 1$ 。",
+        "bbox": [
+            94,
+            690,
+            794,
+            737
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            92,
+            129
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            847,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            75,
+            913,
+            209,
+            941
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "footer",
+        "text": "H - Count it",
+        "bbox": [
+            456,
+            917,
+            536,
+            945
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "footer",
+        "text": "哈尔滨工业大学命题组",
+        "bbox": [
+            781,
+            913,
+            918,
+            941
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "H - Count it 分解为左右端与中间",
+        "text_level": 2,
+        "bbox": [
+            75,
+            121,
+            315,
+            250
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "设 $d = R - L$ 。定义：",
+        "bbox": [
+            94,
+            356,
+            300,
+            400
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "■ $F_{L}$ ：左端各前缀 mex 恰为给定值，且最终 mex 为 K;",
+        "bbox": [
+            114,
+            423,
+            666,
+            474
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "■ $G_{L}$ ：前面给定值满足，最后 mex 严格大于 K;",
+        "bbox": [
+            114,
+            494,
+            593,
+            541
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "■ 反转右端后同理得到 $F_{R}, G_{R}$ 。",
+        "bbox": [
+            114,
+            564,
+            432,
+            611
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "平台上 K 不能同时出现在切口两侧。令 z = M - [K < M]，中间不取 K 时每格有 z 种选择。",
+        "bbox": [
+            92,
+            635,
+            896,
+            729
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            92,
+            129
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            847,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            75,
+            913,
+            209,
+            941
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "footer",
+        "text": "H - Count it",
+        "bbox": [
+            456,
+            917,
+            536,
+            945
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "footer",
+        "text": "哈尔滨工业大学命题组",
+        "bbox": [
+            781,
+            913,
+            918,
+            941
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "H - Count it",
+        "text_level": 2,
+        "bbox": [
+            77,
+            125,
+            251,
+            176
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "三种情况合并",
+        "text_level": 2,
+        "bbox": [
+            75,
+            196,
+            238,
+            250
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "左右端均无 K 时，中间至多出现一个 K:",
+        "bbox": [
+            94,
+            337,
+            490,
+            384
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "equation",
+        "text": "$$\nH = z ^ {d} + [ K <   M ] \\cdot d z ^ {d - 1}.\n$$",
+        "text_format": "latex",
+        "bbox": [
+            370,
+            419,
+            624,
+            474
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "若 $K$ 已在左端或右端，中间不能再出现 $K$ 。因此总答案为",
+        "bbox": [
+            94,
+            509,
+            657,
+            556
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\boxed {F _ {L} F _ {R} H + (G _ {L} F _ {R} + F _ {L} G _ {R}) z ^ {d}}.\n$$",
+        "text_format": "latex",
+        "bbox": [
+            350,
+            596,
+            646,
+            662
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "问题只剩如何计算一个给定非降前缀 mex 序列的 F, G。",
+        "bbox": [
+            94,
+            705,
+            629,
+            752
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            92,
+            129
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            847,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            75,
+            913,
+            209,
+            945
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "footer",
+        "text": "H - Count it",
+        "bbox": [
+            456,
+            917,
+            536,
+            945
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "footer",
+        "text": "哈尔滨工业大学命题组",
+        "bbox": [
+            781,
+            913,
+            918,
+            941
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "H - Count it",
+        "text_level": 2,
+        "bbox": [
+            75,
+            125,
+            251,
+            176
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "前缀 mex 的容斥 DP",
+        "text_level": 2,
+        "bbox": [
+            72,
+            196,
+            317,
+            250
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "给定 $m_{1} \\leq \\cdots \\leq m_{t}$ ，令 $m_{0} = 0$ 。",
+        "bbox": [
+            94,
+            321,
+            366,
+            360
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "若 $m_{i} > m_{i - 1}$ ，则 $A_{i} = m_{i - 1}$ ；被跳过的 $m_{i - 1} + 1,\\dots ,m_i - 1$ 必须已出现。",
+        "bbox": [
+            116,
+            368,
+            750,
+            411
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "■ 若 $m_{i} = m_{i-1}$ ，该位置自由，但当前及未来会成为 mex 的值不能提前出现。",
+        "bbox": [
+            116,
+            419,
+            732,
+            458
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "■ 对“某个被跳过值尚未出现”做容斥；从后向前扫描， $dp_{k}$ 表示选了 k 个坏事件的带符号方案数。",
+        "bbox": [
+            116,
+            470,
+            874,
+            509
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "■ 自由位置乘可选数 $M - h_i - k$ ；新增 $g$ 个坏事件等价于生成函数乘 $(1 - x)^g$ ：",
+        "bbox": [
+            116,
+            517,
+            739,
+            556
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "equation",
+        "text": "$$\nd p _ {k} ^ {\\prime} = d p _ {k} - d p _ {k - 1}.\n$$",
+        "text_format": "latex",
+        "bbox": [
+            441,
+            600,
+            602,
+            639
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "总复杂度 $\\mathcal{O}(N^{2})$ ，空间 $\\mathcal{O}(N)$ 。",
+        "bbox": [
+            94,
+            725,
+            339,
+            768
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            92,
+            125
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            847,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            72,
+            913,
+            209,
+            941
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "footer",
+        "text": "H - Count it",
+        "bbox": [
+            456,
+            917,
+            536,
+            945
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "footer",
+        "text": "哈尔滨工业大学命题组",
+        "bbox": [
+            781,
+            913,
+            918,
+            941
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "I - Sequence Operation 2 不变量与目标",
+        "text_level": 2,
+        "bbox": [
+            75,
+            121,
+            441,
+            250
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "■ 操作翻转 x, y, z，且 $x = y \\oplus z$ 。",
+        "bbox": [
+            112,
+            415,
+            465,
+            466
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "■ 所有值为 1 的位置编号异或和保持不变。",
+        "bbox": [
+            112,
+            478,
+            571,
+            529
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "因而若该异或和非零，最终不可能全为 0；“至多剩一个 1”正是可达到的最优目标。",
+        "bbox": [
+            112,
+            545,
+            898,
+            650
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            90,
+            129
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            847,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            75,
+            913,
+            209,
+            941
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "footer",
+        "text": "I - Sequence Operation 2",
+        "bbox": [
+            417,
+            913,
+            573,
+            941
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "footer",
+        "text": "哈尔滨工业大学命题组",
+        "bbox": [
+            781,
+            913,
+            918,
+            941
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "I - Sequence Operation 2 从小到大扫描构造",
+        "text_level": 2,
+        "bbox": [
+            75,
+            121,
+            441,
+            250
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "维护 pos: 在已扫描区间内唯一可能为 1 的位置，不存在则为 -1。",
+        "bbox": [
+            94,
+            352,
+            732,
+            400
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "■ 若 $s_{i}=0$ ，跳过操作 $i_{0}$ 。",
+        "bbox": [
+            114,
+            423,
+            366,
+            470
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "■ 若 $s_i = 1, pos = -1$ ，令 $pos = i$ 。",
+        "bbox": [
+            114,
+            494,
+            461,
+            541
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "■ 否则执行 $(i, pos, i \\oplus pos)$ ：若 $i \\oplus pos < i$ ，更新 $pos = i \\oplus pos$ ；否则已扫描区间清零。",
+        "bbox": [
+            114,
+            560,
+            900,
+            658
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "每个操作编号至多使用一次，总复杂度 $\\mathcal{O}(N)$ 。",
+        "bbox": [
+            94,
+            682,
+            543,
+            729
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            90,
+            129
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            847,
+            39,
+            973,
+            98
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            72,
+            913,
+            209,
+            945
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "footer",
+        "text": "I - Sequence Operation 2",
+        "bbox": [
+            417,
+            909,
+            576,
+            941
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "footer",
+        "text": "哈尔滨工业大学命题组",
+        "bbox": [
+            781,
+            913,
+            918,
+            941
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "I - Sequence Operation 2 另一种按位理解",
+        "text_level": 2,
+        "bbox": [
+            75,
+            121,
+            441,
+            250
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "■ 从高位到低位，把当前最高位为1的位置两两配对。",
+        "bbox": [
+            112,
+            388,
+            690,
+            439
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "■ 两个同最高位编号异或后会消去该最高位，问题被递归压到低位。",
+        "bbox": [
+            112,
+            454,
+            834,
+            505
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "■ 每层最多留下一个未配对位置；这些剩余位置最高位两两不同，再从低到高合并。",
+        "bbox": [
+            112,
+            517,
+            896,
+            619
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "■ 这也解释了为什么 $N = 2^{n} - 1$ 的编号集合在异或下足够封闭。",
+        "bbox": [
+            112,
+            635,
+            794,
+            686
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            847,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            75,
+            913,
+            209,
+            941
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "footer",
+        "text": "I - Sequence Operation 2",
+        "bbox": [
+            417,
+            909,
+            573,
+            941
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "footer",
+        "text": "哈尔滨工业大学命题组",
+        "bbox": [
+            781,
+            913,
+            918,
+            941
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "J - Sequence (Median Version) 阈值化",
+        "text_level": 2,
+        "bbox": [
+            72,
+            117,
+            518,
+            250
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "■ 对阈值 T，把 $a_{i} \\geq T$ 记为 1，否则记为 0。",
+        "bbox": [
+            112,
+            415,
+            591,
+            466
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "■ 中位数变换与任意阈值化可交换，因此只需研究环形 01 序列的多数变换。",
+        "bbox": [
+            112,
+            478,
+            889,
+            580
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "■ 相邻的 00 或 11 在之后永不改变，称为“源”。",
+        "bbox": [
+            112,
+            596,
+            613,
+            647
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            90,
+            129
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            847,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            75,
+            913,
+            209,
+            941
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "footer",
+        "text": "J - Sequence (Median Version)",
+        "bbox": [
+            401,
+            909,
+            591,
+            941
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "footer",
+        "text": "哈尔滨工业大学命题组",
+        "bbox": [
+            781,
+            913,
+            918,
+            941
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "J - Sequence (Median Version) 源向交替段传播",
+        "text_level": 2,
+        "bbox": [
+            72,
+            117,
+            518,
+            250
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "■ 两个源之间只可能是 0101... 的交替连续段。",
+        "bbox": [
+            114,
+            337,
+            615,
+            384
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "■ 每次变换等价于两端源向段内传播一步；若传播相遇，剩余部分由奇偶性决定。",
+        "bbox": [
+            112,
+            400,
+            896,
+            501
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "例如",
+        "bbox": [
+            114,
+            517,
+            198,
+            568
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "00010101010111 $\\longrightarrow$ 00001010101111.",
+        "bbox": [
+            320,
+            576,
+            721,
+            619
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "■ 因而给定阈值后，可直接计算 $k$ 次变换后的所有01答案。",
+        "bbox": [
+            112,
+            713,
+            754,
+            764
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            90,
+            129
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            847,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            75,
+            913,
+            209,
+            945
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "footer",
+        "text": "J - Sequence (Median Version)",
+        "bbox": [
+            401,
+            909,
+            591,
+            941
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "footer",
+        "text": "哈尔滨工业大学命题组",
+        "bbox": [
+            783,
+            913,
+            918,
+            941
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "J - Sequence (Median Version)",
+        "text_level": 2,
+        "bbox": [
+            75,
+            121,
+            518,
+            180
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "离线枚举阈值",
+        "text_level": 2,
+        "bbox": [
+            75,
+            196,
+            236,
+            247
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "■ 从大到小枚举 $a_{i}$ 中出现的值，动态把位置从0改成1。",
+        "bbox": [
+            112,
+            407,
+            717,
+            458
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "■ 只维护阈值变化时合并、分裂的交替段，以及段内尚未确定的奇偶位置。",
+        "bbox": [
+            112,
+            470,
+            900,
+            525
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "■ 用并查集/线段树批量给未赋值位置填入当前阈值。",
+        "bbox": [
+            112,
+            537,
+            675,
+            588
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "■ 每个位置只被确定常数次，时间 $\\mathcal{O}(n\\log n)$ ，空间 $\\mathcal{O}(n)$ 。",
+        "bbox": [
+            112,
+            603,
+            739,
+            658
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            90,
+            129
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            847,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            75,
+            913,
+            209,
+            941
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "footer",
+        "text": "J - Sequence (Median Version)",
+        "bbox": [
+            401,
+            909,
+            591,
+            941
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "footer",
+        "text": "哈尔滨工业大学命题组",
+        "bbox": [
+            781,
+            913,
+            918,
+            941
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "K - Sequence (Mex Version) 周期性结论",
+        "text_level": 2,
+        "bbox": [
+            75,
+            117,
+            479,
+            250
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": "■ 记一次变换为 T，第 t 层序列为 $a^{(t)}$ 。",
+        "bbox": [
+            112,
+            380,
+            534,
+            431
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": "■ 核心结论:",
+        "bbox": [
+            114,
+            443,
+            253,
+            494
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\boxed {a ^ {(t + 2)} = a ^ {(t)} \\qquad (t \\geq 3).}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            388,
+            490,
+            653,
+            568
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": "因而只需模拟到第4层，再根据 $k$ 的奇偶性选择答案。",
+        "bbox": [
+            112,
+            650,
+            715,
+            701
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            92,
+            129
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            847,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            75,
+            913,
+            209,
+            941
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "footer",
+        "text": "K - Sequence (Mex Version)",
+        "bbox": [
+            410,
+            909,
+            582,
+            941
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "footer",
+        "text": "哈尔滨工业大学命题组",
+        "bbox": [
+            781,
+            913,
+            918,
+            941
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": "K - Sequence (Mex Version)",
+        "text_level": 2,
+        "bbox": [
+            75,
+            117,
+            479,
+            180
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "引理一：隔层单调不增",
+        "text_level": 2,
+        "bbox": [
+            72,
+            196,
+            342,
+            250
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "固定 $x = a_{i}^{(t)}$ 。计算下一层 i - 1, i, $i + 1$ 三个位置时，输入集合都包含 x，所以这三个新值都不等于 x。",
+        "bbox": [
+            94,
+            360,
+            894,
+            454
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "于是计算 $a_{i}^{(t + 2)}$ 时，候选集合中缺少 $x$ 。由 mex 定义：",
+        "bbox": [
+            94,
+            454,
+            620,
+            505
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\boxed {a _ {i} ^ {(t + 2)} \\leq a _ {i} ^ {(t)}}.\n$$",
+        "text_format": "latex",
+        "bbox": [
+            428,
+            545,
+            567,
+            627
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "该不等式对所有位置逐点成立。",
+        "bbox": [
+            94,
+            666,
+            397,
+            713
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            92,
+            125
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            847,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            75,
+            913,
+            209,
+            945
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "footer",
+        "text": "K - Sequence (Mex Version)",
+        "bbox": [
+            410,
+            909,
+            582,
+            941
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "footer",
+        "text": "哈尔滨工业大学命题组",
+        "bbox": [
+            781,
+            913,
+            918,
+            941
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "K - Sequence (Mex Version) 引理二：严格下降可以向前追溯",
+        "text_level": 2,
+        "bbox": [
+            72,
+            117,
+            479,
+            250
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "若 $a_{i}^{(t + 2)} = x < a_{i}^{(t)}$ ，则 $x$ 必在计算 $a_{i}^{(t)}$ 的上一层邻域中。所以存在 $j\\in \\{i - 1,i,i + 1\\}$ 使",
+        "bbox": [
+            92,
+            329,
+            746,
+            439
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "equation",
+        "text": "$$\na _ {j} ^ {(t - 1)} = x.\n$$",
+        "text_format": "latex",
+        "bbox": [
+            443,
+            435,
+            551,
+            498
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "另一方面，mex 在第 $t + 2$ 层等于 $x$ ，说明第 $t + 1$ 层该邻域没有 $x$ 。结合引理一：",
+        "bbox": [
+            92,
+            517,
+            876,
+            564
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "equation",
+        "text": "$$\na _ {j} ^ {(t + 1)} <   x.\n$$",
+        "text_format": "latex",
+        "bbox": [
+            443,
+            600,
+            551,
+            666
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "即每追溯一次，会得到一个更小的非负整数。",
+        "bbox": [
+            94,
+            701,
+            529,
+            749
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            92,
+            129
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            847,
+            39,
+            973,
+            98
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            72,
+            913,
+            209,
+            945
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "footer",
+        "text": "K - Sequence (Mex Version)",
+        "bbox": [
+            410,
+            909,
+            582,
+            941
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "footer",
+        "text": "哈尔滨工业大学命题组",
+        "bbox": [
+            781,
+            913,
+            918,
+            941
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "K - Sequence (Mex Version)",
+        "text_level": 2,
+        "bbox": [
+            75,
+            117,
+            479,
+            180
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "证明进入二周期",
+        "text_level": 2,
+        "bbox": [
+            72,
+            196,
+            264,
+            247
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "一次只对三个数取 $\\mathrm{mex}$ ，因此 $t \\geq 1$ 时所有值均不超过3。",
+        "bbox": [
+            94,
+            376,
+            655,
+            423
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "若存在 $a_{i}^{(5)} < a_{i}^{(3)}$ ，记较小值为 $x_0 \\leq 2$ 。连续三次应用引理二得到",
+        "bbox": [
+            92,
+            423,
+            732,
+            478
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "equation",
+        "text": "$$\n0 \\leq x _ {3} <   x _ {2} <   x _ {1} <   x _ {0} \\leq 2,\n$$",
+        "text_format": "latex",
+        "bbox": [
+            364,
+            517,
+            629,
+            560
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "但 $\\{0,1,2\\}$ 中不可能有四个严格递减非负整数，矛盾。",
+        "bbox": [
+            94,
+            596,
+            615,
+            643
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "故 $a^{(5)} = a^{(3)}$ ；变换确定，因此之后始终以不超过2的周期循环。总复杂度 $\\mathcal{O}(n)$ 。",
+        "bbox": [
+            94,
+            643,
+            885,
+            694
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            92,
+            125
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            847,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            75,
+            913,
+            209,
+            941
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "footer",
+        "text": "K - Sequence (Mex Version)",
+        "bbox": [
+            410,
+            909,
+            582,
+            941
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "footer",
+        "text": "哈尔滨工业大学命题组",
+        "bbox": [
+            781,
+            913,
+            918,
+            941
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "L - Matrix",
+        "text_level": 2,
+        "bbox": [
+            79,
+            125,
+            222,
+            176
+        ],
+        "page_idx": 39
+    },
+    {
+        "type": "text",
+        "text": "答案候选",
+        "text_level": 2,
+        "bbox": [
+            72,
+            196,
+            185,
+            250
+        ],
+        "page_idx": 39
+    },
+    {
+        "type": "text",
+        "text": "■ 每次路径必经过 $(1,1)$ ，并在第二步经过 $(1,2)$ 或 $(2,1)$ 。",
+        "bbox": [
+            112,
+            301,
+            732,
+            356
+        ],
+        "page_idx": 39
+    },
+    {
+        "type": "text",
+        "text": "■ 若最终值为 $X$ 、操作次数为 $K$ ，则",
+        "bbox": [
+            112,
+            368,
+            512,
+            419
+        ],
+        "page_idx": 39
+    },
+    {
+        "type": "equation",
+        "text": "$$\nX = a _ {1, 1} + K, \\quad 2 X = a _ {1, 2} + a _ {2, 1} + K.\n$$",
+        "text_format": "latex",
+        "bbox": [
+            311,
+            466,
+            732,
+            517
+        ],
+        "page_idx": 39
+    },
+    {
+        "type": "text",
+        "text": "■ 消元得到唯一候选",
+        "bbox": [
+            112,
+            623,
+            342,
+            670
+        ],
+        "page_idx": 39
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\boxed {K = a _ {1, 2} + a _ {2, 1} - 2 a _ {1, 1}.}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            392,
+            674,
+            646,
+            741
+        ],
+        "page_idx": 39
+    },
+    {
+        "type": "text",
+        "text": "边界为单行或单列时单独处理。",
+        "bbox": [
+            143,
+            768,
+            474,
+            815
+        ],
+        "page_idx": 39
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            90,
+            129
+        ],
+        "page_idx": 39
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            847,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 39
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            75,
+            913,
+            209,
+            941
+        ],
+        "page_idx": 39
+    },
+    {
+        "type": "footer",
+        "text": "L - Matrix",
+        "bbox": [
+            463,
+            917,
+            529,
+            945
+        ],
+        "page_idx": 39
+    },
+    {
+        "type": "footer",
+        "text": "哈尔滨工业大学命题组",
+        "bbox": [
+            781,
+            913,
+            918,
+            941
+        ],
+        "page_idx": 39
+    },
+    {
+        "type": "text",
+        "text": "L - Matrix",
+        "text_level": 2,
+        "bbox": [
+            79,
+            125,
+            222,
+            176
+        ],
+        "page_idx": 40
+    },
+    {
+        "type": "text",
+        "text": "按反对角线分层",
+        "text_level": 2,
+        "bbox": [
+            72,
+            196,
+            264,
+            250
+        ],
+        "page_idx": 40
+    },
+    {
+        "type": "text",
+        "text": "把格点按 $i+j=s$ 分层。设当前层每行需要通过的路径数量为 $b_{i}$ ，下一层目标为 $c_{i}$ 。每个来自行 i 的单位只能流向下一层的行 i 或 $i+1$ 。令",
+        "bbox": [
+            92,
+            333,
+            902,
+            431
+        ],
+        "page_idx": 40
+    },
+    {
+        "type": "equation",
+        "text": "$$\nB _ {r} = \\sum_ {i \\leq r} b _ {i}, \\quad C _ {r} = \\sum_ {i \\leq r} c _ {i}.\n$$",
+        "text_format": "latex",
+        "bbox": [
+            359,
+            458,
+            635,
+            564
+        ],
+        "page_idx": 40
+    },
+    {
+        "type": "text",
+        "text": "存在分配当且仅当对所有 $r$",
+        "bbox": [
+            94,
+            600,
+            366,
+            643
+        ],
+        "page_idx": 40
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\boxed {B _ {r - 1} \\leq C _ {r} \\leq B _ {r}}.\n$$",
+        "text_format": "latex",
+        "bbox": [
+            408,
+            639,
+            584,
+            705
+        ],
+        "page_idx": 40
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            90,
+            129
+        ],
+        "page_idx": 40
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            847,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 40
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            75,
+            913,
+            209,
+            945
+        ],
+        "page_idx": 40
+    },
+    {
+        "type": "footer",
+        "text": "L - Matrix",
+        "bbox": [
+            463,
+            917,
+            529,
+            945
+        ],
+        "page_idx": 40
+    },
+    {
+        "type": "footer",
+        "text": "哈尔滨工业大学命题组",
+        "bbox": [
+            781,
+            913,
+            918,
+            941
+        ],
+        "page_idx": 40
+    },
+    {
+        "type": "text",
+        "text": "- Matrix",
+        "text_level": 2,
+        "bbox": [
+            97,
+            125,
+            220,
+            172
+        ],
+        "page_idx": 41
+    },
+    {
+        "type": "text",
+        "text": "验证算法",
+        "text_level": 2,
+        "bbox": [
+            75,
+            196,
+            185,
+            247
+        ],
+        "page_idx": 41
+    },
+    {
+        "type": "text",
+        "text": "■ 由候选最终值 X 得到每个格点必须经过的路径次数 $X - a_{i,j}$ 。",
+        "bbox": [
+            112,
+            407,
+            779,
+            462
+        ],
+        "page_idx": 41
+    },
+    {
+        "type": "text",
+        "text": "■ 从左上到右下逐层贪心分配流量，或直接检查每层的前缀和条件。",
+        "bbox": [
+            112,
+            470,
+            834,
+            521
+        ],
+        "page_idx": 41
+    },
+    {
+        "type": "text",
+        "text": "■ 任一数量为负、总量不守恒或前缀条件失败，则输出 -1；否则输出 K。",
+        "bbox": [
+            112,
+            537,
+            896,
+            588
+        ],
+        "page_idx": 41
+    },
+    {
+        "type": "text",
+        "text": "■ 时间 $\\mathcal{O}(nm)$ ，额外空间 $\\mathcal{O}(\\min(n,m))$ 。",
+        "bbox": [
+            114,
+            603,
+            554,
+            658
+        ],
+        "page_idx": 41
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            90,
+            129
+        ],
+        "page_idx": 41
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            847,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 41
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            75,
+            913,
+            209,
+            941
+        ],
+        "page_idx": 41
+    },
+    {
+        "type": "footer",
+        "text": "L - Matrix",
+        "bbox": [
+            463,
+            917,
+            529,
+            941
+        ],
+        "page_idx": 41
+    },
+    {
+        "type": "footer",
+        "text": "哈尔滨工业大学命题组",
+        "bbox": [
+            783,
+            913,
+            918,
+            941
+        ],
+        "page_idx": 41
+    },
+    {
+        "type": "text",
+        "text": "M - Je t'aime encore 树的生成函数",
+        "text_level": 2,
+        "bbox": [
+            72,
+            121,
+            375,
+            250
+        ],
+        "page_idx": 42
+    },
+    {
+        "type": "text",
+        "text": "在 $F_{2}$ 上，设 $B_{h}(z)$ 为根权值不超过 h 的满三叉平面树生成函数， $E_{h}=B_{h}+B_{h-1}$ 表示根权值恰为 h。",
+        "bbox": [
+            92,
+            372,
+            883,
+            462
+        ],
+        "page_idx": 42
+    },
+    {
+        "type": "text",
+        "text": "根为内部结点时，要么三个儿子权值均不超过 $h - 1$ ，要么恰有一个儿子权值为 $h$ 。化简得",
+        "bbox": [
+            92,
+            462,
+            887,
+            556
+        ],
+        "page_idx": 42
+    },
+    {
+        "type": "equation",
+        "text": "$$\nB _ {h} = 1 + z B _ {h} B _ {h - 1} ^ {2}, \\qquad \\boxed {B _ {h} (z) = \\frac {1}{1 + z B _ {h - 1} (z) ^ {2}}.}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            258,
+            552,
+            732,
+            670
+        ],
+        "page_idx": 42
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            92,
+            129
+        ],
+        "page_idx": 42
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            847,
+            39,
+            973,
+            98
+        ],
+        "page_idx": 42
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            75,
+            913,
+            209,
+            945
+        ],
+        "page_idx": 42
+    },
+    {
+        "type": "footer",
+        "text": "M - Je t'aime encore",
+        "bbox": [
+            432,
+            913,
+            562,
+            945
+        ],
+        "page_idx": 42
+    },
+    {
+        "type": "footer",
+        "text": "哈尔滨工业大学命题组",
+        "bbox": [
+            781,
+            913,
+            918,
+            941
+        ],
+        "page_idx": 42
+    },
+    {
+        "type": "text",
+        "text": "M - Je t'aime encore",
+        "text_level": 2,
+        "bbox": [
+            75,
+            121,
+            375,
+            176
+        ],
+        "page_idx": 43
+    },
+    {
+        "type": "text",
+        "text": "$Q_{h}$ 的闭式结构",
+        "text_level": 2,
+        "bbox": [
+            77,
+            196,
+            249,
+            250
+        ],
+        "page_idx": 43
+    },
+    {
+        "type": "text",
+        "text": "定义",
+        "bbox": [
+            94,
+            349,
+            147,
+            396
+        ],
+        "page_idx": 43
+    },
+    {
+        "type": "equation",
+        "text": "$$\nQ _ {0} = 1, \\qquad Q _ {1} = 1 + z, \\qquad Q _ {h} = Q _ {h - 1} + z ^ {2 ^ {h - 1}} Q _ {h - 2}.\n$$",
+        "text_format": "latex",
+        "bbox": [
+            238,
+            388,
+            757,
+            447
+        ],
+        "page_idx": 43
+    },
+    {
+        "type": "text",
+        "text": "可归纳证明",
+        "bbox": [
+            94,
+            466,
+            211,
+            509
+        ],
+        "page_idx": 43
+    },
+    {
+        "type": "equation",
+        "text": "$$\nB _ {h} = \\frac {Q _ {h - 1} ^ {2}}{Q _ {h}}, \\qquad E _ {h} = \\frac {z ^ {2 ^ {h} - 1}}{Q _ {h} Q _ {h - 1}}.\n$$",
+        "text_format": "latex",
+        "bbox": [
+            339,
+            505,
+            653,
+            615
+        ],
+        "page_idx": 43
+    },
+    {
+        "type": "text",
+        "text": "$Q_{h}$ 也可解释为“二进制位中无相邻1”的指数生成多项式。只需保留到 $z^{N}$ ，因此有效递推层数仅 $\\mathcal{O}(\\log N)$ 。",
+        "bbox": [
+            94,
+            635,
+            900,
+            733
+        ],
+        "page_idx": 43
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            92,
+            125
+        ],
+        "page_idx": 43
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            847,
+            39,
+            973,
+            98
+        ],
+        "page_idx": 43
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            75,
+            913,
+            209,
+            945
+        ],
+        "page_idx": 43
+    },
+    {
+        "type": "footer",
+        "text": "M - Je t'aime encore",
+        "bbox": [
+            432,
+            913,
+            562,
+            945
+        ],
+        "page_idx": 43
+    },
+    {
+        "type": "footer",
+        "text": "哈尔滨工业大学命题组",
+        "bbox": [
+            781,
+            913,
+            918,
+            941
+        ],
+        "page_idx": 43
+    },
+    {
+        "type": "text",
+        "text": "M - Je t'aime encore 蓝色结点形成一条链",
+        "text_level": 2,
+        "bbox": [
+            72,
+            121,
+            375,
+            250
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "权值为 $H$ 的内部结点只可能沿一个儿子继续保持权值 $H$ ，所以所有蓝点形成从根向下的一条链。",
+        "bbox": [
+            92,
+            356,
+            900,
+            447
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "用 $u$ 记录蓝点数：非末端蓝点贡献 $uzB_{H - 1}^2$ ，末端蓝点贡献 $uzB_{H - 1}E_{H - 1}^2$ 。于是",
+        "bbox": [
+            94,
+            450,
+            863,
+            505
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "equation",
+        "text": "$$\nF _ {H} (z, u) = \\frac {u z B _ {H - 1} (z) E _ {H - 1} (z) ^ {2}}{1 + u z B _ {H - 1} (z) ^ {2}}.\n$$",
+        "text_format": "latex",
+        "bbox": [
+            342,
+            541,
+            651,
+            643
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "提出最小结点数 $2^{H} - 1$ 后再处理额外的 $N$ 个结点。",
+        "bbox": [
+            94,
+            678,
+            589,
+            725
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            92,
+            129
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            847,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            75,
+            913,
+            209,
+            945
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "footer",
+        "text": "M - Je t'aime encore",
+        "bbox": [
+            432,
+            913,
+            562,
+            945
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "footer",
+        "text": "哈尔滨工业大学命题组",
+        "bbox": [
+            781,
+            913,
+            918,
+            941
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "M - Je t'aime encore 转成统一的系数提取",
+        "text_level": 2,
+        "bbox": [
+            72,
+            121,
+            375,
+            250
+        ],
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": "令 $D(z)=Q_{H-1}(z)$ 。化简得到",
+        "bbox": [
+            94,
+            317,
+            390,
+            368
+        ],
+        "page_idx": 45
+    },
+    {
+        "type": "equation",
+        "text": "$$\nG _ {H} (z, u) = \\frac {u}{D (z) ^ {3}} \\cdot \\frac {1}{1 + u R (z)}, \\qquad R (z) = \\frac {Q _ {H} (z) + D (z) ^ {2}}{D (z) ^ {2}}.\n$$",
+        "text_format": "latex",
+        "bbox": [
+            218,
+            403,
+            774,
+            505
+        ],
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": "所以恰有 $k$ 个蓝点的答案为",
+        "bbox": [
+            94,
+            541,
+            364,
+            588
+        ],
+        "page_idx": 45
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\boxed {\\operatorname{ans} _ {k} = \\left[ z ^ {N} \\right] D (z) ^ {- 3} R (z) ^ {k - 1}}.\n$$",
+        "text_format": "latex",
+        "bbox": [
+            364,
+            627,
+            631,
+            694
+        ],
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": "难点变成在特征2下批量处理复合与复合逆。",
+        "bbox": [
+            94,
+            737,
+            529,
+            784
+        ],
+        "page_idx": 45
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            92,
+            125
+        ],
+        "page_idx": 45
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            847,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 45
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            75,
+            913,
+            209,
+            941
+        ],
+        "page_idx": 45
+    },
+    {
+        "type": "footer",
+        "text": "M - Je t'aime encore",
+        "bbox": [
+            432,
+            917,
+            560,
+            945
+        ],
+        "page_idx": 45
+    },
+    {
+        "type": "footer",
+        "text": "哈尔滨工业大学命题组",
+        "bbox": [
+            783,
+            913,
+            918,
+            941
+        ],
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": "M - Je t'aime encore 利用特征 2 的特殊结构",
+        "text_level": 2,
+        "bbox": [
+            72,
+            121,
+            375,
+            250
+        ],
+        "page_idx": 46
+    },
+    {
+        "type": "text",
+        "text": "由 $B_{H}$ 的递推可得",
+        "bbox": [
+            94,
+            368,
+            275,
+            419
+        ],
+        "page_idx": 46
+    },
+    {
+        "type": "equation",
+        "text": "$$\nR (z) = z U (z), \\qquad U (z) = B _ {H - 1} (z) ^ {2}.\n$$",
+        "text_format": "latex",
+        "bbox": [
+            324,
+            419,
+            671,
+            470
+        ],
+        "page_idx": 46
+    },
+    {
+        "type": "text",
+        "text": "因此 $U(0)=1$ 且在 $F_{2}$ 中 $U'(z)=0$ 。令 $h=R^{(-1)}$ ，两次另类 Lagrange 反演可把答案转成",
+        "bbox": [
+            94,
+            486,
+            885,
+            580
+        ],
+        "page_idx": 46
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\mathrm{ans} _ {k} = [ z ^ {m} ] A (z) V (z) ^ {m}, \\qquad m = N - k + 1,\n$$",
+        "text_format": "latex",
+        "bbox": [
+            289,
+            584,
+            704,
+            635
+        ],
+        "page_idx": 46
+    },
+    {
+        "type": "text",
+        "text": "其中 A, V 都可由 D, U 通过多项式运算得到。",
+        "bbox": [
+            92,
+            650,
+            529,
+            701
+        ],
+        "page_idx": 46
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            92,
+            129
+        ],
+        "page_idx": 46
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            847,
+            39,
+            973,
+            98
+        ],
+        "page_idx": 46
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            75,
+            913,
+            209,
+            945
+        ],
+        "page_idx": 46
+    },
+    {
+        "type": "footer",
+        "text": "M - Je t'aime encore",
+        "bbox": [
+            432,
+            913,
+            562,
+            945
+        ],
+        "page_idx": 46
+    },
+    {
+        "type": "footer",
+        "text": "哈尔滨工业大学命题组",
+        "bbox": [
+            781,
+            913,
+            918,
+            941
+        ],
+        "page_idx": 46
+    },
+    {
+        "type": "text",
+        "text": "M - Je t'aime encore",
+        "text_level": 2,
+        "bbox": [
+            75,
+            121,
+            375,
+            176
+        ],
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "对角线系数递归",
+        "bbox": [
+            72,
+            196,
+            264,
+            250
+        ],
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "对",
+        "bbox": [
+            94,
+            294,
+            125,
+            337
+        ],
+        "page_idx": 47
+    },
+    {
+        "type": "equation",
+        "text": "$$\ns _ {n} = [ x ^ {n} ] A (x) V (x) ^ {n}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            403,
+            341,
+            593,
+            392
+        ],
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "定义偶、奇抽取算子",
+        "bbox": [
+            94,
+            411,
+            300,
+            454
+        ],
+        "page_idx": 47
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\Lambda_ {0} \\left(\\sum a _ {i} x ^ {i}\\right) = \\sum a _ {2 i} x ^ {i}, \\quad \\Lambda_ {1} \\left(\\sum a _ {i} x ^ {i}\\right) = \\sum a _ {2 i + 1} x ^ {i}.\n$$",
+        "text_format": "latex",
+        "bbox": [
+            220,
+            490,
+            772,
+            564
+        ],
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "利用 $V(x)^{2}=V(x^{2})$ :",
+        "bbox": [
+            94,
+            600,
+            295,
+            650
+        ],
+        "page_idx": 47
+    },
+    {
+        "type": "equation",
+        "text": "$$\ns _ {2 m} = [ x ^ {m} ] \\Lambda_ {0} (A) V ^ {m}, \\qquad s _ {2 m + 1} = [ x ^ {m} ] \\Lambda_ {1} (A V) V ^ {m}.\n$$",
+        "text_format": "latex",
+        "bbox": [
+            253,
+            690,
+            741,
+            741
+        ],
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "递归折半即可同时求出全部需要的系数。",
+        "bbox": [
+            94,
+            772,
+            485,
+            819
+        ],
+        "page_idx": 47
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            92,
+            125
+        ],
+        "page_idx": 47
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            847,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 47
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            72,
+            913,
+            209,
+            945
+        ],
+        "page_idx": 47
+    },
+    {
+        "type": "footer",
+        "text": "M - Je t'aime encore",
+        "bbox": [
+            432,
+            913,
+            560,
+            945
+        ],
+        "page_idx": 47
+    },
+    {
+        "type": "footer",
+        "text": "哈尔滨工业大学命题组",
+        "bbox": [
+            781,
+            913,
+            918,
+            941
+        ],
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "M - Je t'aime encore",
+        "text_level": 2,
+        "bbox": [
+            75,
+            121,
+            375,
+            176
+        ],
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "复杂度与关键恒等式",
+        "text_level": 2,
+        "bbox": [
+            72,
+            196,
+            317,
+            250
+        ],
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "■ 多项式乘法、求逆使用 NTT；每层规模折半。",
+        "bbox": [
+            112,
+            278,
+            622,
+            329
+        ],
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "■ 总复杂度 $\\mathcal{O}(M(N)\\log N)$ ，空间 $\\mathcal{O}(N)$ 。",
+        "bbox": [
+            112,
+            345,
+            551,
+            400
+        ],
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "■ 证明闭式时使用恒等式",
+        "bbox": [
+            112,
+            411,
+            392,
+            458
+        ],
+        "page_idx": 48
+    },
+    {
+        "type": "equation",
+        "text": "$$\nQ _ {h} = Q _ {h - 1} ^ {2} + z Q _ {h - 2} ^ {4},\n$$",
+        "text_format": "latex",
+        "bbox": [
+            412,
+            501,
+            631,
+            564
+        ],
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "它对应无相邻二进制位集合中“最低位不选/选”的分类。",
+        "bbox": [
+            143,
+            600,
+            721,
+            650
+        ],
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "■ 进一步可归纳出",
+        "text_level": 2,
+        "bbox": [
+            112,
+            666,
+            317,
+            713
+        ],
+        "page_idx": 48
+    },
+    {
+        "type": "equation",
+        "text": "$$\nQ _ {h - 1} ^ {3} + Q _ {h} Q _ {h - 2} ^ {2} = z ^ {2 ^ {h} - 1},\n$$",
+        "text_format": "latex",
+        "bbox": [
+            392,
+            713,
+            653,
+            776
+        ],
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "从而得到 $E_{h}$ 的闭式。",
+        "bbox": [
+            143,
+            796,
+            370,
+            847
+        ],
+        "page_idx": 48
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            92,
+            125
+        ],
+        "page_idx": 48
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            847,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 48
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            72,
+            913,
+            209,
+            941
+        ],
+        "page_idx": 48
+    },
+    {
+        "type": "footer",
+        "text": "M - Je t'aime encore",
+        "bbox": [
+            432,
+            913,
+            562,
+            945
+        ],
+        "page_idx": 48
+    },
+    {
+        "type": "footer",
+        "text": "哈尔滨工业大学命题组",
+        "bbox": [
+            781,
+            913,
+            918,
+            941
+        ],
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "Ñ - Welcome to HIT",
+        "text_level": 2,
+        "bbox": [
+            77,
+            121,
+            362,
+            176
+        ],
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "题目大意",
+        "text_level": 2,
+        "bbox": [
+            75,
+            196,
+            185,
+            247
+        ],
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "■ 清华大学的英文缩写是 THU，北京大学的英文缩写是 PKU。",
+        "bbox": [
+            112,
+            435,
+            754,
+            486
+        ],
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "■ 哈尔滨工业大学的英文名是 Harbin Institute of Technology。",
+        "bbox": [
+            114,
+            501,
+            788,
+            552
+        ],
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "■ 本题没有输入，输出其大写英文缩写。",
+        "bbox": [
+            114,
+            564,
+            547,
+            615
+        ],
+        "page_idx": 49
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            847,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 49
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            75,
+            917,
+            209,
+            941
+        ],
+        "page_idx": 49
+    },
+    {
+        "type": "footer",
+        "text": "N - Welcome to HIT",
+        "bbox": [
+            434,
+            917,
+            558,
+            945
+        ],
+        "page_idx": 49
+    },
+    {
+        "type": "footer",
+        "text": "哈尔滨工业大学命题组",
+        "bbox": [
+            783,
+            913,
+            918,
+            941
+        ],
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "N - Welcome to HIT 题解",
+        "text_level": 2,
+        "bbox": [
+            75,
+            121,
+            362,
+            250
+        ],
+        "page_idx": 50
+    },
+    {
+        "type": "text",
+        "text": "HIT",
+        "text_level": 2,
+        "bbox": [
+            439,
+            427,
+            556,
+            525
+        ],
+        "page_idx": 50
+    },
+    {
+        "type": "text",
+        "text": "时间复杂度 $\\mathcal{O}(1)$ ，空间复杂度 $\\mathcal{O}(1)$ 。",
+        "bbox": [
+            300,
+            639,
+            695,
+            694
+        ],
+        "page_idx": 50
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            847,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 50
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            75,
+            917,
+            209,
+            941
+        ],
+        "page_idx": 50
+    },
+    {
+        "type": "footer",
+        "text": "N - Welcome to HIT",
+        "bbox": [
+            434,
+            913,
+            558,
+            945
+        ],
+        "page_idx": 50
+    },
+    {
+        "type": "footer",
+        "text": "哈尔滨工业大学命题组",
+        "bbox": [
+            783,
+            913,
+            918,
+            941
+        ],
+        "page_idx": 50
+    },
+    {
+        "type": "text",
+        "text": "THANKS!",
+        "text_level": 2,
+        "bbox": [
+            311,
+            419,
+            644,
+            545
+        ],
+        "page_idx": 51
+    },
+    {
+        "type": "text",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            384,
+            572,
+            573,
+            603
+        ],
+        "page_idx": 51
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            55,
+            66,
+            200,
+            133
+        ],
+        "page_idx": 51
+    },
+    {
+        "type": "header",
+        "text": "牛客害期多校 训练营",
+        "bbox": [
+            761,
+            66,
+            960,
+            125
+        ],
+        "page_idx": 51
+    }
+]

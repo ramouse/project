@@ -1,0 +1,6927 @@
+[
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "2026 牛客暑期多校训练营 #8"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                218,
+                114,
+                769,
+                147
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "N 牛客竞赛 AC.NOWCODER.COM"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                240,
+                205,
+                751,
+                296
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "题目列表"
+                    }
+                ]
+            },
+            "bbox": [
+                431,
+                348,
+                556,
+                372
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "A 14 Minesweeper Variants B Deep Finesse C Fraction on a Ring D Sea, you & copriMe II E Prefix Codes F Tree Shifts Here G Multiplication H It’s Magic, Not a Trick! I Bridge VI J Oni’s Ring K Al Fine II L Shattered Minimum M KV Cache"
+                    }
+                ]
+            },
+            "bbox": [
+                357,
+                388,
+                631,
+                633
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "本试题册应包含 13 道题，共 28 个编号页。如果试题册不完整，请立即告知工作人员。"
+                    }
+                ]
+            },
+            "bbox": [
+                304,
+                781,
+                685,
+                829
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "2026 年 8 月 12 日"
+                    }
+                ]
+            },
+            "bbox": [
+                396,
+                868,
+                589,
+                889
+            ]
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/b62de0c3f9c07508634baf470ce1bba5db4e1c23338828969a55b0d5373a8a22.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                250,
+                219,
+                366,
+                303
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "承办方"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                421,
+                136,
+                566,
+                173
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "命题方"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                430,
+                412,
+                557,
+                445
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/ad44d5b89d7ff88b9c793dc79db0d2d5ff532fa12ae76b3f7c59813eb87c0383.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                342,
+                482,
+                645,
+                695
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Problem A. 14 Minesweeper Variants"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                78,
+                64,
+                581,
+                86
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Input file: standard input Output file: standard output Time limit: 2 seconds Memory limit: 1024 megabytes"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                96,
+                448,
+                161
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "银狼在执行星核猎手任务的间隙找到了一款新游戏可玩：14 Minesweeper Variants。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                173,
+                749,
+                189
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "自然而然地，她在完成教程之前就入侵了游戏。现在她拿到了内部关卡文件，其中包括每颗雷的确切位置。这本应让游戏变得轻而易举。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                193,
+                914,
+                227
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "不幸的是，她选择了专家模式。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                231,
+                327,
+                248
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "在专家模式中，知道一个格子安全还不够。每次点击之前，都必须仅根据一名诚实玩家当前可见的信息证明该格子安全。只根据被入侵后得到的雷区进行点击是不合法的。在令人尴尬地长时间毫无进展后，银狼决定采取合理的做法：编写一个程序，生成一套完整且合法的点击序列。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                253,
+                915,
+                303
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "给定一份被入侵后得到的棋盘内部描述。它包含真实的雷区，以及每个安全格在未来被点击后的行为："
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                307,
+                894,
+                325
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "• # 表示一颗雷。"
+                    }
+                ]
+            },
+            "bbox": [
+                97,
+                344,
+                243,
+                360
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "• O 表示一个已经打开的普通安全格。它显示其周围八个格子中的雷数。"
+                    }
+                ]
+            },
+            "bbox": [
+                97,
+                370,
+                682,
+                387
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "• Q 表示一个已经打开的安全格，但它显示 ? 而非数字。"
+                    }
+                ]
+            },
+            "bbox": [
+                97,
+                397,
+                561,
+                414
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "• . 表示一个未打开的安全格。点击它时，它会显示通常的相邻雷数，即其周围八个格子中的雷数总和。"
+                    }
+                ]
+            },
+            "bbox": [
+                97,
+                424,
+                914,
+                457
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "• ? 表示一个未打开的安全格。点击它时，它会显示 ?，且不给出任何数字线索。"
+                    }
+                ]
+            },
+            "bbox": [
+                97,
+                466,
+                757,
+                483
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "如果两个格子有公共边或公共角，则称它们相邻。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                502,
+                473,
+                519
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "雷的数量等于文件中 # 字符的数量，且从一开始便已知。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                524,
+                532,
+                541
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "该文件包含的信息多于一名诚实玩家能够看到的信息。特别地，所有未打开的 #、. 和 ? 格子在被点击之前看起来完全相同。文件中的符号可以用来模拟一次点击后实际会发生什么，但不能用来证明这次点击合法。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                545,
+                914,
+                595
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "在任意时刻，考虑所有满足以下条件的候选布雷方案："
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                600,
+                510,
+                615
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "1. 它恰好包含已知总数的雷。"
+                    }
+                ]
+            },
+            "bbox": [
+                95,
+                634,
+                336,
+                652
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "2. 每个当前已打开的格子都是安全格。"
+                    }
+                ]
+            },
+            "bbox": [
+                95,
+                663,
+                410,
+                678
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "3. 每条当前可见的数字线索，其相邻雷数都恰好等于该数字。"
+                    }
+                ]
+            },
+            "bbox": [
+                95,
+                689,
+                593,
+                705
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "一个已打开的 Q 或 ? 格子只会告诉玩家该格子安全；它不会对相邻格子施加任何限制。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                725,
+                779,
+                741
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "如果一个未打开的格子在任何候选布雷方案中都不是雷，则称它必定安全。你只能点击当前必定安全的格子。"
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                746,
+                914,
+                778
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "一次合法点击后，实际的关卡文件决定所显示的内容："
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                784,
+                509,
+                801
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "• 点击一个 . 会将其相邻雷数加入可见信息；"
+                    }
+                ]
+            },
+            "bbox": [
+                97,
+                820,
+                470,
+                837
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "• 点击一个 ? 只会揭示该格子是安全的，并显示 ?。"
+                    }
+                ]
+            },
+            "bbox": [
+                97,
+                847,
+                526,
+                864
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "你的目标是打开每个安全格。标记为 O 或 Q 的格子已经打开，不得出现在输出中。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                883,
+                741,
+                898
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "如果存在多套完整的合法顺序，输出任意一套。如果无法通过合法点击打开每个安全格，输出 −1。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                904,
+                870,
+                922
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "2026 牛客暑期多校训练营 #8ac.nowcoder.com, 2026 年 8 月 12 日"
+                    }
+                ]
+            },
+            "bbox": [
+                349,
+                26,
+                647,
+                58
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "Page 1 of 28"
+                    }
+                ]
+            },
+            "bbox": [
+                450,
+                953,
+                554,
+                969
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Input"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                73,
+                66,
+                139,
+                85
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "每个测试包含多组测试用例。第一行包含测试用例的数量 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "t ~ \\left( 1 \\leq t \\leq 1 0 \\right)"
+                    },
+                    {
+                        "type": "text",
+                        "content": "）。接下来是各测试用例的描述。每个测试用例的第一行包含两个整数 n 和 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "m \\ ( 1 \\leq n , m \\leq 6 )"
+                    },
+                    {
+                        "type": "text",
+                        "content": "”— 分别表示行数和列数。"
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                92,
+                907,
+                131
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "每个测试用例接下来的 n 行各包含一个长度为 m 的字符串，字符串仅由字符 #、O、Q、. 和 ? 组成。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                136,
+                902,
+                153
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Output"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                73,
+                162,
+                161,
+                181
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "对于每个测试用例，输出一个答案。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                189,
+                364,
+                206
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "如果不存在完整的合法序列，输出一个整数 −1。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                211,
+                468,
+                227
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "否则，先输出一个整数 k，随后输出 k 行。其中第 i 行包含两个整数 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "r _ { i }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "和 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "c _ { i }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "，表示第 i 个要点击的格子的行号和列号，二者均从 1 开始编号。可能有 k = 0。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                233,
+                914,
+                267
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Example"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                75,
+                275,
+                174,
+                294
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/efa8bcfdc20a4658fcfc001e97b6d5eac00b6b95ec18e1d9c0af54bafcb3377e.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td>standard input</td><td>standard output</td></tr><tr><td>4</td><td>1</td></tr><tr><td>1 3</td><td>1 2</td></tr><tr><td>0.#</td><td>-1</td></tr><tr><td>1 3</td><td>1</td></tr><tr><td>Q.#</td><td>1 2</td></tr><tr><td>1 3</td><td>11</td></tr><tr><td>O?#</td><td>3 4</td></tr><tr><td>5 5</td><td>3 5</td></tr><tr><td>###O#</td><td>3 3</td></tr><tr><td>Q. # ?O</td><td>4 3</td></tr><tr><td>? . . .</td><td>2 2</td></tr><tr><td># . . ##</td><td>2 4</td></tr><tr><td>.Q##?</td><td>3 2</td></tr><tr><td></td><td>4 2</td></tr><tr><td></td><td>5 1</td></tr><tr><td></td><td>3 1</td></tr><tr><td></td><td>5 5</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                75,
+                302,
+                836,
+                601
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Note"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                73,
+                613,
+                137,
+                630
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "在第一个测试用例中，已打开的普通格显示 0，因此格子 (1,2) 必定安全。"
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                639,
+                670,
+                657
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "在第二个测试用例中，Q 不提供任何数字线索。棋盘上有一颗雷，而两个未打开的格子都有可能包含它，因此没有可进行的合法点击。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                662,
+                915,
+                695
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "在第三个测试用例中，已打开的普通格再次证明格子 (1,2) 安全。点击它会显示 ?，但这足以完成目标，因为此时每个安全格都已打开。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                699,
+                915,
+                733
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "本题几乎每个测试用例都来自 14 Minesweeper Variants 中的真实关卡。因此，如果这场比赛开始令您坐牢，你不妨先花一点钱购买游戏，通关相关关卡，然后把所有答案硬编码进去。"
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                736,
+                915,
+                770
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "2026 牛客暑期多校训练营 #8ac.nowcoder.com, 2026 年 8 月 12 日"
+                    }
+                ]
+            },
+            "bbox": [
+                347,
+                26,
+                647,
+                58
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "Page 2 of 28"
+                    }
+                ]
+            },
+            "bbox": [
+                450,
+                953,
+                554,
+                969
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Problem B. Deep Finesse"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                80,
+                64,
+                423,
+                85
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Input file: standard input Output file: standard output Time limit: 2 seconds Memory limit: 1024 megabytes"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                96,
+                448,
+                160
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "汐与风子在一个浩瀚的数字宇宙中展开了一场智力对决：这个宇宙包含从 1 到 10<sup>100</sup> 的所有整数。对决开始时，汐从中精心选择恰好 个互不相同的数字；其余所有数字都归风子所有。接下来的 轮中，两人逐一亮出自己选择的数字。每一轮都由风子先手，她从自己庞大的数字集合中亮出一个数字，汐必须立即用一个自己尚未打出的数字回应。这里有一条危险的规则：如果风子的数字严格小于汐回应的数字，风子就会立刻获胜。只有当汐的数字小于或等于风子的数字时，这一轮才能安全度过 — 两个数字都被丢弃，游戏继续。要赢得对决，汐必须撑过全部 n 轮，且风子打出的数字绝不能小于汐回应的数字。"
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                172,
+                915,
+                269
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "更糟的是，在游戏开始前，风子还施加了额外的限制。她交给汐一个包含 m 个指定数字的集合，并宣布汐的初始手牌必须包含其中每一个数字。汐开始思考自己的胜算：在所有大小为 n 且包含这 m 个指定数字的手牌中，有多少副能够保证她拥有必胜策略，无论风子如何巧妙地选择出牌？答案可能大得惊人，因此她请你计算答案对 998244353 取模后的结果。"
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                274,
+                915,
+                340
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Input"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                73,
+                350,
+                139,
+                369
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "每个测试包含多组测试用例。第一行包含测试用例的数量 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "t ~ \\left( 1 \\leq t \\leq 1 0 0 0 \\right)"
+                    },
+                    {
+                        "type": "text",
+                        "content": "）。接下来是各测试用例的描述。"
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                376,
+                914,
+                409
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "每个测试用例的第一行包含两个整数 n 和 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "m \\ ( 1 \\leq m \\leq n \\leq 5 0 0 0 )"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                414,
+                618,
+                430
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "每个测试用例的第二行包含 m 个整数 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "a _ { 1 } , a _ { 2 } , . . . , a _ { m } \\ ( 1 \\leq a _ { i } \\leq 1 0 ^ { 9 } )"
+                    },
+                    {
+                        "type": "text",
+                        "content": "）”— 汐的手牌中必须包含的指定数字。保证 a 中没有重复元素。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                436,
+                914,
+                468
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "保证所有测试用例的 n 之和不超过 5000。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                474,
+                411,
+                489
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Output"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                73,
+                501,
+                159,
+                520
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "对于每个测试用例，输出一个整数”— 能够保证汐拥有必胜策略的初始手牌数量对 998244353 取模后的结果。"
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                527,
+                914,
+                560
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Example"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                75,
+                571,
+                174,
+                590
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/cbce57b6d22b0f74f04ccc06fdab92fd0127e7dbb230519b38dcfa0c557eee6a.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td>standard input</td><td>standard output</td></tr><tr><td>3</td><td>0</td></tr><tr><td>1 1</td><td>1</td></tr><tr><td>2</td><td>34</td></tr><tr><td>2 1</td><td></td></tr><tr><td>2</td><td></td></tr><tr><td>6 3</td><td></td></tr><tr><td>1 4 5</td><td></td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                75,
+                596,
+                836,
+                734
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Note"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                75,
+                747,
+                136,
+                764
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "在第一个测试用例中，汐的手牌固定为 {2}。如果风子打出 1，汐必须用 2 回应；由于 1 < 2，风子立即获胜。因此，答案为 0。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                772,
+                912,
+                807
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "在第二个测试用例中，要保证获胜，汐的手牌必须为 {1,2}。因此答案为 1。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                810,
+                687,
+                828
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "2026 牛客暑期多校训练营 #8ac.nowcoder.com, 2026 年 8 月 12 日"
+                    }
+                ]
+            },
+            "bbox": [
+                349,
+                26,
+                645,
+                58
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "Page 3 of 28"
+                    }
+                ]
+            },
+            "bbox": [
+                450,
+                953,
+                554,
+                967
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This page is intentionally left blank."
+                    }
+                ]
+            },
+            "bbox": [
+                280,
+                501,
+                705,
+                526
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "2026 牛客暑期多校训练营 #8ac.nowcoder.com, 2026 年 8 月 12 日"
+                    }
+                ]
+            },
+            "bbox": [
+                347,
+                26,
+                648,
+                59
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "Page 4 of 28"
+                    }
+                ]
+            },
+            "bbox": [
+                450,
+                952,
+                554,
+                969
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Problem C. Fraction on a Ring"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                80,
+                64,
+                495,
+                87
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Input file: standard input Output file: standard output Time limit: 3 seconds Memory limit: 1024 megabytes"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                96,
+                450,
+                162
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/ff5a02e61a4c7c650e8819e6240443108ba8996baa3bdcb8b042511843ae9eb3.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                324,
+                187,
+                663,
+                419
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "就在大豆敲下聊天记录中的最后一句话时，一个念头突然击中了他：模质数 P 的每个剩余类在 [0,P) 中都有唯一的整数代表元；将这个代表元除以 P，便得到一个位于 [0,1) 中的数，因而可以将它视作概率。于是，分数 <sup>a</sup> 也有了一个奇特的模意义下的对应物： "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\frac { a b ^ { - 1 } { \\bmod { P } } } { P }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "。大豆随即好奇，在多少种情况下，原分数会大于这个 “概率”？"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                443,
+                915,
+                508
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "给定一个整数 n 和一个质数 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "P _ { \\circ }"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                514,
+                332,
+                530
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "求满足下列条件的不同整数对 (a,b) 的数量："
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                536,
+                433,
+                552
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "1. "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "1 \\leq a < b \\leq n ;"
+                    }
+                ]
+            },
+            "bbox": [
+                95,
+                571,
+                245,
+                589
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "2. \\frac {a}{b} > \\frac {a b ^ {- 1} \\bmod P}{P} 。",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/0d0c8c7dd5dda7120df6de70546de0a2679f4ca1cf5276a9720e2415f687338d.jpg"
+                }
+            },
+            "bbox": [
+                95,
+                596,
+                272,
+                629
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "由于答案可能十分巨大，请将其对 998244353 取模后输出。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                645,
+                549,
+                663
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Input"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                73,
+                673,
+                139,
+                692
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "每个测试包含多组测试用例。第一行包含测试用例的数量 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "t ~ \\left( 1 \\leq t \\leq 1 0 0 \\right)"
+                    },
+                    {
+                        "type": "text",
+                        "content": "）。接下来是各测试用例的描述。每个测试用例仅有一行，包含两个整数 n 和 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "P ~ ( 2 \\leq n < P \\leq 1 0 ^ { 1 8 }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "，P 是质数）。"
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                699,
+                915,
+                739
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Output"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                73,
+                747,
+                161,
+                766
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "对于每个测试用例，输出一个整数”— 满足条件的整数对数量对 998244353 取模后的结果。"
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                775,
+                803,
+                791
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Example"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                75,
+                802,
+                174,
+                821
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/ef8509561699e0017266c0e5de383cdd480b4cdbc32f12afd40005045388a3d5.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td>standard input</td><td>standard output</td></tr><tr><td>3</td><td>1</td></tr><tr><td>4 5</td><td>932</td></tr><tr><td>64 97</td><td>782525253</td></tr><tr><td>998244353 1000000007</td><td></td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                75,
+                828,
+                836,
+                917
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "2026 牛客暑期多校训练营 #8ac.nowcoder.com, 2026 年 8 月 12 日"
+                    }
+                ]
+            },
+            "bbox": [
+                349,
+                26,
+                647,
+                58
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "Page 5 of 28"
+                    }
+                ]
+            },
+            "bbox": [
+                450,
+                953,
+                554,
+                969
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Note"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                75,
+                66,
+                136,
+                83
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "在第一个测试用例中，所有可能的数对如下表所示。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                92,
+                490,
+                109
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/57fdc0d5405876d51d01f51b509e0592a01e3ff03d402c91ad1358b6704d7a40.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td>a/b</td><td></td><td>X/P</td></tr><tr><td>1/2</td><td>&lt;</td><td>3/5</td></tr><tr><td>1/3</td><td>&lt;</td><td>2/5</td></tr><tr><td>1/4</td><td>&lt;</td><td>4/5</td></tr><tr><td>2/3</td><td>&lt;</td><td>4/5</td></tr><tr><td>2/4</td><td>&lt;</td><td>3/5</td></tr><tr><td>3/4</td><td>&gt;</td><td>2/5</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                423,
+                126,
+                566,
+                241
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "2026 牛客暑期多校训练营 #8ac.nowcoder.com, 2026 年 8 月 12 日"
+                    }
+                ]
+            },
+            "bbox": [
+                349,
+                26,
+                647,
+                58
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "Page 6 of 28"
+                    }
+                ]
+            },
+            "bbox": [
+                450,
+                953,
+                554,
+                969
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Problem D. Sea, you & copriMe II"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                78,
+                64,
+                546,
+                87
+            ]
+        },
+        {
+            "type": "code",
+            "content": {
+                "code_caption": [],
+                "code_content": [
+                    {
+                        "type": "text",
+                        "content": "Input file: standard input\nOutput file: standard output\nTime limit: 3 seconds\nMemory limit: 1024 megabytes"
+                    }
+                ],
+                "code_language": "txt"
+            },
+            "bbox": [
+                112,
+                96,
+                448,
+                161
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "给定一个整数数组 a，其长度为 n。定义 f(l, r) 如下："
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                173,
+                510,
+                190
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "f (l, r) = \\left\\{ \\begin{array}{l l} 1 & \\exists p, q, s, t \\in \\{l, l + 1,..., r \\}: \\\\ & | \\{p, q, s, t \\} | = 4, \\quad \\operatorname * {g c d} (a _ {p}, a _ {q}) = \\operatorname * {g c d} (a _ {s}, a _ {t}) = 1 \\\\ 0 & \\text {否则}. \\end{array} \\right.",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/78dbe3bb3af1bc66a210aa87bda7c89d08c012bcf82ffded5d2c3ceed36c1564.jpg"
+                }
+            },
+            "bbox": [
+                300,
+                205,
+                682,
+                256
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "换言之， "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "f ( l , r ) ~ = ~ 1"
+                    },
+                    {
+                        "type": "text",
+                        "content": "当且仅当存在四个互不相同的下标 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "p , q , s , t ,"
+                    },
+                    {
+                        "type": "text",
+                        "content": "，满足 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "l ~ \\leq ~ p , q , s , t ~ \\leq ~ r"
+                    },
+                    {
+                        "type": "text",
+                        "content": "且 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\operatorname* { g c d } ( a _ { p } , a _ { q } ) = \\operatorname* { g c d } ( a _ { s } , a _ { t } ) = 1"
+                    },
+                    {
+                        "type": "text",
+                        "content": "0"
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                267,
+                912,
+                302
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "给定 q 次询问。每次询问包含一个区间 [l,r]，你需要计算："
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                305,
+                552,
+                323
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\sum_ {i = l} ^ {r} \\sum_ {j = i} ^ {r} f (i, j).",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/3f22ed27da2ff4cd33bd84d0c35420a8ca0f01b6172e5ab3c6435d1179b145d8.jpg"
+                }
+            },
+            "bbox": [
+                431,
+                338,
+                552,
+                382
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Input"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                73,
+                397,
+                139,
+                416
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "每个测试的第一行包含两个整数 n 和 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "q ~ ( 1 \\leq n , q \\leq 5 \\cdot 1 0 ^ { 5 } ) \\phantom { } _ { \\mathrm { { } } }"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                423,
+                564,
+                439
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "每个测试的第二行包含 n 个整数 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "a _ { 1 } , a _ { 2 } , . . . , a _ { n } \\ ( 1 \\leq a _ { i } \\leq 1 0 ^ { 6 } )"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                445,
+                588,
+                462
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "每个测试接下来的 q 行各包含两个整数 l 和 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "r ~ \\left( 1 \\leq l \\leq r \\leq n \\right)"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                467,
+                588,
+                483
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Output"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                73,
+                494,
+                159,
+                513
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "对于每次询问，输出一个整数”— 该询问的答案。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                521,
+                470,
+                538
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Example"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                75,
+                548,
+                174,
+                567
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/008c91628295438aa4cd823b001872e14a72421e459f648c208438b25fd3c03e.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td>standard input</td><td>standard output</td></tr><tr><td>8 6</td><td>0</td></tr><tr><td>6 10 15 7 14 21 35 11</td><td>2</td></tr><tr><td>1 4</td><td>2</td></tr><tr><td>1 5</td><td>5</td></tr><tr><td>2 6</td><td>1</td></tr><tr><td>2 8</td><td>9</td></tr><tr><td>3 8</td><td></td></tr><tr><td>1 8</td><td></td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                75,
+                573,
+                836,
+                727
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "2026 牛客暑期多校训练营 #8ac.nowcoder.com, 2026 年 8 月 12 日"
+                    }
+                ]
+            },
+            "bbox": [
+                349,
+                26,
+                647,
+                58
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "Page 7 of 28"
+                    }
+                ]
+            },
+            "bbox": [
+                450,
+                953,
+                554,
+                969
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This page is intentionally left blank."
+                    }
+                ]
+            },
+            "bbox": [
+                280,
+                501,
+                705,
+                526
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "2026 牛客暑期多校训练营 #8ac.nowcoder.com, 2026 年 8 月 12 日"
+                    }
+                ]
+            },
+            "bbox": [
+                347,
+                26,
+                648,
+                59
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "Page 8 of 28"
+                    }
+                ]
+            },
+            "bbox": [
+                450,
+                952,
+                554,
+                969
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Problem E. Prefix Codes"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                80,
+                64,
+                415,
+                85
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Input file: standard input Output file: standard output Time limit: 2 seconds Memory limit: 1024 megabytes"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                92,
+                448,
+                156
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "在本题中，码字指一个非空字符串，而 码本指一个由互不相同的码字组成的非空集合。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                168,
+                773,
+                185
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "如果对于码本中任意两个不同的码字都满足以下条件，则称该码本为 前缀码：设这两个码字为 x 和 y，x不是 y 的前缀，且 y 也不是 x 的前缀。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                190,
+                915,
+                223
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "大豆得到了两个非空字符串 s 和 p。大豆想要构造一个以 s 的子串作为码字的前缀码。不过，大豆不希望任何码字中出现 p。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                228,
+                912,
+                261
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "更形式化地，如果字符串 x 满足以下全部条件，则称其为一个 候选码字："
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                266,
+                667,
+                282
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "• x 非空；"
+                    }
+                ]
+            },
+            "bbox": [
+                97,
+                298,
+                186,
+                313
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "• x 是 s 的子串；"
+                    }
+                ]
+            },
+            "bbox": [
+                99,
+                325,
+                243,
+                341
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "• p 不是 x 的子串。"
+                    }
+                ]
+            },
+            "bbox": [
+                97,
+                351,
+                263,
+                368
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "子串仅根据其内容区分。如果同一个字符串在 s 的多个位置出现，它仍然只会被视为一个候选码字。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                384,
+                878,
+                400
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "一个 合法码本是完全由候选码字组成的前缀码。换言之，它是一个由候选码字组成的非空集合 C，且对于任意两个不同的字符串 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "x , y \\in C"
+                    },
+                    {
+                        "type": "text",
+                        "content": "，其中任一字符串都不是另一个的前缀。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                406,
+                914,
+                438
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "如果一个合法码本中存在一个另一个合法码本不含的码字，则认为二者不同。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                443,
+                694,
+                460
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "求大豆能够构造的不同合法码本的数量。由于答案可能很大，请输出其对 998244353 取模的结果。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                464,
+                862,
+                482
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Input"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                73,
+                493,
+                139,
+                511
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "每个测试的第一行包含一个字符串 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "s ~ \\left( 1 \\leq | s | \\leq 5 \\cdot 1 0 ^ { 5 } \\right)"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                519,
+                529,
+                536
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "每个测试的第二行包含一个字符串 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "p \\ ( 1 \\leq | p | \\leq 5 \\cdot 1 0 ^ { 5 } )"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                541,
+                531,
+                558
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "保证两个字符串均仅由小写拉丁字母组成。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                562,
+                418,
+                579
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Output"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                75,
+                590,
+                159,
+                609
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "输出一个整数”— 不同合法码本的数量对 998244353 取模的结果。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                615,
+                601,
+                633
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Example"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                75,
+                644,
+                174,
+                662
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/987ae6de8b3d06a7b80a1d7c70b890fb66b654d3801e093f4d89884860ae5022.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td>standard input</td><td>standard output</td></tr><tr><td>aba</td><td>5</td></tr><tr><td>ba</td><td></td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                75,
+                670,
+                836,
+                726
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Note"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                75,
+                739,
+                136,
+                756
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "在样例中，合法码本为：{a}、{b}、{ab}、{a, b} 和 {b, ab}。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                766,
+                581,
+                783
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "2026 牛客暑期多校训练营 #8ac.nowcoder.com, 2026 年 8 月 12 日"
+                    }
+                ]
+            },
+            "bbox": [
+                349,
+                26,
+                645,
+                58
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "Page 9 of 28"
+                    }
+                ]
+            },
+            "bbox": [
+                450,
+                953,
+                554,
+                967
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This page is intentionally left blank."
+                    }
+                ]
+            },
+            "bbox": [
+                280,
+                501,
+                705,
+                526
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "2026 牛客暑期多校训练营 #8ac.nowcoder.com, 2026 年 8 月 12 日"
+                    }
+                ]
+            },
+            "bbox": [
+                347,
+                26,
+                648,
+                59
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "Page 10 of 28"
+                    }
+                ]
+            },
+            "bbox": [
+                445,
+                952,
+                559,
+                969
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Problem F. Tree Shifts Here"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                80,
+                64,
+                463,
+                85
+            ]
+        },
+        {
+            "type": "code",
+            "content": {
+                "code_caption": [],
+                "code_content": [
+                    {
+                        "type": "text",
+                        "content": "Input file: standard input\nOutput file: standard output\nTime limit: 4 seconds\nMemory limit: 1024 megabytes"
+                    }
+                ],
+                "code_language": "txt"
+            },
+            "bbox": [
+                112,
+                92,
+                448,
+                156
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "在月球上，篝将时间花在研究数之不尽的可能性上。她用一种极度压缩的语言解释自己的发现：寥寥数语就可能包含足以让普通人的大脑不堪重负的信息。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                168,
+                914,
+                202
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "瑚太朗不愿认输，不断用自己的改写能力加速思考，以跟上她的讲解。这样的尝试已多次以惨痛结果告终，于是篝决定，在进一步告诉他任何事情之前，先测试他的反应速度。自然，简化自己的语言从不在她考虑的选项之中。"
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                206,
+                914,
+                256
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "在这项挑战中，篝使用了一棵有 n 个顶点的世界树，顶点编号从 1 到 n。这棵树是无向且无权的。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                260,
+                865,
+                277
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "每次询问由两个顶点 u 和 v 描述。篝会暂时删除从 u 到 v 的唯一简单路径上的每一条边。世界树随之变成一片由若干连通分量组成的森林。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                282,
+                912,
+                315
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "一个连通分量的 直径是其中任意两个顶点间距离的最大值，距离以二者路径上的边数衡量。特别地，只含一个顶点的连通分量的直径为 0。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                319,
+                912,
+                353
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "对于每次询问，瑚太朗必须求出所得所有连通分量的直径之和。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                357,
+                584,
+                374
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "各次询问彼此 独立。每次询问结束后，所有被删除的边都会在下一次询问开始前恢复。如果 u = v，路径上不含任何边，因此世界树不会发生变化。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                380,
+                914,
+                412
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Input"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                73,
+                424,
+                139,
+                442
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "每个测试的第一行包含两个整数 n 和 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "q ~ ( 1 \\leq n , q \\leq 2 \\cdot 1 0 ^ { 5 } )"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                450,
+                561,
+                466
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "接下来的 n−1 行描述 n−1 条边。第 i 行包含两个整数 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "a _ { i }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "和 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "b _ { i } ~ ( 1 \\leq a _ { i } , b _ { i } \\leq n )"
+                    },
+                    {
+                        "type": "text",
+                        "content": "），表示顶点 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "a _ { i }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "和 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "b _ { i }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "之间的一条无向边。保证这些边构成一棵树。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                470,
+                912,
+                502
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "接下来的 q 行描述 q 次询问。第 i 行包含两个整数 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "u _ { i }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "和 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "v _ { i } ~ \\left( 1 \\leq u _ { i } , v _ { i } \\leq n \\right)"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                508,
+                700,
+                526
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Output"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                75,
+                537,
+                159,
+                555
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "对于每次询问，输出一个整数，表示删除对应边后所得所有连通分量的直径之和。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                563,
+                729,
+                580
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Example"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                75,
+                590,
+                174,
+                609
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/76bf00ace4652922b73e35b8e6ec14bead13e8853f1cf84b51212c72bc2117cd.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td>standard input</td><td>standard output</td></tr><tr><td>7 5</td><td>2</td></tr><tr><td>1 2</td><td>3</td></tr><tr><td>2 3</td><td>4</td></tr><tr><td>3 4</td><td>4</td></tr><tr><td>3 5</td><td>2</td></tr><tr><td>5 6</td><td></td></tr><tr><td>5 7</td><td></td></tr><tr><td>1 4</td><td></td></tr><tr><td>6 7</td><td></td></tr><tr><td>3 3</td><td></td></tr><tr><td>2 5</td><td></td></tr><tr><td>1 7</td><td></td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                75,
+                615,
+                835,
+                834
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Note"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                75,
+                846,
+                134,
+                863
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "样例的解释如下。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                873,
+                216,
+                889
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "2026 牛客暑期多校训练营 #8ac.nowcoder.com, 2026 年 8 月 12 日"
+                    }
+                ]
+            },
+            "bbox": [
+                349,
+                26,
+                645,
+                58
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "Page 11 of 28"
+                    }
+                ]
+            },
+            "bbox": [
+                445,
+                953,
+                557,
+                967
+            ]
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/e84b17822ab736ce11096de9c4818ec56043d501fb83f8b7bb22f29562c47c13.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                78,
+                77,
+                914,
+                877
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "2026 牛客暑期多校训练营 #8ac.nowcoder.com, 2026 年 8 月 12 日"
+                    }
+                ]
+            },
+            "bbox": [
+                347,
+                26,
+                648,
+                59
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "Page 12 of 28"
+                    }
+                ]
+            },
+            "bbox": [
+                445,
+                953,
+                559,
+                969
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Problem G. Multiplication"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                78,
+                64,
+                431,
+                86
+            ]
+        },
+        {
+            "type": "code",
+            "content": {
+                "code_caption": [],
+                "code_content": [
+                    {
+                        "type": "text",
+                        "content": "Input file: standard input\nOutput file: standard output\nTime limit: 1 second\nMemory limit: 1024 megabytes"
+                    }
+                ],
+                "code_language": "txt"
+            },
+            "bbox": [
+                112,
+                96,
+                448,
+                160
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "在名为马苏里拉的魔法国度中，一场召唤仪式出了灾难性的岔子。布劳尼本想让传说中的魔法师加莱特完整现身，结果具现化的却只有她的头。漂浮的头毫不在意地宣告：“只要一颗头就够了！我会证明，单凭我的头脑就能胜过你们的身体。”"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                172,
+                914,
+                221
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "为了展示自己的才智，加莱特大胆断言："
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                225,
+                400,
+                242
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "“任取两个正整数。只要告诉我其中一个数的前 a 位和另一个数的前 b 位，我便能准确无误地确定它们乘积的前 c 位！那些看不见的低位，就像身体之于天才一样无关紧要。”"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                248,
+                914,
+                280
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "学院中最敏锐的数学家奥兰杰特立即察觉了漏洞。但仅仅指出谬误还不够。加莱特要求她给出具体反例：“既然你如此聪明，就找出两对不同的数，让它们的高位部分分别相同，乘积的高位部分却不同！”"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                285,
+                915,
+                318
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "奥兰杰特一时难以构造出这样的例子，于是她现在向你求助。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                323,
+                566,
+                338
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "形式化地说，给定三个正整数 a、b 和 c。请构造两对正整数 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "( x _ { 1 } , y _ { 1 } )"
+                    },
+                    {
+                        "type": "text",
+                        "content": "和 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "( x _ { 2 } , y _ { 2 } )"
+                    },
+                    {
+                        "type": "text",
+                        "content": "，满足以下性质："
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                344,
+                850,
+                362
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "• 在通常的十进制表示法（无前导零）中， "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "x _ { 1 }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "和 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "x _ { 2 }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "均至少有 a 位，且二者的前 a 位相同。"
+                    }
+                ]
+            },
+            "bbox": [
+                97,
+                381,
+                838,
+                397
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "• 同样地，y 和 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "y _ { 2 }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "均至少有 b 位，且二者的前 b 位相同。"
+                    }
+                ]
+            },
+            "bbox": [
+                97,
+                407,
+                576,
+                424
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "• 乘积 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "x _ { 1 } \\cdot y _ { 1 }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "和 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "x _ { 2 } \\cdot y _ { 2 }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "均至少有 c 位，但二者的前 c 位不同。"
+                    }
+                ]
+            },
+            "bbox": [
+                97,
+                435,
+                608,
+                451
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Input"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                73,
+                473,
+                139,
+                491
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "每个测试仅有一行，包含三个整数 a、b 和 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "c \\ ( 1 \\leq a , b \\leq 1 0 ^ { 5 } , \\ 1 \\leq c < a + b - 1 )"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                499,
+                737,
+                514
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Output"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                73,
+                527,
+                159,
+                545
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "输出四个满足要求的整数 x 、y 、x 和 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "y _ { 2 } ~ ( 1 0 ^ { a - 1 } \\leq x _ { 1 } , x _ { 2 } < 1 0 ^ { 5 \\cdot 1 0 ^ { 5 } } , ~ 1 0 ^ { b - 1 } \\leq y _ { 1 } , y _ { 2 } < 1 0 ^ { 5 \\cdot 1 0 ^ { 5 } }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "）。这些整数均不能有前导零。可以证明，在给定限制下答案总是存在。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                552,
+                914,
+                586
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Example"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                75,
+                596,
+                174,
+                615
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/26505c4c76d0ca26a90005ab1079ee1299e52748777aaff2d426aedca972068b.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td>standard input</td><td>standard output</td></tr><tr><td>2 2 2</td><td>1704 1313 1789 1346</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                75,
+                621,
+                836,
+                663
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Note"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                75,
+                675,
+                136,
+                693
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "第一个乘积的前 2 位可由 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "1 7 0 4 \\times 1 3 1 3 = 2 2 3 7 3 5 2"
+                    },
+                    {
+                        "type": "text",
+                        "content": "给出，是 22。第二个乘积的前 2 位可由"
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "1 7 8 9 \\times 1 3 4 6 = 2 4 0 7 9 9 4"
+                    },
+                    {
+                        "type": "text",
+                        "content": "给出，是 24。因此，这是一组合法的构造。"
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                702,
+                912,
+                734
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "2026 牛客暑期多校训练营 #8ac.nowcoder.com, 2026 年 8 月 12 日"
+                    }
+                ]
+            },
+            "bbox": [
+                349,
+                26,
+                645,
+                58
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "Page 13 of 28"
+                    }
+                ]
+            },
+            "bbox": [
+                445,
+                953,
+                557,
+                967
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This page is intentionally left blank."
+                    }
+                ]
+            },
+            "bbox": [
+                280,
+                501,
+                705,
+                526
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "2026 牛客暑期多校训练营 #8ac.nowcoder.com, 2026 年 8 月 12 日"
+                    }
+                ]
+            },
+            "bbox": [
+                347,
+                26,
+                648,
+                59
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "Page 14 of 28"
+                    }
+                ]
+            },
+            "bbox": [
+                445,
+                952,
+                559,
+                969
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Problem H. It’s Magic, Not a Trick!"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                80,
+                63,
+                566,
+                86
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Input file: standard input Output file: standard output Time limit: 2 seconds Memory limit: 1024 megabytes"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                96,
+                448,
+                161
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "嗯啊……真是麻烦，不过真正的魔法师绝不会放弃。"
+                    }
+                ]
+            },
+            "bbox": [
+                573,
+                193,
+                905,
+                225
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "自称” 超高校级的魔法师” 的梦野秘密子将 n 张魔法符咒在自己面前排成一列。第 i 张符咒最初拥有 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "a _ { i }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "单位魔法能量，且每个 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "a _ { i }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "都是正整数。最近，她一直在研究一本尘封的古老魔法书，并从中解读出一种以极其特殊的方式操纵能量的奇妙魔法。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                263,
+                914,
+                313
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "每施放一次魔法，她都必须严格按顺序执行以下两个步骤："
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                318,
+                547,
+                335
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "1. 灌注：她选择任意一张符咒，将自身恰好 1 单位的能量注入其中，使这张符咒的能量增加 1。"
+                    }
+                ]
+            },
+            "bbox": [
+                95,
+                348,
+                868,
+                366
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "2. 释放：她选择任意一张在灌注后拥有至少 x 单位能量的符咒，随即引发一次绚烂的爆发，恰好消耗这张符咒的 x 单位能量，使其能量减少 x。两个步骤中可以选择同一张符咒，也可以选择不同的符咒；在这一点上，魔法相当灵活。"
+                    }
+                ]
+            },
+            "bbox": [
+                94,
+                373,
+                914,
+                423
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "然而，还有一项关键限制：如果灌注后没有任何符咒拥有至少 x 单位能量，就无法执行释放。在这种情况下，整个魔法会施放失败，什么也不会发生，她试图灌注的那张符咒的能量也保持不变。"
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                435,
+                914,
+                469
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "秘密子可以施放任意多次魔法，前提是每次施法均成功，且所有符咒的能量始终非负。她想知道这门技艺的极限：通过在每次施法时选择灌注和释放的对象，所有符咒剩余能量之和最小可以是多少？她宁愿打个盹也不想亲自计算，于是向身为可靠助手的你求助。由于答案可能很大，你只需输出其对 998244353取模的结果。"
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                473,
+                915,
+                539
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Input"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                73,
+                548,
+                139,
+                565
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "每个测试包含多组测试用例。第一行包含测试用例的数量 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "t ~ \\left( 1 \\leq t \\leq 1 0 ^ { 4 } \\right)"
+                    },
+                    {
+                        "type": "text",
+                        "content": "）。接下来是各测试用例的描述。每个测试用例的第一行包含两个整数 n 和 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "x ~ \\left( 1 \\leq n \\leq 2 \\cdot 1 0 ^ { 5 } , ~ 1 \\leq x \\leq 1 0 ^ { 9 } \\right)"
+                    },
+                    {
+                        "type": "text",
+                        "content": "。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                571,
+                915,
+                611
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "每个测试用例的第二行包含 n 个整数 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "a _ { 1 } , a _ { 2 } , \\ldots , a _ { n } \\ ( 1 \\leq a _ { i } \\leq 1 0 ^ { 1 8 } )"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                615,
+                630,
+                633
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "保证所有测试用例的 n 之和不超过 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "2 \\cdot 1 0 ^ { 5 }"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                638,
+                423,
+                653
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Output"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                73,
+                663,
+                161,
+                682
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "对于每个测试用例，输出一个整数”— 所有符咒的剩余能量之和的最小值对 998244353 取模的结果。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                688,
+                875,
+                706
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Example"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                75,
+                714,
+                174,
+                733
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/68f6d5d6f7b220defa8cd1aad7a1a235bbf3f1aaca8f99530ea5f41341adef89.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td>standard input</td><td>standard output</td></tr><tr><td>3</td><td>3</td></tr><tr><td>3 3</td><td>0</td></tr><tr><td>1 1 1</td><td>6</td></tr><tr><td>1 4</td><td></td></tr><tr><td>3</td><td></td></tr><tr><td>4 10</td><td></td></tr><tr><td>30 8 7 6</td><td></td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                75,
+                739,
+                836,
+                876
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Note"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                75,
+                887,
+                136,
+                904
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "在第一个测试用例中，秘密子无法施放任何魔法。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                912,
+                473,
+                929
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "2026 牛客暑期多校训练营 #8ac.nowcoder.com, 2026 年 8 月 12 日"
+                    }
+                ]
+            },
+            "bbox": [
+                349,
+                26,
+                645,
+                58
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "Page 15 of 28"
+                    }
+                ]
+            },
+            "bbox": [
+                445,
+                953,
+                559,
+                967
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "在第二个测试用例中，秘密子可以将灌注和释放均作用于符咒 1，使其能量变为 0。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                67,
+                742,
+                84
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "2026 牛客暑期多校训练营 #8ac.nowcoder.com, 2026 年 8 月 12 日"
+                    }
+                ]
+            },
+            "bbox": [
+                347,
+                26,
+                647,
+                58
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "Page 16 of 28"
+                    }
+                ]
+            },
+            "bbox": [
+                445,
+                953,
+                559,
+                967
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Problem I. Bridge VI"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                80,
+                63,
+                364,
+                86
+            ]
+        },
+        {
+            "type": "code",
+            "content": {
+                "code_caption": [],
+                "code_content": [
+                    {
+                        "type": "text",
+                        "content": "Input file: standard input\nOutput file: standard output\nTime limit: 1 second\nMemory limit: 1024 megabytes"
+                    }
+                ],
+                "code_language": "txt"
+            },
+            "bbox": [
+                112,
+                96,
+                448,
+                161
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "大豆参加了一场有 2n 名参赛者的比赛，目前比赛已经进入决赛轮。参赛者的编号从 1 到 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "2 n ."
+                    },
+                    {
+                        "type": "text",
+                        "content": "。在决赛轮中，对于每个 i = 1,2,...,n，参赛者 2i−1 与参赛者 2i 进行比赛。在每场比赛中，m 分可以以任意方式分配给两名参赛者，但每人获得的分数必须是一个非负实数。"
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                172,
+                914,
+                221
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "决赛轮开始前，参赛者 i 的初始分数为 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "a _ { i \\circ }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "一名参赛者的最终分数等于其初始分数加上其在本轮中获得的分数。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                225,
+                914,
+                259
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "大豆是参赛者 1。他想知道自己最好和最差的最终排名。具体而言，考虑每组中 m 分的所有合法分配方式，他想知道："
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                263,
+                914,
+                297
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "• 最少可能有多少名参赛者的最终分数严格大于他的最终分数，"
+                    }
+                ]
+            },
+            "bbox": [
+                97,
+                316,
+                610,
+                332
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "• 最多可能有多少名参赛者的最终分数严格大于他的最终分数。"
+                    }
+                ]
+            },
+            "bbox": [
+                97,
+                342,
+                611,
+                359
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Input"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                73,
+                380,
+                139,
+                399
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "每个测试包含多组测试用例。第一行包含测试用例的数量 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "t ~ \\left( 1 \\leq t \\leq 1 0 ^ { 4 } \\right)"
+                    },
+                    {
+                        "type": "text",
+                        "content": "）。接下来是各测试用例的描述。每个测试用例的第一行包含两个整数 n 和 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "m ~ \\left( 1 \\leq n \\leq 2 \\cdot 1 0 ^ { 5 } , ~ 1 \\leq m \\leq 1 0 ^ { 9 } \\right)"
+                    },
+                    {
+                        "type": "text",
+                        "content": "）。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                407,
+                915,
+                445
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "每个测试用例的第二行包含 2n 个整数 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "a _ { 1 } , a _ { 2 } , . . . , a _ { 2 n } \\ ( 1 \\leq a _ { i } \\leq 1 0 ^ { 9 } )"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                451,
+                638,
+                467
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "保证所有测试用例的 n 之和不超过 2·10<sup>5</sup>。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                473,
+                423,
+                489
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Output"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                73,
+                500,
+                159,
+                519
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "对于每个测试用例，输出两个整数”— 最少和最多可能有多少名参赛者的最终分数严格大于大豆的最终分数。"
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                526,
+                914,
+                558
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Example"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                75,
+                570,
+                174,
+                589
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/994f3974ce2f68097e6341ed1c4b6bb4e569e398a1f4d931561b42e345884638.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td>standard input</td><td>standard output</td></tr><tr><td>3</td><td>1 3</td></tr><tr><td>2 3</td><td>0 3</td></tr><tr><td>4 5 6 7</td><td>0 5</td></tr><tr><td>2 1</td><td></td></tr><tr><td>6 6 6 6</td><td></td></tr><tr><td>6 6</td><td></td></tr><tr><td>9 9 8 2 4 4 3 5 3 3 1 4</td><td></td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                75,
+                596,
+                836,
+                732
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "2026 牛客暑期多校训练营 #8ac.nowcoder.com, 2026 年 8 月 12 日"
+                    }
+                ]
+            },
+            "bbox": [
+                349,
+                26,
+                645,
+                58
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "Page 17 of 28"
+                    }
+                ]
+            },
+            "bbox": [
+                445,
+                953,
+                557,
+                967
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This page is intentionally left blank."
+                    }
+                ]
+            },
+            "bbox": [
+                280,
+                501,
+                705,
+                526
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "2026 牛客暑期多校训练营 #8ac.nowcoder.com, 2026 年 8 月 12 日"
+                    }
+                ]
+            },
+            "bbox": [
+                347,
+                26,
+                648,
+                59
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "Page 18 of 28"
+                    }
+                ]
+            },
+            "bbox": [
+                445,
+                952,
+                559,
+                969
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Problem J. Oni’s Ring"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                80,
+                64,
+                381,
+                87
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Input file: standard input Output file: standard output Time limit: 2 seconds Memory limit: 1024 megabytes"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                96,
+                448,
+                161
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "神山识正在调查一个古老的传说：一只鬼将自己的记忆封存在一个由黑白两色石子串成的环中。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                173,
+                840,
+                189
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "识用 0 表示每颗黑色石子，用 1 表示每颗白色石子。因此，这个环构成了一个环形二进制字符串 s。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                193,
+                880,
+                211
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "为了研究这个环，识选择一个起始位置 i，并从该处开始沿顺时针方向连续读取 k 个字符，每当抵达字符串末尾时就绕回开头。对于二进制字符串 x（长度为 k），如果从位置 i 读出的字符串等于 x，我们就称 x 在位置 i 处出现于 s 中。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                216,
+                915,
+                265
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "x 在 s 中的出现次数，是 x 出现的不同起始位置的数量。例如，10 在环形二进制字符串 00110011 中恰好出现两次。"
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                269,
+                914,
+                302
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "不幸的是，识还没来得及完成调查，鬼的圆环就消失了。如今只剩下她的笔记本，其中记录了 2<sup>k</sup> 个非负整数 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "c _ { 0 } , c _ { 1 } , \\dotsc , c _ { 2 ^ { k } - 1 }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "0"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                307,
+                914,
+                341
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "对于每个整数 x，若其满足 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "0 < x < 2 ^ { k }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "，则将 x 写成长度恰好为 k 的二进制字符串，必要时在前面补零。识的笔记称，这个二进制字符串在失踪的圆环中恰好出现了 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "c _ { x }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "次。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                344,
+                915,
+                379
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "圆环没有指定的起点。因此，如果一个环形二进制字符串可以通过旋转得到另一个，那么它们会被视为相同。例如，1010 和 0101 表示同一个环形二进制字符串。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                382,
+                914,
+                416
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "请帮助识重建鬼遗失的封印，求出与她笔记本中所有出现次数均相符的不同环形二进制字符串的数量。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                420,
+                895,
+                438
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "由于答案可能很大，请输出其对 998244353 取模后的结果。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                443,
+                551,
+                460
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Input"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                75,
+                470,
+                139,
+                489
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "每个测试的第一行包含一个整数 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "k \\ ( 1 \\leq k \\leq 9 )"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                497,
+                465,
+                513
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "每个测试用例的第二行包含 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "2 ^ { k }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "个非负整数 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "c _ { 0 } , c _ { 1 } , \\dotsc , c _ { 2 ^ { k } - 1 } ."
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                519,
+                557,
+                536
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "保证 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "c _ { i }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "的总和至少为 1 且不超过 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "2 \\cdot 1 0 ^ { 5 }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                539,
+                410,
+                557
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Output"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                73,
+                568,
+                159,
+                586
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "输出一个整数”— 不同的合法环形二进制字符串的数量对 998244353 取模后的结果。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                594,
+                747,
+                611
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Examples"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                75,
+                621,
+                184,
+                640
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/9fdc424eb73ad5459c7b7921c9a53f906b634c9e99db0b2c4fe3014173309b95.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td>standard input</td><td>standard output</td></tr><tr><td>12 2</td><td>2</td></tr><tr><td>21 1 1 1</td><td>1</td></tr><tr><td>20 1 0 0</td><td>0</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                75,
+                646,
+                836,
+                781
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Note"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                75,
+                793,
+                136,
+                810
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "在第一个样例测试中，合法的环形二进制字符串为 0011 和 0101。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                820,
+                616,
+                837
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "在第二个样例测试中，唯一合法的环形二进制字符串为 0011。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                841,
+                579,
+                859
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "2026 牛客暑期多校训练营 #8ac.nowcoder.com, 2026 年 8 月 12 日"
+                    }
+                ]
+            },
+            "bbox": [
+                349,
+                26,
+                645,
+                58
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "Page 19 of 28"
+                    }
+                ]
+            },
+            "bbox": [
+                445,
+                953,
+                559,
+                967
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This page is intentionally left blank."
+                    }
+                ]
+            },
+            "bbox": [
+                280,
+                501,
+                705,
+                526
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "2026 牛客暑期多校训练营 #8ac.nowcoder.com, 2026 年 8 月 12 日"
+                    }
+                ]
+            },
+            "bbox": [
+                347,
+                26,
+                648,
+                59
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "Page 20 of 28"
+                    }
+                ]
+            },
+            "bbox": [
+                445,
+                952,
+                559,
+                969
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Problem K. Al Fine II"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                80,
+                64,
+                374,
+                85
+            ]
+        },
+        {
+            "type": "code",
+            "content": {
+                "code_caption": [],
+                "code_content": [
+                    {
+                        "type": "text",
+                        "content": "Input file: standard input\nOutput file: standard output\nTime limit: 2 seconds\nMemory limit: 1024 megabytes"
+                    }
+                ],
+                "code_language": "txt"
+            },
+            "bbox": [
+                112,
+                92,
+                447,
+                156
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "圣诞节时，双胞胎姐妹朵鲁蒂尼妲和雅琍耶妲各自收到了一棵圣诞树。她们想从 n 个备选装饰品中选择一些来装饰她们的树。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                168,
+                914,
+                200
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "朵鲁蒂尼妲的树有 a 个结点，雅琍耶妲的树有 b 个结点。两棵树都以结点 1 为根。"
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                206,
+                739,
+                223
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "对于每个装饰品，姐妹俩已经分别决定了将它挂在两棵树的什么位置。装饰品 i 将挂在朵鲁蒂尼妲的树的结点 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "x _ { i }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "上，以及雅琍耶妲的树的结点 y 上。姐妹俩必须选择同一组装饰品：每个装饰品要么同时放在两棵树上，要么两棵树上都不放。"
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                228,
+                914,
+                277
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "圣诞树的树枝承载能力有限。两棵树的每个结点都有一个承重上限：挂在该结点或其子树中已选装饰品的数量不能超过此上限。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                282,
+                912,
+                313
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "每个装饰品还有一个美丽值。姐妹俩希望在满足两棵树上每个承重上限的同时，恰好选择 k 个不同的装饰品。求美丽值总和的最大可能值。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                319,
+                914,
+                353
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Input"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                73,
+                363,
+                139,
+                382
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "每个测试包含多组测试用例。第一行包含测试用例的数量 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "t ~ \\left( 1 \\leq t \\leq 2 0 \\right)"
+                    },
+                    {
+                        "type": "text",
+                        "content": "）。接下来是各测试用例的描述。每个测试用例的第一行包含三个正整数 n、a、b 和一个非负整数 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "k ~ \\left( 0 \\leq k \\leq n \\right)"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                388,
+                909,
+                428
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "每个测试用例接下来的 a 行描述朵鲁蒂尼妲的树。第 i 行包含两个整数 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "p _ { i } , c _ { i } ~ \\left( 0 \\leq c _ { i } \\leq n \\right)"
+                    },
+                    {
+                        "type": "text",
+                        "content": "”— 分别表示结点 i 的父结点和承重上限。保证 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "p _ { 1 } = 0"
+                    },
+                    {
+                        "type": "text",
+                        "content": "。对于每个 i > 1，保证 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "1 \\leq p _ { i } < i _ { \\circ }"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                432,
+                912,
+                466
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "每个测试用例接下来的 b 行以相同格式描述雅琍耶妲的树。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                470,
+                549,
+                487
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "每个测试用例接下来的 n 行描述装饰品。第 i 行包含三个整数 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "x _ { i } , y _ { i } , w _ { i } \\ ( 1 \\leq x _ { i } \\leq a , \\ 1 \\leq y _ { i } \\leq b "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "0 \\le w _ { i } \\le 1 0 ^ { 9 } )"
+                    },
+                    {
+                        "type": "text",
+                        "content": "）”— 分别表示它在朵鲁蒂尼妲的树上的位置、它在雅琍耶妲的树上的位置和它的美丽值。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                492,
+                915,
+                526
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "保证所有测试用例的 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "n + a + b"
+                    },
+                    {
+                        "type": "text",
+                        "content": "之和不超过 3000。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                530,
+                473,
+                546
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Output"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                73,
+                557,
+                159,
+                576
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "对于每个测试用例，输出美丽值总和的最大可能值。如果无法恰好选择 k 个装饰品，输出 −1。"
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                583,
+                836,
+                601
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "2026 牛客暑期多校训练营 #8ac.nowcoder.com, 2026 年 8 月 12 日"
+                    }
+                ]
+            },
+            "bbox": [
+                349,
+                26,
+                645,
+                58
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "Page 21 of 28"
+                    }
+                ]
+            },
+            "bbox": [
+                445,
+                953,
+                557,
+                967
+            ]
+        }
+    ],
+    [
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/6d400f283230dcd94b2669852855da3fe73c20fd51bb701b5882bde6a78c5223.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Example"
+                    }
+                ],
+                "table_footnote": [],
+                "html": "<table><tr><td>standard input</td><td>standard output</td></tr><tr><td>2</td><td>18</td></tr><tr><td>5 3 3 3</td><td>-1</td></tr><tr><td>0 3</td><td></td></tr><tr><td>1 1</td><td></td></tr><tr><td>1 2</td><td></td></tr><tr><td>0 3</td><td></td></tr><tr><td>1 2</td><td></td></tr><tr><td>1 1</td><td></td></tr><tr><td>2 2 8</td><td></td></tr><tr><td>2 3 7</td><td></td></tr><tr><td>3 2 6</td><td></td></tr><tr><td>3 2 5</td><td></td></tr><tr><td>3 3 4</td><td></td></tr><tr><td>2 1 2 2</td><td></td></tr><tr><td>0 2</td><td></td></tr><tr><td>0 1</td><td></td></tr><tr><td>1 2</td><td></td></tr><tr><td>1 2 10</td><td></td></tr><tr><td>1 2 9</td><td></td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                75,
+                91,
+                836,
+                423
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Note"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                75,
+                434,
+                136,
+                451
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "在第一个测试用例中，选择装饰品 1,3,5 可使美丽值总和为 8+6+4 = 18。朵鲁蒂尼妲的树的结点 3 的子树中有两个已选装饰品，雅琍耶妲的树的结点 2 的子树中也有两个已选装饰品。对应的两个承重上限均恰好取到，所有其他上限也都得到满足。"
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                461,
+                914,
+                510
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "在第二个测试用例中，雅琍耶妲的树的根结点承重上限为 1，因此无法选择两个装饰品。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                514,
+                783,
+                533
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "2026 牛客暑期多校训练营 #8ac.nowcoder.com, 2026 年 8 月 12 日"
+                    }
+                ]
+            },
+            "bbox": [
+                347,
+                26,
+                647,
+                59
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "Page 22 of 28"
+                    }
+                ]
+            },
+            "bbox": [
+                445,
+                953,
+                559,
+                969
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Problem L. Shattered Minimum"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                80,
+                64,
+                509,
+                86
+            ]
+        },
+        {
+            "type": "code",
+            "content": {
+                "code_caption": [],
+                "code_content": [
+                    {
+                        "type": "text",
+                        "content": "Input file: standard input\nOutput file: standard output\nTime limit: 2 seconds\nMemory limit: 1024 megabytes"
+                    }
+                ],
+                "code_language": "txt"
+            },
+            "bbox": [
+                112,
+                92,
+                448,
+                156
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "千户和尤莉在一座废弃设施中休息时，发现了一台仍在工作的终端。千户还在仔细检查终端，尤莉却已经按下了按钮。随后，n 个方块在屏幕上排成一列，它们的编号构成一个排列 p，其长度为 n。尤莉对这台终端非常感兴趣，于是二人决定按照终端手册玩一个游戏。"
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                168,
+                914,
+                218
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "终端可以复制任意区间 [l,r] 所对应的 p 的子段，形成一个独立的段。初始时有 m 个段。游戏轮流进行，由千户先手。在每一轮中，当前玩家必须："
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                222,
+                915,
+                256
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "1. 选择一个段，终端将移除编号最小的方块。随后，这个线段被分为两个段。"
+                    }
+                ]
+            },
+            "bbox": [
+                95,
+                275,
+                719,
+                292
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "2. 选择以下操作之一："
+                    }
+                ]
+            },
+            "bbox": [
+                95,
+                302,
+                280,
+                318
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "• 保留左侧段，丢弃右侧段。"
+                    }
+                ]
+            },
+            "bbox": [
+                139,
+                329,
+                376,
+                344
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "• 保留右侧段，丢弃左侧段。"
+                    }
+                ]
+            },
+            "bbox": [
+                139,
+                349,
+                376,
+                365
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "• 同时保留两段。"
+                    }
+                ]
+            },
+            "bbox": [
+                139,
+                370,
+                284,
+                386
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "每轮结束后，所有空段都会被丢弃。两名玩家在第 2 步中都可以选择保留空段，从而丢弃整段。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                406,
+                843,
+                423
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "最先无法操作的玩家输掉游戏。假设千户和尤莉都采取最优策略，请判断谁会获胜。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                426,
+                749,
+                444
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Input"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                73,
+                455,
+                139,
+                474
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "每个测试包含多组测试用例。第一行包含测试用例的数量 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "t ~ \\left( 1 \\leq t \\leq 2 \\cdot 1 0 ^ { 4 } \\right)"
+                    },
+                    {
+                        "type": "text",
+                        "content": "）。接下来是各测试用例的描述。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                481,
+                912,
+                514
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "每个测试用例的第一行包含两个整数 n 和 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "m \\ ( 1 \\leq n , m \\leq 2 \\cdot 1 0 ^ { 5 } )"
+                    },
+                    {
+                        "type": "text",
+                        "content": "）。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                519,
+                613,
+                536
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "每个测试用例的第二行包含 n 个整数 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "p _ { 1 } , p _ { 2 } , . . . , p _ { n } ~ ( 1 \\leq p _ { i } \\leq n , ~ p _ { i } \\neq p _ { j } ) { _ { } }"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                541,
+                680,
+                558
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "每个测试用例接下来的 m 行各包含两个整数 l 和 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "r ~ \\left( 1 \\leq l \\leq r \\leq n \\right)"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                563,
+                631,
+                579
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "保证所有测试用例的 n 之和不超过 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "2 \\cdot 1 0 ^ { 5 }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "0"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                583,
+                423,
+                601
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "保证所有测试用例的 m 之和不超过 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "2 \\cdot 1 0 ^ { 5 }"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                606,
+                428,
+                621
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Output"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                73,
+                633,
+                161,
+                652
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "对于每个测试用例，如果千户获胜，则输出字符串 Chito，否则输出 Yuuri。"
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                659,
+                705,
+                677
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "2026 牛客暑期多校训练营 #8ac.nowcoder.com, 2026 年 8 月 12 日"
+                    }
+                ]
+            },
+            "bbox": [
+                349,
+                26,
+                645,
+                58
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "Page 23 of 28"
+                    }
+                ]
+            },
+            "bbox": [
+                445,
+                953,
+                557,
+                967
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "2026 牛客暑期多校训练营 #8"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                374,
+                26,
+                621,
+                42
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Example"
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                65,
+                174,
+                85
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/d07160731b178af7fbf4367b28ebff56c7c935a9ac1bac1dc31b356c421aa892.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td>standard input</td><td>standard output</td></tr><tr><td>4</td><td>Chito</td></tr><tr><td>1 1</td><td>Yuuri</td></tr><tr><td>1</td><td>Yuuri</td></tr><tr><td>1 1</td><td>Chito</td></tr><tr><td>1 2</td><td></td></tr><tr><td>1</td><td></td></tr><tr><td>1 1</td><td></td></tr><tr><td>1 1</td><td></td></tr><tr><td>4 1</td><td></td></tr><tr><td>2 1 3 4</td><td></td></tr><tr><td>1 4</td><td></td></tr><tr><td>3 2</td><td></td></tr><tr><td>2 1 3</td><td></td></tr><tr><td>1 3</td><td></td></tr><tr><td>1 1</td><td></td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                75,
+                91,
+                836,
+                357
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "Page 24 of 28"
+                    }
+                ]
+            },
+            "bbox": [
+                445,
+                953,
+                559,
+                969
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Problem M. KV Cache"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                80,
+                64,
+                391,
+                85
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Input file:"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                92,
+                201,
+                108
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "standard input"
+                    }
+                ]
+            },
+            "bbox": [
+                278,
+                93,
+                440,
+                108
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Output file:"
+                    }
+                ]
+            },
+            "bbox": [
+                115,
+                109,
+                216,
+                124
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Time limit:"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                124,
+                213,
+                140
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "standard output"
+                    }
+                ]
+            },
+            "bbox": [
+                278,
+                109,
+                448,
+                124
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "2 seconds"
+                    }
+                ]
+            },
+            "bbox": [
+                278,
+                126,
+                361,
+                140
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Memory limit:"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                141,
+                236,
+                156
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "1024 megabytes"
+                    }
+                ]
+            },
+            "bbox": [
+                278,
+                141,
+                413,
+                156
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "大豆正在运营一项大语言模型服务。为了避免为不同请求重复计算相同的前缀，该服务维护了一个持久化 KV 缓存。"
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                168,
+                914,
+                202
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "每个请求均由一个小写拉丁字母串表示，其中每个字母代表一个词元。具有公共前缀的请求可以共享 KV缓存项。我们将缓存中的当前内容建模为一棵字典树。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                206,
+                915,
+                239
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "最初，字典树中只有根节点，没有任何边。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                244,
+                418,
+                261
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "处理请求字符串 s 时，会依次执行以下操作："
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                266,
+                438,
+                282
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "1. 大豆从字典树的根节点开始，自左向右处理整个字符串。"
+                    }
+                ]
+            },
+            "bbox": [
+                95,
+                300,
+                574,
+                318
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "2. 如果对应于下一个词元的边已经存在，则可以零代价复用其缓存结果。"
+                    }
+                ]
+            },
+            "bbox": [
+                94,
+                328,
+                684,
+                344
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "3. 否则，大豆必须计算对应的 KV 状态。这会消耗 1 单位计算量，同时字典树中会加入缺失的边。"
+                    }
+                ]
+            },
+            "bbox": [
+                94,
+                354,
+                892,
+                370
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "在移除任何缓存项之前，会先处理完整个请求。特别地，请求中所有缺失的边都会先被加入，即使这会使字典树中的边数暂时超过 m。"
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                390,
+                914,
+                423
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "处理完整个请求后，大豆会应用持久化缓存的容量限制。如果字典树中的边数超过 m，他必须反复删除一个叶节点以及连接该节点与其父节点的边，直到恰好剩下 m 条边。叶节点是当前字典树中没有子节点的节点。处理当前请求时加入的边也可能在此步骤中被删除。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                426,
+                914,
+                476
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "大豆预先知道由全部 n 个请求构成的序列。每次进行删减时，他都可以自行选择要删除哪些与叶节点相连的边。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                481,
+                914,
+                514
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "请确定处理所有 n 个请求所需的最小总计算代价。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                519,
+                478,
+                536
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "字典树是一种以有根树形式存储字符串集合的数据结构。这棵树具有如下结构：树的每条边都标有一个字母，从同一节点出发的任意两条边所标的字母均不相同。沿着从根节点到某个节点的一条路径行走，即可读出一个字符串。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                541,
+                915,
+                590
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "例如，我们可以为字符串 “min”、“trie”、“task” 和 “mini” 建立一棵字典树，如下所示："
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                595,
+                821,
+                612
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/40db5c32e98b2b64ff305d19d1d712b35271e78fc906578459620e4bd5852fdf.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                341,
+                637,
+                613,
+                851
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Input"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                73,
+                887,
+                139,
+                904
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "每个测试的第一行包含两个整数 n 和 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "m ~ ( 1 \\leq n \\leq 1 0 ^ { 6 } , ~ 1 \\leq m \\leq 1 0 ^ { 9 } )"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                913,
+                650,
+                929
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "2026 牛客暑期多校训练营 #8ac.nowcoder.com, 2026 年 8 月 12 日"
+                    }
+                ]
+            },
+            "bbox": [
+                349,
+                26,
+                645,
+                58
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "Page 25 of 28"
+                    }
+                ]
+            },
+            "bbox": [
+                445,
+                953,
+                559,
+                967
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "每个测试接下来的各行依次编号；其中第 i 行（共 n 行）包含一个字符串 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "s _ { i }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "”— 第 i 个请求中的词元序列。保证 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "s _ { i }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "仅由小写拉丁字母组成。保证所有 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "| s _ { i } |"
+                    },
+                    {
+                        "type": "text",
+                        "content": "之和不超过 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "1 0 ^ { 6 }"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                67,
+                914,
+                99
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Output"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                73,
+                111,
+                159,
+                130
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "输出一个整数”— 处理所有 n 个请求所需的最小总计算代价。"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                137,
+                566,
+                154
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Example"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                75,
+                165,
+                174,
+                183
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/17a705fe1bfbaffde74446f95547ac155678efa32600dcec301469e00a5a501a.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td>standard input</td><td>standard output</td></tr><tr><td>4 4</td><td>11</td></tr><tr><td>mini</td><td></td></tr><tr><td>trie</td><td></td></tr><tr><td>task</td><td></td></tr><tr><td>min</td><td></td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                75,
+                191,
+                836,
+                294
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Note"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                75,
+                307,
+                136,
+                325
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "2026 牛客暑期多校训练营 #8ac.nowcoder.com, 2026 年 8 月 12 日"
+                    }
+                ]
+            },
+            "bbox": [
+                347,
+                26,
+                647,
+                58
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "Page 26 of 28"
+                    }
+                ]
+            },
+            "bbox": [
+                445,
+                953,
+                559,
+                967
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Blue: newly computed and kept Green: reused on this request Gray: cached after pruning Red dashed: removed after this request"
+                    }
+                ]
+            },
+            "bbox": [
+                321,
+                82,
+                668,
+                102
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Request 1: mini - cost +4"
+                    }
+                ]
+            },
+            "bbox": [
+                223,
+                104,
+                391,
+                116
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Request 2: trie - cost +4"
+                    }
+                ]
+            },
+            "bbox": [
+                596,
+                104,
+                764,
+                116
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/428301523e3390315bd9cdcc620e90a1578da300bd91b11f3862022a5e965230.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                152,
+                104,
+                833,
+                369
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "All four edges are computed, and no pruning is needed. Cache after pruning (4/4): m, mi, min, mini. Cumulative cost: 4."
+                    }
+                ]
+            },
+            "bbox": [
+                161,
+                422,
+                452,
+                458
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Request 3: task - cost +3"
+                    }
+                ]
+            },
+            "bbox": [
+                223,
+                460,
+                393,
+                473
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "All four request edges are computed; the dashed edges are then removed."
+                    }
+                ]
+            },
+            "bbox": [
+                515,
+                413,
+                845,
+                435
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Cache after pruning (4/4): m, mi, min, t. Cumulative cost: 4 + 4 = 8."
+                    }
+                ]
+            },
+            "bbox": [
+                573,
+                436,
+                788,
+                457
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Request 4: min - cost +0"
+                    }
+                ]
+            },
+            "bbox": [
+                600,
+                460,
+                763,
+                473
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/e0efa799b78ffb75e9dcdf7f70638148c2589cbb65d64c09dde0035725fe370a.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                136,
+                458,
+                858,
+                725
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The edge t is reused; the three computed sufix edges are removed."
+                    }
+                ]
+            },
+            "bbox": [
+                132,
+                778,
+                480,
+                790
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Cache after pruning (4/4): m, mi, min, t. Cumulative cost: 4 + 4 + 3 = 11."
+                    }
+                ]
+            },
+            "bbox": [
+                200,
+                791,
+                413,
+                813
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The complete request path is reused; the cache does not change."
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                775,
+                845,
+                787
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "2026 牛客暑期多校训练营 #8ac.nowcoder.com, 2026 年 8 月 12 日"
+                    }
+                ]
+            },
+            "bbox": [
+                347,
+                26,
+                647,
+                59
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "Page 27 of 28"
+                    }
+                ]
+            },
+            "bbox": [
+                445,
+                953,
+                559,
+                967
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This page is intentionally left blank."
+                    }
+                ]
+            },
+            "bbox": [
+                280,
+                501,
+                705,
+                526
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "2026 牛客暑期多校训练营 #8ac.nowcoder.com, 2026 年 8 月 12 日"
+                    }
+                ]
+            },
+            "bbox": [
+                347,
+                26,
+                648,
+                59
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "Page 28 of 28"
+                    }
+                ]
+            },
+            "bbox": [
+                445,
+                952,
+                559,
+                969
+            ]
+        }
+    ]
+]

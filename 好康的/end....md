@@ -2046,6 +2046,244 @@ int main()
 
 
 
+### 虚树
+
+虚树专门用来应对“树上多组询问，每次询问只涉及少数关键点”的一类树形 DP 题目。
+
+在一棵非常庞大的原树中，针对某次特定的询问，我们只把“有用的节点”**（即题目指定的关键点）以及连通这些关键点所必需的**“枢纽节点”（即它们的最近公共祖先 LCA）提取出来，重新连边构成的一棵规模极小的新树。
+
+在这棵虚树中：
+
+- **节点结构被保留**：祖先和后代的相对位置关系与原树一模一样。
+- **无用节点被压缩**：那些既不是关键点、也不是 LCA 的中转节点，会被直接“合并”成虚树上的一条边。（这也是为什么虚树的边经常需要附带上原树的路径长度或路径最值）。
+
+**1. 原树预处理（倍增 LCA + DFS 序）**
+
+**作用**：预处理倍增表 `up`，以及入栈时间戳 `in` 与出栈时间戳 `out`（用于 $O(1)$ 判定祖先）。
+
+```c++
+vector<vector<ll>> up(n + 1, vector<ll>(LOG + 1, 0));
+vector<ll> in(n + 1, 0), out(n + 1, 0), dep(n + 1, 0);
+ll tim = 0;
+
+auto dfs1 = [&](auto &&self, ll u, ll fa, ll d) -> void {
+    in[u] = ++tim;
+    dep[u] = d;
+    up[u][0] = fa;
+
+    for (int i = 1; i <= LOG; i++) {
+        if (up[u][i - 1] != 0) {
+            up[u][i] = up[up[u][i - 1]][i - 1];
+        }
+    }
+
+    for (ll v : adj[u]) { // 若有边权，这里按你的 Node 结构体拆 [v, w]
+        if (v != fa) {
+            self(self, v, u, d + 1);
+        }
+    }
+    out[u] = ++tim;
+};
+dfs1(dfs1, 1, 0, 1);
+```
+
+**2. 核心辅助函数（O(1)祖先判定 + LCA）**
+
+**作用**：提供极速判定祖先关系的 `is_anc` 和常规倍增 `get_lca`。
+
+```c++
+// O(1) 判断 u 是否为 v 的祖先
+auto is_anc = [&](ll u, ll v) -> bool {
+    return in[u] <= in[v] && out[v] <= out[u];
+};
+
+// 倍增求最近公共祖先
+auto get_lca = [&](ll u, ll v) -> ll {
+    if (dep[u] < dep[v]) swap(u, v);
+    for (int i = LOG; i >= 0; i--) {
+        if (dep[up[u][i]] >= dep[v]) u = up[u][i];
+    }
+    if (u == v) return u;
+    for (int i = LOG; i >= 0; i--) {
+        if (up[u][i] != up[v][i]) {
+            u = up[u][i];
+            v = up[v][i];
+        }
+    }
+    return up[u][0];
+};
+```
+
+**3. 建虚树的核心逻辑（单次询问处理）**
+
+**作用**：将关键点集合 `node` 抽离连边，用单调栈建出节点规模 $O(k)$ 的虚树，并返回虚树根节点。
+
+```c++
+auto build_vt = [&](vector<ll>& node) -> ll {
+    // 1. 按 DFS 序排序
+    sort(all0(node), [&](const auto &x, const auto &y) {
+        return in[x] < in[y];
+    });
+
+    // 2. 插入相邻 LCA（注意此处使用了固定的 sz，彻底解决死循环）
+    ll sz = node.size();
+    for (int i = 0; i < sz - 1; i++) {
+        node.pb(get_lca(node[i], node[i + 1]));
+    }
+
+    // 3. 排序去重
+    sort(all0(node), [&](const auto &x, const auto &y) {
+        return in[x] < in[y];
+    });
+    node.erase(unique(all0(node)), node.end());
+
+    // 4. 单调栈高效连边
+    vector<ll> st;
+    for (ll u : node) {
+        if (st.empty()) {
+            st.pb(u);
+            continue;
+        }
+        // 如果栈顶不是当前点的祖先，说明不在一条链上，退栈
+        while (!st.empty() && !is_anc(st.back(), u)) {
+            st.pop_back();
+        }
+        if (!st.empty()) {
+            vt_adj[st.back()].pb(u); 
+        }
+        st.pb(u);
+    }
+    return node[0]; // 返回虚树根节点
+};
+```
+
+**4. O(k) 状态清理**
+
+**作用**：在每次 Query 结束时精确清空虚树，防止数据跨询问污染，同时避免 `memset` 引发 TLE。
+
+```c++
+auto clear_vt = [&](const vector<ll>& node) -> void {
+    for (ll u : node) {
+        vt_adj[u].clear();
+        vis[u] = 0; // 清空当前询问用到的所有 DP/标记数组
+    }
+};
+```
+
+
+
+### 强连通分量(SCC)
+
+图中两个点 $u,v$ 如果互相可达，我们则称这两个点是强连通的,{$u,v $} 是一个强连通分量 
+
+且scc缩点后一定是$DAG$ (有向无环图)
+
+#### tarjan求scc + 缩点
+
+当题目具有以下特征时，可考虑
+
+> **有向图 + 可能有环 + 需要 DP、最长路、拓扑排序或入出度统计,scc内部节点可看作一个整体**
+
+```c++
+// =========================
+// Tarjan 求 SCC
+// =========================
+
+vector<int> dfn(n + 1), low(n + 1);
+vector<int> bel(n + 1);    // bel[u]：u 所属的 SCC 编号
+vector<int> scc_sz(n + 1); // scc_sz[i]：第 i 个 SCC 的大小
+vector<int> stk;
+vector<char> in_stk(n + 1);
+
+int timer = 0;
+int scc_cnt = 0;
+
+auto tarjan = [&](auto &&self, int u) -> void
+{
+    dfn[u] = low[u] = ++timer;
+
+    stk.push_back(u);
+    in_stk[u] = true;
+
+    for (int v : g[u])
+    {
+        if (!dfn[v])
+        {
+            // v 未访问：递归处理后，用 low[v] 更新 low[u]
+            self(self, v);
+            low[u] = min(low[u], low[v]);
+        }
+        else if (in_stk[v])
+        {
+            // v 已访问且仍在栈中，只能用 dfn[v] 更新
+            low[u] = min(low[u], dfn[v]);
+        }
+    }
+
+    // u 是 SCC 根：从栈顶弹出直到 u
+    if (dfn[u] == low[u])
+    {
+        ++scc_cnt;
+
+        while (true)
+        {
+            int x = stk.back();
+            stk.pop_back();
+
+            in_stk[x] = false;
+            bel[x] = scc_cnt;
+            ++scc_sz[scc_cnt];
+
+            if (x == u)
+            {
+                break;
+            }
+        }
+    }
+};
+
+// 图可能不连通，必须从每个未访问节点开始 DFS
+for (int i = 1; i <= n; ++i)
+{
+    if (!dfn[i])
+    {
+        tarjan(tarjan, i);
+    }
+}
+
+// =========================
+// SCC 缩点
+// =========================
+
+vector<vector<int>> dag(scc_cnt + 1);
+
+for (int u = 1; u <= n; ++u)
+{
+    for (int v : g[u])
+    {
+        int a = bel[u];
+        int b = bel[v];
+
+        // 同一个 SCC 内部的边忽略
+        if (a != b)
+        {
+            dag[a].push_back(b);
+        }
+    }
+}
+
+// 去重：如果后续需要统计入度，必须避免重边重复计算
+for (int i = 1; i <= scc_cnt; ++i)
+{
+    auto &edges = dag[i];
+
+    sort(edges.begin(), edges.end());
+    edges.erase(unique(edges.begin(), edges.end()), edges.end());
+}
+```
+
+
+
 ### 二分图
 
 #### 1.二分冲突模型

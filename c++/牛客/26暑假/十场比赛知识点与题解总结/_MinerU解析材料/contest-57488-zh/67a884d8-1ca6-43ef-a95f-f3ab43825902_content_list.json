@@ -1,0 +1,2637 @@
+[
+    {
+        "type": "text",
+        "text": "Problem A. 排列问题",
+        "text_level": 2,
+        "bbox": [
+            80,
+            65,
+            341,
+            87
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Input file: standard input Output file: standard output Time limit: 2 seconds Memory limit: 256 megabytes",
+        "bbox": [
+            112,
+            96,
+            425,
+            162
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "给定一个长度为 n 的排列<sup>∗</sup> p。你可以执行以下操作任意次（包括零次）：",
+        "bbox": [
+            73,
+            173,
+            665,
+            191
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "• 选择一个整数 i 满足 $2 \\leq i \\leq n - 1$ 且 $p _ { i } > \\operatorname* { m a x } ( p _ { i - 1 } , p _ { i + 1 } )$ 。然后交换 $p _ { i - 1 }$ 和 $p _ { i + 1 }$ C",
+        "bbox": [
+            100,
+            209,
+            801,
+            228
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "一个排列 q 从 p 是可达的，当且仅当存在一个操作序列，使得对 p 执行这些操作后可以得到 q。求从 p 可达的排列数量。由于该数字可能非常大，请输出其对 998244353 取模后的余数。",
+        "bbox": [
+            73,
+            244,
+            847,
+            285
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Input",
+        "text_level": 2,
+        "bbox": [
+            75,
+            294,
+            132,
+            313
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "每个测试包含多个测试用例。 第一行包含测试用例的数量 $t ~ ( 1 \\leq t \\leq 5 \\cdot 1 0 ^ { 4 } )$ 。 接下来是测试用例的描述。",
+        "bbox": [
+            73,
+            321,
+            914,
+            354
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "每个测试用例的第一行包含一个整数 $n ~ ( 3 \\leq n \\leq 1 0 ^ { 6 } )$ ，表示 p 的长度。",
+        "bbox": [
+            73,
+            357,
+            650,
+            376
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "第二行包含 n 个不同的整数 $p 1 , p 2 , \\ldots , p _ { n } \\ ( 1 \\leq p _ { i } \\leq n )$ ，表示 p 的元素。",
+        "bbox": [
+            73,
+            380,
+            658,
+            398
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "保证所有测试用例中 n 的总和不超过 $1 0 ^ { 6 }$",
+        "bbox": [
+            73,
+            401,
+            421,
+            419
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Output",
+        "text_level": 2,
+        "bbox": [
+            73,
+            430,
+            151,
+            448
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "对于每个测试用例，输出一个整数，表示从 p 可达的排列数量对 998244353 取模后的结果。",
+        "bbox": [
+            73,
+            456,
+            816,
+            473
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "table",
+        "img_path": "images/ac0b9d619fee4d84c53af5deae7620847ec84f6bef46c5f7a350d1c45cc054fb.jpg",
+        "table_caption": [
+            "Example"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>standard input</td><td>standard output</td></tr><tr><td>5</td><td>1</td></tr><tr><td>3</td><td>1</td></tr><tr><td>1 2 3</td><td>2</td></tr><tr><td>3</td><td>12</td></tr><tr><td>2 1 3</td><td>4</td></tr><tr><td>3</td><td></td></tr><tr><td>2 3 1</td><td></td></tr><tr><td>8</td><td></td></tr><tr><td>4 5 3 8 1 6 7 2</td><td></td></tr><tr><td>5</td><td></td></tr><tr><td>2 5 4 3 1</td><td></td></tr></table>",
+        "bbox": [
+            75,
+            508,
+            836,
+            711
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "2026年牛客暑期多校第六场线上, 2026年8月5日",
+        "bbox": [
+            384,
+            24,
+            611,
+            58
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "page_footnote",
+        "text": "<sup>∗</sup>长度为 n 的排列是一个数组，它由 n 个从 1 到 n 的不同整数以任意顺序组成。例如，[2, 3, 1, 5, 4] 是一个排列，但 [1, 2, 2]不是排列（2 在数组中出现了两次），[1,3,4] 也不是排列（n = 3 但数组中存在 4）。",
+        "bbox": [
+            73,
+            901,
+            914,
+            929
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "page_number",
+        "text": "Page 1 of 14",
+        "bbox": [
+            450,
+            953,
+            552,
+            969
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```txt\nProblem B. CF2071B\nInput file: standard input\nOutput file: standard output\nTime limit: 4 seconds\nMemory limit: 1024 megabytes\n```",
+        "bbox": [
+            78,
+            63,
+            428,
+            158
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "一个数组 a 被认为是丑陋的，当且仅当其元素之和是一个完全平方数。",
+        "bbox": [
+            73,
+            168,
+            643,
+            185
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "对于任意数组 a，定义 f(a) 为 a 的丑陋非空子数组<sup>†</sup>的数量。",
+        "bbox": [
+            72,
+            190,
+            569,
+            206
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "给定一个正整数 n。令 M(n) 为长度为 n 的所有排列<sup>‡</sup> q 中 f(q) 的最小值。",
+        "bbox": [
+            73,
+            211,
+            682,
+            229
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "请构造一个长度为 n 的排列 p，使得 $f ( \\boldsymbol { p } ) = M ( n )$",
+        "bbox": [
+            73,
+            234,
+            495,
+            250
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Input",
+        "text_level": 2,
+        "bbox": [
+            73,
+            262,
+            132,
+            280
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "每个测试包含多个测试用例。 第一行包含测试用例的数量 $t ~ ( 1 \\leq t \\leq 1 0 ^ { 3 } )$ 。 接下来是测试用例的描述。每个测试用例的唯一一行包含一个整数 $n \\ ( 1 \\leq n \\leq 5 0 0 0 )$ —— 排列的长度。",
+        "bbox": [
+            73,
+            287,
+            904,
+            326
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "保证所有测试用例中 $n ^ { 2 }$ 的总和不超过 $1 0 ^ { 8 }$",
+        "bbox": [
+            73,
+            331,
+            428,
+            348
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Output",
+        "text_level": 2,
+        "bbox": [
+            73,
+            359,
+            151,
+            376
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "对于每个测试用例，输出 n 个互不相同的整数 $p 1 , p 2 , \\ldots , p _ { n } \\ ( 1 \\leq p _ { i } \\leq n )$ ，表示你构造的排列 $p$ 。如果有多个答案，你可以输出其中任意一个。",
+        "bbox": [
+            72,
+            385,
+            855,
+            424
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "table",
+        "img_path": "images/81acbade23fb640cc0e16ee48003fd97252a71f72290a52bfef548edb7a37ad4.jpg",
+        "table_caption": [
+            "Example"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>standard input</td><td>standard output</td></tr><tr><td>5</td><td>1</td></tr><tr><td>1</td><td>1 2</td></tr><tr><td>2</td><td>1 2 3</td></tr><tr><td>3</td><td>2 1 4 3</td></tr><tr><td>4</td><td>2 5 1 4 3</td></tr><tr><td>5</td><td></td></tr></table>",
+        "bbox": [
+            75,
+            458,
+            836,
+            581
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "2026年牛客暑期多校第六场线上, 2026年8月5日",
+        "bbox": [
+            384,
+            24,
+            611,
+            58
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_footnote",
+        "text": "<sup>†</sup>数组 是数组 的子数组，当且仅当可以通过删除 开头若干个（可能是零个或全部）元素以及结尾若干个（可能是零个或全部）元素得到 。",
+        "bbox": [
+            73,
+            873,
+            914,
+            902
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_footnote",
+        "text": "<sup>‡</sup>长度为 n 的排列是一个数组，它由 n 个从 1 到 n 的不同整数以任意顺序组成。例如，[2, 3, 1, 5, 4] 是一个排列，但 [1, 2, 2]不是排列（2 在数组中出现了两次），[1,3,4] 也不是排列（n = 3 但数组中存在 4）。",
+        "bbox": [
+            73,
+            901,
+            915,
+            929
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "Page 2 of 14",
+        "bbox": [
+            450,
+            953,
+            552,
+            969
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Problem C. 切树",
+        "text_level": 2,
+        "bbox": [
+            80,
+            66,
+            280,
+            87
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```txt\nInput file: standard input\nOutput file: standard output\nTime limit: 2 seconds\nMemory limit: 1024 megabytes\n```",
+        "bbox": [
+            114,
+            96,
+            425,
+            162
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "给定一棵由 n 个顶点组成的无向树，顶点编号从 1 到 n。树的根节点是顶点 1。我们定义树的切割序列及其对应的得分如下：",
+        "bbox": [
+            73,
+            173,
+            914,
+            206
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "• 初始化一个空数组 a 和一个整数 s = 0。",
+        "bbox": [
+            100,
+            225,
+            443,
+            242
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "• 执行以下操作，直到树为空：选择一个当前树中仍然存在的顶点。然后移除其子树<sup>§</sup>中的所有顶点。将所选顶点的编号追加到 a 的末尾，并将 s 增加本次操作后树中剩余顶点的数量。",
+        "bbox": [
+            100,
+            250,
+            914,
+            285
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "• 最终的 a 被认为是树的一个切割序列，s 是其对应的得分。",
+        "bbox": [
+            100,
+            294,
+            594,
+            312
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "如果两个切割序列的长度不同，或者至少在一个位置上不同，则认为它们是不同的。",
+        "bbox": [
+            73,
+            330,
+            751,
+            347
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "求所有不同切割序列的得分之和。由于答案可能非常大，请输出其对 998244353 取模后的余数。",
+        "bbox": [
+            73,
+            351,
+            850,
+            369
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Input",
+        "text_level": 2,
+        "bbox": [
+            75,
+            381,
+            132,
+            399
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "每个测试包含多个测试用例。 第一行包含测试用例的数量 $t ~ ( 1 \\leq t \\leq 1 0 ^ { 4 } )$ 。 接下来是测试用例的描述。第一行包含一个整数 $n \\ ( 2 \\leq n \\leq 3 0 0 0 )$ — 树中顶点的数量。",
+        "bbox": [
+            73,
+            406,
+            902,
+            444
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "接下来的 n−1 行，每行包含两个整数 u 和 $v ~ ( 1 \\leq u , v \\leq n , u \\neq v )$ ，表示顶点 u 和 v 之间的一条边。保证输入构成一棵有效的树。",
+        "bbox": [
+            73,
+            450,
+            905,
+            483
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "保证所有测试用例中 n<sup>2</sup> 的总和不超过 9·10<sup>6</sup>。",
+        "bbox": [
+            73,
+            487,
+            448,
+            504
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Output",
+        "text_level": 2,
+        "bbox": [
+            73,
+            514,
+            151,
+            533
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "对于每个测试用例，输出一个整数，表示所有不同切割序列的得分之和对 998244353 取模后的结果。",
+        "bbox": [
+            73,
+            541,
+            887,
+            558
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Example",
+        "text_level": 2,
+        "bbox": [
+            75,
+            569,
+            161,
+            588
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "table",
+        "img_path": "images/f9b558d4d6a69b95e882ce651aa301f2c0ca504e190816e712e9430ab8f229c7.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>standard input</td><td>standard output</td></tr><tr><td>4</td><td>6</td></tr><tr><td>3</td><td>10</td></tr><tr><td>1 2</td><td>37</td></tr><tr><td>2 3</td><td>48</td></tr><tr><td>3</td><td></td></tr><tr><td>1 2</td><td></td></tr><tr><td>1 3</td><td></td></tr><tr><td>4</td><td></td></tr><tr><td>1 2</td><td></td></tr><tr><td>2 3</td><td></td></tr><tr><td>2 4</td><td></td></tr><tr><td>4</td><td></td></tr><tr><td>1 2</td><td></td></tr><tr><td>1 3</td><td></td></tr><tr><td>3 4</td><td></td></tr></table>",
+        "bbox": [
+            75,
+            594,
+            836,
+            862
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "<sup>§</sup>顶点 v 的子树是 v 及其所有后代以及它们之间所有边组成的子图。",
+        "bbox": [
+            95,
+            914,
+            546,
+            929
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "2026年牛客暑期多校第六场线上, 2026年8月5日",
+        "bbox": [
+            384,
+            24,
+            611,
+            58
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "Page 3 of 14",
+        "bbox": [
+            450,
+            953,
+            552,
+            969
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Problem D. 整除",
+        "text_level": 2,
+        "bbox": [
+            80,
+            66,
+            284,
+            87
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Input file: standard input Output file: standard output Time limit: 2 seconds Memory limit: 256 megabytes",
+        "bbox": [
+            112,
+            96,
+            425,
+            161
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "给定一个由 n 个顶点和 m 条边组成的无向图 G。同时给定一个正整数 k。注意，G 可能包含自环和重边。",
+        "bbox": [
+            73,
+            173,
+            914,
+            205
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "对于顶点 u，定义 f(u) 为满足以下条件的最小非负整数 d：d 可以被 k 整除，且存在一条从顶点 1 到顶点 u 的长度为 d 的路径。如果不存在这样的 d，则 f(u) 为 −1。注意，路径可以多次访问同一个顶点或同一条边。",
+        "bbox": [
+            73,
+            210,
+            914,
+            259
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "求所有 $1 \\leq u \\leq n$ 的 f(u) 的值。",
+        "bbox": [
+            73,
+            263,
+            339,
+            282
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Input",
+        "text_level": 2,
+        "bbox": [
+            73,
+            293,
+            132,
+            311
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "每个测试包含多个测试用例。 第一行包含测试用例的数量 $t ~ ( 1 \\leq t \\leq 5 \\cdot 1 0 ^ { 4 } )$ 。 接下来是测试用例的描述。",
+        "bbox": [
+            73,
+            318,
+            914,
+            351
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "每个测试用例的第一行包含三个整数 n、m 和 k $( 2 \\leq n \\leq 5 \\cdot 1 0 ^ { 5 } , 0 \\leq m \\leq 5 \\cdot 1 0 ^ { 5 } , 1 \\leq k \\leq 1 0 ^ { 9 } )$ ，分别表示 G 中的顶点数、G 中的边数以及给定的常数。",
+        "bbox": [
+            73,
+            356,
+            912,
+            388
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "接下来的 m 行，每行包含两个整数 u 和 $v \\ ( 1 \\leq u , v \\leq n )$ ，表示连接顶点 u 和 v 的一条无向边。",
+        "bbox": [
+            73,
+            394,
+            850,
+            411
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "保证所有测试用例中 n 的总和与 m 的总和均不超过 $5 \\cdot 1 0 ^ { 5 }$",
+        "bbox": [
+            73,
+            416,
+            561,
+            432
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Output",
+        "text_level": 2,
+        "bbox": [
+            73,
+            444,
+            151,
+            462
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "输出 n 个整数，其中第 i 个整数表示 f(i) 的值。",
+        "bbox": [
+            73,
+            470,
+            468,
+            487
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Example",
+        "text_level": 2,
+        "bbox": [
+            75,
+            498,
+            161,
+            516
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "table",
+        "img_path": "images/bd1e2ee89efc5c18d7427f1921c55b76090562084e0135cbfc8dcd939cf8db4e.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>standard input</td><td>standard output</td></tr><tr><td>7</td><td>0 3 3 3</td></tr><tr><td>4 4 3</td><td>0 -1 2 -1 4</td></tr><tr><td>1 2</td><td>0 4 4</td></tr><tr><td>2 3</td><td>0 5</td></tr><tr><td>3 4</td><td>0 -1 -1 -1</td></tr><tr><td>4 2</td><td>0 2</td></tr><tr><td>5 4 2</td><td>0 -1</td></tr><tr><td>1 2</td><td></td></tr><tr><td>2 3</td><td></td></tr><tr><td>3 4</td><td></td></tr><tr><td>4 5</td><td></td></tr><tr><td>3 3 4</td><td></td></tr><tr><td>1 2</td><td></td></tr><tr><td>2 3</td><td></td></tr><tr><td>3 1</td><td></td></tr><tr><td>2 1 5</td><td></td></tr><tr><td>1 2</td><td></td></tr><tr><td>4 1 2</td><td></td></tr><tr><td>1 2</td><td></td></tr><tr><td>2 2 2</td><td></td></tr><tr><td>1 2</td><td></td></tr><tr><td>2 2</td><td></td></tr><tr><td>2 0 1</td><td></td></tr></table>",
+        "bbox": [
+            75,
+            523,
+            836,
+            917
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "2026年牛客暑期多校第六场线上, 2026年8月5日",
+        "bbox": [
+            384,
+            24,
+            611,
+            58
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "Page 4 of 14",
+        "bbox": [
+            450,
+            953,
+            552,
+            969
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Problem E. 猫猫",
+        "text_level": 2,
+        "bbox": [
+            80,
+            65,
+            280,
+            87
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```txt\nInput file: standard input\nOutput file: standard output\nTime limit: 6 seconds\nMemory limit: 1024 megabytes\n```",
+        "bbox": [
+            112,
+            96,
+            425,
+            161
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "给定一个长度为 n 的数组 a，由非负整数组成。同时给定两个整数 k 和 m。你必须恰好执行以下操作 k次：",
+        "bbox": [
+            73,
+            173,
+            915,
+            206
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "• 从 a 中选择一个元素，记为 x，并将其删除。剩余部分拼接在一起。然后，将 $\\operatorname* { m i n } ( x + 1 , m )$ 插入到 a 的任意位置。",
+        "bbox": [
+            100,
+            225,
+            912,
+            258
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "在不同的操作中，你可以多次选择同一个元素。求恰好执行 k 次操作后所能得到的字典序最小的数组。",
+        "bbox": [
+            73,
+            275,
+            900,
+            294
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Input",
+        "text_level": 2,
+        "bbox": [
+            75,
+            305,
+            132,
+            323
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "每个测试包含多个测试用例。 第一行包含测试用例的数量 $t ~ ( 1 \\leq t \\leq 5 \\cdot 1 0 ^ { 4 } )$ 。 接下来是测试用例的描述。",
+        "bbox": [
+            73,
+            330,
+            914,
+            363
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "每个测试用例的第一行包含三个整数 n、k 和 $m ~ \\left( 1 \\leq n \\leq 5 \\cdot 1 0 ^ { 4 } , ~ 0 \\leq k \\leq n , ~ 0 \\leq m \\leq 2 \\cdot n \\right)$ ，分别表示 a 的长度、需要执行的操作次数以及操作的参数。",
+        "bbox": [
+            73,
+            368,
+            914,
+            401
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "第二行包含 n 个整数 $a _ { 1 } , a _ { 2 } , \\ldots , a _ { n } ( 0 \\leq a _ { i } \\leq m )$ ，表示 a 中的元素。",
+        "bbox": [
+            73,
+            406,
+            647,
+            423
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "保证所有测试用例中 n 的总和不超过 $5 \\cdot 1 0 ^ { 4 }$",
+        "bbox": [
+            73,
+            428,
+            443,
+            444
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Output",
+        "text_level": 2,
+        "bbox": [
+            73,
+            456,
+            151,
+            474
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "对于每个测试用例，输出 n 个整数，表示恰好执行 k 次操作后所能得到的字典序最小的数组。",
+        "bbox": [
+            73,
+            481,
+            831,
+            498
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Example",
+        "text_level": 2,
+        "bbox": [
+            75,
+            510,
+            161,
+            527
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "table",
+        "img_path": "images/aa9524e74f6ccb50f9421b4a905bc290c189d9044887d4a726a3d69184a35cc7.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>standard input</td><td>standard output</td></tr><tr><td>4</td><td>1 1 2 3 3</td></tr><tr><td>5 2 3</td><td>1 1 2</td></tr><tr><td>1 2 3 1 2</td><td>0 0 0 0 0 2</td></tr><tr><td>3 1 6</td><td>0 1 1 3 4 5 6 7 7 8 9 10 14</td></tr><tr><td>1 1 1</td><td></td></tr><tr><td>6 2 2</td><td></td></tr><tr><td>1 0 0 0 0 0</td><td></td></tr><tr><td>13 12 14</td><td></td></tr><tr><td>6 5 4 3 2 0 1 1 7 8 9 10 11</td><td></td></tr></table>",
+        "bbox": [
+            75,
+            535,
+            836,
+            703
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "2026年牛客暑期多校第六场线上, 2026年8月5日",
+        "bbox": [
+            384,
+            24,
+            611,
+            58
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "Page 5 of 14",
+        "bbox": [
+            450,
+            953,
+            552,
+            969
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Problem F. 字母表",
+        "text_level": 2,
+        "bbox": [
+            80,
+            65,
+            309,
+            87
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```txt\nInput file: standard input\nOutput file: standard output\nTime limit: 10 seconds\nMemory limit: 1024 megabytes\n```",
+        "bbox": [
+            112,
+            96,
+            425,
+            162
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "在本题中，字母表被定义为小写英文字母从 <sub>a</sub> 到 <sub>z</sub> 的一个排列。在字母表 A 下，字母 x 的字典序小于字母 y 当且仅当在 A 中 x 出现在 y 之前。",
+        "bbox": [
+            72,
+            173,
+            914,
+            206
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "在字母表 A 下，字符串 s 的字典序小于字符串 t 当且仅当满足以下两个条件之一：",
+        "bbox": [
+            72,
+            211,
+            739,
+            228
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "• s 是 t 的真前缀。",
+        "bbox": [
+            100,
+            247,
+            260,
+            263
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "• 存在一个整数 $i \\ ( 1 \\leq i \\leq \\operatorname* { m i n } ( | s | , | t | ) )$ )，使得对于所有的 $1 \\le j < i$ 都有 $s _ { j } = t _ { j }$ ，并且在字母表 A下 $s _ { i }$ 的字典序小于 $t _ { i }$ 。",
+        "bbox": [
+            100,
+            273,
+            914,
+            307
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "在字母表 A 下，字符串 s 被称为一个 Lyndon 串，当且仅当在 A 下它的字典序严格小于其所有的非空真后缀。",
+        "bbox": [
+            72,
+            325,
+            914,
+            359
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "给定一个字符串 s。请计算有多少种不同的字母表 A 使得 s 在 A 下是一个 $\\operatorname { L y n d o n }$ 串。由于答案可能很大，请输出其对 $2 ^ { 3 2 }$ 取模后的余数。",
+        "bbox": [
+            73,
+            363,
+            915,
+            397
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Input",
+        "text_level": 2,
+        "bbox": [
+            75,
+            407,
+            132,
+            426
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "每个测试点仅包含一行，给出一个字符串 $s \\ ( 2 \\leq | s | \\leq 2 \\cdot 1 0 ^ { 7 } )$",
+        "bbox": [
+            73,
+            432,
+            579,
+            450
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Output",
+        "text_level": 2,
+        "bbox": [
+            73,
+            461,
+            151,
+            480
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "输出一个整数，表示使得 s 在字母表 A 下是 Lyndon 串的不同字母表 A 的数量对 $2 ^ { 3 2 }$ 取模的结果。",
+        "bbox": [
+            73,
+            487,
+            875,
+            504
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Examples",
+        "text_level": 2,
+        "bbox": [
+            75,
+            514,
+            171,
+            533
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "table",
+        "img_path": "images/912a53fc5619e3b718e515407588a3e075ee24cdcdd87975981c1cabf81de4ee.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>standard input</td><td>standard output</td></tr><tr><td>abcdefghijklmnopqrstuvwxyz</td><td>2076180480</td></tr><tr><td>abaabb</td><td>0</td></tr><tr><td>sserxhsfan</td><td>2452619264</td></tr><tr><td>arcabcagc</td><td>3598712832</td></tr></table>",
+        "bbox": [
+            75,
+            541,
+            836,
+            653
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "2026年牛客暑期多校第六场线上, 2026年8月5日",
+        "bbox": [
+            384,
+            24,
+            611,
+            58
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "Page 6 of 14",
+        "bbox": [
+            450,
+            953,
+            552,
+            969
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Problem G. 图上游戏",
+        "text_level": 2,
+        "bbox": [
+            78,
+            65,
+            341,
+            87
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```txt\nInput file: standard input\nOutput file: standard output\nTime limit: 1 second\nMemory limit: 256 megabytes\n```",
+        "bbox": [
+            112,
+            96,
+            425,
+            162
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "给定一个简单连通无向图 G，包含 n 个顶点和 m 条边，以及一个由 k 个特殊顶点 $a _ { 1 } , a _ { 2 } , \\ldots , a _ { k }$ 组成的集合。G 有一个有趣的性质：所有顶点的度数不超过三。",
+        "bbox": [
+            72,
+            173,
+            914,
+            206
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "考虑在 G 上进行的以下游戏：",
+        "bbox": [
+            73,
+            211,
+            315,
+            228
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "• 游戏由两名玩家 Alice 和 Bob 参与。初始时，Alice 站在一个非特殊顶点 s 上。然后，两名玩家轮流操作，由 Alice 先手：",
+        "bbox": [
+            100,
+            247,
+            914,
+            280
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "– 如果轮到 Alice 操作，假设她当前在顶点 。如果 是特殊顶点，游戏结束且 Alice 获胜。否则，她选择一个与 u 有边相连的顶点 v 并移动到 v。如果不存在这样的顶点，游戏结束且Bob 获胜。",
+        "bbox": [
+            139,
+            293,
+            914,
+            342
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "– 如果轮到 Bob 操作，他会选择 G 中剩余的任意一条边并将其删除。如果 G 中没有边了，他什么也不做。",
+        "bbox": [
+            139,
+            346,
+            915,
+            380
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "• 可以证明游戏会在有限回合内结束。在整个游戏过程中，Alice 的位置对两名玩家都是已知的。",
+        "bbox": [
+            99,
+            392,
+            878,
+            410
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "一个顶点 u 被认为是必胜的，当且仅当：",
+        "bbox": [
+            73,
+            429,
+            401,
+            445
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "• u 不是特殊顶点；",
+        "bbox": [
+            100,
+            464,
+            258,
+            481
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "• 如果初始时 Alice 站在顶点 u 上，在双方都采取最优策略的情况下，她能赢得游戏。",
+        "bbox": [
+            100,
+            491,
+            796,
+            508
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "找出所有必胜顶点。",
+        "bbox": [
+            73,
+            527,
+            236,
+            544
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Input",
+        "text_level": 2,
+        "bbox": [
+            73,
+            556,
+            132,
+            573
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "每个测试包含多个测试用例。 第一行包含测试用例的数量 $t ~ ( 1 \\leq t \\leq 2 \\cdot 1 0 ^ { 4 } )$ 。 接下来是测试用例的描述。",
+        "bbox": [
+            72,
+            581,
+            914,
+            614
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "每个测试用例的第一行包含三个整数 n、m 和 $\\begin{array} { r } { k \\left( 1 \\leq k < n \\leq 2 \\cdot 1 0 ^ { 5 } , n - 1 \\leq m \\leq \\operatorname* { m i n } ( \\frac { 3 n } { 2 } , 2 \\cdot 1 0 ^ { 5 } ) \\right) } \\end{array}$ ，分别表示 G 中的顶点数、G 中的边数和特殊顶点的数量。",
+        "bbox": [
+            73,
+            618,
+            912,
+            651
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "接下来的 m 行，每行包含两个整数 u 和 $v ~ ( 1 \\leq u , v \\leq n , u \\neq v )$ ，表示连接顶点 u 和 v 的一条边。保证G 不包含自环或重边。此外，保证所有顶点的度数不超过三。",
+        "bbox": [
+            73,
+            657,
+            914,
+            689
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "下一行包含 k 个互不相同的整数 $a _ { 1 } , a _ { 2 } , \\ldots , a _ { k } \\ ( 1 \\leq a _ { i } \\leq n )$ ，表示特殊顶点。",
+        "bbox": [
+            73,
+            695,
+            692,
+            712
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "保证所有测试用例中 n 的总和与 m 的总和均不超过 $2 \\cdot 1 0 ^ { 5 }$ C",
+        "bbox": [
+            73,
+            715,
+            563,
+            732
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Output",
+        "text_level": 2,
+        "bbox": [
+            73,
+            745,
+            151,
+            763
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "对于每个测试用例，首先输出一个整数 $c \\left( 1 \\leq c \\leq n - k \\right)$ ，表示必胜顶点的数量。然后，输出 c 个互不相同的整数 $w _ { 1 } , w _ { 2 } , \\ldots , w _ { c } \\ ( 1 \\leq w _ { i } \\leq n )$ ，表示必胜顶点。你可以以任意顺序输出这些顶点。",
+        "bbox": [
+            72,
+            770,
+            915,
+            804
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "2026年牛客暑期多校第六场线上, 2026年8月5日",
+        "bbox": [
+            384,
+            24,
+            611,
+            58
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "Page 7 of 14",
+        "bbox": [
+            450,
+            953,
+            552,
+            969
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Example",
+        "bbox": [
+            75,
+            65,
+            161,
+            85
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "table",
+        "img_path": "images/69f32ace57c92aa6f734a6888eff9681c396be8eadec733015d098344afa4db2.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>standard input</td><td>standard output</td></tr><tr><td>4</td><td>1</td></tr><tr><td>2 1 1</td><td>2</td></tr><tr><td>1 2</td><td>1</td></tr><tr><td>1</td><td>2</td></tr><tr><td>3 2 1</td><td>2</td></tr><tr><td>1 2</td><td>1 2</td></tr><tr><td>2 3</td><td>2</td></tr><tr><td>1</td><td>2 3</td></tr><tr><td>4 3 2</td><td></td></tr><tr><td>1 2</td><td></td></tr><tr><td>2 3</td><td></td></tr><tr><td>2 4</td><td></td></tr><tr><td>3 4</td><td></td></tr><tr><td>4 5 1</td><td></td></tr><tr><td>1 2</td><td></td></tr><tr><td>1 3</td><td></td></tr><tr><td>2 4</td><td></td></tr><tr><td>3 4</td><td></td></tr><tr><td>2 3</td><td></td></tr><tr><td>4</td><td></td></tr></table>",
+        "bbox": [
+            75,
+            91,
+            836,
+            438
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "2026年牛客暑期多校第六场线上, 2026年8月5日",
+        "bbox": [
+            384,
+            24,
+            610,
+            58
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "Page 8 of 14",
+        "bbox": [
+            450,
+            953,
+            552,
+            969
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Problem H. 困难问题",
+        "text_level": 2,
+        "bbox": [
+            78,
+            65,
+            342,
+            87
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```txt\nInput file: standard input\nOutput file: standard output\nTime limit: 1 second\nMemory limit: 256 megabytes\n```",
+        "bbox": [
+            112,
+            96,
+            425,
+            161
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "给定一个整数 n。请找出长度为 n 的字典序最小的<sup>¶</sup>排列<sup>‖</sup> p，使得对于任意 $1 \\leq i \\leq n , | p _ { i } - p _ { ( i \\mathrm { m o d } n ) + 1 } |$ 都不是质数。",
+        "bbox": [
+            72,
+            174,
+            912,
+            206
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Input",
+        "text_level": 2,
+        "bbox": [
+            73,
+            218,
+            132,
+            236
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "每个测试包含多个测试用例。 第一行包含测试用例的数量 $t ~ ( 1 \\leq t \\leq 1 0 ^ { 4 } )$ 。 接下来是测试用例的描述。每个测试用例的唯一一行包含一个整数 $n ~ ( 2 \\leq n \\leq 2 \\cdot 1 0 ^ { 5 } )$ C",
+        "bbox": [
+            73,
+            243,
+            904,
+            282
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "保证所有测试用例中 n 的总和不超过 2·10<sup>5</sup>。",
+        "bbox": [
+            73,
+            287,
+            443,
+            304
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Output",
+        "text_level": 2,
+        "bbox": [
+            73,
+            315,
+            151,
+            334
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "对于每个测试用例，如果不存在符合条件的长度为 n 的排列，请输出 −1。",
+        "bbox": [
+            73,
+            341,
+            675,
+            357
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "否则，输出 n 个互不相同的整数 $p _ { 1 } , p _ { 2 } , . . . , p _ { n } \\ ( 1 \\leq p _ { i } \\leq n )$ ，表示你找到的排列 p。",
+        "bbox": [
+            73,
+            363,
+            744,
+            380
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Example",
+        "text_level": 2,
+        "bbox": [
+            75,
+            391,
+            161,
+            409
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "table",
+        "img_path": "images/8e9100ee6908b2e0613bf1fa20348b15e6269fd01a54e98ad43ea2c5396ad4cf.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>standard input</td><td>standard output</td></tr><tr><td>2</td><td>1 2</td></tr><tr><td>2</td><td>-1</td></tr><tr><td>3</td><td></td></tr></table>",
+        "bbox": [
+            75,
+            416,
+            836,
+            489
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "<sup>¶</sup>数组 a 字典序小于数组 b，当且仅当满足以下条件之一：",
+        "bbox": [
+            92,
+            838,
+            477,
+            853
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "• a 是 b 的前缀，且 $a \\neq b ;$ 或者",
+        "bbox": [
+            100,
+            857,
+            334,
+            871
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "• 在 和 首次出现不同的位置上，数组 中的元素小于 中对应的元素。",
+        "bbox": [
+            100,
+            873,
+            613,
+            889
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "2026年牛客暑期多校第六场线上, 2026年8月5日",
+        "bbox": [
+            384,
+            24,
+            611,
+            58
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_footnote",
+        "text": "<sup>‖</sup>长度为 n 的排列是一个数组，它由 n 个从 1 到 n 的不同整数以任意顺序组成。例如，[2, 3, 1, 5, 4] 是一个排列，但 [1, 2, 2]不是排列（2 在数组中出现了两次），[1,3,4] 也不是排列（n = 3 但数组中存在 4）。",
+        "bbox": [
+            73,
+            901,
+            915,
+            929
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "Page 9 of 14",
+        "bbox": [
+            450,
+            953,
+            552,
+            969
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Problem I. 整数函数",
+        "text_level": 2,
+        "bbox": [
+            80,
+            65,
+            329,
+            87
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```txt\nInput file: standard input\nOutput file: standard output\nTime limit: 2 seconds\nMemory limit: 256 megabytes\n```",
+        "bbox": [
+            112,
+            96,
+            425,
+            162
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "对于非负整数 x，令 f(x) 表示 x 的二进制表示中 1 的个数。",
+        "bbox": [
+            72,
+            173,
+            566,
+            190
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "给定两个整数 n 和 d。计算：",
+        "bbox": [
+            73,
+            195,
+            310,
+            211
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\left(\\sum_ {i = 0} ^ {n} f (i) \\cdot f (i + d)\\right) \\bmod 9 9 8   2 4 4   3 5 3\n$$",
+        "text_format": "latex",
+        "bbox": [
+            341,
+            228,
+            648,
+            272
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Input",
+        "text_level": 2,
+        "bbox": [
+            73,
+            286,
+            132,
+            305
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "每个测试包含多个测试用例。 第一行包含测试用例的数量 $t ~ ( 1 \\leq t \\leq 1 0 ^ { 4 } )$ 。 接下来是测试用例的描述。每个测试用例的唯一一行包含两个整数 n 和 $d ~ ( 0 \\leq n , d < 2 ^ { 6 0 } )$ 0",
+        "bbox": [
+            73,
+            311,
+            902,
+            351
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Output",
+        "text_level": 2,
+        "bbox": [
+            73,
+            362,
+            151,
+            380
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "对于每个测试用例，输出一个整数，表示该表达式的值。",
+        "bbox": [
+            73,
+            387,
+            529,
+            405
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Example",
+        "text_level": 2,
+        "bbox": [
+            75,
+            414,
+            161,
+            432
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "table",
+        "img_path": "images/7a637e5aa57634c6c9af46a8e059c6521fdc84d4d99a1d8beda69a80e5545856.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>standard input</td><td>standard output</td></tr><tr><td>5</td><td>0</td></tr><tr><td>0 0</td><td>1</td></tr><tr><td>1 1</td><td>14</td></tr><tr><td>5 7</td><td>6022</td></tr><tr><td>314 159</td><td>11512513</td></tr><tr><td>114514 1919810</td><td></td></tr></table>",
+        "bbox": [
+            75,
+            441,
+            836,
+            562
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "2026年牛客暑期多校第六场线上, 2026年8月5日",
+        "bbox": [
+            384,
+            24,
+            611,
+            58
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "Page 10 of 14",
+        "bbox": [
+            445,
+            953,
+            557,
+            969
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Problem J. 加除",
+        "text_level": 2,
+        "bbox": [
+            80,
+            66,
+            278,
+            87
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Input file: standard input Output file: standard output Time limit: 5 seconds Memory limit: 1024 megabytes",
+        "bbox": [
+            112,
+            96,
+            425,
+            161
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "给定两个长度为 n 且由正整数组成的数组 a 和 b。你需要回答 q 个以下三种类型的询问：",
+        "bbox": [
+            73,
+            173,
+            789,
+            190
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "$\\begin{array} { r } { 1 \\ i \\ x \\ ( 1 \\leq i \\leq n , \\ 1 \\leq x \\leq 1 0 ^ { 9 } ) } \\end{array}$ ：赋值 $a _ { i }  x ;$",
+        "bbox": [
+            100,
+            209,
+            492,
+            225
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "$\\textit { 2 i x } ( 1 \\leq i \\leq n , \\ 1 \\leq x \\leq 1 0 ^ { 9 } )$ ：赋值 $b _ { i } \\gets x _ { i }$",
+        "bbox": [
+            100,
+            236,
+            490,
+            253
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "$\\ 3 \\ l \\ r \\ ( 1 \\leq l < r \\leq n )$ ：计算：",
+        "bbox": [
+            100,
+            262,
+            349,
+            279
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\max _ {l \\leq i <   j \\leq r} \\frac {a _ {i} + a _ {j}}{b _ {i} + b _ {j}}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            452,
+            278,
+            578,
+            310
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "所有的询问将按给出的顺序依次处理。每次赋值操作都会永久修改对应的数组元素，并影响所有后续的询问。",
+        "bbox": [
+            73,
+            326,
+            914,
+            360
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Input",
+        "text_level": 2,
+        "bbox": [
+            75,
+            372,
+            131,
+            390
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "每个测试点的第一行包含两个整数 n 和 $q ~ ( 2 \\leq n \\leq 1 0 ^ { 5 } , ~ 1 \\leq q \\leq 1 0 ^ { 5 } )$ ，分别表示数组 a 和 b 的长度以及询问的数量。",
+        "bbox": [
+            73,
+            397,
+            914,
+            430
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "第二行包含 n 个整数 $a _ { 1 } , a _ { 2 } , \\ldots , a _ { n } \\ ( 1 \\leq a _ { i } \\leq 1 0 ^ { 9 } )$ ，表示数组 a 的元素。",
+        "bbox": [
+            73,
+            436,
+            657,
+            453
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "第三行包含 n 个整数 $b _ { 1 } , b _ { 2 } , \\ldots , b _ { n } \\ ( 1 \\leq b _ { i } \\leq 1 0 ^ { 9 } )$ ，表示数组 b 的元素。",
+        "bbox": [
+            73,
+            457,
+            650,
+            474
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "接下来的 q 行，每行包含一个询问。",
+        "bbox": [
+            73,
+            479,
+            369,
+            495
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Output",
+        "text_level": 2,
+        "bbox": [
+            73,
+            507,
+            151,
+            525
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "对于每个第三种类型的询问，可以证明其答案能被唯一表示为最简分数 $\\frac { x } { y }$ 。你需要输出两个整数 x 和y<sup>。</sup>",
+        "bbox": [
+            72,
+            533,
+            914,
+            567
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Example",
+        "text_level": 2,
+        "bbox": [
+            75,
+            577,
+            161,
+            595
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "table",
+        "img_path": "images/ca66bcb3ec6f3de42c4583d929d7e6c9e8670e593881c44f590f3e4e86eb34c9.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>standard input</td><td>standard output</td></tr><tr><td>6 7</td><td>40 3</td></tr><tr><td>10 20 30 100 1000000000 1000000000</td><td>65 6</td></tr><tr><td>1 5 2 10 1 1000000000</td><td>10 1</td></tr><tr><td>3 1 4</td><td>26 3</td></tr><tr><td>3 2 4</td><td>2000000000 1000000001</td></tr><tr><td>1 3 4</td><td></td></tr><tr><td>3 1 4</td><td></td></tr><tr><td>2 1 100</td><td></td></tr><tr><td>3 1 4</td><td></td></tr><tr><td>3 5 6</td><td></td></tr></table>",
+        "bbox": [
+            75,
+            602,
+            836,
+            788
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "2026年牛客暑期多校第六场线上, 2026年8月5日",
+        "bbox": [
+            384,
+            24,
+            611,
+            58
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "Page 11 of 14",
+        "bbox": [
+            447,
+            953,
+            557,
+            969
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Problem K. 构造",
+        "text_level": 2,
+        "bbox": [
+            80,
+            66,
+            284,
+            87
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```txt\nInput file: standard input\nOutput file: standard output\nTime limit: 1 second\nMemory limit: 256 megabytes\n```",
+        "bbox": [
+            112,
+            96,
+            425,
+            161
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "在本题中，一个图灵机 M 被定义为一个元组 $( Q , q _ { 0 } , q _ { h } , \\delta , p _ { 0 } )$ ，其中：",
+        "bbox": [
+            72,
+            173,
+            630,
+            190
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "• Q：所有可能状态的有限集合。为简便起见，Q 始终为 $\\{ 0 , 1 , 2 , \\ldots , N - 1 \\}$ ，其中 N 为某个正整数。",
+        "bbox": [
+            100,
+            209,
+            915,
+            241
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "$q _ { 0 } \\in Q ;$ ：初始状态。",
+        "bbox": [
+            100,
+            252,
+            280,
+            269
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "$q _ { h } \\in Q ;$ ：停机状态。",
+        "bbox": [
+            100,
+            279,
+            282,
+            294
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "$\\delta : ( Q \\setminus \\{ q _ { h } \\} ) \\times \\{ 0 , 1 \\}  Q \\times \\{ 0 , 1 \\} \\times \\{ - 1 , 0 , 1 \\}$ ：转移函数。",
+        "bbox": [
+            100,
+            306,
+            608,
+            323
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "$p _ { 0 } \\in \\mathbb { Z } _ { \\geq 0 } \\colon$ 指针的初始位置。",
+        "bbox": [
+            100,
+            332,
+            352,
+            349
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "图灵机在一个由非负整数索引的半无限纸带 c 上运行。每个单元格包含 0 或 1。我们用 c 表示写在单元 $c _ { i }$ 格 $i \\in \\mathbb { Z } _ { \\geq 0 }$ 上的值。",
+        "bbox": [
+            73,
+            368,
+            914,
+            401
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "执行过程遵循以下规则：",
+        "bbox": [
+            73,
+            405,
+            270,
+            422
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "• M 的运行时配置是一个二元组 $( q , p )$ ，其中 q 是当前状态，p 是当前指针位置。初始时， $( q , p ) = ( q _ { 0 } , p _ { 0 } )$ C",
+        "bbox": [
+            100,
+            441,
+            914,
+            476
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "• 在每一步中，严格按顺序发生以下事件：",
+        "bbox": [
+            100,
+            483,
+            443,
+            501
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "– 如果 $p < 0$ ，机器崩溃。",
+        "bbox": [
+            139,
+            514,
+            352,
+            531
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "– 如果 $q = q _ { h }$ ，机器成功停机。",
+        "bbox": [
+            139,
+            536,
+            396,
+            552
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "– 否则，令 $( q _ { \\mathrm { n e x t } } , w , d ) = \\delta ( q , c _ { p } )$ 。机器将更新当前单元格 $c _ { p } \\gets w$ ，状态转移至 $q  q _ { \\mathrm { n e x t } }$ ，并将指针移动 $p \\gets p + d$",
+        "bbox": [
+            139,
+            557,
+            912,
+            589
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "给定一个长度为 n 的数组 a 和一个整数 k。保证：",
+        "bbox": [
+            73,
+            608,
+            477,
+            624
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "$1 \\leq n < 2 ^ { 1 6 }$",
+        "bbox": [
+            100,
+            644,
+            228,
+            659
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "$\\bullet \\ 0 \\leq k < 2 ^ { 1 6 }$",
+        "bbox": [
+            100,
+            671,
+            228,
+            687
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "• 对于所有 $0 \\leq i < n , \\ 0 \\leq a _ { i } < 2 ^ { 1 6 }$",
+        "bbox": [
+            100,
+            697,
+            406,
+            714
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "所有输入都预先写在纸带 c 上，以 16 位小端序二进制编码。具体来说：",
+        "bbox": [
+            73,
+            734,
+            650,
+            750
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "• n 存储在单元格 16 到 31。",
+        "bbox": [
+            99,
+            769,
+            337,
+            785
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "• k 存储在单元格 32 到 47。",
+        "bbox": [
+            100,
+            796,
+            336,
+            812
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "• 对于每个 $0 \\leq i < n$ ，值 $a _ { i }$ 存储在单元格 $4 8 + 1 6 \\cdot i$ 到 $6 3 + 1 6 \\cdot i \\cdot$ C",
+        "bbox": [
+            100,
+            822,
+            658,
+            839
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "• 纸带上的所有其他单元格初始均为 0。",
+        "bbox": [
+            100,
+            850,
+            426,
+            866
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "2026年牛客暑期多校第六场线上, 2026年8月5日",
+        "bbox": [
+            384,
+            24,
+            611,
+            58
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "Page 12 of 14",
+        "bbox": [
+            445,
+            953,
+            557,
+            969
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "当 $x$ 存储在单元格 l 到 r 时，这意味着 $x$ 的第 $j$ 个最低有效位存储在 $c _ { l + j }$ 中 $( 0 \\leq j \\leq r - l )$ 。例如，如果 10 存储在单元格 1 到 7 中，那么 $c _ { 1 . . 7 }$ 将是 0101000。",
+        "bbox": [
+            73,
+            67,
+            902,
+            99
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "你的任务是构造一个图灵机 M，用于计算 a 中严格大于 k 的元素的数量。",
+        "bbox": [
+            73,
+            105,
+            673,
+            121
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "你的机器最终必须到达状态 $q _ { h }$ 并停机。停机时，答案必须存储在单元格 0 到 15 中。一旦机器停机，指针 $p$ 的最终位置以及写在其他单元格中的值都不重要。",
+        "bbox": [
+            73,
+            126,
+            914,
+            158
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "你的机器包含的状态数不应超过 11451 个，并且在不超过 $4 \\cdot 1 0 ^ { 8 }$ 步内停机。",
+        "bbox": [
+            73,
+            164,
+            685,
+            181
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Input",
+        "text_level": 2,
+        "bbox": [
+            75,
+            192,
+            131,
+            210
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "本题没有输入。",
+        "bbox": [
+            73,
+            217,
+            200,
+            234
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Output",
+        "text_level": 2,
+        "bbox": [
+            73,
+            246,
+            151,
+            263
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "首先，输出一个整数 $N \\ ( 1 \\leq N \\leq 1 1 4 5 1 )$ ，表示 $| Q |$ 。",
+        "bbox": [
+            73,
+            272,
+            505,
+            288
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "然后，输出 N 行，每行包含 6 个整数。第 i 行的前三个整数表示 $\\delta ( i , 0 )$ ，后三个整数表示 $\\delta ( i , 1 )$ 最后，输出 3 个整数 $q _ { 0 } \\cdot \\ q _ { h }$ 和 $p _ { 0 } ~ ( 0 \\leq q _ { 0 } , q _ { h } < N , 0 \\leq p _ { 0 } )$ C",
+        "bbox": [
+            73,
+            293,
+            868,
+            334
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Example",
+        "text_level": 2,
+        "bbox": [
+            75,
+            343,
+            163,
+            361
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "table",
+        "img_path": "images/6ee7e13ffb377c8521f8ee3edd13ce4eb6785bf80e94cc7e2d34f411e002737b.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>standard input</td><td>standard output</td></tr><tr><td>No Input</td><td>41 1 1 3 1 11 1 -1 2 0 12 1 -1 0 1 -13 0 1 3 1 10 3 100</td></tr></table>",
+        "bbox": [
+            75,
+            369,
+            835,
+            489
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Note",
+        "text_level": 2,
+        "bbox": [
+            75,
+            502,
+            127,
+            519
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "样例输入和输出仅用于演示目的，并且是不正确的。实际的测试用例将没有任何输入。",
+        "bbox": [
+            73,
+            527,
+            768,
+            545
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "有趣的事实：样例输出是用于计算 BB(3) 的图灵机。",
+        "bbox": [
+            73,
+            550,
+            500,
+            567
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "2026年牛客暑期多校第六场线上, 2026年8月5日",
+        "bbox": [
+            384,
+            24,
+            611,
+            58
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_number",
+        "text": "Page 13 of 14",
+        "bbox": [
+            447,
+            953,
+            557,
+            969
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Problem L. 最长回文子串询问",
+        "text_level": 2,
+        "bbox": [
+            78,
+            65,
+            450,
+            87
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```txt\nInput file: standard input\nOutput file: standard output\nTime limit: 4 seconds\nMemory limit: 512 megabytes\n```",
+        "bbox": [
+            112,
+            96,
+            426,
+            162
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "给定一个长度为 n 的字符串 s。请回答 q 个如下类型的询问：",
+        "bbox": [
+            73,
+            173,
+            566,
+            191
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "• 给定两个整数 l 和 $r \\ ( 1 \\leq l \\leq r \\leq n )$ 。求字符串 $s [ 1 . . l - 1 ] + s [ r + 1 . . n ]$ 的最长回文子串的长度，其中 + 表示字符串拼接。这里，s[x..y] 表示 s 从第 x 个字符到第 y 个字符的子串。特别地，如果$x > y , s [ x . . y ]$ 为空串。",
+        "bbox": [
+            100,
+            209,
+            914,
+            259
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Input",
+        "text_level": 2,
+        "bbox": [
+            75,
+            280,
+            132,
+            298
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "每个测试包含多个测试用例。 第一行包含测试用例的数量 $t ~ ( 1 \\leq t \\leq 1 0 ^ { 4 } )$ 。 接下来是测试用例的描述。每个测试用例的第一行包含两个整数 n 和 $q ~ ( 1 \\leq n \\leq 5 \\cdot 1 0 ^ { 5 } , ~ 1 \\leq q \\leq 5 \\cdot 1 0 ^ { 5 } )$ ，分别表示 s 的长度和询问的数量。",
+        "bbox": [
+            73,
+            306,
+            914,
+            360
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "第二行包含字符串 s。保证 s 仅由小写英文字母组成。",
+        "bbox": [
+            73,
+            365,
+            510,
+            382
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "接下来的 q 行，每行包含两个整数 l 和 $r \\ ( 1 \\leq l \\leq r \\leq n )$ ，表示一个询问。",
+        "bbox": [
+            73,
+            387,
+            677,
+            404
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "保证所有测试用例中 n 的总和以及 q 的总和均不超过 5·10<sup>5</sup>。",
+        "bbox": [
+            73,
+            409,
+            574,
+            425
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Output",
+        "text_level": 2,
+        "bbox": [
+            73,
+            437,
+            151,
+            455
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "对于每个测试用例，输出 q 个整数，其中第 i 个整数表示第 i 个询问的答案。",
+        "bbox": [
+            73,
+            462,
+            697,
+            480
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Example",
+        "text_level": 2,
+        "bbox": [
+            75,
+            491,
+            161,
+            508
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "table",
+        "img_path": "images/fe9c20ad9357bbca2bc84ba5d1ce1a9c8497e3b14539b331c08b0596758348bc.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>standard input</td><td>standard output</td></tr><tr><td>1</td><td>5</td></tr><tr><td>6 21</td><td>3</td></tr><tr><td>abcacb</td><td>1</td></tr><tr><td>1 1</td><td>1</td></tr><tr><td>1 2</td><td>1</td></tr><tr><td>1 3</td><td>0</td></tr><tr><td>1 4</td><td>3</td></tr><tr><td>1 5</td><td>2</td></tr><tr><td>1 6</td><td>1</td></tr><tr><td>2 2</td><td>1</td></tr><tr><td>2 3</td><td>1</td></tr><tr><td>2 4</td><td>3</td></tr><tr><td>2 5</td><td>3</td></tr><tr><td>2 6</td><td>2</td></tr><tr><td>3 3</td><td>1</td></tr><tr><td>3 4</td><td>4</td></tr><tr><td>3 5</td><td>3</td></tr><tr><td>3 6</td><td>1</td></tr><tr><td>4 4</td><td>1</td></tr><tr><td>4 5</td><td>1</td></tr><tr><td>4 6</td><td>3</td></tr><tr><td>5 5</td><td></td></tr><tr><td>5 6</td><td></td></tr><tr><td>6 6</td><td></td></tr></table>",
+        "bbox": [
+            75,
+            516,
+            836,
+            926
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "2026年牛客暑期多校第六场线上, 2026年8月5日",
+        "bbox": [
+            384,
+            24,
+            611,
+            58
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_number",
+        "text": "Page 14 of 14",
+        "bbox": [
+            447,
+            953,
+            557,
+            969
+        ],
+        "page_idx": 13
+    }
+]

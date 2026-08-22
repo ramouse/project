@@ -1,0 +1,4428 @@
+{
+    "pdf_info": [
+        {
+            "preproc_blocks": [
+                {
+                    "bbox": [
+                        38,
+                        47,
+                        356,
+                        74
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                42,
+                                47,
+                                354,
+                                74
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        42,
+                                        47,
+                                        354,
+                                        74
+                                    ],
+                                    "type": "text",
+                                    "content": "权值并查集解决鱼类合并问题",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        38,
+                        81,
+                        276,
+                        95
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 1,
+                    "lines": [
+                        {
+                            "bbox": [
+                                42,
+                                83,
+                                273,
+                                93
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        42,
+                                        83,
+                                        273,
+                                        93
+                                    ],
+                                    "type": "text",
+                                    "content": "https://gemini.google.com/app/c4dddb086f74906a",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        40,
+                        108,
+                        254,
+                        124
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 2,
+                    "lines": [
+                        {
+                            "bbox": [
+                                42,
+                                109,
+                                253,
+                                123
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        42,
+                                        109,
+                                        253,
+                                        123
+                                    ],
+                                    "type": "text",
+                                    "content": "User prompt: 这题怎么用权值并查集做",
+                                    "score": 0.986
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        39,
+                        138,
+                        602,
+                        154
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 3,
+                    "lines": [
+                        {
+                            "bbox": [
+                                42,
+                                139,
+                                598,
+                                152
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        42,
+                                        139,
+                                        598,
+                                        152
+                                    ],
+                                    "type": "text",
+                                    "content": "Response:这道题的核心突破口在于题目中的一个关键条件：“保证 不小于之前放入过的所有鱼的大小”。v",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        38,
+                        169,
+                        798,
+                        204
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 4,
+                    "lines": [
+                        {
+                            "bbox": [
+                                42,
+                                171,
+                                797,
+                                184
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        42,
+                                        171,
+                                        797,
+                                        184
+                                    ],
+                                    "type": "text",
+                                    "content": "这意味着鱼是按照大小非降的顺序被加入网格的。因此，每当加入一条新鱼时，它不仅是当前连通块中最新、最大的鱼，还能直接吃掉四周所有",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                43,
+                                190,
+                                712,
+                                200
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        43,
+                                        190,
+                                        712,
+                                        200
+                                    ],
+                                    "type": "text",
+                                    "content": "已存在的邻居鱼。这就带来了一个非常漂亮的树状拓扑结构，可以通过带路径压缩的权值并查集（WeightedDSU）来完美解决。",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        39,
+                        222,
+                        188,
+                        243
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 5,
+                    "lines": [
+                        {
+                            "bbox": [
+                                40,
+                                219,
+                                186,
+                                244
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        40,
+                                        219,
+                                        186,
+                                        244
+                                    ],
+                                    "type": "text",
+                                    "content": "核心物理量与转化",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        38,
+                        261,
+                        400,
+                        277
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 6,
+                    "lines": [
+                        {
+                            "bbox": [
+                                43,
+                                264,
+                                396,
+                                275
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        43,
+                                        264,
+                                        396,
+                                        275
+                                    ],
+                                    "type": "text",
+                                    "content": "我们可以把每次放入新鱼的过程看作是在构建一棵Kruskal重构树：",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        53,
+                        291,
+                        592,
+                        307
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 7,
+                    "lines": [
+                        {
+                            "bbox": [
+                                57,
+                                292,
+                                590,
+                                305
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        57,
+                                        292,
+                                        528,
+                                        305
+                                    ],
+                                    "type": "text",
+                                    "content": "每条新鱼放入时，如果它挨着某些已有的连通块，它就会成为这些连通块根节点的双亲",
+                                    "score": 1.0
+                                },
+                                {
+                                    "bbox": [
+                                        534,
+                                        292,
+                                        584,
+                                        305
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "( \\mathsf { P a r e n t } )",
+                                    "score": 0.5848
+                                },
+                                {
+                                    "bbox": [
+                                        584,
+                                        299,
+                                        590,
+                                        305
+                                    ],
+                                    "type": "text",
+                                    "content": "o",
+                                    "score": 0.911
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        53,
+                        321,
+                        491,
+                        336
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 8,
+                    "lines": [
+                        {
+                            "bbox": [
+                                58,
+                                323,
+                                488,
+                                336
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        58,
+                                        323,
+                                        488,
+                                        336
+                                    ],
+                                    "type": "text",
+                                    "content": "由于新鱼的大小 之前的任何鱼，它一出生就能直接把这些子树里的鱼全吃掉。≥",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        37,
+                        352,
+                        798,
+                        387
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 9,
+                    "lines": [
+                        {
+                            "bbox": [
+                                42,
+                                355,
+                                796,
+                                367
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        42,
+                                        355,
+                                        199,
+                                        365
+                                    ],
+                                    "type": "text",
+                                    "content": "对于一个已经在树中的老节点",
+                                    "score": 1.0
+                                },
+                                {
+                                    "bbox": [
+                                        200,
+                                        355,
+                                        215,
+                                        367
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "u ,",
+                                    "score": 0.7068
+                                },
+                                {
+                                    "bbox": [
+                                        215,
+                                        355,
+                                        796,
+                                        365
+                                    ],
+                                    "type": "text",
+                                    "content": "，如果它想借着后续不断加入的新鱼“游向更远的世界”（即扩大连通块），它必须能够一路向上走，跨越每一层",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                42,
+                                374,
+                                579,
+                                387
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        42,
+                                        374,
+                                        298,
+                                        384
+                                    ],
+                                    "type": "text",
+                                    "content": "父节点。假设 所在的某个历史连通块根节点为u",
+                                    "score": 1.0
+                                },
+                                {
+                                    "bbox": [
+                                        299,
+                                        375,
+                                        314,
+                                        386
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "x ,",
+                                    "score": 0.5601
+                                },
+                                {
+                                    "bbox": [
+                                        315,
+                                        374,
+                                        550,
+                                        384
+                                    ],
+                                    "type": "text",
+                                    "content": "，现在它被合并到了一个大小为 的新父节点v",
+                                    "score": 1.0
+                                },
+                                {
+                                    "bbox": [
+                                        550,
+                                        374,
+                                        562,
+                                        387
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "p",
+                                    "score": 0.6613
+                                },
+                                {
+                                    "bbox": [
+                                        562,
+                                        374,
+                                        579,
+                                        384
+                                    ],
+                                    "type": "text",
+                                    "content": "上：",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        55,
+                        404,
+                        451,
+                        419
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 10,
+                    "lines": [
+                        {
+                            "bbox": [
+                                60,
+                                406,
+                                448,
+                                419
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        60,
+                                        406,
+                                        169,
+                                        418
+                                    ],
+                                    "type": "text",
+                                    "content": "1. 想要跨过 进入u x",
+                                    "score": 1.0
+                                },
+                                {
+                                    "bbox": [
+                                        169,
+                                        406,
+                                        184,
+                                        419
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "^ { p , }",
+                                    "score": 0.7842
+                                },
+                                {
+                                    "bbox": [
+                                        185,
+                                        406,
+                                        448,
+                                        418
+                                    ],
+                                    "type": "text",
+                                    "content": "，它必须先吃完整个 子树内的所有鱼来壮大自 己。x",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        55,
+                        434,
+                        493,
+                        451
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 11,
+                    "lines": [
+                        {
+                            "bbox": [
+                                58,
+                                434,
+                                491,
+                                452
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        58,
+                                        435,
+                                        240,
+                                        451
+                                    ],
+                                    "type": "text",
+                                    "content": "2.吃完 子树后， 的体型会增加x u",
+                                    "score": 1.0
+                                },
+                                {
+                                    "bbox": [
+                                        243,
+                                        435,
+                                        299,
+                                        451
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "s z [ x ] - 1",
+                                    "score": 0.9112
+                                },
+                                {
+                                    "bbox": [
+                                        305,
+                                        434,
+                                        336,
+                                        452
+                                    ],
+                                    "type": "text",
+                                    "content": "（其中",
+                                    "score": 1.0
+                                },
+                                {
+                                    "bbox": [
+                                        337,
+                                        435,
+                                        367,
+                                        451
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\scriptstyle s z [ x ]",
+                                    "score": 0.9204
+                                },
+                                {
+                                    "bbox": [
+                                        368,
+                                        435,
+                                        383,
+                                        450
+                                    ],
+                                    "type": "text",
+                                    "content": "为",
+                                    "score": 1.0
+                                },
+                                {
+                                    "bbox": [
+                                        384,
+                                        438,
+                                        395,
+                                        449
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "_ x",
+                                    "score": 0.4509
+                                },
+                                {
+                                    "bbox": [
+                                        396,
+                                        435,
+                                        491,
+                                        450
+                                    ],
+                                    "type": "text",
+                                    "content": "子树内的总鱼数）。",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        56,
+                        466,
+                        445,
+                        482
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 12,
+                    "lines": [
+                        {
+                            "bbox": [
+                                59,
+                                466,
+                                443,
+                                482
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        59,
+                                        468,
+                                        157,
+                                        481
+                                    ],
+                                    "type": "text",
+                                    "content": "3.此时 的体型为u",
+                                    "score": 1.0
+                                },
+                                {
+                                    "bbox": [
+                                        159,
+                                        466,
+                                        263,
+                                        482
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "V _ { i n i t } + s z [ { \\bf { \\vec { x } } } ] - 1 { \\bf { \\vec { \\tau } } }",
+                                    "score": 0.9502
+                                },
+                                {
+                                    "bbox": [
+                                        263,
+                                        468,
+                                        367,
+                                        482
+                                    ],
+                                    "type": "text",
+                                    "content": "。为了能吃掉父节点",
+                                    "score": 1.0
+                                },
+                                {
+                                    "bbox": [
+                                        368,
+                                        470,
+                                        382,
+                                        482
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "^ { p , }",
+                                    "score": 0.737
+                                },
+                                {
+                                    "bbox": [
+                                        383,
+                                        468,
+                                        443,
+                                        482
+                                    ],
+                                    "type": "text",
+                                    "content": "，必须满足：",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        286,
+                        495,
+                        584,
+                        513
+                    ],
+                    "type": "interline_equation",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                286,
+                                495,
+                                584,
+                                513
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        286,
+                                        495,
+                                        584,
+                                        513
+                                    ],
+                                    "type": "interline_equation",
+                                    "content": "V _ {i n i t} + s z [ x ] - 1 \\geq v \\implies V _ {i n i t} \\geq v - s z [ x ] + 1",
+                                    "image_path": "53d50996c27b9689dd6265ada89a0ef4bd69a0e6e810a8ab5c478a91fbe67c50.jpg"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 13
+                },
+                {
+                    "bbox": [
+                        38,
+                        529,
+                        376,
+                        544
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 14,
+                    "lines": [
+                        {
+                            "bbox": [
+                                42,
+                                531,
+                                373,
+                                544
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        42,
+                                        531,
+                                        373,
+                                        544
+                                    ],
+                                    "type": "text",
+                                    "content": "因此，从子树根节点 跨越到父节点 的体型门槛（边权）为：x p",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                }
+            ],
+            "discarded_blocks": [],
+            "page_size": [
+                841,
+                594
+            ],
+            "page_idx": 0,
+            "para_blocks": [
+                {
+                    "bbox": [
+                        38,
+                        47,
+                        356,
+                        74
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                42,
+                                47,
+                                354,
+                                74
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        42,
+                                        47,
+                                        354,
+                                        74
+                                    ],
+                                    "type": "text",
+                                    "content": "权值并查集解决鱼类合并问题",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        38,
+                        81,
+                        276,
+                        95
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 1,
+                    "lines": [
+                        {
+                            "bbox": [
+                                42,
+                                83,
+                                273,
+                                93
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        42,
+                                        83,
+                                        273,
+                                        93
+                                    ],
+                                    "type": "text",
+                                    "content": "https://gemini.google.com/app/c4dddb086f74906a",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        40,
+                        108,
+                        254,
+                        124
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 2,
+                    "lines": [
+                        {
+                            "bbox": [
+                                42,
+                                109,
+                                253,
+                                123
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        42,
+                                        109,
+                                        253,
+                                        123
+                                    ],
+                                    "type": "text",
+                                    "content": "User prompt: 这题怎么用权值并查集做",
+                                    "score": 0.986
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        39,
+                        138,
+                        602,
+                        154
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 3,
+                    "lines": [
+                        {
+                            "bbox": [
+                                42,
+                                139,
+                                598,
+                                152
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        42,
+                                        139,
+                                        598,
+                                        152
+                                    ],
+                                    "type": "text",
+                                    "content": "Response:这道题的核心突破口在于题目中的一个关键条件：“保证 不小于之前放入过的所有鱼的大小”。v",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        38,
+                        169,
+                        798,
+                        204
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 4,
+                    "lines": [
+                        {
+                            "bbox": [
+                                42,
+                                171,
+                                797,
+                                184
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        42,
+                                        171,
+                                        797,
+                                        184
+                                    ],
+                                    "type": "text",
+                                    "content": "这意味着鱼是按照大小非降的顺序被加入网格的。因此，每当加入一条新鱼时，它不仅是当前连通块中最新、最大的鱼，还能直接吃掉四周所有",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                43,
+                                190,
+                                712,
+                                200
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        43,
+                                        190,
+                                        712,
+                                        200
+                                    ],
+                                    "type": "text",
+                                    "content": "已存在的邻居鱼。这就带来了一个非常漂亮的树状拓扑结构，可以通过带路径压缩的权值并查集（WeightedDSU）来完美解决。",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        39,
+                        222,
+                        188,
+                        243
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 5,
+                    "lines": [
+                        {
+                            "bbox": [
+                                40,
+                                219,
+                                186,
+                                244
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        40,
+                                        219,
+                                        186,
+                                        244
+                                    ],
+                                    "type": "text",
+                                    "content": "核心物理量与转化",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        38,
+                        261,
+                        400,
+                        277
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 6,
+                    "lines": [
+                        {
+                            "bbox": [
+                                43,
+                                264,
+                                396,
+                                275
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        43,
+                                        264,
+                                        396,
+                                        275
+                                    ],
+                                    "type": "text",
+                                    "content": "我们可以把每次放入新鱼的过程看作是在构建一棵Kruskal重构树：",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        53,
+                        291,
+                        592,
+                        307
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 7,
+                    "lines": [
+                        {
+                            "bbox": [
+                                57,
+                                292,
+                                590,
+                                305
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        57,
+                                        292,
+                                        528,
+                                        305
+                                    ],
+                                    "type": "text",
+                                    "content": "每条新鱼放入时，如果它挨着某些已有的连通块，它就会成为这些连通块根节点的双亲",
+                                    "score": 1.0
+                                },
+                                {
+                                    "bbox": [
+                                        534,
+                                        292,
+                                        584,
+                                        305
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "( \\mathsf { P a r e n t } )",
+                                    "score": 0.5848
+                                },
+                                {
+                                    "bbox": [
+                                        584,
+                                        299,
+                                        590,
+                                        305
+                                    ],
+                                    "type": "text",
+                                    "content": "o",
+                                    "score": 0.911
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        53,
+                        321,
+                        491,
+                        336
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 8,
+                    "lines": [
+                        {
+                            "bbox": [
+                                58,
+                                323,
+                                488,
+                                336
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        58,
+                                        323,
+                                        488,
+                                        336
+                                    ],
+                                    "type": "text",
+                                    "content": "由于新鱼的大小 之前的任何鱼，它一出生就能直接把这些子树里的鱼全吃掉。≥",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        37,
+                        352,
+                        798,
+                        387
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 9,
+                    "lines": [
+                        {
+                            "bbox": [
+                                42,
+                                355,
+                                796,
+                                367
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        42,
+                                        355,
+                                        199,
+                                        365
+                                    ],
+                                    "type": "text",
+                                    "content": "对于一个已经在树中的老节点",
+                                    "score": 1.0
+                                },
+                                {
+                                    "bbox": [
+                                        200,
+                                        355,
+                                        215,
+                                        367
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "u ,",
+                                    "score": 0.7068
+                                },
+                                {
+                                    "bbox": [
+                                        215,
+                                        355,
+                                        796,
+                                        365
+                                    ],
+                                    "type": "text",
+                                    "content": "，如果它想借着后续不断加入的新鱼“游向更远的世界”（即扩大连通块），它必须能够一路向上走，跨越每一层",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                42,
+                                374,
+                                579,
+                                387
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        42,
+                                        374,
+                                        298,
+                                        384
+                                    ],
+                                    "type": "text",
+                                    "content": "父节点。假设 所在的某个历史连通块根节点为u",
+                                    "score": 1.0
+                                },
+                                {
+                                    "bbox": [
+                                        299,
+                                        375,
+                                        314,
+                                        386
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "x ,",
+                                    "score": 0.5601
+                                },
+                                {
+                                    "bbox": [
+                                        315,
+                                        374,
+                                        550,
+                                        384
+                                    ],
+                                    "type": "text",
+                                    "content": "，现在它被合并到了一个大小为 的新父节点v",
+                                    "score": 1.0
+                                },
+                                {
+                                    "bbox": [
+                                        550,
+                                        374,
+                                        562,
+                                        387
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "p",
+                                    "score": 0.6613
+                                },
+                                {
+                                    "bbox": [
+                                        562,
+                                        374,
+                                        579,
+                                        384
+                                    ],
+                                    "type": "text",
+                                    "content": "上：",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        55,
+                        404,
+                        451,
+                        419
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 10,
+                    "lines": [
+                        {
+                            "bbox": [
+                                60,
+                                406,
+                                448,
+                                419
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        60,
+                                        406,
+                                        169,
+                                        418
+                                    ],
+                                    "type": "text",
+                                    "content": "1. 想要跨过 进入u x",
+                                    "score": 1.0
+                                },
+                                {
+                                    "bbox": [
+                                        169,
+                                        406,
+                                        184,
+                                        419
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "^ { p , }",
+                                    "score": 0.7842
+                                },
+                                {
+                                    "bbox": [
+                                        185,
+                                        406,
+                                        448,
+                                        418
+                                    ],
+                                    "type": "text",
+                                    "content": "，它必须先吃完整个 子树内的所有鱼来壮大自 己。x",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        55,
+                        434,
+                        493,
+                        451
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 11,
+                    "lines": [
+                        {
+                            "bbox": [
+                                58,
+                                434,
+                                491,
+                                452
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        58,
+                                        435,
+                                        240,
+                                        451
+                                    ],
+                                    "type": "text",
+                                    "content": "2.吃完 子树后， 的体型会增加x u",
+                                    "score": 1.0
+                                },
+                                {
+                                    "bbox": [
+                                        243,
+                                        435,
+                                        299,
+                                        451
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "s z [ x ] - 1",
+                                    "score": 0.9112
+                                },
+                                {
+                                    "bbox": [
+                                        305,
+                                        434,
+                                        336,
+                                        452
+                                    ],
+                                    "type": "text",
+                                    "content": "（其中",
+                                    "score": 1.0
+                                },
+                                {
+                                    "bbox": [
+                                        337,
+                                        435,
+                                        367,
+                                        451
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\scriptstyle s z [ x ]",
+                                    "score": 0.9204
+                                },
+                                {
+                                    "bbox": [
+                                        368,
+                                        435,
+                                        383,
+                                        450
+                                    ],
+                                    "type": "text",
+                                    "content": "为",
+                                    "score": 1.0
+                                },
+                                {
+                                    "bbox": [
+                                        384,
+                                        438,
+                                        395,
+                                        449
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "_ x",
+                                    "score": 0.4509
+                                },
+                                {
+                                    "bbox": [
+                                        396,
+                                        435,
+                                        491,
+                                        450
+                                    ],
+                                    "type": "text",
+                                    "content": "子树内的总鱼数）。",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        56,
+                        466,
+                        445,
+                        482
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 12,
+                    "lines": [
+                        {
+                            "bbox": [
+                                59,
+                                466,
+                                443,
+                                482
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        59,
+                                        468,
+                                        157,
+                                        481
+                                    ],
+                                    "type": "text",
+                                    "content": "3.此时 的体型为u",
+                                    "score": 1.0
+                                },
+                                {
+                                    "bbox": [
+                                        159,
+                                        466,
+                                        263,
+                                        482
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "V _ { i n i t } + s z [ { \\bf { \\vec { x } } } ] - 1 { \\bf { \\vec { \\tau } } }",
+                                    "score": 0.9502
+                                },
+                                {
+                                    "bbox": [
+                                        263,
+                                        468,
+                                        367,
+                                        482
+                                    ],
+                                    "type": "text",
+                                    "content": "。为了能吃掉父节点",
+                                    "score": 1.0
+                                },
+                                {
+                                    "bbox": [
+                                        368,
+                                        470,
+                                        382,
+                                        482
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "^ { p , }",
+                                    "score": 0.737
+                                },
+                                {
+                                    "bbox": [
+                                        383,
+                                        468,
+                                        443,
+                                        482
+                                    ],
+                                    "type": "text",
+                                    "content": "，必须满足：",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        286,
+                        495,
+                        584,
+                        513
+                    ],
+                    "type": "interline_equation",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                286,
+                                495,
+                                584,
+                                513
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        286,
+                                        495,
+                                        584,
+                                        513
+                                    ],
+                                    "type": "interline_equation",
+                                    "content": "V _ {i n i t} + s z [ x ] - 1 \\geq v \\implies V _ {i n i t} \\geq v - s z [ x ] + 1",
+                                    "image_path": "53d50996c27b9689dd6265ada89a0ef4bd69a0e6e810a8ab5c478a91fbe67c50.jpg"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 13
+                },
+                {
+                    "bbox": [
+                        38,
+                        529,
+                        376,
+                        544
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 14,
+                    "lines": [
+                        {
+                            "bbox": [
+                                42,
+                                531,
+                                373,
+                                544
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        42,
+                                        531,
+                                        373,
+                                        544
+                                    ],
+                                    "type": "text",
+                                    "content": "因此，从子树根节点 跨越到父节点 的体型门槛（边权）为：x p",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                }
+            ]
+        },
+        {
+            "preproc_blocks": [
+                {
+                    "bbox": [
+                        349,
+                        42,
+                        491,
+                        60
+                    ],
+                    "type": "interline_equation",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                349,
+                                42,
+                                491,
+                                60
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        349,
+                                        42,
+                                        491,
+                                        60
+                                    ],
+                                    "type": "interline_equation",
+                                    "content": "W (x) = v - s z [ x ] + 1",
+                                    "image_path": "c75c421c21c6e8aa34eaef536b90690265ec388aaf830ac77b6f505d3fe9fb26.jpg"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0
+                },
+                {
+                    "bbox": [
+                        39,
+                        74,
+                        594,
+                        90
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 1,
+                    "lines": [
+                        {
+                            "bbox": [
+                                42,
+                                76,
+                                591,
+                                89
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        42,
+                                        76,
+                                        591,
+                                        89
+                                    ],
+                                    "type": "text",
+                                    "content": "由于每条鱼只会被合并一次，一旦它从根节点变成了某个新节点的儿子，这条边权 就永远固定了！W(x)",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        39,
+                        110,
+                        170,
+                        131
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 2,
+                    "lines": [
+                        {
+                            "bbox": [
+                                39,
+                                105,
+                                169,
+                                133
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        39,
+                                        105,
+                                        169,
+                                        133
+                                    ],
+                                    "type": "text",
+                                    "content": "权值并查集设计",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        38,
+                        149,
+                        481,
+                        165
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 3,
+                    "lines": [
+                        {
+                            "bbox": [
+                                42,
+                                152,
+                                478,
+                                164
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        42,
+                                        152,
+                                        478,
+                                        164
+                                    ],
+                                    "type": "text",
+                                    "content": "我们用一个权值并查集来维护每个节点到它当前所属的大连通块根节点的路径信息。",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        53,
+                        180,
+                        241,
+                        196
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 4,
+                    "lines": [
+                        {
+                            "bbox": [
+                                58,
+                                181,
+                                238,
+                                194
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        58,
+                                        181,
+                                        238,
+                                        194
+                                    ],
+                                    "type": "text",
+                                    "content": "parent[i]：节点 i 的父亲节点。",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        53,
+                        209,
+                        444,
+                        226
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 5,
+                    "lines": [
+                        {
+                            "bbox": [
+                                57,
+                                210,
+                                442,
+                                223
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        57,
+                                        210,
+                                        442,
+                                        223
+                                    ],
+                                    "type": "text",
+                                    "content": "max_w[i]：从节点i到parent[i]的路径上，最大的“门槛权值” 。W",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        53,
+                        241,
+                        390,
+                        257
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 6,
+                    "lines": [
+                        {
+                            "bbox": [
+                                58,
+                                242,
+                                387,
+                                255
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        58,
+                                        242,
+                                        387,
+                                        255
+                                    ],
+                                    "type": "text",
+                                    "content": "sz[i]：以i为根的子树大小（仅对当前是根节点的i有效）。",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        39,
+                        273,
+                        181,
+                        291
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 7,
+                    "lines": [
+                        {
+                            "bbox": [
+                                42,
+                                274,
+                                179,
+                                291
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        42,
+                                        274,
+                                        179,
+                                        291
+                                    ],
+                                    "type": "text",
+                                    "content": "路径压缩（Find操作）",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        38,
+                        307,
+                        478,
+                        324
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 8,
+                    "lines": [
+                        {
+                            "bbox": [
+                                42,
+                                308,
+                                475,
+                                323
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        42,
+                                        308,
+                                        475,
+                                        323
+                                    ],
+                                    "type": "text",
+                                    "content": "在路径压缩时，我们不仅更新父亲指向，同时利用邻项求最大值的方式更新max_w：",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "type": "code",
+                    "bbox": [
+                        39,
+                        335,
+                        324,
+                        417
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                39,
+                                335,
+                                324,
+                                417
+                            ],
+                            "type": "code_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        39,
+                                        335,
+                                        324,
+                                        417
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                39,
+                                                335,
+                                                324,
+                                                417
+                                            ],
+                                            "type": "text",
+                                            "content": "int find(int i) {\n    if (parent[i] == i) return i;\n    int root = find(parent[i]);\n    max_w[i] = max(max_w[i], max_w(parent[i]]);\n    return parent[i] = root;\n}"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 9
+                        }
+                    ],
+                    "index": 9,
+                    "sub_type": "code",
+                    "guess_lang": "c"
+                },
+                {
+                    "bbox": [
+                        39,
+                        435,
+                        152,
+                        456
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 10,
+                    "lines": [
+                        {
+                            "bbox": [
+                                41,
+                                432,
+                                151,
+                                457
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        41,
+                                        432,
+                                        151,
+                                        457
+                                    ],
+                                    "type": "text",
+                                    "content": "具体操作实现",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        38,
+                        475,
+                        298,
+                        494
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 11,
+                    "lines": [
+                        {
+                            "bbox": [
+                                40,
+                                475,
+                                297,
+                                495
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        40,
+                                        475,
+                                        297,
+                                        495
+                                    ],
+                                    "type": "text",
+                                    "content": "操作 1：在 处放入大小为 的新鱼(x, y) v",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        56,
+                        511,
+                        595,
+                        528
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 12,
+                    "lines": [
+                        {
+                            "bbox": [
+                                58,
+                                511,
+                                592,
+                                528
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        58,
+                                        511,
+                                        592,
+                                        528
+                                    ],
+                                    "type": "text",
+                                    "content": "1. 解密坐标，为当前位置新建一个节点 id。初始化 parent[id] = id, sz[id] = 1, max_w[id] = -INF。",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                }
+            ],
+            "discarded_blocks": [],
+            "page_size": [
+                841,
+                594
+            ],
+            "page_idx": 1,
+            "para_blocks": [
+                {
+                    "bbox": [
+                        349,
+                        42,
+                        491,
+                        60
+                    ],
+                    "type": "interline_equation",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                349,
+                                42,
+                                491,
+                                60
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        349,
+                                        42,
+                                        491,
+                                        60
+                                    ],
+                                    "type": "interline_equation",
+                                    "content": "W (x) = v - s z [ x ] + 1",
+                                    "image_path": "c75c421c21c6e8aa34eaef536b90690265ec388aaf830ac77b6f505d3fe9fb26.jpg"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0
+                },
+                {
+                    "bbox": [
+                        39,
+                        74,
+                        594,
+                        90
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 1,
+                    "lines": [
+                        {
+                            "bbox": [
+                                42,
+                                76,
+                                591,
+                                89
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        42,
+                                        76,
+                                        591,
+                                        89
+                                    ],
+                                    "type": "text",
+                                    "content": "由于每条鱼只会被合并一次，一旦它从根节点变成了某个新节点的儿子，这条边权 就永远固定了！W(x)",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        39,
+                        110,
+                        170,
+                        131
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 2,
+                    "lines": [
+                        {
+                            "bbox": [
+                                39,
+                                105,
+                                169,
+                                133
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        39,
+                                        105,
+                                        169,
+                                        133
+                                    ],
+                                    "type": "text",
+                                    "content": "权值并查集设计",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        38,
+                        149,
+                        481,
+                        165
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 3,
+                    "lines": [
+                        {
+                            "bbox": [
+                                42,
+                                152,
+                                478,
+                                164
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        42,
+                                        152,
+                                        478,
+                                        164
+                                    ],
+                                    "type": "text",
+                                    "content": "我们用一个权值并查集来维护每个节点到它当前所属的大连通块根节点的路径信息。",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        53,
+                        180,
+                        241,
+                        196
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 4,
+                    "lines": [
+                        {
+                            "bbox": [
+                                58,
+                                181,
+                                238,
+                                194
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        58,
+                                        181,
+                                        238,
+                                        194
+                                    ],
+                                    "type": "text",
+                                    "content": "parent[i]：节点 i 的父亲节点。",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        53,
+                        209,
+                        444,
+                        226
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 5,
+                    "lines": [
+                        {
+                            "bbox": [
+                                57,
+                                210,
+                                442,
+                                223
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        57,
+                                        210,
+                                        442,
+                                        223
+                                    ],
+                                    "type": "text",
+                                    "content": "max_w[i]：从节点i到parent[i]的路径上，最大的“门槛权值” 。W",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        53,
+                        241,
+                        390,
+                        257
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 6,
+                    "lines": [
+                        {
+                            "bbox": [
+                                58,
+                                242,
+                                387,
+                                255
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        58,
+                                        242,
+                                        387,
+                                        255
+                                    ],
+                                    "type": "text",
+                                    "content": "sz[i]：以i为根的子树大小（仅对当前是根节点的i有效）。",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        39,
+                        273,
+                        181,
+                        291
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 7,
+                    "lines": [
+                        {
+                            "bbox": [
+                                42,
+                                274,
+                                179,
+                                291
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        42,
+                                        274,
+                                        179,
+                                        291
+                                    ],
+                                    "type": "text",
+                                    "content": "路径压缩（Find操作）",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        38,
+                        307,
+                        478,
+                        324
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 8,
+                    "lines": [
+                        {
+                            "bbox": [
+                                42,
+                                308,
+                                475,
+                                323
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        42,
+                                        308,
+                                        475,
+                                        323
+                                    ],
+                                    "type": "text",
+                                    "content": "在路径压缩时，我们不仅更新父亲指向，同时利用邻项求最大值的方式更新max_w：",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "type": "code",
+                    "bbox": [
+                        39,
+                        335,
+                        324,
+                        417
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                39,
+                                335,
+                                324,
+                                417
+                            ],
+                            "type": "code_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        39,
+                                        335,
+                                        324,
+                                        417
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                39,
+                                                335,
+                                                324,
+                                                417
+                                            ],
+                                            "type": "text",
+                                            "content": "int find(int i) {\n    if (parent[i] == i) return i;\n    int root = find(parent[i]);\n    max_w[i] = max(max_w[i], max_w(parent[i]]);\n    return parent[i] = root;\n}"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 9
+                        }
+                    ],
+                    "index": 9,
+                    "sub_type": "code",
+                    "guess_lang": "c"
+                },
+                {
+                    "bbox": [
+                        39,
+                        435,
+                        152,
+                        456
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 10,
+                    "lines": [
+                        {
+                            "bbox": [
+                                41,
+                                432,
+                                151,
+                                457
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        41,
+                                        432,
+                                        151,
+                                        457
+                                    ],
+                                    "type": "text",
+                                    "content": "具体操作实现",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        38,
+                        475,
+                        298,
+                        494
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 11,
+                    "lines": [
+                        {
+                            "bbox": [
+                                40,
+                                475,
+                                297,
+                                495
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        40,
+                                        475,
+                                        297,
+                                        495
+                                    ],
+                                    "type": "text",
+                                    "content": "操作 1：在 处放入大小为 的新鱼(x, y) v",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        56,
+                        511,
+                        595,
+                        528
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 12,
+                    "lines": [
+                        {
+                            "bbox": [
+                                58,
+                                511,
+                                592,
+                                528
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        58,
+                                        511,
+                                        592,
+                                        528
+                                    ],
+                                    "type": "text",
+                                    "content": "1. 解密坐标，为当前位置新建一个节点 id。初始化 parent[id] = id, sz[id] = 1, max_w[id] = -INF。",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                }
+            ]
+        },
+        {
+            "preproc_blocks": [
+                {
+                    "bbox": [
+                        55,
+                        44,
+                        539,
+                        60
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                58,
+                                44,
+                                538,
+                                60
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        58,
+                                        45,
+                                        97,
+                                        59
+                                    ],
+                                    "type": "text",
+                                    "content": "2. 检查",
+                                    "score": 1.0
+                                },
+                                {
+                                    "bbox": [
+                                        98,
+                                        44,
+                                        132,
+                                        60
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "( x , y )",
+                                    "score": 0.5821
+                                },
+                                {
+                                    "bbox": [
+                                        135,
+                                        46,
+                                        538,
+                                        58
+                                    ],
+                                    "type": "text",
+                                    "content": "四周的邻居。如果邻居有鱼，通过find找到邻居所在连通块的当前根节点r。",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        55,
+                        76,
+                        409,
+                        91
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 1,
+                    "lines": [
+                        {
+                            "bbox": [
+                                60,
+                                78,
+                                406,
+                                89
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        60,
+                                        78,
+                                        406,
+                                        89
+                                    ],
+                                    "type": "text",
+                                    "content": "3.过滤出所有去重后的独特邻居根节点（避免重复合并同一个块）。",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        56,
+                        106,
+                        196,
+                        120
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 2,
+                    "lines": [
+                        {
+                            "bbox": [
+                                58,
+                                106,
+                                194,
+                                121
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        58,
+                                        106,
+                                        194,
+                                        121
+                                    ],
+                                    "type": "text",
+                                    "content": "4.对于每个邻居根节点r：",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        84,
+                        136,
+                        307,
+                        150
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 3,
+                    "lines": [
+                        {
+                            "bbox": [
+                                85,
+                                133,
+                                305,
+                                152
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        85,
+                                        133,
+                                        156,
+                                        152
+                                    ],
+                                    "type": "text",
+                                    "content": "记录边权：",
+                                    "score": 1.0
+                                },
+                                {
+                                    "bbox": [
+                                        159,
+                                        136,
+                                        305,
+                                        150
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\mathrm { m a x \\_ w [ r ] \\enspace = \\enspace v \\enspace - \\enspace s z [ r ] \\enspace + \\enspace 1 }",
+                                    "score": 0.84
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        84,
+                        165,
+                        248,
+                        180
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 4,
+                    "lines": [
+                        {
+                            "bbox": [
+                                84,
+                                162,
+                                247,
+                                182
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        84,
+                                        162,
+                                        156,
+                                        182
+                                    ],
+                                    "type": "text",
+                                    "content": "改变父亲：",
+                                    "score": 1.0
+                                },
+                                {
+                                    "bbox": [
+                                        160,
+                                        166,
+                                        247,
+                                        180
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\mathrm { p a r e n t } [ \\mathrm { r } ] ~ = ~ \\mathrm { i d }",
+                                    "score": 0.7248
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        84,
+                        196,
+                        277,
+                        210
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 5,
+                    "lines": [
+                        {
+                            "bbox": [
+                                86,
+                                194,
+                                275,
+                                212
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        86,
+                                        194,
+                                        179,
+                                        212
+                                    ],
+                                    "type": "text",
+                                    "content": "累加子树大小：",
+                                    "score": 1.0
+                                },
+                                {
+                                    "bbox": [
+                                        184,
+                                        196,
+                                        275,
+                                        210
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\mathrm { \\ s z [ i d ] \\Sigma \\ + = \\ s z [ r ] }",
+                                    "score": 0.7729
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        55,
+                        225,
+                        525,
+                        241
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 6,
+                    "lines": [
+                        {
+                            "bbox": [
+                                58,
+                                226,
+                                523,
+                                240
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        58,
+                                        226,
+                                        456,
+                                        240
+                                    ],
+                                    "type": "text",
+                                    "content": "5.答案：当前新鱼能吃掉的最大鱼数就是新连通块的总鱼数减去它自 己，即",
+                                    "score": 1.0
+                                },
+                                {
+                                    "bbox": [
+                                        457,
+                                        226,
+                                        518,
+                                        239
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\mathrm { \\ s { z } [ i d ] \\ - \\ 1 }",
+                                    "score": 0.7299
+                                },
+                                {
+                                    "bbox": [
+                                        518,
+                                        233,
+                                        523,
+                                        240
+                                    ],
+                                    "type": "text",
+                                    "content": "0",
+                                    "score": 0.641
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        38,
+                        257,
+                        339,
+                        276
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 7,
+                    "lines": [
+                        {
+                            "bbox": [
+                                42,
+                                258,
+                                338,
+                                276
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        42,
+                                        258,
+                                        338,
+                                        276
+                                    ],
+                                    "type": "text",
+                                    "content": "操作2：查询 处的鱼吃饱所需的最小增量(x,y)",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        56,
+                        294,
+                        274,
+                        309
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 8,
+                    "lines": [
+                        {
+                            "bbox": [
+                                60,
+                                295,
+                                271,
+                                309
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        60,
+                                        295,
+                                        271,
+                                        309
+                                    ],
+                                    "type": "text",
+                                    "content": "1.解密坐标，找到该位置对应的节点id。",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        55,
+                        324,
+                        788,
+                        358
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 9,
+                    "lines": [
+                        {
+                            "bbox": [
+                                59,
+                                325,
+                                783,
+                                339
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        59,
+                                        326,
+                                        516,
+                                        336
+                                    ],
+                                    "type": "text",
+                                    "content": "2.调用 find(id)。此时，id的父亲已经被压缩指向了当前整张网格的绝对根节点R，而",
+                                    "score": 1.0
+                                },
+                                {
+                                    "bbox": [
+                                        518,
+                                        325,
+                                        573,
+                                        339
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\operatorname* { m a x } _ { - } \\mathrm { w } \\big [ \\mathrm { i d } \\big ]",
+                                    "score": 0.5118
+                                },
+                                {
+                                    "bbox": [
+                                        577,
+                                        326,
+                                        783,
+                                        336
+                                    ],
+                                    "type": "text",
+                                    "content": "存储的就是从id到R路径上的最高门槛",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                69,
+                                342,
+                                91,
+                                358
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        342,
+                                        91,
+                                        358
+                                    ],
+                                    "type": "text",
+                                    "content": "值。",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        56,
+                        371,
+                        742,
+                        389
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 10,
+                    "lines": [
+                        {
+                            "bbox": [
+                                59,
+                                372,
+                                742,
+                                388
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        59,
+                                        374,
+                                        335,
+                                        386
+                                    ],
+                                    "type": "text",
+                                    "content": "3.要想吃掉最多数量的鱼（即达到整个连通块的上限",
+                                    "score": 1.0
+                                },
+                                {
+                                    "bbox": [
+                                        338,
+                                        373,
+                                        396,
+                                        387
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\mathrm { s z } \\left[ \\mathrm { R } \\right] \\mathrm { ~ - ~ } 1 )",
+                                    "score": 0.5807
+                                },
+                                {
+                                    "bbox": [
+                                        399,
+                                        374,
+                                        576,
+                                        386
+                                    ],
+                                    "type": "text",
+                                    "content": "），这条鱼的初始体型最低必须达到",
+                                    "score": 1.0
+                                },
+                                {
+                                    "bbox": [
+                                        579,
+                                        372,
+                                        736,
+                                        388
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\operatorname* { m a x } ( \\mathrm { s i z e } [ i d ] , \\operatorname* { m a x } _ { - } w [ i d ] )",
+                                    "score": 0.9256
+                                },
+                                {
+                                    "bbox": [
+                                        737,
+                                        380,
+                                        742,
+                                        387
+                                    ],
+                                    "type": "text",
+                                    "content": "c",
+                                    "score": 0.743
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        55,
+                        403,
+                        418,
+                        420
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 11,
+                    "lines": [
+                        {
+                            "bbox": [
+                                59,
+                                403,
+                                417,
+                                420
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        59,
+                                        405,
+                                        227,
+                                        418
+                                    ],
+                                    "type": "text",
+                                    "content": "4.答案：所需的最小增加量即为",
+                                    "score": 1.0
+                                },
+                                {
+                                    "bbox": [
+                                        229,
+                                        403,
+                                        412,
+                                        420
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\operatorname* { m a x } ( 0 , \\operatorname* { m a x } _ { - } w [ i d ] - \\mathrm { s i z e } [ i d ] )",
+                                    "score": 0.9477
+                                },
+                                {
+                                    "bbox": [
+                                        412,
+                                        411,
+                                        417,
+                                        418
+                                    ],
+                                    "type": "text",
+                                    "content": "。",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        39,
+                        440,
+                        152,
+                        460
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 12,
+                    "lines": [
+                        {
+                            "bbox": [
+                                41,
+                                437,
+                                151,
+                                462
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        41,
+                                        437,
+                                        151,
+                                        462
+                                    ],
+                                    "type": "text",
+                                    "content": "关键代码框架",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        39,
+                        478,
+                        158,
+                        491
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 13,
+                    "lines": [
+                        {
+                            "bbox": [
+                                42,
+                                479,
+                                155,
+                                491
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        42,
+                                        479,
+                                        155,
+                                        491
+                                    ],
+                                    "type": "text",
+                                    "content": "#include <iostream>",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        39,
+                        491,
+                        147,
+                        504
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 14,
+                    "lines": [
+                        {
+                            "bbox": [
+                                41,
+                                493,
+                                143,
+                                504
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        41,
+                                        493,
+                                        143,
+                                        504
+                                    ],
+                                    "type": "text",
+                                    "content": "#include <vector>",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        39,
+                        505,
+                        163,
+                        518
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 15,
+                    "lines": [
+                        {
+                            "bbox": [
+                                42,
+                                506,
+                                161,
+                                517
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        42,
+                                        506,
+                                        161,
+                                        517
+                                    ],
+                                    "type": "text",
+                                    "content": "#include <algorithm>",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        39,
+                        532,
+                        163,
+                        545
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 16,
+                    "lines": [
+                        {
+                            "bbox": [
+                                42,
+                                532,
+                                161,
+                                545
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        42,
+                                        532,
+                                        161,
+                                        545
+                                    ],
+                                    "type": "text",
+                                    "content": "using namespace std;",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                }
+            ],
+            "discarded_blocks": [],
+            "page_size": [
+                841,
+                594
+            ],
+            "page_idx": 2,
+            "para_blocks": [
+                {
+                    "bbox": [
+                        55,
+                        44,
+                        539,
+                        60
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                58,
+                                44,
+                                538,
+                                60
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        58,
+                                        45,
+                                        97,
+                                        59
+                                    ],
+                                    "type": "text",
+                                    "content": "2. 检查",
+                                    "score": 1.0
+                                },
+                                {
+                                    "bbox": [
+                                        98,
+                                        44,
+                                        132,
+                                        60
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "( x , y )",
+                                    "score": 0.5821
+                                },
+                                {
+                                    "bbox": [
+                                        135,
+                                        46,
+                                        538,
+                                        58
+                                    ],
+                                    "type": "text",
+                                    "content": "四周的邻居。如果邻居有鱼，通过find找到邻居所在连通块的当前根节点r。",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        55,
+                        76,
+                        409,
+                        91
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 1,
+                    "lines": [
+                        {
+                            "bbox": [
+                                60,
+                                78,
+                                406,
+                                89
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        60,
+                                        78,
+                                        406,
+                                        89
+                                    ],
+                                    "type": "text",
+                                    "content": "3.过滤出所有去重后的独特邻居根节点（避免重复合并同一个块）。",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        56,
+                        106,
+                        196,
+                        120
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 2,
+                    "lines": [
+                        {
+                            "bbox": [
+                                58,
+                                106,
+                                194,
+                                121
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        58,
+                                        106,
+                                        194,
+                                        121
+                                    ],
+                                    "type": "text",
+                                    "content": "4.对于每个邻居根节点r：",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        84,
+                        136,
+                        307,
+                        150
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 3,
+                    "lines": [
+                        {
+                            "bbox": [
+                                85,
+                                133,
+                                305,
+                                152
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        85,
+                                        133,
+                                        156,
+                                        152
+                                    ],
+                                    "type": "text",
+                                    "content": "记录边权：",
+                                    "score": 1.0
+                                },
+                                {
+                                    "bbox": [
+                                        159,
+                                        136,
+                                        305,
+                                        150
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\mathrm { m a x \\_ w [ r ] \\enspace = \\enspace v \\enspace - \\enspace s z [ r ] \\enspace + \\enspace 1 }",
+                                    "score": 0.84
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        84,
+                        165,
+                        248,
+                        180
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 4,
+                    "lines": [
+                        {
+                            "bbox": [
+                                84,
+                                162,
+                                247,
+                                182
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        84,
+                                        162,
+                                        156,
+                                        182
+                                    ],
+                                    "type": "text",
+                                    "content": "改变父亲：",
+                                    "score": 1.0
+                                },
+                                {
+                                    "bbox": [
+                                        160,
+                                        166,
+                                        247,
+                                        180
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\mathrm { p a r e n t } [ \\mathrm { r } ] ~ = ~ \\mathrm { i d }",
+                                    "score": 0.7248
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        84,
+                        196,
+                        277,
+                        210
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 5,
+                    "lines": [
+                        {
+                            "bbox": [
+                                86,
+                                194,
+                                275,
+                                212
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        86,
+                                        194,
+                                        179,
+                                        212
+                                    ],
+                                    "type": "text",
+                                    "content": "累加子树大小：",
+                                    "score": 1.0
+                                },
+                                {
+                                    "bbox": [
+                                        184,
+                                        196,
+                                        275,
+                                        210
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\mathrm { \\ s z [ i d ] \\Sigma \\ + = \\ s z [ r ] }",
+                                    "score": 0.7729
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        55,
+                        225,
+                        525,
+                        241
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 6,
+                    "lines": [
+                        {
+                            "bbox": [
+                                58,
+                                226,
+                                523,
+                                240
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        58,
+                                        226,
+                                        456,
+                                        240
+                                    ],
+                                    "type": "text",
+                                    "content": "5.答案：当前新鱼能吃掉的最大鱼数就是新连通块的总鱼数减去它自 己，即",
+                                    "score": 1.0
+                                },
+                                {
+                                    "bbox": [
+                                        457,
+                                        226,
+                                        518,
+                                        239
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\mathrm { \\ s { z } [ i d ] \\ - \\ 1 }",
+                                    "score": 0.7299
+                                },
+                                {
+                                    "bbox": [
+                                        518,
+                                        233,
+                                        523,
+                                        240
+                                    ],
+                                    "type": "text",
+                                    "content": "0",
+                                    "score": 0.641
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        38,
+                        257,
+                        339,
+                        276
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 7,
+                    "lines": [
+                        {
+                            "bbox": [
+                                42,
+                                258,
+                                338,
+                                276
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        42,
+                                        258,
+                                        338,
+                                        276
+                                    ],
+                                    "type": "text",
+                                    "content": "操作2：查询 处的鱼吃饱所需的最小增量(x,y)",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        56,
+                        294,
+                        274,
+                        309
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 8,
+                    "lines": [
+                        {
+                            "bbox": [
+                                60,
+                                295,
+                                271,
+                                309
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        60,
+                                        295,
+                                        271,
+                                        309
+                                    ],
+                                    "type": "text",
+                                    "content": "1.解密坐标，找到该位置对应的节点id。",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        55,
+                        324,
+                        788,
+                        358
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 9,
+                    "lines": [
+                        {
+                            "bbox": [
+                                59,
+                                325,
+                                783,
+                                339
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        59,
+                                        326,
+                                        516,
+                                        336
+                                    ],
+                                    "type": "text",
+                                    "content": "2.调用 find(id)。此时，id的父亲已经被压缩指向了当前整张网格的绝对根节点R，而",
+                                    "score": 1.0
+                                },
+                                {
+                                    "bbox": [
+                                        518,
+                                        325,
+                                        573,
+                                        339
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\operatorname* { m a x } _ { - } \\mathrm { w } \\big [ \\mathrm { i d } \\big ]",
+                                    "score": 0.5118
+                                },
+                                {
+                                    "bbox": [
+                                        577,
+                                        326,
+                                        783,
+                                        336
+                                    ],
+                                    "type": "text",
+                                    "content": "存储的就是从id到R路径上的最高门槛",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                69,
+                                342,
+                                91,
+                                358
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        342,
+                                        91,
+                                        358
+                                    ],
+                                    "type": "text",
+                                    "content": "值。",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        56,
+                        371,
+                        742,
+                        389
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 10,
+                    "lines": [
+                        {
+                            "bbox": [
+                                59,
+                                372,
+                                742,
+                                388
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        59,
+                                        374,
+                                        335,
+                                        386
+                                    ],
+                                    "type": "text",
+                                    "content": "3.要想吃掉最多数量的鱼（即达到整个连通块的上限",
+                                    "score": 1.0
+                                },
+                                {
+                                    "bbox": [
+                                        338,
+                                        373,
+                                        396,
+                                        387
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\mathrm { s z } \\left[ \\mathrm { R } \\right] \\mathrm { ~ - ~ } 1 )",
+                                    "score": 0.5807
+                                },
+                                {
+                                    "bbox": [
+                                        399,
+                                        374,
+                                        576,
+                                        386
+                                    ],
+                                    "type": "text",
+                                    "content": "），这条鱼的初始体型最低必须达到",
+                                    "score": 1.0
+                                },
+                                {
+                                    "bbox": [
+                                        579,
+                                        372,
+                                        736,
+                                        388
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\operatorname* { m a x } ( \\mathrm { s i z e } [ i d ] , \\operatorname* { m a x } _ { - } w [ i d ] )",
+                                    "score": 0.9256
+                                },
+                                {
+                                    "bbox": [
+                                        737,
+                                        380,
+                                        742,
+                                        387
+                                    ],
+                                    "type": "text",
+                                    "content": "c",
+                                    "score": 0.743
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        55,
+                        403,
+                        418,
+                        420
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 11,
+                    "lines": [
+                        {
+                            "bbox": [
+                                59,
+                                403,
+                                417,
+                                420
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        59,
+                                        405,
+                                        227,
+                                        418
+                                    ],
+                                    "type": "text",
+                                    "content": "4.答案：所需的最小增加量即为",
+                                    "score": 1.0
+                                },
+                                {
+                                    "bbox": [
+                                        229,
+                                        403,
+                                        412,
+                                        420
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\operatorname* { m a x } ( 0 , \\operatorname* { m a x } _ { - } w [ i d ] - \\mathrm { s i z e } [ i d ] )",
+                                    "score": 0.9477
+                                },
+                                {
+                                    "bbox": [
+                                        412,
+                                        411,
+                                        417,
+                                        418
+                                    ],
+                                    "type": "text",
+                                    "content": "。",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        39,
+                        440,
+                        152,
+                        460
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 12,
+                    "lines": [
+                        {
+                            "bbox": [
+                                41,
+                                437,
+                                151,
+                                462
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        41,
+                                        437,
+                                        151,
+                                        462
+                                    ],
+                                    "type": "text",
+                                    "content": "关键代码框架",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        39,
+                        478,
+                        158,
+                        491
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 13,
+                    "lines": [
+                        {
+                            "bbox": [
+                                42,
+                                479,
+                                155,
+                                491
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        42,
+                                        479,
+                                        155,
+                                        491
+                                    ],
+                                    "type": "text",
+                                    "content": "#include <iostream>",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        39,
+                        491,
+                        147,
+                        504
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 14,
+                    "lines": [
+                        {
+                            "bbox": [
+                                41,
+                                493,
+                                143,
+                                504
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        41,
+                                        493,
+                                        143,
+                                        504
+                                    ],
+                                    "type": "text",
+                                    "content": "#include <vector>",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        39,
+                        505,
+                        163,
+                        518
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 15,
+                    "lines": [
+                        {
+                            "bbox": [
+                                42,
+                                506,
+                                161,
+                                517
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        42,
+                                        506,
+                                        161,
+                                        517
+                                    ],
+                                    "type": "text",
+                                    "content": "#include <algorithm>",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        39,
+                        532,
+                        163,
+                        545
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 16,
+                    "lines": [
+                        {
+                            "bbox": [
+                                42,
+                                532,
+                                161,
+                                545
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        42,
+                                        532,
+                                        161,
+                                        545
+                                    ],
+                                    "type": "text",
+                                    "content": "using namespace std;",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                }
+            ]
+        },
+        {
+            "preproc_blocks": [
+                {
+                    "type": "code",
+                    "bbox": [
+                        40,
+                        53,
+                        350,
+                        545
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                40,
+                                53,
+                                350,
+                                545
+                            ],
+                            "type": "code_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        40,
+                                        53,
+                                        350,
+                                        545
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                40,
+                                                53,
+                                                350,
+                                                545
+                                            ],
+                                            "type": "text",
+                                            "content": "const int INF = 2e9;\n\nstruct DSU {\n    vector<int> parent;\n    vector<int> max_w;\n    vector<int> sz;\n    vector<int> val; // 记录每条鱼的初始大小 v\n\n    DSU(int n) {\n    parent.resize(n + 1);\n    max_w.assign(n + 1, -INF);\n    sz.assign(n + 1, 1);\n    val.resize(n + 1);\n    for (int i = 0; i <= n; i++) parent[i] = i;\n    }\n\n    int find(int i) {\n    if (parent[i] == i) return i;\n    int root = find(parent[i]);\n    max_w[i] = max(max_w[i], max_w(parent[i]]);\n    return parent[i] = root;\n    }\n\n    void merge(int u, int v_parent, int val_p) {\n    int root_u = find(u);\n    if (root_u != v_parent) {\n    max_w[root_u] = val_p - sz[root_u] + 1;\n    parent[root_u] = v_parent;\n    sz[v_parent] += sz[root_u];\n    }\n    }\n};\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 0
+                        }
+                    ],
+                    "index": 0,
+                    "sub_type": "code",
+                    "guess_lang": "cpp"
+                }
+            ],
+            "discarded_blocks": [],
+            "page_size": [
+                841,
+                594
+            ],
+            "page_idx": 3,
+            "para_blocks": [
+                {
+                    "type": "code",
+                    "bbox": [
+                        40,
+                        53,
+                        350,
+                        545
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                40,
+                                53,
+                                350,
+                                545
+                            ],
+                            "type": "code_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        40,
+                                        53,
+                                        350,
+                                        545
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                40,
+                                                53,
+                                                350,
+                                                545
+                                            ],
+                                            "type": "text",
+                                            "content": "const int INF = 2e9;\n\nstruct DSU {\n    vector<int> parent;\n    vector<int> max_w;\n    vector<int> sz;\n    vector<int> val; // 记录每条鱼的初始大小 v\n\n    DSU(int n) {\n    parent.resize(n + 1);\n    max_w.assign(n + 1, -INF);\n    sz.assign(n + 1, 1);\n    val.resize(n + 1);\n    for (int i = 0; i <= n; i++) parent[i] = i;\n    }\n\n    int find(int i) {\n    if (parent[i] == i) return i;\n    int root = find(parent[i]);\n    max_w[i] = max(max_w[i], max_w(parent[i]]);\n    return parent[i] = root;\n    }\n\n    void merge(int u, int v_parent, int val_p) {\n    int root_u = find(u);\n    if (root_u != v_parent) {\n    max_w[root_u] = val_p - sz[root_u] + 1;\n    parent[root_u] = v_parent;\n    sz[v_parent] += sz[root_u];\n    }\n    }\n};\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 0
+                        }
+                    ],
+                    "index": 0,
+                    "sub_type": "code",
+                    "guess_lang": "cpp"
+                }
+            ]
+        },
+        {
+            "preproc_blocks": [
+                {
+                    "type": "code",
+                    "bbox": [
+                        63,
+                        56,
+                        580,
+                        547
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                63,
+                                56,
+                                580,
+                                547
+                            ],
+                            "type": "code_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        63,
+                                        56,
+                                        580,
+                                        547
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                63,
+                                                56,
+                                                580,
+                                                547
+                                            ],
+                                            "type": "text",
+                                            "content": "int n, m, q;\nif (!(cin >> n >> m >> q)) return 0;\n\n// 用一个二维数组记录网格中每个位置对应的鱼的节点编号，0表示障碍\nvector<vector<int>> grid(n + 1, vector<int>(m + 1, 0));\nDSU dsu(q + 1); // 最多会有 q 条鱼被创建\n\nint fish_cnt = 0;\nint last_ans = 0;\n\nint dx[] = {-1, 1, 0, 0};\nint dy[] = {0, 0, -1, 1};\n\nfor (int i = 0; i < q; i++) {\n    int op;\n    cin >> op;\n    if (op == 1) {\n    int x_prime, y_prime, v;\n    cin >> x_prime >> y_prime >> v;\n    int x = x_prime ^ last_ans;\n    int y = y_prime ^ last_ans;\n\n    fish_cnt++;\n    grid[x][y] = fish_cnt;\n    dsu.val[fish_cnt] = v;\n\n    vector<int> neighbors;\n    for (int d = 0; d < 4; d++) {\n    int nx = x + dx[d], ny = y + dy[d];\n    if (nx >= 1 && nx <= n && ny >= 1 && ny <= m && grid[nx][ny] > 0) {\n    neighbors.push_back(dsu.find(grid[nx][ny]));\n    }\n    }\n    // 去重，防止同一个连通块被多次合并导致 sz 重复计算\n    sort(neighbors.begin(), neighbors.end());\n    neighbors.erase(unique(neighbors.begin(), neighbors.end()), neighbors.end());"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 0
+                        }
+                    ],
+                    "index": 0,
+                    "sub_type": "code",
+                    "guess_lang": "txt"
+                }
+            ],
+            "discarded_blocks": [],
+            "page_size": [
+                841,
+                594
+            ],
+            "page_idx": 4,
+            "para_blocks": [
+                {
+                    "type": "code",
+                    "bbox": [
+                        63,
+                        56,
+                        580,
+                        547
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                63,
+                                56,
+                                580,
+                                547
+                            ],
+                            "type": "code_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        63,
+                                        56,
+                                        580,
+                                        547
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                63,
+                                                56,
+                                                580,
+                                                547
+                                            ],
+                                            "type": "text",
+                                            "content": "int n, m, q;\nif (!(cin >> n >> m >> q)) return 0;\n\n// 用一个二维数组记录网格中每个位置对应的鱼的节点编号，0表示障碍\nvector<vector<int>> grid(n + 1, vector<int>(m + 1, 0));\nDSU dsu(q + 1); // 最多会有 q 条鱼被创建\n\nint fish_cnt = 0;\nint last_ans = 0;\n\nint dx[] = {-1, 1, 0, 0};\nint dy[] = {0, 0, -1, 1};\n\nfor (int i = 0; i < q; i++) {\n    int op;\n    cin >> op;\n    if (op == 1) {\n    int x_prime, y_prime, v;\n    cin >> x_prime >> y_prime >> v;\n    int x = x_prime ^ last_ans;\n    int y = y_prime ^ last_ans;\n\n    fish_cnt++;\n    grid[x][y] = fish_cnt;\n    dsu.val[fish_cnt] = v;\n\n    vector<int> neighbors;\n    for (int d = 0; d < 4; d++) {\n    int nx = x + dx[d], ny = y + dy[d];\n    if (nx >= 1 && nx <= n && ny >= 1 && ny <= m && grid[nx][ny] > 0) {\n    neighbors.push_back(dsu.find(grid[nx][ny]));\n    }\n    }\n    // 去重，防止同一个连通块被多次合并导致 sz 重复计算\n    sort(neighbors.begin(), neighbors.end());\n    neighbors.erase(unique(neighbors.begin(), neighbors.end()), neighbors.end());"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 0
+                        }
+                    ],
+                    "index": 0,
+                    "sub_type": "code",
+                    "guess_lang": "txt"
+                }
+            ]
+        },
+        {
+            "preproc_blocks": [
+                {
+                    "type": "code",
+                    "bbox": [
+                        39,
+                        50,
+                        793,
+                        421
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                39,
+                                50,
+                                793,
+                                421
+                            ],
+                            "type": "code_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        39,
+                                        50,
+                                        793,
+                                        421
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                39,
+                                                50,
+                                                793,
+                                                421
+                                            ],
+                                            "type": "text",
+                                            "content": "for (int r : neighbors) {\n    dsu.merge(r, fish_cnt, v);\n}\n\nlast_ans = dsu.sz[fish_cnt] - 1;\ncout << last_ans << \"\\n\";\n\n} else if (op == 2) {\n    int x_prime, y_prime;\n    cin >> x_prime >> y_prime;\n    int x = x_prime ^ last_ans;\n    int y = y_prime ^ last_ans;\n\n    int id = grid[x][y];\n    dsu.find(id); // 触发路径压缩更新 max_w\n\n    int req_v = max(dsu.val[id], dsu.max_w[id]);\n    last_ans = max(0, req_v - dsu.val[id]);\n    cout << last_ans << \"\\n\";\n}\nreturn 0;\n}\n\n通过这种设计，单次操作的时间复杂度被完美控制在了并查集的几乎常数级别 O(α(q))，总时间复杂度为 O(q · α(q))，面对 5 × 10⁵ 的数据量可以在 0.1 秒内轻松跑完。"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 0
+                        }
+                    ],
+                    "index": 0,
+                    "sub_type": "code",
+                    "guess_lang": "cpp"
+                }
+            ],
+            "discarded_blocks": [],
+            "page_size": [
+                841,
+                594
+            ],
+            "page_idx": 5,
+            "para_blocks": [
+                {
+                    "type": "code",
+                    "bbox": [
+                        39,
+                        50,
+                        793,
+                        421
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                39,
+                                50,
+                                793,
+                                421
+                            ],
+                            "type": "code_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        39,
+                                        50,
+                                        793,
+                                        421
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                39,
+                                                50,
+                                                793,
+                                                421
+                                            ],
+                                            "type": "text",
+                                            "content": "for (int r : neighbors) {\n    dsu.merge(r, fish_cnt, v);\n}\n\nlast_ans = dsu.sz[fish_cnt] - 1;\ncout << last_ans << \"\\n\";\n\n} else if (op == 2) {\n    int x_prime, y_prime;\n    cin >> x_prime >> y_prime;\n    int x = x_prime ^ last_ans;\n    int y = y_prime ^ last_ans;\n\n    int id = grid[x][y];\n    dsu.find(id); // 触发路径压缩更新 max_w\n\n    int req_v = max(dsu.val[id], dsu.max_w[id]);\n    last_ans = max(0, req_v - dsu.val[id]);\n    cout << last_ans << \"\\n\";\n}\nreturn 0;\n}\n\n通过这种设计，单次操作的时间复杂度被完美控制在了并查集的几乎常数级别 O(α(q))，总时间复杂度为 O(q · α(q))，面对 5 × 10⁵ 的数据量可以在 0.1 秒内轻松跑完。"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 0
+                        }
+                    ],
+                    "index": 0,
+                    "sub_type": "code",
+                    "guess_lang": "cpp"
+                }
+            ]
+        }
+    ],
+    "_backend": "hybrid",
+    "_effort": "medium",
+    "_ocr_enable": false,
+    "_version_name": "3.4.4"
+}

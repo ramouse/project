@@ -1,45 +1,79 @@
 #include <bits/stdc++.h>
 using namespace std;
 using ll = long long;
+using i128 = __int128_t;
 #define endl '\n'
+#define pll pair<ll, ll>
+#define T tuple<ll, ll, ll>
+#define all1(x) x.begin() + 1, x.end()
+#define all0(x) x.begin(), x.end()
+#define pb push_back
+#define fir first
+#define sec second
 
-const ll MOD = 10000;
+const ll MOD = 998244353;
 const ll INF = 1e18;
-struct Node
-{
-    ll to, w, t;
-};
 
 void solve()
 {
-    ll n, k;
-    cin >> n >> k;
-    vector<vector<Node>> adj(n + 1);
-    for (int i = 1; i <= n - 1; i++)
-    {
-        ll u, v, w, t;
-        cin >> u >> v >> w >> t;
-        adj[u].push_back({v, w, t});
-        adj[v].push_back({u, w, t});
+    ll n,m;
+    cin>>n>>m;
+    vector<vector<ll>> adj(n+1);
+    for(int i = 1;i<=m;i++){
+        ll u,v;
+        cin>>u>>v;
+        adj[u].pb(v);
     }
 
-    ll ans = 0;
-    ll cur = 0;
-    auto dfs = [&](auto &&self,ll u,ll fa,ll ma,ll mi,ll sum) -> void{
-        for(auto [v,w,t] : adj[u]){
-            if(v != fa){
-                ma = max(ma,w);
-                mi = min(mi,t);
-                if(ma - mi <= k){
-                    ans = max(ans,sum+w);
+    vector<ll> dfn(n+1,0),low(n+1,0);
+    vector<ll> bel(n+1,0);
+    vector<ll> scc_sz(n+1,0);
+    vector<ll> stk;
+    vector<int> instk(n+1,0);
+    
+    ll tim = 0;
+    ll cnt = 0;
+
+    auto tarjan = [&](auto &&self,ll u) -> void{
+        dfn[u] = low[u] = ++tim;
+
+        stk.pb(u);
+        instk[u] = 1;
+
+        for(ll v : adj[u]){
+            if(dfn[v] == 0){
+                self(self,v);
+                low[u] = min(low[u],low[v]);
+            }else if(instk[v]){
+                low[u] = min(low[u],dfn[v]);
+            }
+        }
+
+        if(dfn[u] == low[u]){
+            cnt++;
+            while(1){
+                ll x = stk.back();
+                stk.pop_back();
+                instk[x] = 0;
+                bel[x] = cnt;
+                scc_sz[cnt]++;
+
+                if(x == u){
+                    break;
                 }
-                self(self, v, u, ma, mi,sum+w);
             }
         }
     };
 
-    dfs(dfs,1,0,0,INF,0);
-    cout<<ans<<endl;
+    for(int i = 1;i<=n;i++){
+        if(dfn[i] == 0){
+            tarjan(tarjan,i);
+        }
+    }
+
+    vector<vector<ll>> g(cnt+1);
+
+    
 }
 
 int main()

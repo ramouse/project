@@ -1,0 +1,5906 @@
+[
+    {
+        "type": "text",
+        "text": "2026 牛客 暑期多校训练营",
+        "text_level": 2,
+        "bbox": [
+            55,
+            317,
+            456,
+            556
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "第三场 黑冰茶命题组",
+        "bbox": [
+            55,
+            623,
+            353,
+            690
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            44,
+            62,
+            205,
+            141
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "HR.NOWCODER.COM",
+        "bbox": [
+            39,
+            890,
+            200,
+            929
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "K - 转向导航",
+        "text_level": 2,
+        "bbox": [
+            68,
+            101,
+            249,
+            164
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "题目大意",
+        "text_level": 2,
+        "bbox": [
+            66,
+            200,
+            174,
+            250
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "■ 给定平面上 n 个整点航点 $P_{1}, \\ldots, P_{n}$ ，汽车依次沿直线段 $P_{1} \\rightarrow P_{2} \\rightarrow \\cdots \\rightarrow P_{n}$ 行驶",
+        "bbox": [
+            77,
+            388,
+            909,
+            439
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "在每个中间航点 $P_{i}$ ( $2 \\leq i \\leq n - 1$ ), 判断是左转 (LEFT)、右转 (RIGHT) 还是直行 (STRAIGHT)",
+        "bbox": [
+            77,
+            458,
+            909,
+            564
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "保证不会掉头",
+        "bbox": [
+            79,
+            588,
+            238,
+            635
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "■ $3 \\leq n \\leq 10^{5}$ , $|x_{i}|, |y_{i}| \\leq 10^{9}$ , $\\sum n \\leq 2 \\cdot 10^{5}$",
+        "bbox": [
+            79,
+            658,
+            520,
+            709
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "AC. K",
+        "bbox": [
+            22,
+            43,
+            92,
+            156
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            59,
+            933,
+            178,
+            960
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "简单题",
+        "bbox": [
+            476,
+            933,
+            516,
+            960
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "第三场 黑冰茶命题组",
+        "bbox": [
+            827,
+            933,
+            935,
+            960
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "K - 转向导航",
+        "text_level": 2,
+        "bbox": [
+            68,
+            101,
+            249,
+            164
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "题解",
+        "text_level": 2,
+        "bbox": [
+            59,
+            188,
+            108,
+            235
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "设到达方向向量 $\\vec{a}=P_{i}-P_{i-1}$ ，离开方向向量 $\\vec{b}=P_{i+1}-P_{i}$",
+        "bbox": [
+            77,
+            270,
+            682,
+            325
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "■ 转向关系由二维叉积的符号给出：",
+        "bbox": [
+            77,
+            349,
+            423,
+            392
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\vec {a} \\times \\vec {b} = a _ {x} b _ {y} - a _ {y} b _ {x} \\left\\{ \\begin{array}{l l} > 0 & \\Rightarrow \\text { LEFT } \\\\ <   0 & \\Rightarrow \\text { RIGHT } \\\\ = 0 & \\Rightarrow \\text { STRAIGHT } \\end{array} \\right.\n$$",
+        "text_format": "latex",
+        "bbox": [
+            309,
+            423,
+            728,
+            643
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "\\- 精度与溢出：坐标绝对值不超过 $10^{9}$ ，叉积不超过约 $8 \\times 10^{18}$ ，落在 long long 范围内，全程整数运算",
+        "bbox": [
+            77,
+            721,
+            920,
+            827
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "时间复杂度 $O(\\sum n)$",
+        "bbox": [
+            79,
+            847,
+            295,
+            898
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            39,
+            973,
+            98
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            57,
+            933,
+            178,
+            960
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "简单题",
+        "bbox": [
+            476,
+            933,
+            516,
+            960
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "第三场 黑冰茶命题组",
+        "bbox": [
+            827,
+            933,
+            935,
+            960
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "- 登山对决",
+        "text_level": 2,
+        "bbox": [
+            92,
+            105,
+            242,
+            160
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "题目大意",
+        "text_level": 2,
+        "bbox": [
+            66,
+            200,
+            174,
+            250
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "\\- 给定一个 $n \\times m$ 的网格，每个格子有一个互不相同的高度",
+        "bbox": [
+            79,
+            388,
+            664,
+            435
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "■ 两面玩家交替移动一面旗帜，每次必须把旗帜移到一个四相邻且高度严格更高的格子；无路可走的玩家输",
+        "bbox": [
+            79,
+            462,
+            927,
+            564
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "■ 给 q 个独立询问，每个询问指定起始格子，判断先手胜（First）还是后手胜（Second）",
+        "bbox": [
+            79,
+            588,
+            938,
+            635
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "$1 \\leq n, m \\leq 10^{5}, n \\cdot m \\leq 10^{5}, 1 \\leq h_{i,j} \\leq 10^{9}, 1 \\leq q \\leq 10^{5}, \\sum n \\cdot m, \\sum q \\leq 10^{5}$",
+        "bbox": [
+            77,
+            654,
+            874,
+            709
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            90,
+            152
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            59,
+            933,
+            178,
+            960
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "简单题",
+        "bbox": [
+            476,
+            933,
+            516,
+            960
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "第三场 黑冰茶命题组",
+        "bbox": [
+            827,
+            933,
+            935,
+            960
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "- 登山对决",
+        "text_level": 2,
+        "bbox": [
+            94,
+            105,
+            242,
+            164
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "DAG 上的博弈判定",
+        "text_level": 2,
+        "bbox": [
+            59,
+            250,
+            247,
+            294
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "■ 旗帜只能往更高的格子走，所有可能的移动构成一个有向无环图（高度严格递增，不可能成环）",
+        "bbox": [
+            79,
+            337,
+            935,
+            443
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "这是单 token 在 DAG 上的正常博弈，不需要 Sprague-Grundy 理论，只需判定每个格子的胜/负状态",
+        "bbox": [
+            79,
+            466,
+            935,
+            572
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "■ 必胜：存在至少一个严格更高的相邻格子且该相邻格子是必败的；否则必败",
+        "bbox": [
+            79,
+            596,
+            832,
+            643
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "按高度从高到低 DP，依次处理每个格子，检查其四个邻居中是否有“严格更高且必败”的",
+        "bbox": [
+            79,
+            666,
+            935,
+            768
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            59,
+            933,
+            178,
+            960
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "简单题",
+        "bbox": [
+            479,
+            933,
+            516,
+            960
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "第三场 黑冰茶命题组",
+        "bbox": [
+            827,
+            933,
+            935,
+            960
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "- 登山对决",
+        "text_level": 2,
+        "bbox": [
+            94,
+            105,
+            242,
+            164
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "实现与复杂度",
+        "text_level": 2,
+        "bbox": [
+            59,
+            294,
+            194,
+            341
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "■ 把所有格子按高度降序排序",
+        "bbox": [
+            79,
+            380,
+            370,
+            427
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "■ 依次处理每个格子，检查其四个邻居中是否有“严格更高且必败”的，有则该格必胜，否则必败",
+        "bbox": [
+            79,
+            450,
+            918,
+            556
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "\\- 询问 O(1) 查表输出",
+        "bbox": [
+            79,
+            580,
+            298,
+            627
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "■ 复杂度：排序 O(nm log(nm))，DP 与询问合计 O(nm + q)",
+        "bbox": [
+            79,
+            650,
+            675,
+            698
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            90,
+            152
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            59,
+            933,
+            178,
+            960
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "简单题",
+        "bbox": [
+            479,
+            933,
+            516,
+            960
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "第三场 黑冰茶命题组",
+        "bbox": [
+            827,
+            933,
+            935,
+            960
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "A - 比特掩码",
+        "text_level": 2,
+        "bbox": [
+            66,
+            105,
+            247,
+            164
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "题目大意",
+        "text_level": 2,
+        "bbox": [
+            66,
+            200,
+            174,
+            250
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "■ 定义 $f(x)$ 为 $x$ 的二进制表示中极长连续全1段的个数",
+        "bbox": [
+            79,
+            388,
+            626,
+            435
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "\\- 给定 $n$ 个整数 $a_1, a_2, \\ldots, a_n$ ，处理 $m$ 个操作",
+        "bbox": [
+            79,
+            458,
+            540,
+            501
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "■ 每次操作将所有 $a_i$ 替换为 $a_i \\& x, a_i \\mid x$ 或 $a_i \\oplus x$",
+        "bbox": [
+            79,
+            529,
+            584,
+            576
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "■ 每次操作后输出 $\\sum_{i=1}^{n} f(a_{i})$",
+        "bbox": [
+            79,
+            596,
+            362,
+            647
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "■ $1 \\leq n, m \\leq 3 \\cdot 10^{5}, 0 \\leq a_{i}, x < 2^{30}$",
+        "bbox": [
+            79,
+            666,
+            434,
+            713
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "AC.\nA",
+        "bbox": [
+            22,
+            43,
+            90,
+            152
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            59,
+            933,
+            178,
+            960
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "简单题",
+        "bbox": [
+            479,
+            933,
+            516,
+            956
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "第三场 黑冰茶命题组",
+        "bbox": [
+            827,
+            933,
+            935,
+            956
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "A - 比特掩码",
+        "text_level": 2,
+        "bbox": [
+            66,
+            105,
+            247,
+            164
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "逐位计数",
+        "text_level": 2,
+        "bbox": [
+            57,
+            294,
+            150,
+            341
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "■ 规定 $b_{30}=0$ ，则 $f(x)=\\sum_{i=0}^{29}[bit_{i}(x)=1\\ and\\ bit_{i+1}(x)=0]$",
+        "bbox": [
+            77,
+            376,
+            679,
+            431
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "■ 每个连续的 1 段都会在某处结束（某位为 1，下一位为 0），且每个 1 段都有唯一这样的结尾",
+        "bbox": [
+            77,
+            450,
+            929,
+            556
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "因此只需统计每一对相邻位 $(\\mathrm{i},\\mathrm{i} + 1)$ 中有多少个数满足 $(\\mathrm{bit}_{\\mathrm{i}},\\mathrm{bit}_{\\mathrm{i} + 1}) = (1,0)$",
+        "bbox": [
+            77,
+            580,
+            832,
+            627
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "对每个 i 维护四个计数 $cnt[i][p][q]$ ，表示 $bit_{i}=p$ 且 $bit_{i+1}=q$ 的数的个数",
+        "bbox": [
+            77,
+            650,
+            830,
+            701
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "AC.\nA",
+        "bbox": [
+            22,
+            43,
+            90,
+            156
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "第三场 黑冰茶命题组",
+        "bbox": [
+            827,
+            933,
+            935,
+            960
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            59,
+            933,
+            178,
+            960
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "简单题",
+        "bbox": [
+            476,
+            933,
+            516,
+            960
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "A - 比特掩码",
+        "text_level": 2,
+        "bbox": [
+            68,
+            105,
+            247,
+            164
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "状态重映射",
+        "text_level": 2,
+        "bbox": [
+            57,
+            266,
+            172,
+            313
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "当前答案为 ans = $\\sum_{i=0}^{29} cnt[i][1][0]$",
+        "bbox": [
+            79,
+            345,
+            437,
+            403
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "■ 初始化枚举每个 $a_{j}$ 和每个 i，复杂度 O(30n)",
+        "bbox": [
+            79,
+            423,
+            534,
+            470
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "一次操作对每一位的影响只与该位原值、操作类型、x 的该位有关",
+        "bbox": [
+            77,
+            494,
+            741,
+            541
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "对固定的 i，把原来的四种状态重新映射到新的四种状态：",
+        "bbox": [
+            79,
+            564,
+            655,
+            611
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "tmp[new\\_p][new\\_q] += cnt[i][p][q]",
+        "bbox": [
+            101,
+            619,
+            421,
+            670
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "单次操作处理 30 组相邻位，每组 4 种状态，复杂度 O(30 × 4)",
+        "bbox": [
+            79,
+            690,
+            708,
+            741
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            59,
+            933,
+            178,
+            960
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "简单题",
+        "bbox": [
+            476,
+            933,
+            516,
+            960
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "第三场 黑冰茶命题组",
+        "bbox": [
+            827,
+            933,
+            935,
+            960
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "G - 矩阵标记",
+        "text_level": 2,
+        "bbox": [
+            70,
+            105,
+            247,
+            164
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "题目大意",
+        "text_level": 2,
+        "bbox": [
+            66,
+            200,
+            176,
+            250
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "\\- 给定 $n \\times m$ 的数字网格，每个格子含一个正整数",
+        "bbox": [
+            77,
+            388,
+            576,
+            435
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "若两格 $(\\mathsf{r}_1,\\mathsf{c}_1)$ 、 $(\\mathsf{r}_2,\\mathsf{c}_2)$ 满足 $r_1 < r_2$ 、 $c_{1} < c_{2}$ 且数字相等，则矩形 $[\\mathsf{r}_1,r_2]\\times [\\mathsf{c}_1,\\mathsf{c}_2]$ 全部被标记",
+        "bbox": [
+            79,
+            462,
+            935,
+            564
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "\\- 输出整个网格最终的标记情况",
+        "bbox": [
+            79,
+            588,
+            392,
+            635
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "$1 \\leq n, m, n \\times m \\leq 10^{6}, 1 \\leq a_{i,j} \\leq n \\times m$",
+        "bbox": [
+            79,
+            658,
+            505,
+            705
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            90,
+            152
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            59,
+            933,
+            178,
+            960
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "中等题",
+        "bbox": [
+            476,
+            933,
+            516,
+            960
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "第三场 黑冰茶命题组",
+        "bbox": [
+            827,
+            933,
+            935,
+            960
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "G - 矩阵标记",
+        "text_level": 2,
+        "bbox": [
+            70,
+            105,
+            247,
+            164
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "按数值独立处理",
+        "text_level": 2,
+        "bbox": [
+            57,
+            294,
+            216,
+            337
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "\\- 固定数值 $x$ ; 两个值为 $x$ 的格子 $(r_1, c_1)$ 、 $(r_2, c_2)$ ( $r_1 < r_2, c_1 < c_2$ ) 标记矩形 $[r_1, r_2] \\times [c_1, c_2]$",
+        "bbox": [
+            77,
+            380,
+            852,
+            490
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "不同数值的矩形只需取并集，可独立处理后用二维差分叠加",
+        "bbox": [
+            77,
+            509,
+            679,
+            556
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "■ 将 x 出现的行升序记为 $r_{1} < r_{2} < \\cdots < r_{k}$ ，每行只保留最小列 mn[i] 与最大列 mx[i]",
+        "bbox": [
+            77,
+            580,
+            907,
+            631
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "考虑第 $r_t$ 、 $r_{t+1}$ 行间的横向分界线，跨过的矩形左上角来自上方、右下角来自下方",
+        "bbox": [
+            77,
+            650,
+            898,
+            698
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            92,
+            156
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            59,
+            933,
+            178,
+            960
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "第三场 黑冰茶命题组",
+        "bbox": [
+            827,
+            933,
+            935,
+            960
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "中等题",
+        "bbox": [
+            476,
+            933,
+            516,
+            960
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "G - 矩阵标记",
+        "text_level": 2,
+        "bbox": [
+            68,
+            105,
+            247,
+            164
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "跨行矩形合并",
+        "text_level": 2,
+        "bbox": [
+            57,
+            243,
+            196,
+            290
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "■ 令 L[t] = min(mn[1], ..., mn[t]), R[t] = max(mx[t + 1], ..., mx[k])",
+        "bbox": [
+            77,
+            329,
+            739,
+            380
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "若 $L[t] < R[t]$ ，跨该分界线的矩形在 $r_t, r_{t+1}$ 间的并可由一个矩形表示：行 $[r_t, r_{t+1}]$ 、列 $[L[t], R[t]]$",
+        "bbox": [
+            77,
+            400,
+            938,
+            509
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "对每个 $t = 1..k - 1$ ，只要 $\\mathsf{L}[\\mathsf{t}] < \\mathsf{R}[\\mathsf{t}]$ ，向二维差分加入此矩形",
+        "bbox": [
+            77,
+            529,
+            701,
+            576
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "■ 正确性：算法加入的矩形均被合法的相等格子对标记；任一合法矩形也被对应小矩形覆盖",
+        "bbox": [
+            77,
+            600,
+            935,
+            701
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "■ 时间复杂度 O(nm)，空间 O(nm)。",
+        "bbox": [
+            79,
+            729,
+            437,
+            776
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            59,
+            933,
+            178,
+            960
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "中等题",
+        "bbox": [
+            476,
+            933,
+            516,
+            960
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "第三场 黑冰茶命题组",
+        "bbox": [
+            827,
+            933,
+            935,
+            960
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "B - 再买一瓶",
+        "text_level": 2,
+        "bbox": [
+            68,
+            105,
+            247,
+            164
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "题目大意",
+        "text_level": 2,
+        "bbox": [
+            66,
+            200,
+            174,
+            250
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "一瓶饮料售价1元，喝完有 $\\frac{a}{b}$ 的概率中奖，获得c元",
+        "bbox": [
+            77,
+            388,
+            626,
+            435
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "■ 小明一开始有 n 元",
+        "bbox": [
+            79,
+            458,
+            289,
+            501
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "■ 求恰好喝完 m 瓶饮料后花光所有钱的概率",
+        "bbox": [
+            79,
+            529,
+            514,
+            576
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "答案对998244353取模",
+        "bbox": [
+            79,
+            600,
+            331,
+            643
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "$1 \\leq T \\leq 2 \\times 10^{5}$ , $1 \\leq n, m, c \\leq 2 \\times 10^{6}$ , $0 \\leq a < b < 998244353$",
+        "bbox": [
+            79,
+            666,
+            728,
+            713
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "AC.\nB",
+        "bbox": [
+            22,
+            43,
+            90,
+            152
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            59,
+            933,
+            178,
+            960
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "中等题",
+        "bbox": [
+            479,
+            933,
+            516,
+            960
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "第三场 黑冰茶命题组",
+        "bbox": [
+            827,
+            933,
+            935,
+            960
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "B - 再买一瓶",
+        "text_level": 2,
+        "bbox": [
+            68,
+            105,
+            247,
+            164
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "中奖次数的确定",
+        "text_level": 2,
+        "bbox": [
+            59,
+            290,
+            216,
+            337
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "设中奖概率 p = a/b，未中奖概率 q = 1 - p，除法在模 998244353 意义下进行",
+        "bbox": [
+            77,
+            380,
+            869,
+            423
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "■ 喝完 m 瓶共中奖 w 次时，手中剩余 n - m + cw",
+        "bbox": [
+            79,
+            450,
+            582,
+            494
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "要恰好花光，需满足 $m - n = cw$ ；故 $m < n$ 或 $(m - n)$ 不被 $c$ 整除时答案为 0",
+        "bbox": [
+            79,
+            517,
+            880,
+            564
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "■ 否则中奖次数唯一确定： $w = (m - n)/c$",
+        "bbox": [
+            79,
+            588,
+            494,
+            635
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "只需统计长度为 m、恰有 w 次中奖、且不会在第 m 瓶前花光的序列数",
+        "bbox": [
+            77,
+            658,
+            792,
+            705
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "AC.\nB",
+        "bbox": [
+            22,
+            43,
+            90,
+            156
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            59,
+            933,
+            178,
+            960
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "中等题",
+        "bbox": [
+            479,
+            933,
+            516,
+            960
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "第三场 黑冰茶命题组",
+        "bbox": [
+            827,
+            933,
+            935,
+            960
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "B - 再买一瓶",
+        "text_level": 2,
+        "bbox": [
+            68,
+            105,
+            247,
+            164
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Raney 引理的应用",
+        "text_level": 2,
+        "bbox": [
+            59,
+            294,
+            236,
+            341
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "■ 中奖记 W（变化量 c-1），未中奖记 L（变化量 -1）",
+        "bbox": [
+            77,
+            384,
+            620,
+            431
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "■ 前缀和 $S_{t}$ ，剩余饮料数 $A_{t}=n+S_{t}$ ；合法当且仅当 $A_{t}>0\\ (0\\leq t<m)$ 且 $A_{m}=0$",
+        "bbox": [
+            77,
+            454,
+            898,
+            501
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "将序列反转并取相反数，新序列步长均不超过1，总和为n",
+        "bbox": [
+            77,
+            525,
+            675,
+            572
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "由Raney引理：每项不超过1、总和为正整数 $n$ 的序列，其 $m$ 个循环移位中恰有 $n$ 个移位的非空前缀和均为正",
+        "bbox": [
+            79,
+            592,
+            922,
+            701
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "AC.\nB",
+        "bbox": [
+            22,
+            43,
+            90,
+            156
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            59,
+            933,
+            178,
+            960
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "footer",
+        "text": "中等题",
+        "bbox": [
+            479,
+            933,
+            516,
+            960
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "footer",
+        "text": "第三场 黑冰茶命题组",
+        "bbox": [
+            827,
+            933,
+            935,
+            960
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "B - 再买一瓶",
+        "text_level": 2,
+        "bbox": [
+            68,
+            105,
+            247,
+            164
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "计数与复杂度",
+        "text_level": 2,
+        "bbox": [
+            59,
+            266,
+            194,
+            313
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "长度为 m、恰有 w 个中奖的序列总数为 $\\binom{m}{w}$",
+        "bbox": [
+            79,
+            352,
+            532,
+            403
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "对每个序列考虑全部 m 个切分位置，其中恰有 n 个得到合法序列，而每个线性序列会被计入 m 次",
+        "bbox": [
+            79,
+            423,
+            935,
+            529
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "\\- 合法序列数为 $\\frac{n}{m}\\binom{m}{w}$",
+        "bbox": [
+            79,
+            552,
+            295,
+            603
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "最终答案： $n \\cdot \\text{inv}(m) \\cdot \\binom{m}{w} \\cdot p^{w} \\cdot q^{m-w}$",
+        "bbox": [
+            79,
+            619,
+            470,
+            670
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "预处理阶乘 O(max m)，单组 O(log MOD)",
+        "bbox": [
+            79,
+            690,
+            514,
+            741
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "AC.\nB",
+        "bbox": [
+            22,
+            43,
+            90,
+            152
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            59,
+            933,
+            178,
+            960
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "footer",
+        "text": "中等题",
+        "bbox": [
+            479,
+            933,
+            516,
+            960
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "footer",
+        "text": "第三场 黑冰茶命题组",
+        "bbox": [
+            827,
+            933,
+            935,
+            960
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "- Not Aqre 2",
+        "text_level": 2,
+        "bbox": [
+            94,
+            105,
+            262,
+            164
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "题目大意",
+        "text_level": 2,
+        "bbox": [
+            66,
+            200,
+            176,
+            250
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "■ n × m 网格，每格填 0,1,2，相邻格子数字不同",
+        "bbox": [
+            79,
+            443,
+            562,
+            490
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "■ 求合法填法数，对 998244353 取模",
+        "bbox": [
+            79,
+            513,
+            441,
+            560
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "$1 \\leq n < 10, \\quad 1 \\leq m < 998244353$ （行数小、列数大）",
+        "bbox": [
+            79,
+            584,
+            604,
+            631
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            90,
+            152
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            59,
+            933,
+            178,
+            960
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "page_number",
+        "text": "中等题",
+        "bbox": [
+            479,
+            933,
+            516,
+            960
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "footer",
+        "text": "第三场 黑冰茶命题组",
+        "bbox": [
+            827,
+            933,
+            935,
+            960
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "- Not Aqre 2",
+        "text_level": 2,
+        "bbox": [
+            94,
+            105,
+            264,
+            164
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "列形状状态压缩",
+        "text_level": 2,
+        "bbox": [
+            59,
+            290,
+            216,
+            333
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "以整列颜色为状态做矩阵快速幂；合法列数 $3 \\cdot 2^{n-1}$ ，最多768",
+        "bbox": [
+            77,
+            376,
+            708,
+            423
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "■ 直接矩阵快速幂 S = 768，运算量超 $10^{10}$ ，无法通过",
+        "bbox": [
+            79,
+            447,
+            611,
+            494
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "■ 关键观察：下一列只关心当前列内部的“形状”，而非具体颜色名",
+        "bbox": [
+            77,
+            517,
+            730,
+            564
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "对列 $a_{1},\\ldots,a_{n}\\left(a_{i}\\neq a_{i-1}\\right)$ ， $i\\geq3$ 时 $a_{i}$ 有两种： $a_{i}=a_{i-2}$ 或第三种颜色",
+        "bbox": [
+            77,
+            584,
+            807,
+            635
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "用第 $i - 2$ 位记录 $[a_i = a_{i-2}]$ ，状态数 $2^{n-2}$",
+        "bbox": [
+            79,
+            658,
+            518,
+            705
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            90,
+            152
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            39,
+            973,
+            98
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            59,
+            933,
+            178,
+            960
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "page_number",
+        "text": "中等题",
+        "bbox": [
+            479,
+            933,
+            516,
+            960
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "footer",
+        "text": "第三场 黑冰茶命题组",
+        "bbox": [
+            827,
+            933,
+            935,
+            960
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "转移矩阵构造",
+        "text_level": 2,
+        "bbox": [
+            57,
+            282,
+            194,
+            333
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "■ 每种形状前两色任选两不同色，共 6 种，每种形状对应 6 个具体合法列",
+        "bbox": [
+            77,
+            372,
+            794,
+            423
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "■ 枚举当前列与下一列的全部 $3 \\cdot 2^{n-1}$ 种情况，求出形状 $s, t$",
+        "bbox": [
+            77,
+            443,
+            668,
+            490
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "若两列可相邻，转移矩阵 $M_{s,t}$ 加一，值即从形状 s 到 t 的具体方案数",
+        "bbox": [
+            77,
+            513,
+            777,
+            564
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "第一列任选形状，初始向量每项为 6；m = 1 时答案 $6S = 3 \\cdot 2^{n-1}$",
+        "bbox": [
+            77,
+            584,
+            739,
+            631
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "■ m > 1 时做 m - 1 次转移：答案为 $6 \\cdot \\sum_{s,t} (M^{m-1})_{s,t}$",
+        "bbox": [
+            79,
+            654,
+            611,
+            705
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            90,
+            152
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            39,
+            973,
+            98
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "header",
+        "text": "- Not Aqre 2",
+        "bbox": [
+            94,
+            105,
+            264,
+            164
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            59,
+            933,
+            178,
+            960
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "footer",
+        "text": "第三场 黑冰茶命题组",
+        "bbox": [
+            827,
+            933,
+            935,
+            960
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "footer",
+        "text": "中等题",
+        "bbox": [
+            476,
+            933,
+            516,
+            960
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "- Not Aqre 2",
+        "text_level": 2,
+        "bbox": [
+            94,
+            105,
+            264,
+            164
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "复杂度与递推替代",
+        "text_level": 2,
+        "bbox": [
+            59,
+            317,
+            238,
+            364
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "■ 优化后最大矩阵边长 $2^{7} = 128$ ，复杂度 $O(S^{3} \\log m)$ 可通过",
+        "bbox": [
+            79,
+            407,
+            677,
+            454
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "■ 另一种思路：方案数为项数 $S = 2^{n-2}$ 的线性递推式",
+        "bbox": [
+            77,
+            474,
+            604,
+            525
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "■ 无需手工求递推式：暴力 dp 出前 2S 项，用 Berlekamp-Massey 算法求解",
+        "bbox": [
+            77,
+            545,
+            807,
+            592
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "n = 1 需单独处理",
+        "bbox": [
+            79,
+            615,
+            278,
+            662
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            90,
+            152
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            59,
+            933,
+            178,
+            960
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "footer",
+        "text": "中等题",
+        "bbox": [
+            479,
+            933,
+            516,
+            960
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "footer",
+        "text": "第三场 黑冰茶命题组",
+        "bbox": [
+            827,
+            933,
+            935,
+            960
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "J- 树.zip",
+        "text_level": 2,
+        "bbox": [
+            75,
+            105,
+            192,
+            164
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "题目大意",
+        "text_level": 2,
+        "bbox": [
+            66,
+            200,
+            174,
+            250
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "\\- 给定以 1 为根、n 个顶点的树",
+        "bbox": [
+            79,
+            388,
+            395,
+            435
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "■ 构建新树（同以 1 为根），每个 $x \\neq 1$ 的新树父顶点必须是原树祖先",
+        "bbox": [
+            79,
+            454,
+            759,
+            505
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "■ q 个约束 (u, v): 新树中 v 必须是 u 的祖先",
+        "bbox": [
+            79,
+            529,
+            525,
+            576
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "■ 最小化新树深度和 $\\sum dep_{i}$ （根深度为 0）",
+        "bbox": [
+            79,
+            596,
+            498,
+            643
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "$2\\leq n,q\\leq 5\\times 10^{5}$",
+        "bbox": [
+            79,
+            666,
+            282,
+            713
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            88,
+            156
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            59,
+            933,
+            178,
+            960
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "footer",
+        "text": "中等题",
+        "bbox": [
+            479,
+            933,
+            516,
+            960
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "footer",
+        "text": "第三场 黑冰茶命题组",
+        "bbox": [
+            827,
+            933,
+            935,
+            960
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "- 树.zip",
+        "text_level": 2,
+        "bbox": [
+            88,
+            105,
+            192,
+            164
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "需求集合的传递合并",
+        "text_level": 2,
+        "bbox": [
+            59,
+            290,
+            262,
+            337
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "■ 为每个点 x 维护集合 need[x]：其中的点必须成为 x 的新树祖先",
+        "bbox": [
+            77,
+            376,
+            721,
+            423
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "初始每条约束 (u, v) 把 v 放入 need[u]；按原树深度从大到小处理",
+        "bbox": [
+            77,
+            447,
+            743,
+            494
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "■ 处理 x：若 need[x] 为空，parent\\_new[x] = 1",
+        "bbox": [
+            79,
+            517,
+            554,
+            564
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "■ 否则取 need[x] 中原树深度最大的点 d，令 parent\\_new[x] = d",
+        "bbox": [
+            79,
+            588,
+            719,
+            635
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "■ 删除所有等于 d 的重复要求，其余要求合并到 need[d]",
+        "bbox": [
+            79,
+            658,
+            635,
+            705
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            88,
+            156
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            59,
+            933,
+            178,
+            960
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "footer",
+        "text": "中等题",
+        "bbox": [
+            476,
+            933,
+            516,
+            960
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "footer",
+        "text": "第三场 黑冰茶命题组",
+        "bbox": [
+            827,
+            933,
+            935,
+            960
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "- 树.zip",
+        "text_level": 2,
+        "bbox": [
+            90,
+            105,
+            192,
+            164
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "贪心正确性",
+        "text_level": 2,
+        "bbox": [
+            57,
+            317,
+            174,
+            364
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "■ 传递正确性：need[x] 中的点都在根到 x 的链上，d 是最深的",
+        "bbox": [
+            77,
+            403,
+            695,
+            450
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "\\- 较浅的要求 a 转入 need[d]，因为 x 挂在 d 下后需 a 成为 d 的祖先",
+        "bbox": [
+            77,
+            474,
+            763,
+            521
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "■ 贪心正确性：d 必须成为 x 的新树祖先，故 dep\\_new[x] ≥ dep\\_new[d] + 1",
+        "bbox": [
+            77,
+            545,
+            838,
+            596
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "■ 直接令 parent\\_new[x] = d 达到下界，不可能更浅；逐点替换不增加深度和",
+        "bbox": [
+            77,
+            615,
+            838,
+            662
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            90,
+            156
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            59,
+            933,
+            178,
+            960
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "footer",
+        "text": "中等题",
+        "bbox": [
+            476,
+            933,
+            516,
+            960
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "footer",
+        "text": "第三场 黑冰茶命题组",
+        "bbox": [
+            827,
+            933,
+            935,
+            960
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "- 树.zip",
+        "text_level": 2,
+        "bbox": [
+            88,
+            105,
+            192,
+            164
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "可并堆实现与复杂度",
+        "text_level": 2,
+        "bbox": [
+            59,
+            290,
+            262,
+            337
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "用以原树深度为键的大根左偏堆（或配对堆）支持插入、取最大、删相同值、合并",
+        "bbox": [
+            77,
+            376,
+            898,
+            423
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "■ 每条初始约束对应一个堆节点，总数 q，每次操作 O(log q)",
+        "bbox": [
+            77,
+            447,
+            677,
+            494
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "■ 父亲确定后按原树深度从小到大算 dep\\_new[x] = dep\\_new(parent\\_new[x]) + 1",
+        "bbox": [
+            77,
+            517,
+            880,
+            564
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "■ 累加即答案，最大 $O(n^{2})$ ，需 long long",
+        "bbox": [
+            77,
+            588,
+            505,
+            635
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "时间复杂度 $O((n + q)\\log q)$ ，空间 $O(n + q)$",
+        "bbox": [
+            79,
+            658,
+            538,
+            705
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            88,
+            156
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            59,
+            933,
+            178,
+            960
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "footer",
+        "text": "中等题",
+        "bbox": [
+            476,
+            933,
+            516,
+            960
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "footer",
+        "text": "第三场 黑冰茶命题组",
+        "bbox": [
+            827,
+            933,
+            935,
+            960
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "- 交换大师",
+        "text_level": 2,
+        "bbox": [
+            79,
+            105,
+            233,
+            164
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "题目大意",
+        "text_level": 2,
+        "bbox": [
+            66,
+            200,
+            174,
+            250
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "■ 数组 $a_1, \\ldots, a_n$ ，价值 $F(a) = \\sum_{i=1}^{n-1} |a_i - a_{i+1}|$",
+        "bbox": [
+            79,
+            411,
+            547,
+            462
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "■ 最多交换两个不同位置一次，也可不交换",
+        "bbox": [
+            79,
+            486,
+            503,
+            529
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "■ 最大化 F(a)",
+        "bbox": [
+            79,
+            556,
+            220,
+            603
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "$2 \\leq n \\leq 5 \\cdot 10^{5}$ , $0 \\leq a_{i} \\leq 10^{9}$ , $\\sum n \\leq 5 \\cdot 10^{5}$",
+        "bbox": [
+            79,
+            619,
+            538,
+            670
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            90,
+            156
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            59,
+            933,
+            178,
+            960
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "page_number",
+        "text": "中等题",
+        "bbox": [
+            479,
+            933,
+            516,
+            960
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "footer",
+        "text": "第三场 黑冰茶命题组",
+        "bbox": [
+            827,
+            933,
+            935,
+            960
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "- 交换大师",
+        "text_level": 2,
+        "bbox": [
+            83,
+            105,
+            236,
+            164
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "增量的局部性",
+        "text_level": 2,
+        "bbox": [
+            57,
+            317,
+            194,
+            364
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "■ 交换 i,j 只有 O(1) 条边变化: (i-1,i), (i,i+1), (j-1,j), (j,j+1)",
+        "bbox": [
+            77,
+            403,
+            728,
+            450
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "■ 相邻交换 $(i, i + 1)$ 公式重叠，需单独处理",
+        "bbox": [
+            79,
+            474,
+            505,
+            521
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "非相邻交换 $i + 1 < j$ 两边影响不重叠，增量 $\\Delta = g_i(a_j) - base_i + g_j(a_i) - base_j$",
+        "bbox": [
+            79,
+            545,
+            871,
+            596
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "■ $g_{p}(x)$ ：把位置 p 改成 x 后与邻居的贡献； $base_{p} = g_{p}(a_{p})$",
+        "bbox": [
+            79,
+            615,
+            668,
+            666
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            59,
+            933,
+            178,
+            960
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "footer",
+        "text": "中等题",
+        "bbox": [
+            479,
+            933,
+            516,
+            960
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "footer",
+        "text": "第三场 黑冰茶命题组",
+        "bbox": [
+            827,
+            933,
+            935,
+            960
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "- 交换大师",
+        "text_level": 2,
+        "bbox": [
+            83,
+            105,
+            236,
+            164
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "直线最大值分解",
+        "text_level": 2,
+        "bbox": [
+            59,
+            294,
+            216,
+            337
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "$|x - c| = \\max(x - c, c - x)$ ，每个绝对值是两条直线的最大值",
+        "bbox": [
+            79,
+            380,
+            693,
+            423
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "$g_{p}(x)$ 为若干绝对值之和，可表示为有限条直线 $kx + b$ 的最大值（端点 $\\leq 2$ 条，中间点 $\\leq 4$ 条）",
+        "bbox": [
+            79,
+            450,
+            927,
+            556
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "■ 增量 $\\Delta = (b_{i} - base_{i} + k_{j}a_{i}) + k_{i}a_{j} + b_{j} - base_{j}$",
+        "bbox": [
+            79,
+            580,
+            562,
+            627
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "从左到右枚举右端点 j 及 $g_{j}$ 的直线，关键：快速找最优左端点 i",
+        "bbox": [
+            77,
+            647,
+            721,
+            698
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            59,
+            933,
+            178,
+            960
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "footer",
+        "text": "中等题",
+        "bbox": [
+            479,
+            933,
+            516,
+            960
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "footer",
+        "text": "第三场 黑冰茶命题组",
+        "bbox": [
+            827,
+            933,
+            935,
+            960
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "- 交换大师",
+        "text_level": 2,
+        "bbox": [
+            81,
+            105,
+            233,
+            164
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "斜率分类扫描",
+        "text_level": 2,
+        "bbox": [
+            59,
+            294,
+            194,
+            341
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "■ 维护 best[k\\_i][k\\_j]：左边可非相邻交换的位置中，左端点斜率 k\\_i、右端点斜率 k\\_j 时的最大历史值 max(b\\_i - base\\_i + k\\_j a\\_i)",
+        "bbox": [
+            77,
+            380,
+            927,
+            490
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "■ 斜率仅 -2, -1, 0, 1, 2, best 仅 $5 \\times 5$ 状态",
+        "bbox": [
+            77,
+            509,
+            512,
+            556
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "■ 扫描时加入位置 j-2（保证非相邻），枚举 $g_{j}$ 直线查 best 更新答案",
+        "bbox": [
+            77,
+            580,
+            763,
+            631
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "非相邻交换 $O(n^{2}) \\rightarrow O(n)$ ，相邻交换 $O(n)$ ，总复杂度 $O(n)$",
+        "bbox": [
+            79,
+            650,
+            688,
+            701
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            59,
+            933,
+            178,
+            960
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "page_number",
+        "text": "中等题",
+        "bbox": [
+            479,
+            933,
+            516,
+            960
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "footer",
+        "text": "第三场 黑冰茶命题组",
+        "bbox": [
+            827,
+            933,
+            935,
+            960
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "- 扫雷",
+        "text_level": 2,
+        "bbox": [
+            92,
+            105,
+            181,
+            164
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "题目大意",
+        "text_level": 2,
+        "bbox": [
+            66,
+            200,
+            174,
+            250
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "\\- 给定正整数 $x$ ，构造一个扫雷局面，使其恰好有 $x$ 种合法雷的放置方案",
+        "bbox": [
+            79,
+            415,
+            788,
+            462
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "■ 格子为 \\*（未打开，可有雷）或数字 0-8（已打开安全格）",
+        "bbox": [
+            79,
+            486,
+            657,
+            533
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "■ 数字格的值等于其八邻格中的雷数；雷总数不固定",
+        "bbox": [
+            79,
+            556,
+            591,
+            603
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "$1 \\leq x \\leq 300, *$ 数量不超过 40",
+        "bbox": [
+            79,
+            627,
+            401,
+            670
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            90,
+            152
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            59,
+            933,
+            178,
+            960
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "footer",
+        "text": "困难题",
+        "bbox": [
+            479,
+            933,
+            516,
+            956
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "footer",
+        "text": "第三场 黑冰茶命题组",
+        "bbox": [
+            827,
+            933,
+            935,
+            960
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "- 扫雷",
+        "text_level": 2,
+        "bbox": [
+            94,
+            105,
+            181,
+            164
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "两行条带构造",
+        "text_level": 2,
+        "bbox": [
+            59,
+            313,
+            194,
+            364
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "■ 本题较 Heuristic，40 个 \\* 限制宽松，多种构造均可；x 仅 1-300，打表也可通过",
+        "bbox": [
+            77,
+            403,
+            880,
+            450
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "■ 核心思想：只输出两行条带，第一行全 \\*，第二行是数字与 \\* 组成的字符串 p",
+        "bbox": [
+            79,
+            474,
+            854,
+            521
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "好处：局面窄，方便 DP 计算方案数；可离线搜索每个 x 的短条带后打表输出",
+        "bbox": [
+            79,
+            545,
+            858,
+            592
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "例：\\*\\*\\* / \\*1\\*，五个 \\* 恰一个有雷，方案数 $\\binom{5}{1}=5$",
+        "bbox": [
+            79,
+            611,
+            613,
+            666
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            90,
+            152
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            59,
+            933,
+            178,
+            960
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "footer",
+        "text": "困难题",
+        "bbox": [
+            476,
+            933,
+            516,
+            956
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "footer",
+        "text": "第三场 黑冰茶命题组",
+        "bbox": [
+            827,
+            933,
+            935,
+            960
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "- 扫雷",
+        "text_level": 2,
+        "bbox": [
+            94,
+            105,
+            181,
+            164
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "列 DP",
+        "text_level": 2,
+        "bbox": [
+            59,
+            290,
+            121,
+            333
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "■ 每列最多两格，用二进制 mask 表示列状态（0-3）",
+        "bbox": [
+            79,
+            376,
+            584,
+            423
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "■ 数字列：第二行该格无雷，状态约束低位为 0",
+        "bbox": [
+            79,
+            447,
+            545,
+            494
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "一个数字由相邻三列状态决定：三列中有雷格子总数等于该数字",
+        "bbox": [
+            77,
+            517,
+            724,
+            564
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "列 DP: dp[a][b] 表示倒数第二列状态 a、最后一列状态 b 的方案数",
+        "bbox": [
+            77,
+            584,
+            759,
+            635
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "■ 加入新列 c 时检查上一列数字 d: popcount(a) + popcount(b) + popcount(c) = d",
+        "bbox": [
+            79,
+            658,
+            913,
+            705
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            90,
+            152
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            59,
+            933,
+            178,
+            960
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "footer",
+        "text": "困难题",
+        "bbox": [
+            476,
+            933,
+            516,
+            960
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "footer",
+        "text": "第三场 黑冰茶命题组",
+        "bbox": [
+            827,
+            933,
+            935,
+            960
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "- 扫雷",
+        "text_level": 2,
+        "bbox": [
+            92,
+            105,
+            181,
+            164
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "搜索与打表",
+        "text_level": 2,
+        "bbox": [
+            57,
+            290,
+            174,
+            337
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "■ 左右边界视作全空状态 0，最终答案为 $\\sum dp[a][b]$ （最后一列为数字时再校验）",
+        "bbox": [
+            77,
+            376,
+            860,
+            427
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "■ 搜索：状态含当前长度、已用 \\* 数、最后一列字符、DP 表、条带串",
+        "bbox": [
+            77,
+            447,
+            763,
+            494
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "■ 每次在右边添加 0-5 或 \\*，DP 转移更新方案数",
+        "bbox": [
+            79,
+            517,
+            562,
+            564
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "若方案数 $v \\in [1, 300]$ ，记录 ans[v] = 当前条带",
+        "bbox": [
+            79,
+            588,
+            558,
+            635
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "■ 全部覆盖即停止；实际最多用 20 个 \\*，最大宽度 13",
+        "bbox": [
+            79,
+            658,
+            611,
+            705
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            90,
+            152
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            59,
+            933,
+            178,
+            960
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "footer",
+        "text": "困难题",
+        "bbox": [
+            476,
+            933,
+            516,
+            956
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "footer",
+        "text": "第三场 黑冰茶命题组",
+        "bbox": [
+            827,
+            933,
+            935,
+            960
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "M - 漫游者",
+        "text_level": 2,
+        "bbox": [
+            68,
+            105,
+            222,
+            164
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "题目大意",
+        "text_level": 2,
+        "bbox": [
+            66,
+            200,
+            174,
+            250
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "■ 树上从 s 走到 t；第一步从 s 邻点中等概率选一个",
+        "bbox": [
+            79,
+            415,
+            589,
+            462
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "■ 之后在 x、上一点 y：若 x 有非 y 邻点则等概率选一个，否则走回 y",
+        "bbox": [
+            77,
+            486,
+            763,
+            533
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "■ 到达 t 即停；求期望步数，对 998244353 取模",
+        "bbox": [
+            79,
+            556,
+            551,
+            600
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "$2 \\leq n \\leq 5 \\cdot 10^{5}$ , $1 \\leq s, t \\leq n$ , $\\sum n \\leq 5 \\cdot 10^{5}$",
+        "bbox": [
+            79,
+            623,
+            529,
+            670
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "header",
+        "text": "AC. M",
+        "bbox": [
+            22,
+            43,
+            94,
+            156
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            59,
+            933,
+            178,
+            960
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "footer",
+        "text": "困难题",
+        "bbox": [
+            479,
+            933,
+            516,
+            956
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "footer",
+        "text": "第三场 黑冰茶命题组",
+        "bbox": [
+            827,
+            933,
+            935,
+            960
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "M - 漫游者",
+        "text_level": 2,
+        "bbox": [
+            68,
+            105,
+            222,
+            164
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "有向边状态与方程",
+        "text_level": 2,
+        "bbox": [
+            57,
+            290,
+            238,
+            333
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "■ 需记住”上一步”，定义有向边状态 $f(u \\rightarrow v)$ ：在 v、上一点 u 时到 t 的期望剩余步数",
+        "bbox": [
+            77,
+            376,
+            931,
+            423
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "■ v = t 时 $f(u \\rightarrow v) = 0$",
+        "bbox": [
+            79,
+            447,
+            317,
+            494
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "■ $v \\neq t$ , v 除 u 外有 k 个邻点: $f(u \\rightarrow v) = 1 + \\frac{1}{k} \\sum_{w \\neq u} f(v \\rightarrow w)$",
+        "bbox": [
+            79,
+            517,
+            719,
+            568
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "■ k = 0 时 $f(u \\rightarrow v) = 1 + f(v \\rightarrow u)$",
+        "bbox": [
+            79,
+            588,
+            428,
+            635
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "■ 直接列方程高斯消元 $O(n^{3})$ ，需利用树结构线性求解",
+        "bbox": [
+            79,
+            658,
+            611,
+            705
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "header",
+        "text": "AC. M",
+        "bbox": [
+            22,
+            43,
+            94,
+            156
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            59,
+            933,
+            178,
+            960
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "footer",
+        "text": "困难题",
+        "bbox": [
+            476,
+            933,
+            516,
+            956
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "footer",
+        "text": "第三场 黑冰茶命题组",
+        "bbox": [
+            827,
+            933,
+            935,
+            960
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "M - 漫游者",
+        "text_level": 2,
+        "bbox": [
+            68,
+            105,
+            222,
+            164
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "树形 DP 建立线性关系",
+        "text_level": 2,
+        "bbox": [
+            57,
+            258,
+            282,
+            305
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "以 t 为根，对非根点 v（父 p）关心两方向：",
+        "bbox": [
+            77,
+            345,
+            529,
+            392
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "$A_{v}=f(p\\rightarrow v)$ （从父亲走进v）， $B_{v}=f(v\\rightarrow p)$ （从v走回父亲）",
+        "bbox": [
+            77,
+            415,
+            730,
+            462
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "■ 后序 DP 求线性关系 $A_{v} = a_{v} B_{v} + b_{v}$",
+        "bbox": [
+            77,
+            486,
+            459,
+            533
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "■ 叶子： $A_{v}=1+B_{v}$ ，即 $a_{v}=1, b_{v}=1$",
+        "bbox": [
+            77,
+            556,
+            472,
+            603
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "非叶子：用儿子 $c_{i}$ 的 $x_{i}=a_{i}y_{i}+b_{i}$ 解出 $y_{i}=\\frac{S+B_{v}+k+C-b_{i}}{k+a_{i}}$",
+        "bbox": [
+            77,
+            619,
+            662,
+            682
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "■ 其中 $S = \\sum a_{j} y_{j}$ ， $C = \\sum b_{j}$ ；解出 $S = \\frac{UB_{v} + V}{1 - U}$ ，故 $A_{v}$ 亦为 $B_{v}$ 的一次函数",
+        "bbox": [
+            77,
+            690,
+            816,
+            749
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "header",
+        "text": "AC. M",
+        "bbox": [
+            22,
+            43,
+            94,
+            156
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            39,
+            973,
+            98
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            59,
+            933,
+            178,
+            960
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "footer",
+        "text": "困难题",
+        "bbox": [
+            476,
+            933,
+            516,
+            956
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "footer",
+        "text": "第三场 黑冰茶命题组",
+        "bbox": [
+            827,
+            933,
+            935,
+            960
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "M - 漫游者",
+        "text_level": 2,
+        "bbox": [
+            68,
+            105,
+            222,
+            164
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": "自顶向下求值与复杂度",
+        "text_level": 2,
+        "bbox": [
+            59,
+            290,
+            282,
+            337
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": "■ 后序 DP 得到每个非根点的 $a_{v}, b_{v}$ ，但不知具体值",
+        "bbox": [
+            77,
+            376,
+            587,
+            423
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": "■ 自上而下：根的儿子 $B_{v} = f(v \\rightarrow t) = 0$ ，故 $A_{v} = b_{v}$",
+        "bbox": [
+            77,
+            447,
+            609,
+            494
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": "其他点已知 $B_{v}$ 后用同式求儿子 $B_{c_{i}} = y_{i}$ ，继续向下",
+        "bbox": [
+            77,
+            517,
+            598,
+            564
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": "答案：s = t 时为 0；否则 ans = 1 + $\\frac{1}{\\deg(s)} \\sum_{v \\in \\text{adj}(s)} f(s \\to v)$",
+        "bbox": [
+            77,
+            584,
+            690,
+            643
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": "■ 所有除法模 998244353（乘逆元）；时间复杂度 O(n)",
+        "bbox": [
+            79,
+            658,
+            607,
+            705
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "header",
+        "text": "AC. M",
+        "bbox": [
+            22,
+            43,
+            94,
+            156
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            59,
+            933,
+            178,
+            960
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "footer",
+        "text": "困难题",
+        "bbox": [
+            476,
+            933,
+            516,
+            956
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "footer",
+        "text": "第三场 黑冰茶命题组",
+        "bbox": [
+            827,
+            933,
+            935,
+            960
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": "D - 最长的连续的一",
+        "text_level": 2,
+        "bbox": [
+            70,
+            105,
+            342,
+            164
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "题目大意",
+        "text_level": 2,
+        "bbox": [
+            66,
+            200,
+            174,
+            250
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "■ 给定一个 n 个点 m 条边的 DAG，每个顶点标号为 $a_{i} \\in \\{0, 1\\}$",
+        "bbox": [
+            79,
+            415,
+            697,
+            462
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "在所有拓扑序中，求标号序列里极长连续全一段的最大长度 L",
+        "bbox": [
+            79,
+            482,
+            697,
+            529
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "\\- 输出一个达到 L 的拓扑序",
+        "bbox": [
+            79,
+            552,
+            355,
+            600
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "■ $1 \\leq n \\leq 2000$ , $0 \\leq m \\leq \\min(10^{5}, \\frac{n(n-1)}{2})$ , $\\sum n \\leq 2000$ , $\\sum m \\leq 10^{5}$",
+        "bbox": [
+            79,
+            615,
+            761,
+            674
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            90,
+            152
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            59,
+            933,
+            178,
+            960
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "footer",
+        "text": "困难题",
+        "bbox": [
+            476,
+            933,
+            516,
+            956
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "footer",
+        "text": "第三场 黑冰茶命题组",
+        "bbox": [
+            827,
+            933,
+            935,
+            960
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "D - 最长的连续的一",
+        "text_level": 2,
+        "bbox": [
+            68,
+            105,
+            342,
+            164
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "最大权闭合子图建模",
+        "text_level": 2,
+        "bbox": [
+            59,
+            192,
+            262,
+            239
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "考虑最终拓扑序，将每个顶点 v 必被分配到三个组之一：组 0（连续段之前）、组 1（连续段内部，必须 $a_{v}=1$ ）、组 2（连续段之后）",
+        "bbox": [
+            77,
+            278,
+            938,
+            384
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "■ 将每个点拆成两个点 $x_{i}$ 和 $y_{i}$ ，考虑一个最大权闭合子图建模：",
+        "bbox": [
+            79,
+            403,
+            697,
+            450
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "■ 令点 $y_i$ 被选入子图代表原图的点 i 在组 1 或组 2 中，选入时收益为 1。",
+        "bbox": [
+            123,
+            466,
+            772,
+            509
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "■ 令点 $x_i$ 被选入子图代表原图的点 i 在组 2 中，选入时收益为 -1。",
+        "bbox": [
+            123,
+            521,
+            724,
+            564
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "■ 组1中 $a_{i} = 1$ 的限制：若 $a_{i} = 0$ ，则点i不能在组1中，即选中 $y_{i}$ 就必须选择 $x_{i}$ ，即 $y_{i}$ 向 $x_{i}$ 连边。",
+        "bbox": [
+            123,
+            576,
+            938,
+            670
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "☑ 拓扑序限制：若原图中 u 向 v 有连边，则若选中 $y_{u}$ ，就一定要选 $y_{v}$ ，即 $y_{u}$ 向 $y_{v}$ 连边（对 x 同理）。",
+        "bbox": [
+            123,
+            682,
+            922,
+            780
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "上述问题转化为一个等价的最大权闭合子图问题，可以网络流解决。",
+        "bbox": [
+            77,
+            803,
+            754,
+            850
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            847,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            57,
+            933,
+            178,
+            960
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "footer",
+        "text": "困难题",
+        "bbox": [
+            476,
+            933,
+            516,
+            960
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "footer",
+        "text": "第三场 黑冰茶命题组",
+        "bbox": [
+            827,
+            933,
+            935,
+            960
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "- 最长的连续的一",
+        "text_level": 2,
+        "bbox": [
+            97,
+            105,
+            342,
+            164
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "方案构造与复杂度",
+        "text_level": 2,
+        "bbox": [
+            59,
+            352,
+            238,
+            396
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "答案构造方法是朴素的：从最大权闭合子图中找出最终子图，即可判断每个点属于哪个组，然后运行一次拓扑排序，依次选择组 0, 1, 2 的点即可。",
+        "bbox": [
+            79,
+            439,
+            935,
+            545
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "■ 复杂度：所有源点边容量为 1，Dinic 最多增广 n 次，总计 O(n(n+m))",
+        "bbox": [
+            79,
+            568,
+            796,
+            615
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            90,
+            152
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            59,
+            937,
+            178,
+            960
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "footer",
+        "text": "困难题",
+        "bbox": [
+            479,
+            933,
+            516,
+            956
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "footer",
+        "text": "第三场 黑冰茶命题组",
+        "bbox": [
+            827,
+            933,
+            935,
+            960
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "- 蛋糕店",
+        "text_level": 2,
+        "bbox": [
+            97,
+            105,
+            214,
+            164
+        ],
+        "page_idx": 39
+    },
+    {
+        "type": "text",
+        "text": "题目大意",
+        "text_level": 2,
+        "bbox": [
+            66,
+            200,
+            174,
+            250
+        ],
+        "page_idx": 39
+    },
+    {
+        "type": "text",
+        "text": "蛋糕店位于数轴原点0，配送员速度为1，每次沿正方向配送后返回",
+        "bbox": [
+            79,
+            360,
+            759,
+            407
+        ],
+        "page_idx": 39
+    },
+    {
+        "type": "text",
+        "text": "n 个订单，第 i 个在时刻 $t_i$ 到达，目的地为 $x_i$",
+        "bbox": [
+            79,
+            431,
+            549,
+            474
+        ],
+        "page_idx": 39
+    },
+    {
+        "type": "text",
+        "text": "订单到达后可随时取走，配送员可带走已到达的任意子集",
+        "bbox": [
+            79,
+            498,
+            657,
+            545
+        ],
+        "page_idx": 39
+    },
+    {
+        "type": "text",
+        "text": "\\- 订单 i 在时刻 $d_{i}$ 送达，等待时间为 $d_{i} - t_{i}$",
+        "bbox": [
+            79,
+            568,
+            509,
+            615
+        ],
+        "page_idx": 39
+    },
+    {
+        "type": "text",
+        "text": "■ 最小化所有订单的最大等待时间",
+        "bbox": [
+            79,
+            639,
+            415,
+            686
+        ],
+        "page_idx": 39
+    },
+    {
+        "type": "text",
+        "text": "$1 \\leq n \\leq 10^{5}, 1 \\leq t_{i}, x_{i} \\leq 10^{9}, \\sum n \\leq 10^{5}$",
+        "bbox": [
+            79,
+            705,
+            505,
+            756
+        ],
+        "page_idx": 39
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            92,
+            152
+        ],
+        "page_idx": 39
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 39
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            59,
+            933,
+            178,
+            960
+        ],
+        "page_idx": 39
+    },
+    {
+        "type": "footer",
+        "text": "困难题",
+        "bbox": [
+            479,
+            933,
+            516,
+            956
+        ],
+        "page_idx": 39
+    },
+    {
+        "type": "footer",
+        "text": "第三场 黑冰茶命题组",
+        "bbox": [
+            827,
+            933,
+            935,
+            960
+        ],
+        "page_idx": 39
+    },
+    {
+        "type": "text",
+        "text": "- 蛋糕店",
+        "text_level": 2,
+        "bbox": [
+            97,
+            105,
+            214,
+            164
+        ],
+        "page_idx": 40
+    },
+    {
+        "type": "text",
+        "text": "订单化简与二分",
+        "text_level": 2,
+        "bbox": [
+            57,
+            317,
+            216,
+            364
+        ],
+        "page_idx": 40
+    },
+    {
+        "type": "text",
+        "text": "按 t 升序排序；若 $t_{i} \\leq t_{j}$ 且 $x_{j} - x_{i} \\geq t_{j} - t_{i}$ ，则送 j 时可顺路送 i，订单 i 可删除",
+        "bbox": [
+            77,
+            407,
+            880,
+            454
+        ],
+        "page_idx": 40
+    },
+    {
+        "type": "text",
+        "text": "■ 删除后，剩余订单满足 t 严格递增、x-t 严格递减",
+        "bbox": [
+            79,
+            478,
+            600,
+            525
+        ],
+        "page_idx": 40
+    },
+    {
+        "type": "text",
+        "text": "二分最大等待时间 W；订单 i 的出发时间 d 需满足 $t_{i} \\leq d \\leq t_{i} + W - x_{i}$",
+        "bbox": [
+            77,
+            545,
+            796,
+            592
+        ],
+        "page_idx": 40
+    },
+    {
+        "type": "text",
+        "text": "记 $l_{i}=t_{i}$ ， $r_{i}=t_{i}+W-x_{i}$ ，删除后 $l_{i}$ 与 $r_{i}$ 均递增",
+        "bbox": [
+            79,
+            615,
+            584,
+            662
+        ],
+        "page_idx": 40
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            92,
+            152
+        ],
+        "page_idx": 40
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 40
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            59,
+            933,
+            178,
+            960
+        ],
+        "page_idx": 40
+    },
+    {
+        "type": "footer",
+        "text": "困难题",
+        "bbox": [
+            479,
+            933,
+            516,
+            956
+        ],
+        "page_idx": 40
+    },
+    {
+        "type": "footer",
+        "text": "第三场 黑冰茶命题组",
+        "bbox": [
+            827,
+            933,
+            935,
+            960
+        ],
+        "page_idx": 40
+    },
+    {
+        "type": "text",
+        "text": "- 蛋糕店",
+        "text_level": 2,
+        "bbox": [
+            97,
+            105,
+            216,
+            164
+        ],
+        "page_idx": 41
+    },
+    {
+        "type": "text",
+        "text": "前缀分批与 DP 转移",
+        "text_level": 2,
+        "bbox": [
+            59,
+            286,
+            262,
+            333
+        ],
+        "page_idx": 41
+    },
+    {
+        "type": "text",
+        "text": "■ 关键结论：存在一种可行方案，使得每趟送完返回后，已送达的集合总是删除后序列的一个前缀",
+        "bbox": [
+            77,
+            376,
+            935,
+            478
+        ],
+        "page_idx": 41
+    },
+    {
+        "type": "text",
+        "text": "■ 证明：若有“逆序”（某趟送了 j 但 i < j 未送），可通过交换消去逆序",
+        "bbox": [
+            77,
+            501,
+            770,
+            552
+        ],
+        "page_idx": 41
+    },
+    {
+        "type": "text",
+        "text": "\\- 故可按前缀分批，定义 $dp_i$ 为送完前 i 个订单并返回的最早时间",
+        "bbox": [
+            77,
+            572,
+            721,
+            619
+        ],
+        "page_idx": 41
+    },
+    {
+        "type": "text",
+        "text": "■ 转移： $dp_{j} = \\min_{i}\\left(\\max(dp_{i}, t_{j}) + 2\\max_{k=i+1}^{j} x_{k}\\right)$ ，需满足 $\\max(dp_{i}, t_{j}) \\leq r_{i+1}$",
+        "bbox": [
+            77,
+            631,
+            845,
+            705
+        ],
+        "page_idx": 41
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            92,
+            156
+        ],
+        "page_idx": 41
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 41
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            59,
+            933,
+            178,
+            960
+        ],
+        "page_idx": 41
+    },
+    {
+        "type": "footer",
+        "text": "困难题",
+        "bbox": [
+            476,
+            933,
+            516,
+            956
+        ],
+        "page_idx": 41
+    },
+    {
+        "type": "footer",
+        "text": "第三场 黑冰茶命题组",
+        "bbox": [
+            827,
+            933,
+            935,
+            960
+        ],
+        "page_idx": 41
+    },
+    {
+        "type": "text",
+        "text": "- 蛋糕店",
+        "text_level": 2,
+        "bbox": [
+            94,
+            105,
+            214,
+            164
+        ],
+        "page_idx": 42
+    },
+    {
+        "type": "text",
+        "text": "决策分类与数据结构优化",
+        "text_level": 2,
+        "bbox": [
+            57,
+            266,
+            304,
+            313
+        ],
+        "page_idx": 42
+    },
+    {
+        "type": "text",
+        "text": "$dp_{i}$ 单调不降，合法决策点需满足 $r_{i+1} \\geq t_{j}$ 且 $dp_{i} \\leq r_{i+1}$",
+        "bbox": [
+            79,
+            352,
+            646,
+            403
+        ],
+        "page_idx": 42
+    },
+    {
+        "type": "text",
+        "text": "■ 第一类 $dp_{i} \\leq t_{j}$ ：出发时间为 $t_{j}$ ，选最靠右的合法 i，单调队列维护区间最大 x",
+        "bbox": [
+            77,
+            423,
+            856,
+            474
+        ],
+        "page_idx": 42
+    },
+    {
+        "type": "text",
+        "text": "■ 第二类 $dp_{i} > t_{j}$ ：转移值 $dp_{i} + 2\\max_{k=i+1}^{j} x_{k}$ ，单调栈维护后缀最大值区间，线段树区间加法维护最小值",
+        "bbox": [
+            77,
+            490,
+            929,
+            600
+        ],
+        "page_idx": 42
+    },
+    {
+        "type": "text",
+        "text": "■ 每次判定 O(m log m)，二分 O(log $10^{9}$ ) 次",
+        "bbox": [
+            79,
+            619,
+            516,
+            670
+        ],
+        "page_idx": 42
+    },
+    {
+        "type": "text",
+        "text": "■ 总复杂度 O(n log n log 10 $^{9}$ )，空间 O(n log n)",
+        "bbox": [
+            77,
+            690,
+            540,
+            741
+        ],
+        "page_idx": 42
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            92,
+            156
+        ],
+        "page_idx": 42
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            39,
+            973,
+            98
+        ],
+        "page_idx": 42
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            59,
+            933,
+            178,
+            960
+        ],
+        "page_idx": 42
+    },
+    {
+        "type": "footer",
+        "text": "第三场 黑冰茶命题组",
+        "bbox": [
+            827,
+            933,
+            935,
+            960
+        ],
+        "page_idx": 42
+    },
+    {
+        "type": "footer",
+        "text": "困难题",
+        "bbox": [
+            476,
+            933,
+            516,
+            956
+        ],
+        "page_idx": 42
+    },
+    {
+        "type": "text",
+        "text": "H - 季节",
+        "text_level": 2,
+        "bbox": [
+            72,
+            101,
+            183,
+            164
+        ],
+        "page_idx": 43
+    },
+    {
+        "type": "text",
+        "text": "题目大意",
+        "text_level": 2,
+        "bbox": [
+            66,
+            200,
+            176,
+            250
+        ],
+        "page_idx": 43
+    },
+    {
+        "type": "text",
+        "text": "■ 数组 B 以 p 为周期：对所有 $0 \\leq j < j + p < n$ 有 $B_{j} = B_{j+p}$",
+        "bbox": [
+            77,
+            364,
+            679,
+            415
+        ],
+        "page_idx": 43
+    },
+    {
+        "type": "text",
+        "text": "■ 给定模 998244353 下的数组 $A_0, \\ldots, A_{n-1}$",
+        "bbox": [
+            77,
+            435,
+            501,
+            482
+        ],
+        "page_idx": 43
+    },
+    {
+        "type": "text",
+        "text": "求最小非负整数 T，使存在 $B^{(1)}, \\ldots, B^{(T)}$ ，其中 $B^{(i)}$ 以 i 为周期，且 $A_{j} \\equiv \\sum_{i=1}^{T} B_{j}^{(i)} \\pmod{998244353}$",
+        "bbox": [
+            77,
+            494,
+            905,
+            611
+        ],
+        "page_idx": 43
+    },
+    {
+        "type": "text",
+        "text": "T = 0 时空求和，仅全零数组可表示",
+        "bbox": [
+            77,
+            631,
+            454,
+            678
+        ],
+        "page_idx": 43
+    },
+    {
+        "type": "text",
+        "text": "$1 \\leq n \\leq 10^{5}, 0 \\leq A_{i} < 998244353$",
+        "bbox": [
+            77,
+            701,
+            432,
+            749
+        ],
+        "page_idx": 43
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            90,
+            152
+        ],
+        "page_idx": 43
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            39,
+            973,
+            98
+        ],
+        "page_idx": 43
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            59,
+            933,
+            178,
+            960
+        ],
+        "page_idx": 43
+    },
+    {
+        "type": "footer",
+        "text": "困难题",
+        "bbox": [
+            476,
+            933,
+            516,
+            960
+        ],
+        "page_idx": 43
+    },
+    {
+        "type": "footer",
+        "text": "第三场 黑冰茶命题组",
+        "bbox": [
+            827,
+            933,
+            935,
+            960
+        ],
+        "page_idx": 43
+    },
+    {
+        "type": "text",
+        "text": "H - 季节",
+        "text_level": 2,
+        "bbox": [
+            68,
+            101,
+            185,
+            164
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "序列与多项式的联系",
+        "text_level": 2,
+        "bbox": [
+            57,
+            219,
+            260,
+            266
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "设 $S_{T}$ 为所有周期在 $1,2,\\ldots,T$ 范围内的数组之和构成的集合。",
+        "bbox": [
+            55,
+            294,
+            657,
+            341
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "由于周期为 p 的序列会被多项式 $x^{p}-1$ 零化（annihilated），集合 $S_{T}$ 中的每个序列都会被它们的最小公倍式零化：",
+        "bbox": [
+            55,
+            352,
+            929,
+            462
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "equation",
+        "text": "$$\nQ _ {T} (\\mathsf {x}) = \\operatorname{lcm} \\left(\\mathsf {x} ^ {1} - 1, \\mathsf {x} ^ {2} - 1, \\dots , \\mathsf {x} ^ {T} - 1\\right) = \\prod_ {d = 1} ^ {T} \\Phi_ {d} (\\mathsf {x}),\n$$",
+        "text_format": "latex",
+        "bbox": [
+            245,
+            494,
+            748,
+            623
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "其中 $\\Phi_{d}$ 是第 d 个分圆多项式（cyclotomic polynomial）。",
+        "bbox": [
+            55,
+            662,
+            598,
+            709
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "反之，在该域上，此条件在有限前缀上描述了完全相同的子空间： $A \\in S_{T}$ 当且仅当 $Q_{T}$ 的系数构成了 $A$ 的一个合法的线性递推。",
+        "bbox": [
+            55,
+            717,
+            938,
+            827
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            847,
+            39,
+            973,
+            98
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            57,
+            933,
+            178,
+            960
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "footer",
+        "text": "困难题",
+        "bbox": [
+            476,
+            933,
+            516,
+            960
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "footer",
+        "text": "第三场 黑冰茶命题组",
+        "bbox": [
+            827,
+            933,
+            935,
+            960
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "- 季节",
+        "text_level": 2,
+        "bbox": [
+            88,
+            101,
+            185,
+            164
+        ],
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": "合法性校验与卷积",
+        "text_level": 2,
+        "bbox": [
+            59,
+            262,
+            238,
+            309
+        ],
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": "对于固定的 T，设多项式 $Q_{T}$ 的次数为 $D = \\deg Q_{T}$ ， $Q_{T}(x) = \\sum q_{j} x^{j}$ 。",
+        "bbox": [
+            55,
+            337,
+            728,
+            388
+        ],
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": "若 $D < n$ ，我们需要校验所有可能的值是否满足该线性递推：",
+        "bbox": [
+            57,
+            396,
+            642,
+            447
+        ],
+        "page_idx": 45
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\sum_ {j = 0} ^ {D} q _ {j} A _ {k + j} = 0 \\quad (0 \\leq k <   n - D).\n$$",
+        "text_format": "latex",
+        "bbox": [
+            333,
+            478,
+            657,
+            615
+        ],
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": "这一校验过程本质上是一个卷积，可以通过NTT（快速数论变换）高效完成。若 $D \\geq n$ ，则序列没有任何限制，必然合法。",
+        "bbox": [
+            55,
+            650,
+            805,
+            760
+        ],
+        "page_idx": 45
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            90,
+            156
+        ],
+        "page_idx": 45
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            847,
+            39,
+            973,
+            98
+        ],
+        "page_idx": 45
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            57,
+            933,
+            178,
+            960
+        ],
+        "page_idx": 45
+    },
+    {
+        "type": "footer",
+        "text": "困难题",
+        "bbox": [
+            476,
+            933,
+            516,
+            960
+        ],
+        "page_idx": 45
+    },
+    {
+        "type": "footer",
+        "text": "第三场 黑冰茶命题组",
+        "bbox": [
+            827,
+            933,
+            935,
+            960
+        ],
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": "H - 季节",
+        "text_level": 2,
+        "bbox": [
+            68,
+            101,
+            185,
+            164
+        ],
+        "page_idx": 46
+    },
+    {
+        "type": "text",
+        "text": "预处理界限与算法流程",
+        "text_level": 2,
+        "bbox": [
+            57,
+            258,
+            282,
+            305
+        ],
+        "page_idx": 46
+    },
+    {
+        "type": "text",
+        "text": "由分圆多项式度数的性质可知，因为 $\\sum_{\\mathsf{d} = 1}^{573}\\varphi (\\mathsf{d})\\geq 10^{5}$ ，我们只需要考虑到大约573的分圆多项式，即可满足可能的最大长度需求。",
+        "bbox": [
+            57,
+            329,
+            938,
+            439
+        ],
+        "page_idx": 46
+    },
+    {
+        "type": "text",
+        "text": "算法整体流程：",
+        "bbox": [
+            57,
+            450,
+            205,
+            498
+        ],
+        "page_idx": 46
+    },
+    {
+        "type": "text",
+        "text": "预处理：利用整除关系 $x^{m} - 1 = \\prod_{d|m}\\Phi_{d}(x)$ 进行精确除法（exact division），预先计算出所需的分圆多项式。",
+        "bbox": [
+            77,
+            521,
+            938,
+            627
+        ],
+        "page_idx": 46
+    },
+    {
+        "type": "text",
+        "text": "■ 二分答案：由于随着 T 增大，条件会变得更宽松（具备单调性），我们可以通过二分查找（binary search）来寻找最小的可行 T。每次 check 即可套用上述的 NTT 卷积校验。",
+        "bbox": [
+            77,
+            647,
+            935,
+            756
+        ],
+        "page_idx": 46
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            847,
+            39,
+            973,
+            98
+        ],
+        "page_idx": 46
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            57,
+            933,
+            178,
+            960
+        ],
+        "page_idx": 46
+    },
+    {
+        "type": "footer",
+        "text": "困难题",
+        "bbox": [
+            476,
+            933,
+            516,
+            960
+        ],
+        "page_idx": 46
+    },
+    {
+        "type": "footer",
+        "text": "第三场 黑冰茶命题组",
+        "bbox": [
+            827,
+            933,
+            935,
+            960
+        ],
+        "page_idx": 46
+    },
+    {
+        "type": "text",
+        "text": "THANKS!",
+        "text_level": 2,
+        "bbox": [
+            317,
+            454,
+            637,
+            576
+        ],
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            373,
+            603,
+            584,
+            635
+        ],
+        "page_idx": 47
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            55,
+            66,
+            200,
+            133
+        ],
+        "page_idx": 47
+    },
+    {
+        "type": "header",
+        "text": "牛客害期名校 | 2026 训练营",
+        "bbox": [
+            763,
+            66,
+            960,
+            125
+        ],
+        "page_idx": 47
+    }
+]

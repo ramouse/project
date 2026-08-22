@@ -1,0 +1,3494 @@
+[
+    {
+        "type": "text",
+        "text": "Problem A夏日影",
+        "text_level": 1,
+        "bbox": [
+            410,
+            96,
+            579,
+            151
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Time limit: 2 seconds",
+        "bbox": [
+            376,
+            155,
+            610,
+            174
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "队伍的实力本来有很多维，一场比赛的排名却只是它在某个方向上的投影。赛场上，也许有些方向还能由你控制；但有时候，说不定只是巴库的阳光不太站在你这边⋯⋯",
+        "bbox": [
+            117,
+            187,
+            867,
+            219
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "二维平面上，一根定长直杆的一端铰接在地面上，可以在两个边界方向之间转动，且杆身始终位于地面上方。太阳光是沿固定方向传播的平行光。求杆在所有允许方向下影长的最小值和最大值。",
+        "bbox": [
+            73,
+            239,
+            914,
+            273
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/f11cf6334e06fbbdea501c5f55c3b6f46c6488c62a23172abc1a446249ed378d.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            225,
+            296,
+            759,
+            527
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "图中，O 是原点， $\\overrightarrow { S O }$ 表示太阳光的传播方向，杆可以从 $\\overrightarrow { O A }$ 逆时针转动至 $\\overrightarrow { O B } _ { \\circ }$ 当前杆为 $O P ,$ 此时影长为 $| O Q | _ { \\mathrm { { c } } }$ C",
+        "bbox": [
+            73,
+            536,
+            915,
+            555
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Input",
+        "text_level": 2,
+        "bbox": [
+            73,
+            577,
+            131,
+            594
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "第一行包含一个整数 $T \\ : \\ : \\left( 1 \\leq T \\leq 1 0 ^ { 5 } \\right)$ ），表示测试数据的组数。接下来是各组测试数据的描述。",
+        "bbox": [
+            73,
+            602,
+            835,
+            619
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "每组测试数据包含六个整数 $s _ { x } , \\ s _ { y } , \\ a _ { x } , \\ a _ { y } , \\ b _ { x }$ 和 $b _ { y } ,$ ，分别确定 ${ \\cal S } = ( s _ { x } , s _ { y } ) , ~ A = ( a _ { x } , a _ { y } )$ 和 $\\boldsymbol { B } = \\left( \\boldsymbol { b } _ { x } , \\boldsymbol { b } _ { y } \\right)$ $( - 1 0 ^ { 5 } \\leq s _ { x } , a _ { x } , b _ { x } \\leq 1 0 ^ { 5 } ; ~ 1 \\leq s _ { y } , a _ { y } , b _ { y } \\leq 1 0 ^ { 5 } )$ C",
+        "bbox": [
+            72,
+            624,
+            912,
+            659
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "保证 $| O A | = | O B |$ ，且 $\\overrightarrow { O B }$ 位于 $\\overrightarrow { O A }$ 的逆时针方向或与其重合。",
+        "bbox": [
+            73,
+            663,
+            581,
+            682
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Output",
+        "text_level": 2,
+        "bbox": [
+            73,
+            694,
+            147,
+            711
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "对于每组测试数据，输出两个实数，依次表示影长的最小值和最大值。",
+        "bbox": [
+            73,
+            719,
+            636,
+            736
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "如果答案的绝对误差或相对误差不超过 $1 0 ^ { - 6 }$ ，则认为答案正确。",
+        "bbox": [
+            73,
+            741,
+            588,
+            758
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "table",
+        "img_path": "images/46b1f64bc1a140f713849f18560721dae328f0fcbd9292c5dde4d729c8ef3408.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Sample Input 1</td><td>Sample Output 1</td></tr><tr><td>2</td><td>1.00000000000000 5.099019513592784</td></tr><tr><td>-3 3 3 2 -2 3</td><td>0.00000000000000 1.00000000000000</td></tr><tr><td>0 1 1 1 -1 1</td><td></td></tr></table>",
+        "bbox": [
+            75,
+            770,
+            902,
+            845
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛AC.NOWCODER.COM",
+        "bbox": [
+            75,
+            30,
+            263,
+            66
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "2026 Nowcoder Summer Multi-University Training Camp - 10th Nowcoder, August 18, 2026",
+        "bbox": [
+            312,
+            33,
+            828,
+            66
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "page_number",
+        "text": "1",
+        "bbox": [
+            902,
+            961,
+            915,
+            973
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "2026 Nowcoder Summer Multi-University Training Camp - 10th Problem A: 夏日影",
+        "bbox": [
+            78,
+            960,
+            699,
+            975
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Problem B老虎机",
+        "text_level": 1,
+        "bbox": [
+            411,
+            96,
+            578,
+            152
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Time limit: 1 seconds",
+        "bbox": [
+            379,
+            155,
+            610,
+            174
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "游戏厅里有n台老虎机，编号为 $1 , 2 , \\ldots , n _ { \\circ }$ 游戏开始时，每台老虎机最初的奖金都是从区间[0,m]中独立且均匀随机选取的一个实数。你的作弊手段可以让你在每次选择前看到所有老虎机当前的奖金。",
+        "bbox": [
+            73,
+            190,
+            914,
+            223
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "你的策略是选择当前奖金最多的老虎机：奖金较多的老虎机排名更高，奖金相同时编号较大的老虎机排名更高。领取奖金后，被选中的老虎机会独立地从 $[ 0 , m ]$ 中均匀随机生成一笔新的奖金。你的作弊手段会立刻告诉你新的数额，其他老虎机的奖金则保持不变。",
+        "bbox": [
+            73,
+            227,
+            915,
+            277
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "求恰好游玩 k 次后，获得的奖金总额的期望。",
+        "bbox": [
+            73,
+            282,
+            436,
+            299
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Input",
+        "text_level": 2,
+        "bbox": [
+            73,
+            311,
+            131,
+            329
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "第一行包含三个整数n、m 和 $ { k } \\left( 1 \\leq n , k \\leq 3 0 0 , \\ 1 \\leq m \\leq 1 0 ^ { 9 } \\right)$ ）。",
+        "bbox": [
+            73,
+            337,
+            601,
+            354
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Output",
+        "text_level": 2,
+        "bbox": [
+            73,
+            366,
+            147,
+            382
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "输出获得的 k 笔奖金总额的期望。如果答案的绝对误差或相对误差不超过 $1 0 ^ { - 6 }$ ，则认为答案正确。",
+        "bbox": [
+            73,
+            391,
+            863,
+            407
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "table",
+        "img_path": "images/6f5c12c0bab7038cf381ce829450e75e4142b17088b7a6d808ec3a1430a7bbfb.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Sample Input 1</td><td>Sample Output 1</td></tr><tr><td>1 10 3</td><td>15.0000000000</td></tr><tr><td>Sample Input 2</td><td>Sample Output 2</td></tr><tr><td>2 6 2</td><td>7.5000000000</td></tr></table>",
+        "bbox": [
+            75,
+            420,
+            905,
+            517
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "在第一组样例中，机器只有一台。每次游玩获得的奖金期望为 5，因此奖金总额的期望为 $1 5 _ { \\circ }$ 。在第二组样例中，前两次游玩获得的奖金期望分别为4 和3.5，因此奖金总额的期望为7.5。",
+        "bbox": [
+            73,
+            529,
+            912,
+            564
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            902,
+            960,
+            917,
+            973
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛AC.NOWCODER.COM",
+        "bbox": [
+            75,
+            30,
+            263,
+            66
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "2026 Nowcoder Summer Multi-University Training Camp - 10th Nowcoder, August 18, 2026",
+        "bbox": [
+            312,
+            33,
+            828,
+            65
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "2026 Nowcoder Summer Multi-University Training Camp - 10th Problem B: 老虎机",
+        "bbox": [
+            78,
+            960,
+            700,
+            975
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Problem C老虎机 2Time limit: 4 seconds",
+        "text_level": 1,
+        "bbox": [
+            376,
+            97,
+            610,
+            175
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "游戏厅里仍然有 n 台老虎机，编号为 1,2,...,n。老板发现了你的作弊行为，于是修改了老虎机的程序。现在，游戏开始时，每台老虎机最初的奖金都是从 0, 1, . . . , m 中独立且均匀随机选取的一个 整数。不过，由于你的作弊手段高超，你仍然可以在每次选择前看到所有老虎机当前的奖金。",
+        "bbox": [
+            73,
+            190,
+            915,
+            240
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "为了不再因为每次都选中最高奖金而露馅，你换了一种更聪明的策略：在第 i 次游玩时，你选择当前奖金第 $a _ { i }$ 多的老虎机：奖金较多的老虎机排名更高，奖金相同时编号较大的老虎机排名更高。领取奖金后，被选中的老虎机会独立地从整数 0,1,...,m 中均匀随机生成一笔新的奖金。你的作弊手段会立刻告诉你新的数额，其他老虎机的奖金则保持不变。",
+        "bbox": [
+            72,
+            244,
+            915,
+            309
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "求恰好游玩 k 次后，获得的奖金总额的期望。",
+        "bbox": [
+            73,
+            315,
+            436,
+            332
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Input",
+        "text_level": 2,
+        "bbox": [
+            73,
+            344,
+            131,
+            362
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "第一行包含三个整数n、m 和 $ { k } \\left( 1 \\leq n , k \\leq 3 0 0 , \\ 1 \\leq m \\leq 1 0 ^ { 9 } \\right)$ o",
+        "bbox": [
+            73,
+            369,
+            601,
+            386
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "第二行包含 k 个整数 $a _ { 1 } , a _ { 2 } , \\ldots , a _ { k } ( 1 \\leq a _ { i } \\leq n ) ,$ O",
+        "bbox": [
+            73,
+            391,
+            472,
+            407
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Output",
+        "text_level": 2,
+        "bbox": [
+            73,
+            420,
+            147,
+            437
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "可以证明，精确答案可以写成最简分数 $\\textstyle { \\frac { p } { q } } ,$ ，其中 $q \\not \\equiv 0 \\ ( \\mathrm { m o d } \\ 1 0 ^ { 9 } + 7 )$ 。输出整数 $x \\ ( 0 \\leq x < 1 0 ^ { 9 } + 7 )$ ），满足 $x \\cdot q \\equiv p { \\pmod { 1 0 ^ { 9 } + 7 } }$ 。",
+        "bbox": [
+            73,
+            445,
+            914,
+            483
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Sample Input 1",
+        "text_level": 2,
+        "bbox": [
+            73,
+            495,
+            210,
+            511
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "table",
+        "img_path": "images/b9e29298d7b7c27a34b4bee4385ae49555f5ba8b0ab697bf615bf26ac1ff55a0.jpg",
+        "table_caption": [
+            "Sample Output 1"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>1 10 31 1 1</td><td>15</td></tr></table>",
+        "bbox": [
+            75,
+            513,
+            902,
+            552
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Sample Input 2",
+        "text_level": 2,
+        "bbox": [
+            75,
+            564,
+            211,
+            580
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Sample Output 2",
+        "text_level": 2,
+        "bbox": [
+            484,
+            564,
+            636,
+            581
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "table",
+        "img_path": "images/0bca65223607713f7bbd2e427dd8ba86ef9f5f958a209378d46064783b287553.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>2 2 21 2</td><td>777777785</td></tr></table>",
+        "bbox": [
+            75,
+            583,
+            902,
+            623
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "在第一组样例中，机器只有一台。每次游玩获得的奖金期望为 5，因此奖金总额的期望为 15。在第二组样例中，奖金总额的期望为 ${ \\frac { 1 6 } { 9 } } \\cdot$ 。由于 $9 ^ { - 1 } \\equiv 1 1 1 1 1 1 1 1 2 { \\pmod { 1 0 ^ { 9 } + 7 } }$ ，因此应输出 16 111 111 112 mod$( 1 0 ^ { 9 } + 7 ) = 7 7 7 7 7 7 8 5 \\circ$",
+        "bbox": [
+            72,
+            634,
+            914,
+            684
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            902,
+            961,
+            915,
+            973
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛AC.NOWCODER.COM",
+        "bbox": [
+            75,
+            30,
+            263,
+            66
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "2026 Nowcoder Summer Multi-University Training Camp - 10th Nowcoder, August 18, 2026",
+        "bbox": [
+            312,
+            33,
+            828,
+            65
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "2026 Nowcoder Summer Multi-University Training Camp - 10th Problem C: 老虎机 2",
+        "bbox": [
+            78,
+            960,
+            715,
+            975
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Problem D 绝对多数 Time limit: 5 seconds",
+        "text_level": 1,
+        "bbox": [
+            376,
+            96,
+            610,
+            174
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "公园里有 n 个路口，由小径相连。任意两个路口之间，恰好有一条不重复经过路口的路线。",
+        "bbox": [
+            73,
+            190,
+            803,
+            206
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "每个路口都要立一块写有小写英文字母的路牌。有些路牌已经写好，其余路牌上的字母用问号表示。你需要将每个问号替换为一个小写英文字母，同时不能改动已经写好的字母。",
+        "bbox": [
+            73,
+            212,
+            914,
+            244
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "考虑任意一条经过至少三个路口的路线。如果某个字母在这条路线中出现的次数超过路口总数的一半，就称这个字母占绝对多数。如果一条不少于三个点的路线上同一个字母占了绝对多数，那么路人会感到困惑，因此这么做是不允许的。",
+        "bbox": [
+            73,
+            250,
+            915,
+            299
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "请补全所有路牌，或判断不存在合法的写法。",
+        "bbox": [
+            73,
+            304,
+            436,
+            321
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Input",
+        "text_level": 2,
+        "bbox": [
+            73,
+            334,
+            131,
+            351
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "第一行包含一个整数 $T \\ \\left( 1 \\leq T \\leq 1 0 0 0 \\right)$ ），表示测试数据的组数。接下来是各组测试数据的描述。",
+        "bbox": [
+            73,
+            359,
+            843,
+            376
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "每组测试数据的第一行包含一个整数 $n \\ ( 3 \\leq n \\leq 5 0 0 0 )$ ），表示路口的数量。",
+        "bbox": [
+            73,
+            380,
+            677,
+            397
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "每组测试数据的第二行包含一个长度为 n 的字符串 $s _ { \\circ } \\quad s$ 的第 i 个字符是一个小写英文字母或问号：小写英文字母表示路口i 的路牌上已经写好的字母，? 表示这个字母尚未写好。",
+        "bbox": [
+            73,
+            403,
+            912,
+            435
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "接下来的n 1行中，第i 行包含两个整数 $u _ { i }$ 和 $v _ { i } ~ \\left( 1 \\leq u _ { i } , v _ { i } \\leq n \\right)$ ），表示路口 $u _ { i }$ 和 $v _ { i }$ 之间有一条小径。保证每组测试数据中给定的边构成一棵树。",
+        "bbox": [
+            73,
+            441,
+            915,
+            479
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "保证所有测试数据中n 的总和不超过 5000。",
+        "bbox": [
+            73,
+            485,
+            423,
+            502
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Output",
+        "text_level": 2,
+        "bbox": [
+            73,
+            514,
+            147,
+            531
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "对于每组测试数据，输出一个合法的标记方案，具体格式如 $\\mathsf { F } _ { \\circ }$",
+        "bbox": [
+            73,
+            539,
+            581,
+            556
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "如果无解，输出 1。",
+        "bbox": [
+            73,
+            561,
+            243,
+            577
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "否则，输出一个长度为n的字符串，其第i个字符表示写在路口i的路牌上的字母。如果有多个解，输出任意一个即可。",
+        "bbox": [
+            73,
+            583,
+            912,
+            615
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Sample Input 1",
+        "text_level": 2,
+        "bbox": [
+            75,
+            627,
+            210,
+            643
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "table",
+        "img_path": "images/b6a3fd701b10aa30ebf3022392c79e940fce97ff895c6ded5f89faf841456180.jpg",
+        "table_caption": [
+            "Sample Output 1"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>25a?c??1 22 32 44 55aab?a1 22 33 44 5</td><td>abcda-1</td></tr></table>",
+        "bbox": [
+            75,
+            645,
+            902,
+            863
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            902,
+            961,
+            917,
+            973
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛AC.NOWCODER.COM",
+        "bbox": [
+            75,
+            30,
+            263,
+            66
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "2026 Nowcoder Summer Multi-University Training Camp - 10th Nowcoder, August 18, 2026",
+        "bbox": [
+            312,
+            33,
+            828,
+            66
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "2026 Nowcoder Summer Multi-University Training Camp - 10th Problem D: 绝对多数",
+        "bbox": [
+            78,
+            960,
+            719,
+            975
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Problem E 璀璨宝石 Time limit: 2 seconds",
+        "text_level": 1,
+        "bbox": [
+            376,
+            97,
+            608,
+            174
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "在桌游《璀璨宝石》（Splendor）中，玩家通过拿取不同颜色的宝石来发展自己的商业帝国。原版规则较为复杂，因此本题仅采用下文描述的简化规则。原桌游中的其他规则均不适用于本题。共有五种颜色的宝石，每种颜色的宝石数量均无限。你的目标是恰好拿到 $a _ { i }$ 枚颜色 i 的宝石。每个回合，你必须恰好执行以下一种操作：",
+        "bbox": [
+            73,
+            189,
+            912,
+            268
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "• 分别拿取三种不同颜色的宝石各一枚；",
+        "bbox": [
+            102,
+            282,
+            428,
+            299
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "• 拿取两枚颜色相同的宝石。",
+        "bbox": [
+            102,
+            309,
+            334,
+            326
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "任何颜色的宝石都不能拿取超过目标数量。求达成目标所需的最少回合数，或判断目标无法达成。",
+        "bbox": [
+            73,
+            341,
+            857,
+            359
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Input",
+        "text_level": 2,
+        "bbox": [
+            73,
+            370,
+            131,
+            388
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "第一行包含一个整数 $T \\ : \\ : \\left( 1 \\leq T \\leq 1 0 ^ { 5 } \\right)$ ），表示测试数据的组数。接下来是各组测试数据的描述。每组测试数据包含五个整数 $a _ { 1 } , a _ { 2 } , . . . , a _ { 5 }  1 0 \\leq a _ { i } \\leq 1 0 ^ { 9 } )$ ），其中 $a _ { i }$ 表示需要拿取的颜色i 的宝石数量。",
+        "bbox": [
+            73,
+            395,
+            890,
+            437
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Output",
+        "text_level": 2,
+        "bbox": [
+            73,
+            447,
+            147,
+            464
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "对于每组测试数据，输出一个整数，表示恰好拿到所需宝石的最少回合数。如果无解，输出 1。",
+        "bbox": [
+            73,
+            472,
+            848,
+            489
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Sample Input 1",
+        "text_level": 2,
+        "bbox": [
+            75,
+            502,
+            210,
+            518
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "table",
+        "img_path": "images/76ae54625595710a6afc48484b210b56dfa64ea93498a366430bd42cc060d7c6.jpg",
+        "table_caption": [
+            "Sample Output 1"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>3</td><td>2</td></tr><tr><td>2 2 2 0 0</td><td>2</td></tr><tr><td>3 1 1 0 0</td><td>0</td></tr><tr><td>0 0 0 0 0</td><td></td></tr></table>",
+        "bbox": [
+            75,
+            521,
+            902,
+            593
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Sample Input 2",
+        "text_level": 2,
+        "bbox": [
+            75,
+            604,
+            211,
+            621
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Sample Output 2",
+        "bbox": [
+            485,
+            604,
+            636,
+            621
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "table",
+        "img_path": "images/3d643f0b713acf595e19f25b8cfaf75877a7ed61acaacbcd95be9860bfc9fb57.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>2</td><td>-1</td></tr><tr><td>1 0 0 0 0</td><td>2</td></tr><tr><td>2 1 1 1 1</td><td></td></tr></table>",
+        "bbox": [
+            75,
+            624,
+            902,
+            678
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "在样例一的第一组测试数据中，两个回合都可以分别拿取颜色 1、2、3 的宝石各一枚。",
+        "bbox": [
+            75,
+            690,
+            766,
+            708
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "在样例一的第二组测试数据中，第一个回合可以分别拿取颜色 1、2、3 的宝石各一枚，第二个回合可以拿取两枚颜色 1 的宝石。",
+        "bbox": [
+            73,
+            714,
+            914,
+            747
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "在样例二的第一组测试数据中，两种操作都无法只拿取一枚宝石。",
+        "bbox": [
+            73,
+            751,
+            601,
+            769
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "在样例二的第二组测试数据中，第一个回合可以分别拿取颜色 1、2、3 的宝石各一枚，第二个回合可以分别拿取颜色 1、4、5 的宝石各一枚。",
+        "bbox": [
+            73,
+            772,
+            914,
+            807
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            902,
+            961,
+            915,
+            973
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛AC.NOWCODER.COM",
+        "bbox": [
+            75,
+            30,
+            263,
+            66
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "2026 Nowcoder Summer Multi-University Training Camp - 10th Nowcoder, August 18, 2026",
+        "bbox": [
+            314,
+            33,
+            828,
+            66
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "2026 Nowcoder Summer Multi-University Training Camp - 10th Problem E: 璀璨宝石",
+        "bbox": [
+            78,
+            960,
+            715,
+            975
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Problem F 出现次数 Time limit: 4 seconds",
+        "text_level": 1,
+        "bbox": [
+            376,
+            96,
+            610,
+            175
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "你正在为一篇由小写字符串S 表示的文稿制作索引。S 的长度为 $n ,$ ，字符下标从 1到 $n _ { \\circ }$",
+        "bbox": [
+            73,
+            190,
+            781,
+            206
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "对于任意非空字符串 T，定义 $\\sec ( T )$ 为满足 $1 \\leq p \\leq n - | T | + 1$ 以及下式的起始位置 $p$ 的数量：",
+        "bbox": [
+            73,
+            211,
+            845,
+            229
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "equation",
+        "text": "$$\nS [ p \\dots p + | T | - 1 ] = T.\n$$",
+        "text_format": "latex",
+        "bbox": [
+            396,
+            250,
+            591,
+            268
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "不同的出现可以重叠。",
+        "bbox": [
+            73,
+            279,
+            253,
+            296
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "每次询问给出一个区间 $[ l , r ] _ { \\circ }$ 考虑所有满足 $l \\leq i \\leq j \\leq r$ 的非空子串 $S [ i \\ldots j ] _ { \\mathsf { c } }$ 。这次询问的答案为",
+        "bbox": [
+            73,
+            300,
+            867,
+            319
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\sum_ {l \\leq i \\leq j \\leq r} \\operatorname{occ} (S [ i \\dots j ]).\n$$",
+        "text_format": "latex",
+        "bbox": [
+            403,
+            337,
+            581,
+            372
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Input",
+        "text_level": 2,
+        "bbox": [
+            73,
+            387,
+            132,
+            405
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "第一行包含一个整数 $n \\ ( 1 \\leq n \\leq 2 \\times 1 0 ^ { 5 } )$ ）。",
+        "bbox": [
+            73,
+            412,
+            423,
+            429
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "第二行包含字符串S，其长度为 $n ,$ ，且仅由小写英文字母组成。",
+        "bbox": [
+            73,
+            434,
+            578,
+            451
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "第三行包含一个整数 $q ~ \\left( 1 \\leq q \\leq 2 \\times 1 0 ^ { 5 } \\right)$ ）。",
+        "bbox": [
+            73,
+            456,
+            418,
+            473
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "接下来的 q 行中，每行包含两个整数l 和 $r ~ \\left( 1 \\leq l \\leq r \\leq n \\right)$",
+        "bbox": [
+            73,
+            478,
+            561,
+            495
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Output",
+        "text_level": 2,
+        "bbox": [
+            73,
+            507,
+            147,
+            525
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "对于每次询问，输出一个整数，表示上文定义的和。",
+        "bbox": [
+            73,
+            532,
+            490,
+            550
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Sample Input 1",
+        "text_level": 2,
+        "bbox": [
+            73,
+            562,
+            210,
+            579
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "table",
+        "img_path": "images/c562465ca6aa3651ec9df259618b86291aac8d11518cd350bde38af01c404f3e.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>4</td><td>6</td></tr><tr><td>abab</td><td>16</td></tr><tr><td>3</td><td>5</td></tr><tr><td>1 2</td><td></td></tr><tr><td>1 4</td><td></td></tr><tr><td>2 3</td><td></td></tr></table>",
+        "bbox": [
+            75,
+            580,
+            902,
+            686
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Sample Input 2",
+        "text_level": 2,
+        "bbox": [
+            75,
+            697,
+            211,
+            713
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "table",
+        "img_path": "images/8aa4ffc446c4d1b8a10618dae9296dfc4f70dc3edb58842848dc2a03d40e06d6.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>4</td><td>4</td></tr><tr><td>aaaa</td><td>11</td></tr><tr><td>3</td><td>20</td></tr><tr><td>1 1</td><td></td></tr><tr><td>1 2</td><td></td></tr><tr><td>2 4</td><td></td></tr></table>",
+        "bbox": [
+            75,
+            715,
+            902,
+            819
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "在第一组样例的第一次询问中，求和中的三个子串为 $S [ 1 \\dots 1 ] = \\mathsf { a } _ { \\star } S [ 2 \\dots 2 ] = \\mathsf { b }$ 和 $S [ 1 \\ldots 2 ] = \\mathsf { a b } _ { \\circ }$ 它们在S 中的出现次数分别为 $2 , \\ 2$ 和2，因此答案为 $6 _ { \\circ }$",
+        "bbox": [
+            72,
+            832,
+            912,
+            865
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "在第二组样例的第二次询问中， $S [ 1 \\ldots 1 ]$ 和 $S [ 2 \\ldots 2 ]$ 均为 $\\mathtt { a } _ { \\mathrm { : } }$ ，各自贡献 $\\sec ( \\mathsf { a } ) = 4 ; S [ 1 \\ldots 2 ] = \\mathsf { a } \\mathsf { a }$ ，贡献 $\\sec ( \\mathsf { a a a } ) = 3$ 。因此答案为 $4 + 4 + 3 = 1 1$ 。",
+        "bbox": [
+            72,
+            869,
+            914,
+            904
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            902,
+            961,
+            917,
+            973
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛AC.NOWCODER.COM",
+        "bbox": [
+            75,
+            30,
+            263,
+            66
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "2026 Nowcoder Summer Multi-University Training Camp - 10th Nowcoder, August 18, 2026",
+        "bbox": [
+            312,
+            33,
+            828,
+            66
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "2026 Nowcoder Summer Multi-University Training Camp - 10th Problem F: 出现次数",
+        "bbox": [
+            78,
+            960,
+            717,
+            975
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Problem G 还是 A+B 问题 Time limit: 10 seconds",
+        "text_level": 1,
+        "bbox": [
+            369,
+            98,
+            618,
+            174
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "给定两个可能退化的简单多边形 A 和 $B _ { \\circ }$ 。每个多边形都包含其内部和边界；退化的多边形可以是线段或点。",
+        "bbox": [
+            72,
+            190,
+            914,
+            223
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "对于两个点 $a = ( x _ { a } , y _ { a } )$ 和 $\\boldsymbol { b } = \\left( x _ { b } , y _ { b } \\right)$ ，定义它们的和为",
+        "bbox": [
+            72,
+            228,
+            532,
+            246
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "equation",
+        "text": "$$\na + b = (x _ {a} + x _ {b}, y _ {a} + y _ {b}).\n$$",
+        "text_format": "latex",
+        "bbox": [
+            384,
+            259,
+            600,
+            275
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "对于每个询问点 $c _ { i } .$ ，判断是否存在 $a \\in A$ 和 $b \\in B$ ，满足 $a + b = c _ { i \\circ }$ 如果存在，给出任意一组这样的点。",
+        "bbox": [
+            72,
+            292,
+            915,
+            309
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "image",
+        "img_path": "images/858e311351a4f24cd3fb3d5b93b17ac745bd8add5efd8e9a6ac0e6d6edb1dee8.jpg",
+        "image_caption": [
+            "第一个样例第一组测试数据的示意图。"
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            292,
+            334,
+            697,
+            577
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Input",
+        "text_level": 2,
+        "bbox": [
+            73,
+            625,
+            132,
+            642
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "第一行包含一个整数 $T \\ \\left( 1 \\leq T \\leq 2 0 0 \\right)$ ），表示测试数据的组数。接下来是各组测试数据的描述。",
+        "bbox": [
+            73,
+            650,
+            836,
+            665
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "每组测试数据的第一行包含三个整数 n、m 和 $q ( 1 \\leq n , m , q \\leq 2 0 0 )$ ），分别表示 A 的顶点数、B 的顶点数和询问数。",
+        "bbox": [
+            73,
+            671,
+            912,
+            703
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "第二行包含 $2 n$ 个整数 $x _ { a _ { 1 } } , y _ { a _ { 1 } } , x _ { a _ { 2 } } , y _ { a _ { 2 } } , . . . , x _ { a _ { n } } , y _ { a _ { n } }$ ，按逆时针顺序描述A的各个顶点。",
+        "bbox": [
+            73,
+            709,
+            774,
+            727
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "第三行包含 2m 个整数 $x _ { b _ { 1 } } , y _ { b _ { 1 } } , x _ { b _ { 2 } } , y _ { b _ { 2 } } , . . . , x _ { b _ { m } } , y _ { b _ { m } }$ ，按逆时针顺序描述B 的各个顶点。",
+        "bbox": [
+            73,
+            732,
+            779,
+            749
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "接下来的 q 行中，第 i 行包含两个整数 $x _ { c _ { i } }$ 和 $y _ { c _ { i } } ,$ ，表示询问点 $c _ { i }$ 的坐标。",
+        "bbox": [
+            73,
+            753,
+            660,
+            770
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "所有输入坐标均在0到 $2 \\times 1 0 ^ { 6 }$ 之间。每个多边形内给出的顶点互不相同。只有一个顶点的多边形表示这个点，只有两个顶点的多边形表示连接这两个点的线段；顶点数不少于三个的多边形是内部连通且具有正面积的简单多边形，并且任意三个循环相邻的顶点均不共线。",
+        "bbox": [
+            72,
+            775,
+            914,
+            825
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "保证所有测试数据满足 $\\textstyle \\sum n \\leq 5 0 0$ 且 $\\sum m \\leq 5 0 0 \\%$ 请注意，所有测试数据中 $q$ 的总和无额外限制。",
+        "bbox": [
+            73,
+            829,
+            863,
+            847
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Output",
+        "text_level": 2,
+        "bbox": [
+            73,
+            859,
+            147,
+            875
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "对于每个询问，输出一行。",
+        "bbox": [
+            73,
+            884,
+            289,
+            901
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "如果有解，输出四个实数 $x _ { a } , \\ y _ { a } , \\ x _ { b }$ 和 $y _ { b } ,$ ，表示任意一组满足 $a = ( x _ { a } , y _ { a } ) \\in A _ { \\setminus } \\ b = ( x _ { b } , y _ { b } ) \\in B$ 且$a + b = c _ { i }$ 的点。否则，输出 $\\mathrm { ~  ~ { ~ \\underline { ~ } { ~ } { ~ - ~ } 1 ~ } ~ } - 1 - 1 - 1 - 1 - 1 .$ C",
+        "bbox": [
+            72,
+            906,
+            912,
+            939
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛AC.NOWCODER.COM",
+        "bbox": [
+            75,
+            30,
+            263,
+            66
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "2026 Nowcoder Summer Multi-University Training Camp - 10th Nowcoder, August 18, 2026",
+        "bbox": [
+            312,
+            33,
+            828,
+            65
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            902,
+            961,
+            915,
+            973
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "2026 Nowcoder Summer Multi-University Training Camp - 10th Problem G: 还是 A+B 问题",
+        "bbox": [
+            77,
+            960,
+            763,
+            975
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "如果输出的两个点到对应多边形的欧几里得距离均不超过 10−<sup>6</sup>，且 a + b 到 $c _ { i }$ 的欧几里得距离不超过10−<sup>6</sup>，则这组答案会被接受。",
+        "bbox": [
+            72,
+            99,
+            914,
+            135
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "table",
+        "img_path": "images/3850117ab00b16cccf6d096172f3b76305a8e4c397ba3f980467bb65d7f440f1.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>43 3 30 0 30 0 30 200 0 20 24 0 2440 4031 031 22 2 30 0 0 0 3000 0 300 01 22 1301 03 4 20 0 1 0 0 10 0 1 0 1 1 0 12 11 28 3 30 0 12 6 3 6 7 4 1 1 1 5 2 6 0 60 0 2 0 0 12 75 54 5</td><td>30 20 10 20-1 -1 -1 -129.5 0 1.5 20 2 1 00 1 2 0-1 -1 -1 -11 0 1 10 1 1 12 6 0 15 5 0 0-1 -1 -1 -1</td></tr></table>",
+        "bbox": [
+            75,
+            164,
+            902,
+            562
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "table",
+        "img_path": "images/461b732652d6558cb03c7958e89955720baeac0ee0bdcfaa53251632b6bae934.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>1</td><td>2 3 4 5</td></tr><tr><td>1 1 1</td><td></td></tr><tr><td>2 3</td><td></td></tr><tr><td>4 5</td><td></td></tr><tr><td>6 8</td><td></td></tr></table>",
+        "bbox": [
+            75,
+            589,
+            902,
+            677
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛AC.NOWCODER.COM",
+        "bbox": [
+            75,
+            30,
+            263,
+            66
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "2026 Nowcoder Summer Multi-University Training Camp - 10th Nowcoder, August 18, 2026",
+        "bbox": [
+            312,
+            33,
+            828,
+            66
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "2026 Nowcoder Summer Multi-University Training Camp - 10th Problem G: 还是 A+B 问题",
+        "bbox": [
+            78,
+            960,
+            763,
+            975
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            902,
+            961,
+            915,
+            973
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Problem H 差不多得了",
+        "text_level": 1,
+        "bbox": [
+            408,
+            97,
+            579,
+            151
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Time limit: 4 seconds",
+        "bbox": [
+            376,
+            155,
+            610,
+            174
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "“差不多得了” 物流公司正在规划一条货运路线。公司的运输网络由路口和单向道路组成，每条道路都有一个整数限速。为了避免货车一路上反复加速和减速，公司希望所选路线上的限速尽量接近。一条路径的极差是这条路径上的最高限速减去最低限速。",
+        "bbox": [
+            72,
+            190,
+            914,
+            239
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "给定两个路口s和t，令OPT表示从s到t的所有路径中，极差的最小值。秉承“差不多得 $\\overrightarrow { \\Gamma } ^ { \\ast }$ 的精神，你不一定要找到最优解，只需给出一个 $\\sqrt { 2 }$ 近似解：一条从 s 到 t 的路径，其极差不超过 ${ \\sqrt { 2 } } \\cdot \\mathrm { O P T _ { c } }$",
+        "bbox": [
+            72,
+            244,
+            914,
+            278
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "image",
+        "img_path": "images/536c1ff869b851b43d266215c12f22a9d9d2f07b08e65e508a6d09f47bd4d728.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "第一组样例：蓝色路径的极差为 $1 3 - 1 0 = 3 = \\mathrm { O P T _ { o } }$ 橙色路径的极差为 24 20 = 4，且 $4 \\leq { \\sqrt { 2 } } \\cdot 3 ,$ ，因此也是可接受的答案。"
+        ],
+        "content": "",
+        "bbox": [
+            243,
+            305,
+            744,
+            466
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Input",
+        "text_level": 2,
+        "bbox": [
+            73,
+            533,
+            132,
+            550
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "第一行包含四个整数n、m、s和 $t ~ \\left( 2 \\leq n \\leq 1 0 ^ { 5 } , \\ 1 \\leq m \\leq 2 \\times 1 0 ^ { 5 } , \\ 1 \\leq s , t \\leq n , \\ s \\neq t \\right)$ ），分别表示路口数、道路数、起点和终点。",
+        "bbox": [
+            73,
+            557,
+            912,
+            590
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "接下来的m行中，第i行包含三个整数 $u _ { i } , \\textit { v } _ { i }$ 和 $w _ { i } \\ \\left( 1 \\leq u _ { i } , v _ { i } \\leq n , \\ 1 \\leq w _ { i } \\leq 1 0 ^ { 9 } \\right)$ ），表示一条从路口 $u _ { i }$ 指向路口 $v _ { i } ,$ 、限速为 $w _ { i }$ 的单向道路。",
+        "bbox": [
+            72,
+            595,
+            914,
+            629
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "保证给出的图没有自环或重边，且存在一条从s 到t 的路径。",
+        "bbox": [
+            73,
+            633,
+            561,
+            650
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Output",
+        "text_level": 2,
+        "bbox": [
+            73,
+            663,
+            147,
+            680
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "第一行输出一个整数 $k \\ \\left( 2 \\leq k \\leq n \\right)$ ），表示路径上的顶点数。",
+        "bbox": [
+            73,
+            688,
+            557,
+            703
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "第二行输出 k 个互不相同的整数 $p _ { 1 } , p _ { 2 } , . . . , p _ { k } \\ ( 1 \\leq p _ { i } \\leq n )$ ），依次表示路径上的顶点。它们必须满足$p _ { 1 } = s , ~ p _ { k } = t .$ ，并且对于每个 1 $\\leq i < k$ ，都存在一条从 $p _ { i }$ 指向 $p _ { i + 1 }$ 的边。",
+        "bbox": [
+            72,
+            709,
+            912,
+            744
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "令ANS表示输出路径的极差。若 $\\mathbf { A N S ^ { 2 } } \\leq 2 \\cdot \\mathbf { O P T ^ { 2 } }$ ，则认为答案正确。如果有多个解，输出任意一个即可。",
+        "bbox": [
+            73,
+            747,
+            914,
+            765
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Sample Input 1",
+        "text_level": 2,
+        "bbox": [
+            73,
+            778,
+            211,
+            793
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "table",
+        "img_path": "images/654daa67f3d05340eb409533673c74d6d11dcb1513fa9c2fd42d4cc407447364.jpg",
+        "table_caption": [
+            "Sample Output 1"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>5 5 1 51 2 102 5 131 3 203 4 244 5 22</td><td>31 2 5</td></tr></table>",
+        "bbox": [
+            75,
+            793,
+            902,
+            900
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛AC.NOWCODER.COM",
+        "bbox": [
+            75,
+            30,
+            263,
+            66
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "2026 Nowcoder Summer Multi-University Training Camp - 10th Nowcoder, August 18, 2026",
+        "bbox": [
+            312,
+            33,
+            828,
+            65
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "2026 Nowcoder Summer Multi-University Training Camp - 10th Problem H: 差不多得了",
+        "bbox": [
+            77,
+            960,
+            734,
+            975
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            902,
+            961,
+            917,
+            973
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "table",
+        "img_path": "images/c65031eaa920b76cc2fb605c11e91e359bcad3e04d2c0de57403272df7f63c9e.jpg",
+        "table_caption": [
+            "Sample Input 2",
+            "Sample Output 2"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>4 5 1 4</td><td>3</td></tr><tr><td>1 2 3</td><td>1 3 4</td></tr><tr><td>2 4 8</td><td></td></tr><tr><td>1 3 5</td><td></td></tr><tr><td>3 4 7</td><td></td></tr><tr><td>2 3 6</td><td></td></tr></table>",
+        "bbox": [
+            75,
+            116,
+            902,
+            219
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛AC.NOWCODER.COM",
+        "bbox": [
+            75,
+            30,
+            263,
+            66
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "2026 Nowcoder Summer Multi-University Training Camp - 10th Nowcoder, August 18, 2026",
+        "bbox": [
+            312,
+            33,
+            828,
+            66
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "2026 Nowcoder Summer Multi-University Training Camp - 10th Problem H: 差不多得了",
+        "bbox": [
+            78,
+            960,
+            734,
+            975
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            895,
+            960,
+            917,
+            973
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Sample Output 1",
+        "bbox": [
+            485,
+            633,
+            635,
+            649
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Problem I 选择用户名 Time limit: 5 seconds",
+        "text_level": 1,
+        "bbox": [
+            376,
+            97,
+            610,
+            174
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "猪标最近（在AI的一点小小帮助下）写了一个用户管理系统。这个系统的数据库其实就是一个直接存储在硬盘上的文件。系统会把查询的用户名当作前缀：搜索一个字符串时，所有用户名以该字符串开头的用户都会被找到。",
+        "bbox": [
+            72,
+            190,
+            914,
+            239
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "因此，如果一个用户名是另一个用户名的前缀，精确查找较短的用户名时也会找到较长的用户名。猪标想起了无前缀码，决定对用户名提出相同的要求。如果对于任意两个不同的用户，其中任何一个用户的用户名都不是另一个用户的用户名的前缀，那么这些用户名构成一个无前缀集合。一个字符串也是其自身的前缀，因此两个用户不能使用相同的用户名。",
+        "bbox": [
+            72,
+            244,
+            914,
+            309
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "系统中有 n 个已有用户。第 i 个用户提供两个候选用户名：左侧候选名 $l _ { i }$ 和右侧候选名 $r _ { i \\mathrm { o } }$ 。你需要为每个用户恰好选择一个候选名，使所有选出的用户名构成一个无前缀集合；或者判断这无法做到。",
+        "bbox": [
+            73,
+            313,
+            914,
+            347
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Input",
+        "text_level": 2,
+        "bbox": [
+            73,
+            360,
+            131,
+            376
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "第一行包含一个整数 $T \\ ( 1 \\leq T \\leq 1 0 ^ { 4 } )$ ），表示测试数据的组数。接下来是各组测试数据的描述。",
+        "bbox": [
+            73,
+            385,
+            835,
+            401
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "每组测试数据的第一行包含一个整数 $n \\ ( 1 \\leq n \\leq 5 \\times 1 0 ^ { 5 } )$",
+        "bbox": [
+            73,
+            407,
+            551,
+            423
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "接下来的n行中，第i行包含两个非空字符串 $l _ { i }$ 和r ，表示第i个用户的左侧候选名和右侧候选名。每个 $\\boldsymbol { r } _ { i } ,$ 字符串仅由小写英文字母组成。",
+        "bbox": [
+            73,
+            429,
+            912,
+            461
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "保证所有测试数据中n 的总和不超过 $5 \\times 1 0 ^ { 5 } ,$",
+        "bbox": [
+            73,
+            466,
+            445,
+            483
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "保证所有测试数据中全部字符串的长度之和不超过 $1 0 ^ { 6 } .$ 。",
+        "bbox": [
+            73,
+            489,
+            521,
+            506
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Output",
+        "text_level": 2,
+        "bbox": [
+            73,
+            518,
+            147,
+            535
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "对于每组测试数据，如果答案存在，输出YES；否则输出 $\\mathrm { N O _ { c } }$",
+        "bbox": [
+            73,
+            543,
+            573,
+            560
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "如果答案存在，下一行输出一个长度为n、仅由字符l和r组成的字符串 $s _ { \\circ }$ 。如果 $s _ { i }$ 为l，则为第i个用户选择 $l _ { i } \\mathbf { ; }$ ；如果 $s _ { i }$ 为r，则为第 i 个用户选择 $r _ { i \\circ }$",
+        "bbox": [
+            73,
+            565,
+            912,
+            598
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "如果有多个解，输出任意一个即可。",
+        "bbox": [
+            73,
+            602,
+            361,
+            620
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "table",
+        "img_path": "images/db7480071ef5044bd0f26351b2eed2829ac8dd54f7c0e26ba080e128e515deeb.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td colspan=\"2\">Sample Input 1 Sample Output 1</td></tr><tr><td>3</td><td>YES</td></tr><tr><td>3</td><td>111</td></tr><tr><td>alice al</td><td>NO</td></tr><tr><td>bob bobby</td><td>YES</td></tr><tr><td>carol cat</td><td>lrr</td></tr><tr><td>2</td><td></td></tr><tr><td>a ab</td><td></td></tr><tr><td>a ab</td><td></td></tr><tr><td>3</td><td></td></tr><tr><td>a dog</td><td></td></tr><tr><td>ab cat</td><td></td></tr><tr><td>abc cow</td><td></td></tr></table>",
+        "bbox": [
+            75,
+            642,
+            902,
+            852
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛AC.NOWCODER.COM",
+        "bbox": [
+            75,
+            30,
+            263,
+            66
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "2026 Nowcoder Summer Multi-University Training Camp - 10th Nowcoder, August 18, 2026",
+        "bbox": [
+            312,
+            33,
+            828,
+            66
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "11",
+        "bbox": [
+            894,
+            960,
+            915,
+            973
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "2026 Nowcoder Summer Multi-University Training Camp - 10th Problem I: 选择用户名",
+        "bbox": [
+            78,
+            960,
+            731,
+            975
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "table",
+        "img_path": "images/63d5920b4fab43e0614b502bc97dc65085a012814dc3f135b0346e6c6198400d.jpg",
+        "table_caption": [
+            "Sample Input 2",
+            "Sample Output 2"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>2</td><td>YES</td></tr><tr><td>1</td><td>1</td></tr><tr><td>x x</td><td>YES</td></tr><tr><td>4</td><td>lrrr</td></tr><tr><td>a za</td><td></td></tr><tr><td>ab zb</td><td></td></tr><tr><td>abc zc</td><td></td></tr><tr><td>abcd zd</td><td></td></tr></table>",
+        "bbox": [
+            75,
+            116,
+            902,
+            253
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "在第一个样例的第一组测试数据中，选出的用户名是alice、bob和carol，其中任何一个都不是另一个的前缀。第二组测试数据中，任意选择出的两个用户名要么相同，要么分别为a和ab，因此不存在合法方案。",
+        "bbox": [
+            73,
+            265,
+            915,
+            315
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "在第二个样例中，只有一个用户的测试数据一定有解。在第二组测试数据中，选择za、zb、zc和zd可以得到一个无前缀集合。",
+        "bbox": [
+            73,
+            319,
+            914,
+            353
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛AC.NOWCODER.COM",
+        "bbox": [
+            75,
+            30,
+            263,
+            66
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "2026 Nowcoder Summer Multi-University Training Camp - 10th Nowcoder, August 18, 2026",
+        "bbox": [
+            312,
+            33,
+            828,
+            66
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "2026 Nowcoder Summer Multi-University Training Camp - 10th Problem I: 选择用户名",
+        "bbox": [
+            78,
+            960,
+            731,
+            975
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "12",
+        "bbox": [
+            894,
+            960,
+            917,
+            973
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Problem J 兜风 Time limit: 2 seconds",
+        "text_level": 1,
+        "bbox": [
+            376,
+            96,
+            610,
+            174
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "你正在规划穿行于一座城市的兜风路线。城市中有n 个路口和m 条双向道路。",
+        "bbox": [
+            73,
+            190,
+            702,
+            206
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "一趟兜风从某个路口出发，经过至少 3 条道路后回到起点。途中不能重复经过任何道路，也不能重复经过除起点外的任何路口。因此，每趟兜风都沿着一个简单环行驶。",
+        "bbox": [
+            72,
+            211,
+            914,
+            244
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "对于一个固定的路口 i，选出尽可能多的经过 i 的兜风路线，并要求任意一条道路至多属于一条选中的路线。对于每个 $i = 1 , 2 , \\dots , n ,$ ，求最多可以选出多少条路线。",
+        "bbox": [
+            72,
+            250,
+            914,
+            282
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Input",
+        "text_level": 2,
+        "bbox": [
+            73,
+            294,
+            132,
+            312
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "第一行包含一个整数 $T \\ : \\ : ( 1 \\leq T \\leq 2 \\times 1 0 ^ { 5 } )$ ），表示测试数据的组数。接下来是各组测试数据的描述。",
+        "bbox": [
+            73,
+            319,
+            867,
+            337
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "每组测试数据的第一行包含两个整数n和 $m ~ \\left( 1 \\leq n \\leq 2 \\times 1 0 ^ { 5 } , \\ 0 \\leq m \\leq 2 \\times 1 0 ^ { 5 } \\right)$ ），分别表示路口数和道路数。",
+        "bbox": [
+            73,
+            342,
+            914,
+            375
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "接下来的m行中，每行包含两个整数u和 $v ~ \\left( 1 \\leq u , v \\leq n , \\ u \\neq v \\right)$ ），表示路口u与路口v 之间有一条双向道路。",
+        "bbox": [
+            72,
+            380,
+            914,
+            413
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "路口编号为 1 到 $n _ { \\circ }$ 。保证没有道路连接同一个路口，也没有两条道路连接同一对路口。城市不保证连通。保证所有测试数据中n 的总和不超过 $2 \\times 1 0 ^ { 5 }$ ，且所有测试数据中m的总和不超过 $2 \\times 1 0 ^ { 5 } ,$ O",
+        "bbox": [
+            73,
+            418,
+            910,
+            458
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Output",
+        "text_level": 2,
+        "bbox": [
+            73,
+            469,
+            147,
+            486
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "对于每组测试数据，输出 n 个整数，相邻两个整数之间用一个空格分隔。第 i 个整数表示最多可以选出多少条经过路口 i 的兜风路线，并且任意一条道路至多属于其中一条路线。",
+        "bbox": [
+            72,
+            494,
+            912,
+            527
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Sample Input 1",
+        "text_level": 2,
+        "bbox": [
+            73,
+            539,
+            211,
+            556
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Sample Output 1",
+        "text_level": 2,
+        "bbox": [
+            484,
+            539,
+            636,
+            556
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "table",
+        "img_path": "images/e49f36e53fe09761d524b74ce9c39981e2be7625ef90ff3c23ee7708189cc0a7.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td></td><td>2 1 1 1 11 1 1 1 1 10 0 0 0</td></tr></table>",
+        "bbox": [
+            75,
+            557,
+            902,
+            857
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "在第一组测试数据中，可以选出两条经过路口 且不共用道路的兜风路线： 和$1  4  5  1 _ { \\circ }$ 因此，路口 1 的答案至少为 2。每条经过路口 1 的路线都要占用两条与它相连的道路，而这样的道路一共只有四条，所以不可能再选出第三条路线。路口1 的答案恰好为2。",
+        "bbox": [
+            72,
+            869,
+            915,
+            917
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "路口2到5都在图中的某条兜风路线上，所以它们的答案至少为1。另一方面，每个路口都只连着两条道路；任何经过它的兜风路线都会同时用到这两条道路，因而无法再选出第二条不共用道路的路线。所以它们的答案都是 1。",
+        "bbox": [
+            72,
+            922,
+            915,
+            940
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_number",
+        "text": "13",
+        "bbox": [
+            894,
+            961,
+            915,
+            973
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛AC.NOWCODER.COM",
+        "bbox": [
+            75,
+            30,
+            263,
+            66
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "2026 Nowcoder Summer Multi-University Training Camp - 10th Nowcoder, August 18, 2026",
+        "bbox": [
+            312,
+            33,
+            828,
+            66
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "2026 Nowcoder Summer Multi-University Training Camp - 10th Problem J: 兜风",
+        "bbox": [
+            77,
+            960,
+            678,
+            975
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            72,
+            99,
+            914,
+            134
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "在第二组测试数据中，路口 1 与路口 5 之间有三条不共用道路的路径，分别经过路口 2、3 和 4。任何经过路口 1 的兜风路线，都要从这三条路径中选出两条来绕成一圈。任意两个这样的环都会共用至少一条路径，因此不能同时选中。路口 1的答案只能是 1。",
+        "bbox": [
+            72,
+            137,
+            915,
+            187
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "图中每个路口都在至少一个环上，但没有任何路口能同时属于两条不共用道路的兜风路线，因此五个路口的答案都是 1。",
+        "bbox": [
+            73,
+            193,
+            914,
+            225
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "image",
+        "img_path": "images/01324b34b9996ed1f9f5d3c33b3ebe3eee7fc7d4005356c9a5233695b840b9d0.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "第一组测试数据中的两条不共用道路的路线。"
+        ],
+        "content": "",
+        "bbox": [
+            90,
+            253,
+            447,
+            414
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "image",
+        "img_path": "images/5737a55f3b35d17c751bf23b31ce6decf712ebb12ad1abe26c38128011a71015.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "第二组测试数据中从路口1 到路口 5 的三条路径。"
+        ],
+        "content": "",
+        "bbox": [
+            536,
+            253,
+            897,
+            414
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "左图中，蓝色路线为1 2 3 1，橙色路线为1 4 5 1。它们都经过路口1，但没有共用道路。右图中，三种颜色分别表示从路口 1到路口 5 的三条路径。",
+        "bbox": [
+            72,
+            458,
+            915,
+            493
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛AC.NOWCODER.COM",
+        "bbox": [
+            75,
+            30,
+            263,
+            66
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "2026 Nowcoder Summer Multi-University Training Camp - 10th Nowcoder, August 18, 2026",
+        "bbox": [
+            312,
+            33,
+            828,
+            65
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "2026 Nowcoder Summer Multi-University Training Camp - 10th Problem J: 兜风",
+        "bbox": [
+            78,
+            960,
+            678,
+            975
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_number",
+        "text": "14",
+        "bbox": [
+            894,
+            960,
+            917,
+            973
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Problem K 组队 Time limit: 2 seconds",
+        "text_level": 1,
+        "bbox": [
+            376,
+            96,
+            610,
+            174
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "新学期，3n名新生来到校队试训。正式参加ICPC/CCPC之前，他们得先组成队伍。组队必须满足两条规则：",
+        "bbox": [
+            73,
+            190,
+            914,
+            223
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "• 每支队伍恰好有三名队员；",
+        "bbox": [
+            104,
+            242,
+            336,
+            259
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "• 每名队员恰好加入一支队伍。",
+        "bbox": [
+            102,
+            268,
+            352,
+            285
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "规则只有两条，麻烦却不少：要组队，更要组对。每两名队员之间都有一个整数默契值；如果两个人实在合不来，这个值甚至可以是负数。一支队伍的得分是队内三对队员之间的默契值之和。",
+        "bbox": [
+            73,
+            305,
+            914,
+            338
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "求所有合法组队方案中，队伍总得分的最大值。",
+        "bbox": [
+            73,
+            343,
+            453,
+            360
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Input",
+        "text_level": 2,
+        "bbox": [
+            73,
+            373,
+            131,
+            390
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "第一行包含一个整数 $n \\ ( 1 \\leq n \\leq 8 )$",
+        "bbox": [
+            73,
+            397,
+            374,
+            414
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "接下来的 $3 n$ 行中，第i行包含 $3 n$ 个整数 $a _ { i , 1 } , a _ { i , 2 } , \\dotsc , a _ { i , 3 n }  &  \\left( - 1 0 ^ { 8 } \\dotsc a _ { i , j } \\dotsc 1 0 ^ { 8 } \\right)$ ）。其中 $a _ { i , j }$ 表示队员i和j 之间的默契值。",
+        "bbox": [
+            73,
+            419,
+            912,
+            453
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "保证对于所有 $1 \\leq i , j \\leq 3 n$ ，都有 $a _ { i , i } = 0$ 且 $a _ { i , j } = a _ { j , i \\circ }$",
+        "bbox": [
+            73,
+            458,
+            524,
+            475
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Output",
+        "text_level": 2,
+        "bbox": [
+            73,
+            486,
+            147,
+            504
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "输出所有队伍得分之和的最大可能值。",
+        "bbox": [
+            73,
+            512,
+            379,
+            529
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Sample Input 1",
+        "text_level": 2,
+        "bbox": [
+            75,
+            539,
+            210,
+            556
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "table",
+        "img_path": "images/650df0ff0a7514051d3d1ab86fa194ddf2ab412b16d04023fc169d34cd44a5eb.jpg",
+        "table_caption": [
+            "Sample Output 1"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>20 5 4 -1 -2 -35 0 3 -2 -2 -34 3 0 -1 -4 -2-1 -2 -1 0 7 6-2 -2 -4 7 0 5-3 -3 -2 6 5 0</td><td>30</td></tr></table>",
+        "bbox": [
+            75,
+            558,
+            902,
+            678
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Sample Input 2",
+        "text_level": 2,
+        "bbox": [
+            75,
+            690,
+            211,
+            707
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "table",
+        "img_path": "images/8bebaabb0ef93edbd381a66111b2b74fcf7f578cf2e5d0d9d38a092004d6ff84.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "在第一组样例中，一种最优分组是 (1,2,3) 和 (4,5,6)。总分为 (5 + 4 + 3) + (7 + 6 + 5) = 30。",
+            "在第二组样例中，三名队员只能组成唯一的队伍，其得分为 $- 5 + 2 + 1 = - 2$"
+        ],
+        "table_body": "<table><tr><td>10 -5 2-5 0 12 1 0</td><td>-2</td></tr></table>",
+        "bbox": [
+            75,
+            709,
+            902,
+            782
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛AC.NOWCODER.COM",
+        "bbox": [
+            75,
+            30,
+            263,
+            66
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "2026 Nowcoder Summer Multi-University Training Camp - 10th Nowcoder, August 18, 2026",
+        "bbox": [
+            312,
+            33,
+            828,
+            66
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "page_number",
+        "text": "15",
+        "bbox": [
+            894,
+            960,
+            915,
+            973
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "footer",
+        "text": "2026 Nowcoder Summer Multi-University Training Camp - 10th Problem K: 组队",
+        "bbox": [
+            78,
+            960,
+            682,
+            975
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Problem L",
+        "text_level": 1,
+        "bbox": [
+            413,
+            97,
+            576,
+            123
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "死神",
+        "bbox": [
+            460,
+            128,
+            527,
+            151
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Time limit: 2 seconds",
+        "bbox": [
+            376,
+            155,
+            610,
+            174
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "死神想知道，如果战斗永远持续下去，他最多能以多快的速度使用手中的地狱火霰弹枪射击。",
+        "bbox": [
+            73,
+            190,
+            821,
+            206
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "这件武器装满时共有 m 发子弹。射出一发子弹会消耗一发子弹，并花费恰好一秒。死神可以在两次射击之间装弹：他会扔掉手中的武器，再取出一件装有m 发子弹的新武器。这个过程耗时r 秒。",
+        "bbox": [
+            73,
+            211,
+            914,
+            246
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "死神还可以使用幽灵形态，但不能在射击或装弹的过程中使用。使用幽灵形态不耗费时间，并会立即将这件武器的弹量恢复到 m 发。战斗开始时，幽灵形态已经可以使用。每次使用后，幽灵形态会进入 c 秒钟的冷却时间，在此期间无法使用。无论死神正在射击、装弹还是等待，幽灵形态都会正常冷却。",
+        "bbox": [
+            72,
+            250,
+            915,
+            300
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "image",
+        "img_path": "images/d3dc42fd1b4e7a07bd8f9e398c68072f4733b4b00d77b1410845649a403267cc.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "上图展示了样例中的第一组测试数据。可以证明，两次相邻装弹之间的最优操作会不断重复，每八秒射出六发子弹，因此答案为 6/8 = 0.75。"
+        ],
+        "content": "",
+        "bbox": [
+            166,
+            321,
+            821,
+            432
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "死神可以自行决定何时射击、装弹、使用幽灵形态或等待。假设战斗开始时武器已经装满，并且幽灵形态可以使用。令 f(n) 表示死神在前 n 秒内最多能够完成的射击次数。可以证明，下面的极限存在：",
+        "bbox": [
+            72,
+            488,
+            914,
+            523
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\lim _ {n \\to \\infty} \\frac {f (n)}{n}.\n$$",
+        "text_format": "latex",
+        "bbox": [
+            445,
+            539,
+            537,
+            571
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "求这个极限，也就是死神每秒最多能够射出的子弹数。",
+        "bbox": [
+            73,
+            581,
+            510,
+            598
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Input",
+        "text_level": 2,
+        "bbox": [
+            73,
+            609,
+            132,
+            627
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "第一行包含一个整数 ${ \\textit { T } } ( 1 \\leq T \\leq 1 0 0 )$ ），表示测试数据的组数。接下来是各组测试数据的描述。",
+        "bbox": [
+            73,
+            634,
+            836,
+            653
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "每组测试数据包含三个整数 m、r 和 c $( 1 \\leq m , r , c \\leq 1 0 0 )$ ），分别表示武器装满时的子弹数、装弹所需的秒数和幽灵形态的冷却秒数。",
+        "bbox": [
+            73,
+            657,
+            914,
+            690
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Output",
+        "text_level": 2,
+        "bbox": [
+            73,
+            703,
+            147,
+            720
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "对于每组测试数据，输出死神的最大有效射速。",
+        "bbox": [
+            73,
+            728,
+            453,
+            745
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "如果答案的绝对误差或相对误差不超过 10−<sup>9</sup>，则认为答案正确。",
+        "bbox": [
+            73,
+            750,
+            588,
+            766
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "table",
+        "img_path": "images/1b24359a854f63d9e010876fb595225e9f2c02b436f072a58639bdcdbab5c81b.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Sample Input 1</td><td>Sample Output 1</td></tr><tr><td>5</td><td>0.750000000000</td></tr><tr><td>3 2 7</td><td>0.666666666667</td></tr><tr><td>1 1 2</td><td>0.666666666667</td></tr><tr><td>2 100 3</td><td>0.250000000000</td></tr><tr><td>1 100 4</td><td>0.666666666667</td></tr><tr><td>4 100 6</td><td></td></tr></table>",
+        "bbox": [
+            75,
+            778,
+            905,
+            903
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛AC.NOWCODER.COM",
+        "bbox": [
+            75,
+            30,
+            263,
+            66
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "2026 Nowcoder Summer Multi-University Training Camp - 10th Nowcoder, August 18, 2026",
+        "bbox": [
+            312,
+            33,
+            828,
+            66
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "footer",
+        "text": "2026 Nowcoder Summer Multi-University Training Camp - 10th Problem L: 死神",
+        "bbox": [
+            78,
+            960,
+            680,
+            975
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "page_number",
+        "text": "16",
+        "bbox": [
+            895,
+            961,
+            917,
+            973
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Problem M 括号 Time limit: 2 seconds",
+        "text_level": 1,
+        "bbox": [
+            376,
+            96,
+            610,
+            174
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "给定两个长度为 n 的合法括号序列 S 和T，以及两个数组 a 和 $b _ { \\circ }$",
+        "bbox": [
+            72,
+            190,
+            601,
+            206
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "如果可以在一个括号序列的字符之间插入 1 和 +，使其变成一个合法的算术表达式，则称这个括号序列是合法的。",
+        "bbox": [
+            72,
+            211,
+            914,
+            244
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "长度为 n 的括号序列 P 的权重定义如下：",
+        "bbox": [
+            75,
+            250,
+            406,
+            266
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "• 对于每个满足 $P _ { i } = \\boxed { \\begin{array} { r l } \\end{array} }$ 的位置 $i ,$ ，加上 $a _ { i }$ ；",
+        "bbox": [
+            102,
+            285,
+            457,
+            304
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "• 对于每个满足 $P _ { i } = \\boxed { 1 }$ 的位置 $i ,$ ，加上 $b _ { i \\circ }$ 。",
+        "bbox": [
+            102,
+            315,
+            455,
+            332
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "换言之，",
+        "bbox": [
+            73,
+            353,
+            142,
+            370
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\operatorname{weight} (P) = \\sum_ {P _ {i} = \\boxed {(}} a _ {i} + \\sum_ {P _ {i} = \\boxed {)}} b _ {i}.\n$$",
+        "text_format": "latex",
+        "bbox": [
+            357,
+            368,
+            628,
+            412
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "对于从 0到 n 的每个整数 $k ,$ ，选择恰好 k 个位置，并将每个选中位置 i 上的 $S _ { i }$ 替换为 $T _ { i \\mathrm { c } }$",
+        "bbox": [
+            72,
+            424,
+            791,
+            441
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "记替换后得到的序列为 $S _ { \\mathrm { ~ o ~ } } ^ { \\prime }$ 。在所有恰好选择 k 个位置，且 $S ^ { \\prime }$ 仍然是合法括号序列的方案中，求 $S ^ { \\prime }$ 权重的最大可能值。",
+        "bbox": [
+            72,
+            445,
+            914,
+            479
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "如果对于某个 k 无法得到合法括号序列，则该k 的答案为 1。",
+        "bbox": [
+            72,
+            483,
+            576,
+            501
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Input",
+        "text_level": 2,
+        "bbox": [
+            73,
+            514,
+            132,
+            531
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "第一行包含一个整数 $T \\ \\left( 1 \\leq T \\leq 2 5 0 0 0 0 \\right)$ ），表示测试数据的组数。接下来是各组测试数据的描述。",
+        "bbox": [
+            73,
+            538,
+            867,
+            555
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "每组测试数据包含五行。",
+        "bbox": [
+            73,
+            560,
+            270,
+            576
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "每组测试数据的第一行包含一个偶数 $n ~ \\left( 2 \\leq n \\leq 5 \\times 1 0 ^ { 5 } \\right)$ ），表示括号序列的长度。",
+        "bbox": [
+            73,
+            582,
+            734,
+            599
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "第二行包含一个长度为n 的合法括号序列 ${ \\mathit { S } } ,$ ，其中只包含 ( 和 ) 。",
+        "bbox": [
+            73,
+            604,
+            621,
+            621
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "第三行包含一个长度为n 的合法括号序列 $T ,$ ，其中只包含 $\\boxed { ( } \\pi \\boxed { 1 } $",
+        "bbox": [
+            73,
+            627,
+            621,
+            646
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "第四行包含 n 个整数 $a _ { 1 } , a _ { 2 } , . . . , a _ { n }  1 1 \\leq a _ { i } \\leq 1 0 ^ { 9 } )$",
+        "bbox": [
+            73,
+            653,
+            489,
+            669
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "第五行包含 n 个整数 $b _ { 1 } , b _ { 2 } , \\ldots , b _ { n } ( 1 \\leq b _ { i } \\leq 1 0 ^ { 9 } )$ o",
+        "bbox": [
+            73,
+            675,
+            482,
+            690
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "保证所有测试数据中 的总和不超过 $5 \\times 1 0 ^ { 5 }$ 。",
+        "bbox": [
+            73,
+            696,
+            445,
+            713
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Output",
+        "text_level": 2,
+        "bbox": [
+            73,
+            725,
+            147,
+            741
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "对于每组测试数据，输出n+1 个整数，相邻两个整数之间用一个空格分隔。",
+        "bbox": [
+            72,
+            751,
+            689,
+            766
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "对于 $0 \\leq k \\leq n$ ，第(k+1)个整数应为恰好选择k 个位置，并将所有选中位置上的 $S _ { i }$ 替换为 $T _ { i }$ 后，所得合法括号序列权重的最大可能值。",
+        "bbox": [
+            73,
+            772,
+            912,
+            804
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "如果对于某个 k 无法得到合法括号序列，则第(k +1) 个整数必须为 1。",
+        "bbox": [
+            73,
+            810,
+            658,
+            828
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛AC.NOWCODER.COM",
+        "bbox": [
+            75,
+            30,
+            263,
+            66
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "header",
+        "text": "2026 Nowcoder Summer Multi-University Training Camp - 10th Nowcoder, August 18, 2026",
+        "bbox": [
+            312,
+            33,
+            828,
+            65
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "page_number",
+        "text": "17",
+        "bbox": [
+            895,
+            960,
+            917,
+            973
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "footer",
+        "text": "2026 Nowcoder Summer Multi-University Training Camp - 10th Problem M: 括号",
+        "bbox": [
+            78,
+            960,
+            682,
+            975
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "table",
+        "img_path": "images/0f6dce0ac5b4970ff984d8058d33aae12e09e517679d876dc17579c2bc54ef5d.jpg",
+        "table_caption": [
+            "Sample Input 1",
+            "Sample Output 1"
+        ],
+        "table_footnote": [
+            "在第一组测试数据中，替换任意选中位置的字符都不会改变序列。它的权重为a +b = 1+4 = 5。",
+            "在第二组测试数据中，S 和 T 只有位置 2 和 5 不同。只替换其中一个位置会使序列不合法；同时替换这两个位置会将序列变为T，并使其权重从 12 增加到18。其余四个位置即使被选中也不会改变序列。"
+        ],
+        "table_body": "<table><tr><td>52( )()()1 23 46(((( )))( ) ( )1 2 3 4 5 66 5 4 3 2 14( )()( )1 5 4 62 2 5 58(( ) () ()( ) ( ) ( )8 5 1 4 2 6 7 31 9 7 6 6 5 9 210(( ) ( ) ( )(( ) ( ) )2 3 4 1 9 5 8 7 1 101 9 6 7 6 2 8 5 3 10</td><td>5 5 512 12 18 18 18 18 1812 12 16 16 1642 42 45 45 47 47 47 45 4548 48 52 52 53 53 53 53 53 53 53</td></tr></table>",
+        "bbox": [
+            75,
+            115,
+            902,
+            542
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛AC.NOWCODER.COM",
+        "bbox": [
+            75,
+            30,
+            263,
+            66
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "header",
+        "text": "2026 Nowcoder Summer Multi-University Training Camp - 10th Nowcoder, August 18, 2026",
+        "bbox": [
+            312,
+            33,
+            828,
+            66
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "footer",
+        "text": "2026 Nowcoder Summer Multi-University Training Camp - 10th Problem M: 括号",
+        "bbox": [
+            78,
+            960,
+            682,
+            975
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "page_number",
+        "text": "18",
+        "bbox": [
+            895,
+            960,
+            917,
+            973
+        ],
+        "page_idx": 17
+    }
+]

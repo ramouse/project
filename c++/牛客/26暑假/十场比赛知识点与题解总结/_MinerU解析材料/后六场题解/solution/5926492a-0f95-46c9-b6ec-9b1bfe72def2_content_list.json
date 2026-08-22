@@ -1,0 +1,6449 @@
+[
+    {
+        "type": "text",
+        "text": "2026 牛客 暑期多校训练营",
+        "text_level": 2,
+        "bbox": [
+            66,
+            341,
+            467,
+            576
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Cfz 出题组",
+        "bbox": [
+            66,
+            666,
+            242,
+            741
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            44,
+            62,
+            205,
+            141
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "HR.NOWCODER.COM",
+        "bbox": [
+            39,
+            890,
+            200,
+            929
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "A - Another Searching Problem 题目大意",
+        "text_level": 2,
+        "bbox": [
+            77,
+            121,
+            549,
+            290
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "给定一个从点 1 开始的类 BFS 过程：点可重复入队，每次出队都会扫描其全部邻边。",
+        "bbox": [
+            83,
+            388,
+            920,
+            513
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "■ 邻居按编号升序访问；仅当 $id_{v} > id_{u}$ 时将 v 入队。",
+        "bbox": [
+            83,
+            537,
+            693,
+            592
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "■ 给定 $k \\leq 10^{18}$ ，构造一个简单无向图，使扫描边的总次数恰为 $k$ 。",
+        "bbox": [
+            83,
+            615,
+            854,
+            674
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "构造需满足 $n \\leq 200, m \\leq 300$ ；无解时输出 $-1$ 。",
+        "bbox": [
+            83,
+            694,
+            664,
+            752
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            92,
+            125
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            66,
+            921,
+            209,
+            952
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "A - Another Searching Problem",
+        "bbox": [
+            401,
+            917,
+            593,
+            949
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "Cfz 出题组",
+        "bbox": [
+            860,
+            921,
+            929,
+            949
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "题解",
+        "text_level": 2,
+        "bbox": [
+            77,
+            113,
+            156,
+            184
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "将过程改写为 DAG",
+        "text_level": 2,
+        "bbox": [
+            77,
+            227,
+            344,
+            290
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "■ 只保留点 1 的连通分量，并按第一次出队顺序将边从早到晚定向，得到 DAG。",
+        "bbox": [
+            86,
+            329,
+            717,
+            368
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "记 $P_{v}$ 为点 $v$ 的总出队次数，则",
+        "bbox": [
+            88,
+            384,
+            364,
+            423
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "equation",
+        "text": "$$\nP _ {1} = 1, \\qquad P _ {v} = \\sum_ {u \\to v} P _ {u}.\n$$",
+        "text_format": "latex",
+        "bbox": [
+            417,
+            423,
+            631,
+            501
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "■ 点 v 每次出队扫描 $\\deg(v)$ 条边，因此答案为",
+        "bbox": [
+            86,
+            556,
+            463,
+            596
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "equation",
+        "text": "$$\nK = \\sum_ {v} P _ {v} \\deg (v) = \\sum_ {u \\rightarrow v} \\left(P _ {u} + P _ {v}\\right).\n$$",
+        "text_format": "latex",
+        "bbox": [
+            377,
+            639,
+            668,
+            717
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "问题变为：用一个很小的 DAG 精确控制这些路径计数与边贡献。",
+        "bbox": [
+            88,
+            792,
+            613,
+            831
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            39,
+            70,
+            75,
+            105
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            66,
+            921,
+            207,
+            952
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "A - Another Searching Problem",
+        "bbox": [
+            403,
+            917,
+            593,
+            949
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "Cfz 出题组",
+        "bbox": [
+            860,
+            921,
+            929,
+            949
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "题解",
+        "text_level": 2,
+        "bbox": [
+            77,
+            113,
+            158,
+            184
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "斐波那契基础图与调节器",
+        "text_level": 2,
+        "bbox": [
+            75,
+            227,
+            430,
+            290
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "■ 基础点 $1, \\ldots, b$ 之间连接 $(i, i+1)$ 与 $(i, i+2)$ ，于是 $P_{i} = F_{i}$ 。",
+        "bbox": [
+            81,
+            321,
+            818,
+            376
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "■ 记基础图答案为 $C_b$ ，则",
+        "bbox": [
+            83,
+            392,
+            390,
+            447
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "equation",
+        "text": "$$\nC _ {2} = 2, \\qquad C _ {b} - C _ {b - 1} = 3 F _ {b}.\n$$",
+        "text_format": "latex",
+        "bbox": [
+            355,
+            494,
+            693,
+            549
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "向基础点 $i$ 接一个新叶子，答案增加 $2F_{i}$ 。",
+        "bbox": [
+            81,
+            662,
+            593,
+            717
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "■ 新建一点并连接基础点 2,3，其出队次数为 3，答案增加 9；该调节器只用于改变奇偶性。",
+        "bbox": [
+            83,
+            733,
+            938,
+            858
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "AC.",
+        "bbox": [
+            39,
+            70,
+            75,
+            105
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            39,
+            973,
+            98
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            66,
+            921,
+            209,
+            952
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "Cfz 出题组",
+        "bbox": [
+            860,
+            917,
+            929,
+            949
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "A - Another Searching Problem",
+        "bbox": [
+            401,
+            917,
+            593,
+            949
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "题解",
+        "text_level": 2,
+        "bbox": [
+            79,
+            113,
+            156,
+            184
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "构造与无解情况",
+        "text_level": 2,
+        "bbox": [
+            77,
+            227,
+            304,
+            290
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "■ 枚举满足 $C_b \\leq k$ 的基础图。若余数为奇数，先减去 9；剩余偶数除以 2。",
+        "bbox": [
+            83,
+            356,
+            940,
+            415
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "用斐波那契数贪心表示余数，每使用一个 $F_{i}$ ，就在点 $i$ 上挂一个叶子。",
+        "bbox": [
+            83,
+            439,
+            924,
+            494
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "若当前余数是 1,3,5,7，改用小一号基础图即可留出足够的调整空间。",
+        "bbox": [
+            83,
+            517,
+            909,
+            572
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "■ 可以证明所有小于 17 的正奇数均无解；k = 0 不在输入范围，其余数均可构造。",
+        "bbox": [
+            83,
+            596,
+            938,
+            721
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "■ 最大只需 128 个点、209 条边；每组数据所需时间可视为常数。",
+        "bbox": [
+            83,
+            745,
+            838,
+            800
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            39,
+            70,
+            75,
+            105
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            39,
+            973,
+            98
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            66,
+            921,
+            209,
+            952
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "A - Another Searching Problem",
+        "bbox": [
+            403,
+            917,
+            593,
+            949
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "Cfz 出题组",
+        "bbox": [
+            860,
+            921,
+            929,
+            949
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "B - Bingo Game",
+        "text_level": 2,
+        "bbox": [
+            79,
+            121,
+            324,
+            188
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "题目大意",
+        "text_level": 2,
+        "bbox": [
+            77,
+            227,
+            207,
+            290
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "■ 有一个 $n \\times n$ 网格，其中 $m$ 个互不相同的格子已经点亮。",
+        "bbox": [
+            83,
+            415,
+            772,
+            470
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "■ 可以继续点亮任意未亮格子。",
+        "bbox": [
+            83,
+            494,
+            445,
+            549
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "■ 求至少还要点亮多少个格子，才能出现一整行或一整列全部点亮。",
+        "bbox": [
+            83,
+            576,
+            865,
+            631
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "■ $1 \\leq n, m \\leq 10^{5}$ 。",
+        "bbox": [
+            83,
+            658,
+            295,
+            713
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            92,
+            129
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            66,
+            921,
+            209,
+            952
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "B - Bingo Game",
+        "bbox": [
+            445,
+            917,
+            549,
+            949
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "Cfz 出题组",
+        "bbox": [
+            860,
+            921,
+            929,
+            949
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "题解",
+        "text_level": 2,
+        "bbox": [
+            77,
+            113,
+            156,
+            184
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "■ 记第 i 行已有 $r_{i}$ 个亮格，第 j 列已有 $c_{j}$ 个亮格。",
+        "bbox": [
+            83,
+            258,
+            671,
+            313
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "■ 补全一行或一列分别需要 $n - r_{i}$ 或 $n - c_{j}$ 次操作。",
+        "bbox": [
+            83,
+            337,
+            688,
+            392
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "令",
+        "bbox": [
+            83,
+            415,
+            143,
+            470
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "equation",
+        "text": "$$\nk = \\max (r _ {1}, \\dots , r _ {n}, c _ {1}, \\dots , c _ {n}),\n$$",
+        "text_format": "latex",
+        "bbox": [
+            350,
+            490,
+            695,
+            545
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "直接选择亮格最多的一行或一列，答案即为 $n - k$ 。",
+        "bbox": [
+            110,
+            576,
+            695,
+            631
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "■ 读入坐标时更新对应行列计数及最大值即可。",
+        "bbox": [
+            83,
+            658,
+            629,
+            713
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "■ 时间复杂度 $\\mathcal{O}(n+m)$ ，空间复杂度 $\\mathcal{O}(n)$ 。",
+        "bbox": [
+            83,
+            737,
+            600,
+            796
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            39,
+            70,
+            75,
+            105
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            39,
+            973,
+            98
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            66,
+            921,
+            209,
+            952
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "B - Bingo Game",
+        "bbox": [
+            445,
+            917,
+            549,
+            949
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "Cfz 出题组",
+        "bbox": [
+            860,
+            921,
+            929,
+            949
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "C - Drifting Toward a Promised Sky 2 题目大意",
+        "text_level": 2,
+        "bbox": [
+            77,
+            121,
+            649,
+            290
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "■ 数轴上有 n 个点；同一位置可以有多个点。",
+        "bbox": [
+            81,
+            388,
+            609,
+            443
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "一次操作选择含至少两个点的位置 $x$ ，移走两个点，并在 $x - 1, x + 1$ 各放一个点。",
+        "bbox": [
+            83,
+            466,
+            938,
+            592
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "■ 可执行任意多次操作，求最终位置集合的最小可能 mex。",
+        "bbox": [
+            83,
+            615,
+            763,
+            670
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "■ $\\sum n \\leq 5 \\times 10^{5}$ , 位置不超过 $10^{9}$ 。",
+        "bbox": [
+            83,
+            694,
+            494,
+            752
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            94,
+            129
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            39,
+            973,
+            98
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            66,
+            921,
+            209,
+            952
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "C - Drifting Toward a Promised Sky 2",
+        "bbox": [
+            384,
+            917,
+            613,
+            949
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "Cfz 出题组",
+        "bbox": [
+            860,
+            921,
+            931,
+            949
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "题解",
+        "text_level": 2,
+        "bbox": [
+            79,
+            113,
+            156,
+            184
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Abelian 稳定化",
+        "text_level": 2,
+        "bbox": [
+            77,
+            227,
+            282,
+            290
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "将“某位置至少有两个点时进行一次操作”称为点火；终止状态中每个位置至多一个点。",
+        "bbox": [
+            83,
+            360,
+            931,
+            478
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "■ 可以用最早出现分歧的位置反证：每个位置的点火次数唯一，因此稳定状态与操作顺序无关。",
+        "bbox": [
+            83,
+            525,
+            933,
+            639
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "对一个相互作用的块，只需记录点数 c 与位置和 s。其稳定形态一定是一个连续区间，至多挖去一个位置。",
+        "bbox": [
+            83,
+            686,
+            931,
+            803
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "AC.",
+        "bbox": [
+            39,
+            70,
+            75,
+            105
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            66,
+            921,
+            207,
+            952
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "C - Drifting Toward a Promised Sky 2",
+        "bbox": [
+            384,
+            917,
+            611,
+            949
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "Cfz 出题组",
+        "bbox": [
+            860,
+            921,
+            929,
+            949
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "题解",
+        "text_level": 2,
+        "bbox": [
+            77,
+            113,
+            156,
+            184
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "稳定块的形态",
+        "text_level": 2,
+        "bbox": [
+            77,
+            227,
+            273,
+            290
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "■ 令 $T = c(c - 1) / 2$ ，则",
+        "bbox": [
+            83,
+            403,
+            370,
+            462
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "equation",
+        "text": "$$\nL = \\left\\lfloor \\frac {s - T}{c} \\right\\rfloor ,\n$$",
+        "text_format": "latex",
+        "bbox": [
+            242,
+            505,
+            410,
+            631
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "equation",
+        "text": "$$\nr = s - (c L + T), \\quad 0 \\leq r <   c.\n$$",
+        "text_format": "latex",
+        "bbox": [
+            459,
+            537,
+            803,
+            596
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "若 $r = 0$ ，块为 $[L,L + c - 1]$ ；否则为 $[L,L + c]$ 挖去 $L + c - r$ 。",
+        "bbox": [
+            108,
+            670,
+            845,
+            729
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            847,
+            39,
+            973,
+            98
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            66,
+            921,
+            209,
+            952
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "C - Drifting Toward a Promised Sky 2",
+        "bbox": [
+            384,
+            917,
+            613,
+            949
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "Cfz 出题组",
+        "bbox": [
+            860,
+            917,
+            931,
+            949
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "题解",
+        "text_level": 2,
+        "bbox": [
+            77,
+            113,
+            156,
+            184
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "栈合并与答案判定",
+        "text_level": 2,
+        "bbox": [
+            77,
+            227,
+            335,
+            290
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "将初始位置排序，逐点形成单点块；若栈顶两个块的外包区间相交，就合并其点数与位置和并重新计算稳定形态。",
+        "bbox": [
+            86,
+            341,
+            927,
+            447
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "■ 每个块只会入栈、出栈常数次，得到全局唯一稳定状态。",
+        "bbox": [
+            86,
+            478,
+            653,
+            525
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "从 $k = 0$ 向上扫描。若 $k$ 不在任何稳定块中，或恰为块的缺口，则可令 $k$ 缺失。",
+        "bbox": [
+            86,
+            556,
+            878,
+            607
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "■ 否则，若 $k - 1$ 或 $k + 1$ 位于所在块的严格内部，该位置在稳定化中点过火；利用交换性调整顺序，也可在保留更小位置的同时消去 $k$ 。",
+        "bbox": [
+            86,
+            635,
+            938,
+            741
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "第一个满足上述条件的 $k$ 即答案。时间复杂度 $\\mathcal{O}(n\\log n)$ ，空间复杂度 $\\mathcal{O}(n)$ 。",
+        "bbox": [
+            86,
+            772,
+            858,
+            823
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "AC.",
+        "bbox": [
+            39,
+            70,
+            75,
+            105
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            66,
+            921,
+            207,
+            952
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "C - Drifting Toward a Promised Sky 2",
+        "bbox": [
+            384,
+            917,
+            613,
+            949
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "Cfz 出题组",
+        "bbox": [
+            860,
+            921,
+            929,
+            949
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "D - Escape Root",
+        "text_level": 2,
+        "bbox": [
+            79,
+            121,
+            331,
+            188
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "题目大意",
+        "text_level": 2,
+        "bbox": [
+            77,
+            227,
+            209,
+            290
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "■ m 个人分别在时刻 $s_{i}$ 出现在树上结点 $x_{i}$ ，随后以单位速度沿最短路走向根 1。",
+        "bbox": [
+            83,
+            360,
+            920,
+            486
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "■ 任意时刻若至少两人在同一位置，则这些人同时消失；位置也可以在边内部。",
+        "bbox": [
+            83,
+            509,
+            933,
+            631
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "■ 未发生碰撞并到达根的人成功逃脱，输出每个人的结果。",
+        "bbox": [
+            83,
+            658,
+            761,
+            713
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "$n, m \\leq 2 \\times 10^{5}$ 。",
+        "bbox": [
+            83,
+            741,
+            291,
+            792
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            66,
+            921,
+            209,
+            952
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "D - Escape Root",
+        "bbox": [
+            445,
+            917,
+            549,
+            949
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "Cfz 出题组",
+        "bbox": [
+            860,
+            921,
+            929,
+            949
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "题解",
+        "text_level": 2,
+        "bbox": [
+            77,
+            113,
+            158,
+            184
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "把相遇按 key 分类",
+        "text_level": 2,
+        "bbox": [
+            75,
+            227,
+            335,
+            290
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "设 $dep_{u}$ 为深度，定义",
+        "bbox": [
+            83,
+            317,
+            368,
+            372
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "equation",
+        "text": "$$\nk e y _ {i} = s _ {i} + d e p _ {x _ {i}}.\n$$",
+        "text_format": "latex",
+        "bbox": [
+            426,
+            388,
+            620,
+            443
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "■ 第 i 个人到达祖先 u 的时刻为 $key_{i} - dep_{u}$ ，故不同 key 的人绝不相遇。",
+        "bbox": [
+            81,
+            533,
+            924,
+            588
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "■ 相同 key 的人始终处在相同深度；他们的路径第一次汇合时，就会在公共祖先处同时到达并消失。",
+        "bbox": [
+            83,
+            600,
+            933,
+            725
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "■ 所有人在同一条边上同向同速，边内部无需单独处理：若位置重合，进入该边时就已在下端点相遇。",
+        "bbox": [
+            83,
+            737,
+            933,
+            862
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            39,
+            973,
+            98
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            66,
+            921,
+            209,
+            952
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "D - Escape Root",
+        "bbox": [
+            445,
+            917,
+            551,
+            949
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "Cfz 出题组",
+        "bbox": [
+            860,
+            917,
+            929,
+            949
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "题解",
+        "text_level": 2,
+        "bbox": [
+            77,
+            113,
+            156,
+            184
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "树上小并大",
+        "text_level": 2,
+        "bbox": [
+            77,
+            227,
+            240,
+            290
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "■ 自底向上处理树；每个结点维护映射 $key \\rightarrow person\\_id$ ，表示仍活着并将继续向父亲移动的人。",
+        "bbox": [
+            83,
+            329,
+            920,
+            450
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "■ 合并所有儿子的映射，再加入从当前结点出发的人。",
+        "bbox": [
+            83,
+            474,
+            708,
+            533
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "同一结点出现至少两个相同 key 时，将这些人全部标记死亡；用临时集合记录已碰撞的 key，避免第三个人被错误留下。",
+        "bbox": [
+            83,
+            556,
+            933,
+            682
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "■ 使用小并大合并映射。根结点处理完后，映射中剩下的人全部逃脱。",
+        "bbox": [
+            83,
+            701,
+            891,
+            760
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "■ 使用有序映射时复杂度为 $\\mathcal{O}((n+m)\\log^{2}m)$ ，空间复杂度 $\\mathcal{O}(n+m)$ 。",
+        "bbox": [
+            83,
+            780,
+            902,
+            843
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_number",
+        "text": "AC.",
+        "bbox": [
+            39,
+            70,
+            75,
+            105
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            39,
+            973,
+            98
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            66,
+            921,
+            207,
+            952
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "D - Escape Root",
+        "bbox": [
+            445,
+            917,
+            551,
+            949
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "Cfz 出题组",
+        "bbox": [
+            860,
+            917,
+            929,
+            949
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "É - Grand Mex 2",
+        "text_level": 2,
+        "bbox": [
+            81,
+            121,
+            333,
+            180
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "题目大意",
+        "text_level": 2,
+        "bbox": [
+            77,
+            227,
+            209,
+            290
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "■ 初始 $a_1, \\ldots, a_n$ 全为 0。对树上每条边 $(u, v)$ ，恰好选择令 $a_u$ 或 $a_v$ 加一。",
+        "bbox": [
+            83,
+            450,
+            940,
+            505
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "对全部 $2^{n - 1}$ 种选择方案，求最终数组 $\\mathrm{mex}$ 的总和。",
+        "bbox": [
+            83,
+            529,
+            706,
+            584
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "答案对 998244353 取模， $n \\leq 150$ 。",
+        "bbox": [
+            83,
+            607,
+            507,
+            662
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            92,
+            129
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            66,
+            921,
+            209,
+            949
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "footer",
+        "text": "E - Grand Mex 2",
+        "bbox": [
+            445,
+            921,
+            551,
+            952
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "footer",
+        "text": "Cfz 出题组",
+        "bbox": [
+            860,
+            921,
+            929,
+            949
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "题解",
+        "text_level": 2,
+        "bbox": [
+            77,
+            113,
+            156,
+            184
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "上界与容斥",
+        "text_level": 2,
+        "bbox": [
+            79,
+            227,
+            240,
+            290
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "■ 将每条边定向到被加一的端点，则 $a_{v}$ 就是 v 的入度。",
+        "bbox": [
+            83,
+            349,
+            673,
+            400
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "若 $\\mathrm{mex} \\geq k$ ，则 $0,1,\\ldots,k-1$ 全部出现，所以",
+        "bbox": [
+            83,
+            447,
+            609,
+            501
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\frac {k (k - 1)}{2} \\leq n - 1.\n$$",
+        "text_format": "latex",
+        "bbox": [
+            432,
+            537,
+            615,
+            639
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "令满足该式的最大 k 为 K，本题中 $K \\leq 17$ 。",
+        "bbox": [
+            108,
+            674,
+            576,
+            725
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "■ 树的任意定向均有入度为 0 的点，因此 0 在每种方案中都会出现。",
+        "bbox": [
+            83,
+            772,
+            807,
+            827
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "page_number",
+        "text": "AC.",
+        "bbox": [
+            39,
+            70,
+            75,
+            105
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            66,
+            921,
+            209,
+            952
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "footer",
+        "text": "E - Grand Mex 2",
+        "bbox": [
+            445,
+            921,
+            551,
+            952
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "footer",
+        "text": "Cfz 出题组",
+        "bbox": [
+            860,
+            921,
+            929,
+            949
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "题解",
+        "text_level": 2,
+        "bbox": [
+            77,
+            113,
+            156,
+            184
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "对缺失的入度值容斥",
+        "text_level": 2,
+        "bbox": [
+            75,
+            227,
+            368,
+            290
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "对 $S \\subseteq \\{1, \\ldots, K - 1\\}$ ，令 $Z(S)$ 为所有点入度均不属于 $S$ 的定向数。",
+        "bbox": [
+            83,
+            333,
+            832,
+            388
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "由尾和公式， $\\mathrm{mex}$ 等于所有命题“ $\\mathrm{mex} \\geq k$ ”的指示函数之和。",
+        "bbox": [
+            83,
+            427,
+            743,
+            478
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "\\- 固定 $k$ ，条件 $\\mathrm{mex} \\geq k$ 等价于 $1, \\ldots, k-1$ 全部出现；对其中缺失的值容斥。",
+        "bbox": [
+            83,
+            521,
+            911,
+            572
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "■ 交换对 $k$ 和 $S$ 的求和顺序，得到",
+        "bbox": [
+            83,
+            615,
+            461,
+            666
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "equation",
+        "text": "$$\nA n s = K Z (\\varnothing) + \\sum_ {\\varnothing \\neq S} (- 1) ^ {| S |} (K - \\max S) Z (S).\n$$",
+        "text_format": "latex",
+        "bbox": [
+            286,
+            698,
+            759,
+            807
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "page_number",
+        "text": "AC.",
+        "bbox": [
+            39,
+            70,
+            75,
+            105
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            66,
+            921,
+            209,
+            949
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "footer",
+        "text": "E - Grand Mex 2",
+        "bbox": [
+            445,
+            921,
+            551,
+            952
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "footer",
+        "text": "Cfz 出题组",
+        "bbox": [
+            860,
+            921,
+            929,
+            949
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "题解",
+        "text_level": 2,
+        "bbox": [
+            77,
+            113,
+            158,
+            184
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "计算 $Z(S)$ 的树形DP",
+        "text_level": 2,
+        "bbox": [
+            77,
+            227,
+            373,
+            294
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "\\- 固定根。只区分入度 $0, 1, \\ldots, K - 1$ ，将所有 $\\geq K$ 的值并入状态 $K$ 。",
+        "bbox": [
+            83,
+            384,
+            827,
+            435
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "■ 合并 v 的儿子时， $dp[d]$ 表示已有 d 条儿子边指向 v。对儿子 u:",
+        "bbox": [
+            83,
+            482,
+            785,
+            533
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "$ndp[d] += dp[d]f_u[1] \\quad ((v, u) \\text{指向} u),$",
+        "bbox": [
+            395,
+            584,
+            779,
+            643
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "$ndp[\\min(K, d+1)] += dp[d]f_u[0] \\quad ((v, u) \\text{指向} v).$",
+        "bbox": [
+            267,
+            658,
+            777,
+            717
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "page_number",
+        "text": "AC.",
+        "bbox": [
+            39,
+            70,
+            75,
+            105
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            39,
+            973,
+            98
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            66,
+            921,
+            209,
+            952
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "footer",
+        "text": "E - Grand Mex 2",
+        "bbox": [
+            445,
+            921,
+            551,
+            952
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "footer",
+        "text": "Cfz 出题组",
+        "bbox": [
+            860,
+            921,
+            931,
+            949
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "题解",
+        "text_level": 2,
+        "bbox": [
+            77,
+            113,
+            156,
+            184
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "DP 收尾与复杂度",
+        "text_level": 2,
+        "bbox": [
+            77,
+            227,
+            324,
+            290
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "■ $f_{v}[b]$ 表示父边给 $v$ 贡献 $b \\in \\{0,1\\}$ 个入度，且 $v$ 子树内所有点均合法的方案数。",
+        "bbox": [
+            83,
+            325,
+            876,
+            376
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "合并儿子结束后，加上父边贡献，只保留",
+        "bbox": [
+            86,
+            400,
+            512,
+            450
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\min (K, d + b) \\notin S\n$$",
+        "text_format": "latex",
+        "bbox": [
+            434,
+            486,
+            615,
+            533
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "的状态；根没有父边，所以 $Z(S) = f_{root}[0]$ 。",
+        "bbox": [
+            108,
+            564,
+            532,
+            615
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "■ 枚举全部 $2^{K - 1}$ 个集合并代入容斥式。总复杂度",
+        "bbox": [
+            86,
+            635,
+            573,
+            686
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\mathcal {O} (n K 2 ^ {K - 1}), \\qquad \\text { 空间 } \\mathcal {O} (n K).\n$$",
+        "text_format": "latex",
+        "bbox": [
+            379,
+            717,
+            664,
+            772
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "page_number",
+        "text": "AC.",
+        "bbox": [
+            39,
+            70,
+            75,
+            105
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            66,
+            921,
+            209,
+            952
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "footer",
+        "text": "E - Grand Mex 2",
+        "bbox": [
+            445,
+            921,
+            551,
+            952
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "footer",
+        "text": "Cfz 出题组",
+        "bbox": [
+            860,
+            921,
+            929,
+            949
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "F - Light the Lamp",
+        "text_level": 2,
+        "bbox": [
+            79,
+            121,
+            370,
+            192
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "题目大意",
+        "text_level": 2,
+        "bbox": [
+            77,
+            227,
+            209,
+            290
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "在 $n \\times n$ 网格中，第 $i$ 行第 $p_i$ 列初始亮灯，其中 $p$ 是一个排列。",
+        "bbox": [
+            83,
+            415,
+            852,
+            474
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "■ 每秒，所有至少有两个相邻亮灯的未亮格子同时亮起，且不会熄灭。",
+        "bbox": [
+            83,
+            498,
+            891,
+            552
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "■ 判断是否最终全亮；若可以，求全亮的最早时刻。",
+        "bbox": [
+            83,
+            576,
+            682,
+            631
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "$n \\leq 5 \\times 10^{5}$",
+        "bbox": [
+            83,
+            658,
+            260,
+            713
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            92,
+            129
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            66,
+            921,
+            209,
+            952
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "footer",
+        "text": "F - Light the Lamp",
+        "bbox": [
+            439,
+            917,
+            558,
+            949
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "footer",
+        "text": "Cfz 出题组",
+        "bbox": [
+            860,
+            921,
+            929,
+            949
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "题解",
+        "text_level": 2,
+        "bbox": [
+            79,
+            113,
+            156,
+            184
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "可分离排列",
+        "text_level": 2,
+        "bbox": [
+            79,
+            227,
+            238,
+            290
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "若一个连续下标块的值域也连续，它对应网格中的一个正方形区域。",
+        "bbox": [
+            86,
+            364,
+            763,
+            411
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "两个相邻块的值域相邻时可以合并：值域递增为“+”合并，递减为“-”合并。",
+        "bbox": [
+            86,
+            443,
+            838,
+            494
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "所有灯最终会亮，当且仅当排列可通过这种合并最终变成一个块，即 $p$ 是可分离排列。",
+        "bbox": [
+            86,
+            525,
+            940,
+            572
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "从左到右扫描，用栈维护块的大小与值域；栈顶两块能合并就立刻合并。最后不只一个块则输出 -1。",
+        "bbox": [
+            86,
+            603,
+            929,
+            705
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "■ 连续同号合并必须展平为一个多叉结点，不能任意组成二叉树，否则会高估亮灯时间。",
+        "bbox": [
+            86,
+            741,
+            938,
+            788
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "page_number",
+        "text": "AC.",
+        "bbox": [
+            39,
+            70,
+            75,
+            105
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            66,
+            921,
+            207,
+            952
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "footer",
+        "text": "F - Light the Lamp",
+        "bbox": [
+            439,
+            917,
+            556,
+            949
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "footer",
+        "text": "Cfz 出题组",
+        "bbox": [
+            860,
+            921,
+            929,
+            949
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "题解",
+        "text_level": 2,
+        "bbox": [
+            77,
+            113,
+            156,
+            184
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "维护全亮时间",
+        "text_level": 2,
+        "bbox": [
+            77,
+            227,
+            271,
+            290
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "■ 对块内格子 $(x, y)$ 的亮灯时间 $t(x, y)$ ，维护",
+        "bbox": [
+            83,
+            329,
+            565,
+            384
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\begin{array}{c} f = \\max t, \\quad A = \\max (t + x - y), \\quad B = \\max (t - x + y), \\\\ C = \\max (t + x + y), \\quad D = \\max (t - x - y). \\end{array}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            227,
+            415,
+            816,
+            545
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "■ 子块平移 $(r_0, c_0)$ 时，四个方向量分别加",
+        "bbox": [
+            83,
+            627,
+            540,
+            678
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "equation",
+        "text": "$$\nr _ {0} - c _ {0}, - r _ {0} + c _ {0}, r _ {0} + c _ {0}, - r _ {0} - c _ {0}.\n$$",
+        "text_format": "latex",
+        "bbox": [
+            328,
+            721,
+            719,
+            768
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            66,
+            921,
+            209,
+            952
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "footer",
+        "text": "F - Light the Lamp",
+        "bbox": [
+            437,
+            917,
+            558,
+            949
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "footer",
+        "text": "Cfz 出题组",
+        "bbox": [
+            860,
+            921,
+            931,
+            949
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "题解",
+        "text_level": 2,
+        "bbox": [
+            77,
+            113,
+            156,
+            184
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "五元组的合并",
+        "text_level": 2,
+        "bbox": [
+            77,
+            227,
+            271,
+            290
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "对“+”结点，主对角线两侧的时间分别形如 $y - x + A$ 与 $x - y + B$ ; “-”结点同理由 $C, D$ 决定。",
+        "bbox": [
+            83,
+            333,
+            935,
+            458
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "对所有直接儿子平移并取五个量的最大值，即可用常数个公式得到父块的五元组。",
+        "bbox": [
+            83,
+            478,
+            933,
+            603
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "若儿子和父亲合并符号相同，直接使用儿子保存的“直接子块最大值”，从而展平连续同号结点。",
+        "bbox": [
+            83,
+            627,
+            909,
+            752
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "每个块只被合并一次，时间与空间复杂度均为 $\\mathcal{O}(n)$ ；根块的 f 即答案。",
+        "bbox": [
+            83,
+            776,
+            929,
+            835
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "page_number",
+        "text": "AC.",
+        "bbox": [
+            39,
+            70,
+            75,
+            105
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            66,
+            921,
+            207,
+            952
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "footer",
+        "text": "F - Light the Lamp",
+        "bbox": [
+            439,
+            917,
+            556,
+            949
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "footer",
+        "text": "Cfz 出题组",
+        "bbox": [
+            860,
+            921,
+            929,
+            949
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "G - Passing Game",
+        "text_level": 2,
+        "bbox": [
+            79,
+            125,
+            350,
+            188
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "题目大意",
+        "text_level": 2,
+        "bbox": [
+            77,
+            227,
+            209,
+            290
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "■ n 个人围成一圈，持球者每次只能把球传给左右相邻的人。",
+        "bbox": [
+            83,
+            415,
+            785,
+            470
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "■ 第 i 个人最多传出 $a_{i}$ 次；接球次数无限，且最后接到球的人不必再传出。",
+        "bbox": [
+            83,
+            498,
+            940,
+            552
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "■ 可以任选起点和结束时刻，求最多传球次数。",
+        "bbox": [
+            83,
+            576,
+            629,
+            631
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "$n \\leq 5 \\times 10^{5}, a_{i} \\leq 10^{9}$",
+        "bbox": [
+            83,
+            658,
+            377,
+            713
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            92,
+            129
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            66,
+            921,
+            209,
+            949
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "footer",
+        "text": "G - Passing Game",
+        "bbox": [
+            443,
+            921,
+            554,
+            949
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "footer",
+        "text": "Cfz 出题组",
+        "bbox": [
+            860,
+            921,
+            929,
+            949
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "题解",
+        "text_level": 2,
+        "bbox": [
+            77,
+            113,
+            156,
+            184
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "化为带容量游走",
+        "text_level": 2,
+        "bbox": [
+            77,
+            227,
+            302,
+            290
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "■ 只记录每次传球的传出者，得到环上的游走；点 i 最多出现 $a_{i}$ 次。",
+        "bbox": [
+            83,
+            356,
+            810,
+            407
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "$a_{i}=0$ 的点会切断游走。对一个全为正数、长度为 m 的路径块，令 $S=\\sum a_{i}$ 。",
+        "bbox": [
+            83,
+            454,
+            935,
+            509
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "■ 给两个端点权值 $2a_{i} - 1$ ，内部点权值 $2a_{i} - 2$ ；记路径最小带权点覆盖为 $\\tau$ ，则块的答案为",
+        "bbox": [
+            83,
+            552,
+            935,
+            666
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\min (S, m + \\tau).\n$$",
+        "text_format": "latex",
+        "bbox": [
+            443,
+            682,
+            600,
+            737
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            39,
+            70,
+            75,
+            105
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            66,
+            921,
+            209,
+            952
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "footer",
+        "text": "G - Passing Game",
+        "bbox": [
+            443,
+            917,
+            554,
+            949
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "footer",
+        "text": "Cfz 出题组",
+        "bbox": [
+            860,
+            921,
+            929,
+            949
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "题解",
+        "text_level": 2,
+        "bbox": [
+            77,
+            113,
+            156,
+            184
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "路径块的计算",
+        "text_level": 2,
+        "bbox": [
+            77,
+            227,
+            271,
+            290
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "上式可由各边的经过次数推出；剩余容量对应路径上的带容量匹配，再由带权 König 定理转成最小带权点覆盖。",
+        "bbox": [
+            83,
+            329,
+            933,
+            454
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "■ 最小带权点覆盖可用两状态 DP:",
+        "bbox": [
+            83,
+            478,
+            485,
+            533
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "equation",
+        "text": "$$\nn d p _ {0} = d p _ {1}, \\qquad n d p _ {1} = \\min (d p _ {0}, d p _ {1}) + w.\n$$",
+        "text_format": "latex",
+        "bbox": [
+            282,
+            596,
+            766,
+            650
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "路径向外扩展时答案不减，因此有零点时，只需计算每个完整正数块。",
+        "bbox": [
+            83,
+            784,
+            918,
+            843
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "page_number",
+        "text": "AC.",
+        "bbox": [
+            39,
+            70,
+            75,
+            105
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            66,
+            921,
+            209,
+            952
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "footer",
+        "text": "G - Passing Game",
+        "bbox": [
+            443,
+            917,
+            554,
+            949
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "footer",
+        "text": "Cfz 出题组",
+        "bbox": [
+            860,
+            921,
+            929,
+            949
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "题解",
+        "text_level": 2,
+        "bbox": [
+            77,
+            113,
+            156,
+            184
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "整圈与所有切口",
+        "text_level": 2,
+        "bbox": [
+            77,
+            227,
+            300,
+            290
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "若所有 $a_{i} > 0$ ，未使用全部环边的游走对应删掉某条边后的生成路径，需要考虑 n 个切口。",
+        "bbox": [
+            86,
+            333,
+            933,
+            435
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "■ 令 $c_{i} = 2a_{i} - 2$ ，转移写成min-plus矩阵",
+        "bbox": [
+            86,
+            466,
+            505,
+            517
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "equation",
+        "text": "$$\nT (w) = \\left( \\begin{array}{c c} \\infty & w \\\\ 0 & w \\end{array} \\right).\n$$",
+        "text_format": "latex",
+        "bbox": [
+            432,
+            549,
+            615,
+            674
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "每个切口的内部转移是长度 n-2 的滑动窗口有序矩阵积。",
+        "bbox": [
+            108,
+            705,
+            673,
+            752
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "用双栈聚合队列维护矩阵积，即可均摊 $\\mathcal{O}(1)$ 计算每个切口。",
+        "bbox": [
+            86,
+            784,
+            693,
+            835
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            39,
+            70,
+            75,
+            105
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            66,
+            921,
+            207,
+            952
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "footer",
+        "text": "G - Passing Game",
+        "bbox": [
+            443,
+            917,
+            554,
+            949
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "footer",
+        "text": "Cfz 出题组",
+        "bbox": [
+            860,
+            921,
+            929,
+            949
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "题解",
+        "text_level": 2,
+        "bbox": [
+            77,
+            113,
+            156,
+            184
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "使用全部环边",
+        "text_level": 2,
+        "bbox": [
+            77,
+            227,
+            271,
+            290
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "■ 还需考虑游走使用了环上全部边的情况。令环上点权为 $c_{i}=2a_{i}-2$ ，其最小带权点覆盖为 $\\tau_{cycle}$ 。",
+        "bbox": [
+            83,
+            360,
+            938,
+            490
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "■ 偶环是二分图，剩余可增加量就是 $\\tau_{cycle}$ ；奇环还要与 $\\left\\lfloor\\sum c_{i}/2\\right\\rfloor$ 取最小值。",
+        "bbox": [
+            83,
+            509,
+            927,
+            631
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "■ 分别固定第一个点选或不选，做两次线性 DP 即可求环形点覆盖。",
+        "bbox": [
+            83,
+            658,
+            865,
+            713
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "■ 综合正数块、所有切口与整环方案取最大值。总时间 $\\mathcal{O}(n)$ ，空间 $\\mathcal{O}(n)$ 。",
+        "bbox": [
+            83,
+            737,
+            938,
+            792
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            39,
+            70,
+            75,
+            105
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            66,
+            921,
+            207,
+            952
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "footer",
+        "text": "G - Passing Game",
+        "bbox": [
+            443,
+            917,
+            554,
+            949
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "footer",
+        "text": "Cfz 出题组",
+        "bbox": [
+            860,
+            917,
+            929,
+            949
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "H - Set",
+        "text_level": 2,
+        "bbox": [
+            79,
+            121,
+            192,
+            180
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "题目大意",
+        "text_level": 2,
+        "bbox": [
+            77,
+            227,
+            209,
+            290
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "■ 初始集合 S 含 n 个互不相同的正整数。",
+        "bbox": [
+            83,
+            415,
+            560,
+            470
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "■ 每次选择 $x \\in S$ ，拆成正整数 $u + v = x$ ，再依次对 x, u, v 做集合对称差。",
+        "bbox": [
+            81,
+            498,
+            938,
+            552
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "问经过任意次操作后，可以得到多少种只含一个元素的集合。",
+        "bbox": [
+            81,
+            576,
+            814,
+            631
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "$n \\leq 10^{5}, a_{i} \\leq 10^{9}$",
+        "bbox": [
+            83,
+            658,
+            331,
+            713
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            90,
+            129
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            39,
+            973,
+            98
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            66,
+            921,
+            209,
+            952
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "footer",
+        "text": "H - Set",
+        "bbox": [
+            474,
+            921,
+            523,
+            952
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "footer",
+        "text": "Cfz 出题组",
+        "bbox": [
+            860,
+            917,
+            931,
+            949
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "题解",
+        "text_level": 2,
+        "bbox": [
+            77,
+            113,
+            158,
+            184
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "一次操作中被翻转的三个数满足 $x + u + v = 2x$ ，因此集合元素和的奇偶性不变。",
+        "bbox": [
+            83,
+            243,
+            922,
+            360
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "■ 通过不断拆分，可以证明单元素集合 $\\{x\\}$ 可达当且仅当",
+        "bbox": [
+            83,
+            407,
+            697,
+            458
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "equation",
+        "text": "$$\n1 \\leq x \\leq M = \\max S, \\qquad x \\equiv \\sum_ {y \\in S} y \\pmod {2}.\n$$",
+        "text_format": "latex",
+        "bbox": [
+            284,
+            505,
+            761,
+            615
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "■ 必要性来自奇偶不变量与数值不会超过初始最大值；充分性可将其余质量不断拆分并成对抵消。",
+        "bbox": [
+            83,
+            713,
+            935,
+            831
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            847,
+            39,
+            973,
+            101
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            66,
+            921,
+            209,
+            952
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "page_number",
+        "text": "H - Set",
+        "bbox": [
+            472,
+            921,
+            523,
+            952
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "footer",
+        "text": "Cfz 出题组",
+        "bbox": [
+            860,
+            917,
+            931,
+            949
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "题解",
+        "text_level": 2,
+        "bbox": [
+            77,
+            113,
+            156,
+            184
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "统计答案",
+        "text_level": 2,
+        "bbox": [
+            77,
+            227,
+            209,
+            290
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "因此答案只是 $[1, M]$ 中指定奇偶性的整数个数:",
+        "bbox": [
+            83,
+            364,
+            653,
+            423
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "equation",
+        "text": "$$\nA n s = \\left\\{ \\begin{array}{l l} (M + 1) / 2, & \\sum S \\text {为奇数}, \\\\ M / 2, & \\sum S \\text {为偶数}. \\end{array} \\right.\n$$",
+        "text_format": "latex",
+        "bbox": [
+            324,
+            466,
+            721,
+            643
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "■ 时间复杂度 $\\mathcal{O}(n)$ ，额外空间复杂度 $\\mathcal{O}(1)$ 。",
+        "bbox": [
+            83,
+            729,
+            598,
+            784
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            66,
+            921,
+            209,
+            952
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "page_number",
+        "text": "H - Set",
+        "bbox": [
+            472,
+            921,
+            523,
+            952
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "footer",
+        "text": "Cfz 出题组",
+        "bbox": [
+            860,
+            921,
+            931,
+            949
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "- Slay the Spire",
+        "text_level": 2,
+        "bbox": [
+            94,
+            121,
+            335,
+            192
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "题目大意",
+        "text_level": 2,
+        "bbox": [
+            77,
+            227,
+            207,
+            290
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "■ 敌人有 $x$ 点生命；每回合选择增加 $a$ 层中毒，或立即造成 $b$ 点普通伤害。",
+        "bbox": [
+            83,
+            415,
+            940,
+            470
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "■ 行动后结算一次中毒：造成当前层数的伤害，再令层数减一。",
+        "bbox": [
+            83,
+            494,
+            814,
+            552
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "■ 求最少多少回合能击杀敌人。",
+        "bbox": [
+            83,
+            576,
+            445,
+            631
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "$x, a, b \\leq 10^{9}$ 。",
+        "bbox": [
+            83,
+            658,
+            260,
+            713
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            90,
+            129
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            66,
+            921,
+            209,
+            949
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "footer",
+        "text": "I - Slay the Spire",
+        "bbox": [
+            445,
+            917,
+            551,
+            949
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "footer",
+        "text": "Cfz 出题组",
+        "bbox": [
+            860,
+            921,
+            929,
+            949
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "题解",
+        "text_level": 2,
+        "bbox": [
+            79,
+            117,
+            156,
+            184
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "先上毒，再攻击：活跃段",
+        "text_level": 2,
+        "bbox": [
+            77,
+            227,
+            430,
+            290
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "单独交换相邻的“攻击、上毒”并不安全：交换可能令中毒提前耗尽，进而损失后续伤害。",
+        "bbox": [
+            83,
+            427,
+            933,
+            552
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "■ 将中毒结算伤害为正的极长连续回合称为一个活跃段。每段必以上毒开始，设长度为 L，其中上毒 k 次。",
+        "bbox": [
+            83,
+            576,
+            931,
+            698
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "page_number",
+        "text": "AC.",
+        "bbox": [
+            39,
+            70,
+            75,
+            105
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            66,
+            921,
+            209,
+            952
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "footer",
+        "text": "I - Slay the Spire",
+        "bbox": [
+            443,
+            917,
+            551,
+            949
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "footer",
+        "text": "Cfz 出题组",
+        "bbox": [
+            860,
+            921,
+            929,
+            949
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "题解",
+        "text_level": 2,
+        "bbox": [
+            79,
+            113,
+            156,
+            184
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "活跃段内的最优顺序",
+        "text_level": 2,
+        "bbox": [
+            77,
+            227,
+            366,
+            290
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "固定 $L, k$ 时，该段中第 $j$ 回合的上毒会参与之后 $L - j + 1$ 次结算，贡献权值随 $j$ 单调下降。",
+        "bbox": [
+            83,
+            392,
+            938,
+            517
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "因而把该段内的 k 次上毒移到最前面，段内伤害不会减少。",
+        "bbox": [
+            83,
+            541,
+            788,
+            600
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "原段最后一回合仍有毒，故 $L \\leq ak$ ；移动后的总毒层足以维持到第 $L$ 回合，不会提前断毒。",
+        "bbox": [
+            83,
+            619,
+            913,
+            745
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "page_number",
+        "text": "AC.",
+        "bbox": [
+            39,
+            70,
+            75,
+            105
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            66,
+            921,
+            207,
+            952
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "footer",
+        "text": "I - Slay the Spire",
+        "bbox": [
+            443,
+            917,
+            551,
+            949
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "footer",
+        "text": "Cfz 出题组",
+        "bbox": [
+            860,
+            921,
+            929,
+            949
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "题解",
+        "text_level": 2,
+        "bbox": [
+            77,
+            113,
+            156,
+            184
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "先上毒，再攻击：合并活跃段",
+        "text_level": 2,
+        "bbox": [
+            75,
+            227,
+            494,
+            290
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "■ 记排好序的一个活跃段的中毒伤害为 $H(L, k)$ 。对两个合法段 $k_{i} \\leq L_{i} \\leq ak_{i}$ ，有",
+        "bbox": [
+            83,
+            372,
+            869,
+            419
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\begin{array}{c} H (L _ {1} + L _ {2}, k _ {1} + k _ {2}) - H (L _ {1}, k _ {1}) - H (L _ {2}, k _ {2}) \\\\ = a (k _ {1} L _ {2} + k _ {2} L _ {1} - k _ {1} k _ {2}) - L _ {1} L _ {2} \\geq 0. \\end{array}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            315,
+            466,
+            732,
+            584
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "■ 最后一个不等式可令 $x = L_{1} / k_{1}, y = L_{2} / k_{2}$ ，在 $1 \\leq x, y \\leq a$ 上验证 $a(x + y - 1) - xy \\geq 0$ 。",
+        "bbox": [
+            83,
+            670,
+            754,
+            776
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "page_number",
+        "text": "AC.",
+        "bbox": [
+            39,
+            70,
+            75,
+            105
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            66,
+            921,
+            209,
+            952
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "footer",
+        "text": "I - Slay the Spire",
+        "bbox": [
+            443,
+            917,
+            551,
+            949
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "footer",
+        "text": "Cfz 出题组",
+        "bbox": [
+            860,
+            921,
+            929,
+            949
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "题解",
+        "text_level": 2,
+        "bbox": [
+            79,
+            117,
+            156,
+            184
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": "得到全局最优结构",
+        "text_level": 2,
+        "bbox": [
+            77,
+            227,
+            333,
+            290
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": "■ 上述不等式说明：把两个活跃段连接，并将它们的所有上毒放在新段开头，中毒伤害不会减少。",
+        "bbox": [
+            83,
+            368,
+            933,
+            494
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": "■ 原来夹在活跃段之间、毒层为零时的攻击，可以统一接到最后；它们还可能额外获得中毒伤害。",
+        "bbox": [
+            83,
+            517,
+            935,
+            639
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": "■ 反复合并后只剩一个活跃段，所以确实存在最优策略：先连续上毒 k 次，再连续攻击 m 次。",
+        "bbox": [
+            83,
+            662,
+            938,
+            784
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            39,
+            70,
+            75,
+            101
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            66,
+            921,
+            207,
+            952
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "footer",
+        "text": "I - Slay the Spire",
+        "bbox": [
+            443,
+            917,
+            551,
+            949
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "footer",
+        "text": "Cfz 出题组",
+        "bbox": [
+            860,
+            921,
+            929,
+            949
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": "题解",
+        "text_level": 2,
+        "bbox": [
+            77,
+            113,
+            156,
+            184
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "固定上毒和攻击次数",
+        "text_level": 2,
+        "bbox": [
+            77,
+            227,
+            366,
+            290
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "■ 令 c = a - 1。连续上毒 k 次的伤害为",
+        "bbox": [
+            83,
+            321,
+            547,
+            372
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "equation",
+        "text": "$$\nS (k) = k + c \\frac {k (k + 1)}{2},\n$$",
+        "text_format": "latex",
+        "bbox": [
+            401,
+            392,
+            646,
+            505
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "结束后剩余毒层 q = kc。",
+        "bbox": [
+            108,
+            525,
+            390,
+            580
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "■ 随后攻击 m 次，令 $t = \\min(m, q)$ ，总伤害为",
+        "bbox": [
+            83,
+            600,
+            629,
+            658
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "equation",
+        "text": "$$\nD (k, m) = S (k) + m b + \\frac {t (2 q - t + 1)}{2}.\n$$",
+        "text_format": "latex",
+        "bbox": [
+            315,
+            682,
+            732,
+            792
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "page_number",
+        "text": "AC.",
+        "bbox": [
+            39,
+            70,
+            75,
+            105
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            66,
+            921,
+            209,
+            949
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "footer",
+        "text": "I - Slay the Spire",
+        "bbox": [
+            443,
+            917,
+            551,
+            949
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "footer",
+        "text": "Cfz 出题组",
+        "bbox": [
+            860,
+            921,
+            929,
+            949
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "题解",
+        "text_level": 2,
+        "bbox": [
+            77,
+            113,
+            158,
+            184
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "枚举与二分",
+        "text_level": 2,
+        "bbox": [
+            77,
+            227,
+            240,
+            290
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "\\- 固定 $k$ 后， $D(k, m)$ 关于 $m$ 单调，二分最小的可行 $m$ 。",
+        "bbox": [
+            81,
+            317,
+            739,
+            372
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "若 $a = 1$ ，上毒每回合只造成1点且不积累，直接全程普通攻击，答案为 $\\lceil x / b\\rceil$ 。",
+        "bbox": [
+            83,
+            384,
+            927,
+            509
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "若 $a \\geq 2$ ，则 $S(k) \\geq k(k + 1) / 2$ 。只需枚举到第一个满足 $S(k) \\geq x$ 的 $k$ ，共 $\\mathcal{O}(\\sqrt{x})$ 个。",
+        "bbox": [
+            83,
+            521,
+            927,
+            650
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "■ 对所有 $k + m$ 取最小值即可。用 \\_\\_int128 计算公式，避免中间乘法溢出。",
+        "bbox": [
+            81,
+            658,
+            931,
+            784
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "时间复杂度 $\\mathcal{O}(\\sqrt{x}\\log x)$ ，空间复杂度 $\\mathcal{O}(1)$ 。",
+        "bbox": [
+            83,
+            800,
+            620,
+            858
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "page_number",
+        "text": "AC.",
+        "bbox": [
+            39,
+            70,
+            75,
+            105
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            39,
+            973,
+            98
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            66,
+            921,
+            209,
+            952
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "footer",
+        "text": "I - Slay the Spire",
+        "bbox": [
+            443,
+            917,
+            551,
+            949
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "footer",
+        "text": "Cfz 出题组",
+        "bbox": [
+            860,
+            917,
+            929,
+            949
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "J - Start to the End",
+        "text_level": 2,
+        "bbox": [
+            79,
+            121,
+            379,
+            184
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "题目大意",
+        "text_level": 2,
+        "bbox": [
+            77,
+            227,
+            209,
+            290
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "■ 统计有标号的有向二分图：左右部分别有 $n, m$ 个点，每点出度至多为 1。",
+        "bbox": [
+            83,
+            388,
+            940,
+            443
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "左、右部零出度点分别不超过 a, b；任意非零出度点都不能沿有向边走到零出度点。",
+        "bbox": [
+            83,
+            470,
+            924,
+            592
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "■ 多组询问，答案对 $2^{64}$ 取模。",
+        "bbox": [
+            83,
+            615,
+            441,
+            670
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "$t \\leq 10^{3}, n, m \\leq 10^{7}$",
+        "bbox": [
+            83,
+            698,
+            353,
+            752
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            92,
+            129
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            66,
+            921,
+            209,
+            952
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "footer",
+        "text": "J - Start to the End",
+        "bbox": [
+            434,
+            921,
+            560,
+            952
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "footer",
+        "text": "Cfz 出题组",
+        "bbox": [
+            860,
+            921,
+            929,
+            949
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "题解",
+        "text_level": 2,
+        "bbox": [
+            77,
+            113,
+            158,
+            184
+        ],
+        "page_idx": 39
+    },
+    {
+        "type": "text",
+        "text": "计数式与 Stirling 展开",
+        "text_level": 2,
+        "bbox": [
+            77,
+            227,
+            386,
+            294
+        ],
+        "page_idx": 39
+    },
+    {
+        "type": "text",
+        "text": "设左右两侧非零出度点分别有 i, j 个。它们的出边必须仍指向非零出度点，故",
+        "bbox": [
+            83,
+            329,
+            927,
+            384
+        ],
+        "page_idx": 39
+    },
+    {
+        "type": "equation",
+        "text": "$$\nA n s = \\sum_ {i = n - a} ^ {n} \\sum_ {j = m - b} ^ {m} \\binom {n} {i} \\binom {m} {j} j ^ {i} i ^ {j}.\n$$",
+        "text_format": "latex",
+        "bbox": [
+            353,
+            403,
+            693,
+            541
+        ],
+        "page_idx": 39
+    },
+    {
+        "type": "text",
+        "text": "■ 使用第二类 Stirling 数展开幕:",
+        "bbox": [
+            83,
+            615,
+            430,
+            666
+        ],
+        "page_idx": 39
+    },
+    {
+        "type": "equation",
+        "text": "$$\ni ^ {j} = \\sum_ {p} S (j, p) p! \\binom {i} {p}, \\qquad j ^ {i} = \\sum_ {q} S (i, q) q! \\binom {j} {q}.\n$$",
+        "text_format": "latex",
+        "bbox": [
+            273,
+            686,
+            772,
+            815
+        ],
+        "page_idx": 39
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 39
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            66,
+            921,
+            209,
+            952
+        ],
+        "page_idx": 39
+    },
+    {
+        "type": "footer",
+        "text": "J - Start to the End",
+        "bbox": [
+            434,
+            921,
+            560,
+            952
+        ],
+        "page_idx": 39
+    },
+    {
+        "type": "footer",
+        "text": "Cfz 出题组",
+        "bbox": [
+            860,
+            921,
+            931,
+            949
+        ],
+        "page_idx": 39
+    },
+    {
+        "type": "text",
+        "text": "题解",
+        "text_level": 2,
+        "bbox": [
+            79,
+            113,
+            156,
+            184
+        ],
+        "page_idx": 40
+    },
+    {
+        "type": "text",
+        "text": "利用模数截断状态",
+        "text_level": 2,
+        "bbox": [
+            77,
+            227,
+            335,
+            290
+        ],
+        "page_idx": 40
+    },
+    {
+        "type": "text",
+        "text": "因 $66!\\equiv0\\pmod{2^{64}}$ ，只需保留 $p,q\\leq65$ 。",
+        "bbox": [
+            83,
+            392,
+            565,
+            447
+        ],
+        "page_idx": 40
+    },
+    {
+        "type": "text",
+        "text": "令",
+        "bbox": [
+            83,
+            494,
+            139,
+            541
+        ],
+        "page_idx": 40
+    },
+    {
+        "type": "equation",
+        "text": "$$\nA _ {p, q} (n, a) = q! \\sum_ {i = n - a} ^ {n} {\\binom {n} {i}} {\\binom {i} {p}} S (i, q),\n$$",
+        "text_format": "latex",
+        "bbox": [
+            333,
+            541,
+            715,
+            666
+        ],
+        "page_idx": 40
+    },
+    {
+        "type": "text",
+        "text": "则 $Ans = \\sum_{p,q} A_{p,q}(n, a) A_{q,p}(m, b)$ 。",
+        "bbox": [
+            108,
+            694,
+            485,
+            756
+        ],
+        "page_idx": 40
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            39,
+            70,
+            75,
+            105
+        ],
+        "page_idx": 40
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 40
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            66,
+            921,
+            207,
+            949
+        ],
+        "page_idx": 40
+    },
+    {
+        "type": "footer",
+        "text": "J - Start to the End",
+        "bbox": [
+            437,
+            921,
+            558,
+            952
+        ],
+        "page_idx": 40
+    },
+    {
+        "type": "footer",
+        "text": "Cfz 出题组",
+        "bbox": [
+            860,
+            921,
+            929,
+            949
+        ],
+        "page_idx": 40
+    },
+    {
+        "type": "text",
+        "text": "题解",
+        "text_level": 2,
+        "bbox": [
+            77,
+            113,
+            158,
+            184
+        ],
+        "page_idx": 41
+    },
+    {
+        "type": "text",
+        "text": "快速计算 $A_{p,q}$",
+        "bbox": [
+            77,
+            227,
+            273,
+            301
+        ],
+        "page_idx": 41
+    },
+    {
+        "type": "text",
+        "text": "利用",
+        "text_level": 2,
+        "bbox": [
+            83,
+            372,
+            163,
+            423
+        ],
+        "page_idx": 41
+    },
+    {
+        "type": "equation",
+        "text": "$$\nq! S (i, q) = \\sum_ {z = 0} ^ {q} (- 1) ^ {q - z} \\binom {q} {z} z ^ {i},\n$$",
+        "text_format": "latex",
+        "bbox": [
+            373,
+            419,
+            675,
+            552
+        ],
+        "page_idx": 41
+    },
+    {
+        "type": "text",
+        "text": "将问题化为 $z \\leq 65$ 时的截断二项式和。",
+        "bbox": [
+            108,
+            576,
+            523,
+            627
+        ],
+        "page_idx": 41
+    },
+    {
+        "type": "text",
+        "text": "设 $F(N, A, z) = \\sum_{r=0}^{A} \\binom{N}{r} z^r$ 。当 $z$ 为偶数时， $z^r$ 很快成为 $2^{64}$ 的倍数，只需直接计算至多 64 项。",
+        "bbox": [
+            83,
+            670,
+            931,
+            792
+        ],
+        "page_idx": 41
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            847,
+            39,
+            973,
+            98
+        ],
+        "page_idx": 41
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            66,
+            921,
+            209,
+            952
+        ],
+        "page_idx": 41
+    },
+    {
+        "type": "footer",
+        "text": "J - Start to the End",
+        "bbox": [
+            434,
+            921,
+            560,
+            952
+        ],
+        "page_idx": 41
+    },
+    {
+        "type": "footer",
+        "text": "Cfz 出题组",
+        "bbox": [
+            860,
+            917,
+            929,
+            949
+        ],
+        "page_idx": 41
+    },
+    {
+        "type": "text",
+        "text": "题解",
+        "text_level": 2,
+        "bbox": [
+            77,
+            113,
+            156,
+            184
+        ],
+        "page_idx": 42
+    },
+    {
+        "type": "text",
+        "text": "奇数底数与组合数",
+        "text_level": 2,
+        "bbox": [
+            77,
+            227,
+            335,
+            290
+        ],
+        "page_idx": 42
+    },
+    {
+        "type": "text",
+        "text": "当 $z$ 为奇数时，使用",
+        "bbox": [
+            86,
+            380,
+            333,
+            431
+        ],
+        "page_idx": 42
+    },
+    {
+        "type": "equation",
+        "text": "$$\nF (N, A, z) = (z + 1) F (N - 1, A - 1, z) + \\binom {N - 1} {A} z ^ {A}.\n$$",
+        "text_format": "latex",
+        "bbox": [
+            249,
+            470,
+            796,
+            580
+        ],
+        "page_idx": 42
+    },
+    {
+        "type": "text",
+        "text": "展开 64 层后，剩余部分含 $(z+1)^{64}$ ，模 $2^{64}$ 为零。",
+        "bbox": [
+            108,
+            619,
+            651,
+            674
+        ],
+        "page_idx": 42
+    },
+    {
+        "type": "text",
+        "text": "预处理去掉二因子的阶乘，用2-进制估值计算组合数。单组复杂度约 $\\mathcal{O}(66^3)$",
+        "bbox": [
+            83,
+            717,
+            924,
+            772
+        ],
+        "page_idx": 42
+    },
+    {
+        "type": "page_number",
+        "text": "AC.",
+        "bbox": [
+            39,
+            70,
+            75,
+            105
+        ],
+        "page_idx": 42
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 42
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            66,
+            921,
+            209,
+            952
+        ],
+        "page_idx": 42
+    },
+    {
+        "type": "footer",
+        "text": "J - Start to the End",
+        "bbox": [
+            434,
+            921,
+            560,
+            952
+        ],
+        "page_idx": 42
+    },
+    {
+        "type": "footer",
+        "text": "Cfz 出题组",
+        "bbox": [
+            860,
+            921,
+            929,
+            949
+        ],
+        "page_idx": 42
+    },
+    {
+        "type": "text",
+        "text": "K - Tree Reflection",
+        "text_level": 2,
+        "bbox": [
+            79,
+            121,
+            366,
+            184
+        ],
+        "page_idx": 43
+    },
+    {
+        "type": "text",
+        "text": "题目大意",
+        "text_level": 2,
+        "bbox": [
+            77,
+            227,
+            209,
+            290
+        ],
+        "page_idx": 43
+    },
+    {
+        "type": "text",
+        "text": "■ 初始 x=0。第 i 次操作以给定概率令 $x \\leftarrow x + a_{i}$ ，否则令 $x \\leftarrow x - a_{i}$ 。",
+        "bbox": [
+            83,
+            415,
+            920,
+            470
+        ],
+        "page_idx": 43
+    },
+    {
+        "type": "text",
+        "text": "若减法后 $x < 0$ ，设 $u = -x$ ，立即将 $x$ 改为给定外向树 $T_{i}$ 中 $u$ 的父亲。",
+        "bbox": [
+            81,
+            494,
+            940,
+            549
+        ],
+        "page_idx": 43
+    },
+    {
+        "type": "text",
+        "text": "■ 求全部操作后 $x$ 的期望，对998244353取模。",
+        "bbox": [
+            83,
+            576,
+            633,
+            631
+        ],
+        "page_idx": 43
+    },
+    {
+        "type": "text",
+        "text": "$n, \\sum a_{i} \\leq 5 \\times 10^{5}$",
+        "bbox": [
+            83,
+            654,
+            324,
+            713
+        ],
+        "page_idx": 43
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            90,
+            125
+        ],
+        "page_idx": 43
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 43
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            66,
+            921,
+            209,
+            952
+        ],
+        "page_idx": 43
+    },
+    {
+        "type": "footer",
+        "text": "K - Tree Reflection",
+        "bbox": [
+            439,
+            921,
+            556,
+            952
+        ],
+        "page_idx": 43
+    },
+    {
+        "type": "footer",
+        "text": "Cfz 出题组",
+        "bbox": [
+            860,
+            921,
+            929,
+            949
+        ],
+        "page_idx": 43
+    },
+    {
+        "type": "text",
+        "text": "题解",
+        "text_level": 2,
+        "bbox": [
+            77,
+            113,
+            156,
+            184
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "高位状态可以整体卷积",
+        "text_level": 2,
+        "bbox": [
+            77,
+            227,
+            397,
+            290
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "对操作区间 $I = [l,r]$ ，记 $S_{I} = \\sum_{i\\in I}a_{i}$ 。",
+        "bbox": [
+            83,
+            388,
+            520,
+            447
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "若进入区间前 $x > S_{I}$ ，则区间内无论如何选择都不会变成负数，反射树完全不会被访问。",
+        "bbox": [
+            83,
+            486,
+            935,
+            603
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "此时每个操作只是独立选择 $+a_{i}$ 或 $-a_{i}$ ，可以按选择加号的位置权值和统一统计。",
+        "bbox": [
+            83,
+            650,
+            938,
+            768
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            39,
+            70,
+            75,
+            105
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            66,
+            921,
+            207,
+            952
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "footer",
+        "text": "K - Tree Reflection",
+        "bbox": [
+            439,
+            921,
+            556,
+            952
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "footer",
+        "text": "Cfz 出题组",
+        "bbox": [
+            860,
+            921,
+            929,
+            949
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "题解",
+        "text_level": 2,
+        "bbox": [
+            77,
+            113,
+            156,
+            184
+        ],
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": "概率多项式",
+        "text_level": 2,
+        "bbox": [
+            77,
+            227,
+            240,
+            286
+        ],
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": "■ 令加、减概率为 $P_{i}, Q_{i}$ ，预处理",
+        "bbox": [
+            83,
+            333,
+            448,
+            384
+        ],
+        "page_idx": 45
+    },
+    {
+        "type": "equation",
+        "text": "$$\nF _ {I} (z) = \\prod_ {i \\in I} (Q _ {i} + P _ {i} z ^ {a _ {i}}).\n$$",
+        "text_format": "latex",
+        "bbox": [
+            399,
+            419,
+            646,
+            525
+        ],
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": "若区间中所有选择加号的位置权值和为 t，出口为",
+        "bbox": [
+            83,
+            607,
+            635,
+            658
+        ],
+        "page_idx": 45
+    },
+    {
+        "type": "equation",
+        "text": "$$\nx - S _ {I} + 2 t.\n$$",
+        "text_format": "latex",
+        "bbox": [
+            461,
+            701,
+            584,
+            749
+        ],
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": "因此把入口按奇偶拆成两个多项式，各与 $F_{I}$ 卷积即可处理全部高位状态。",
+        "bbox": [
+            110,
+            788,
+            889,
+            839
+        ],
+        "page_idx": 45
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            39,
+            70,
+            75,
+            105
+        ],
+        "page_idx": 45
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 45
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            66,
+            921,
+            207,
+            952
+        ],
+        "page_idx": 45
+    },
+    {
+        "type": "footer",
+        "text": "K - Tree Reflection",
+        "bbox": [
+            439,
+            921,
+            556,
+            952
+        ],
+        "page_idx": 45
+    },
+    {
+        "type": "footer",
+        "text": "Cfz 出题组",
+        "bbox": [
+            860,
+            921,
+            929,
+            949
+        ],
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": "题解",
+        "text_level": 2,
+        "bbox": [
+            79,
+            113,
+            156,
+            184
+        ],
+        "page_idx": 46
+    },
+    {
+        "type": "text",
+        "text": "线段树分治",
+        "text_level": 2,
+        "bbox": [
+            77,
+            227,
+            238,
+            290
+        ],
+        "page_idx": 46
+    },
+    {
+        "type": "text",
+        "text": "对操作序列建线段树，每个结点存区间和 $S_{I}$ 与概率多项式 $F_{I}$ ；内部结点用 NTT 合并儿子多项式。",
+        "bbox": [
+            83,
+            388,
+            907,
+            505
+        ],
+        "page_idx": 46
+    },
+    {
+        "type": "text",
+        "text": "■ 处理一个结点的入口分布时，按 $x > S_{I}$ 分成高位与低位。",
+        "bbox": [
+            83,
+            552,
+            713,
+            603
+        ],
+        "page_idx": 46
+    },
+    {
+        "type": "text",
+        "text": "■ 高位直接卷积；低位在叶子处按题意转移，在内部结点依次递归经过左、右儿子。",
+        "bbox": [
+            83,
+            650,
+            933,
+            768
+        ],
+        "page_idx": 46
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            39,
+            70,
+            75,
+            105
+        ],
+        "page_idx": 46
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 46
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            66,
+            921,
+            207,
+            952
+        ],
+        "page_idx": 46
+    },
+    {
+        "type": "footer",
+        "text": "K - Tree Reflection",
+        "bbox": [
+            439,
+            921,
+            556,
+            952
+        ],
+        "page_idx": 46
+    },
+    {
+        "type": "footer",
+        "text": "Cfz 出题组",
+        "bbox": [
+            860,
+            921,
+            929,
+            949
+        ],
+        "page_idx": 46
+    },
+    {
+        "type": "text",
+        "text": "题解",
+        "text_level": 2,
+        "bbox": [
+            77,
+            113,
+            156,
+            184
+        ],
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "期望与复杂度",
+        "text_level": 2,
+        "bbox": [
+            77,
+            227,
+            273,
+            290
+        ],
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "从根的入口分布 $\\operatorname{Pr}[x = 0] = 1$ 开始，得到最终分布后计算",
+        "bbox": [
+            81,
+            384,
+            783,
+            443
+        ],
+        "page_idx": 47
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\mathbb {E} [ x ] = \\sum_ {x} x \\operatorname * {P r} [ x ].\n$$",
+        "text_format": "latex",
+        "bbox": [
+            419,
+            494,
+            624,
+            607
+        ],
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "■ 令 $S = \\sum a_{i}$ ，复杂度为 $\\mathcal{O}(S\\log S\\log n)$ ，空间复杂度为 $\\mathcal{O}(S\\log n)$ 。",
+        "bbox": [
+            81,
+            694,
+            878,
+            756
+        ],
+        "page_idx": 47
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 47
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            66,
+            921,
+            209,
+            952
+        ],
+        "page_idx": 47
+    },
+    {
+        "type": "footer",
+        "text": "K - Tree Reflection",
+        "bbox": [
+            439,
+            921,
+            556,
+            952
+        ],
+        "page_idx": 47
+    },
+    {
+        "type": "footer",
+        "text": "Cfz 出题组",
+        "bbox": [
+            860,
+            921,
+            931,
+            949
+        ],
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "- XOR Team",
+        "text_level": 2,
+        "bbox": [
+            105,
+            121,
+            302,
+            180
+        ],
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "题目大意",
+        "text_level": 2,
+        "bbox": [
+            77,
+            227,
+            209,
+            290
+        ],
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "■ 给定 2n 个端点，将它们任意两两配对为 $(x_{i}, y_{i})$ ，其中 $x_{i} \\leq y_{i}$ 。",
+        "bbox": [
+            83,
+            415,
+            834,
+            474
+        ],
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "对初始全零的超长01序列，将每个闭区间 $[x_i, y_i]$ 整段异或1。",
+        "bbox": [
+            83,
+            494,
+            827,
+            552
+        ],
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "求最终序列中1的个数的最小值。",
+        "bbox": [
+            83,
+            576,
+            501,
+            631
+        ],
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "■ $\\sum n \\leq 2 \\times 10^{6}$ , 端点坐标不超过 $10^{18}$ 。",
+        "bbox": [
+            83,
+            654,
+            556,
+            713
+        ],
+        "page_idx": 48
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            22,
+            43,
+            90,
+            129
+        ],
+        "page_idx": 48
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            39,
+            973,
+            98
+        ],
+        "page_idx": 48
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            66,
+            921,
+            209,
+            952
+        ],
+        "page_idx": 48
+    },
+    {
+        "type": "footer",
+        "text": "L - XOR Team",
+        "bbox": [
+            450,
+            921,
+            545,
+            952
+        ],
+        "page_idx": 48
+    },
+    {
+        "type": "footer",
+        "text": "Cfz 出题组",
+        "bbox": [
+            860,
+            921,
+            929,
+            949
+        ],
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "题解",
+        "text_level": 2,
+        "bbox": [
+            77,
+            113,
+            156,
+            184
+        ],
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "区间内部贡献固定",
+        "text_level": 2,
+        "bbox": [
+            79,
+            227,
+            333,
+            290
+        ],
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "■ 将不同坐标排序为 $v_{1} < \\cdots < v_{m}$ ，出现次数为 $c_{i}$ ，前缀端点数为 $s_{i} = \\sum_{j \\leq i} c_{j}$ 。",
+        "bbox": [
+            86,
+            329,
+            871,
+            384
+        ],
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "对相邻不同坐标之间的任意位置，覆盖次数的奇偶性与配对方式无关，恰为左侧端点数的奇偶性。",
+        "bbox": [
+            86,
+            407,
+            927,
+            509
+        ],
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "因而开区间 $(v_{i}, v_{i + 1})$ 的固定贡献为",
+        "bbox": [
+            86,
+            541,
+            454,
+            588
+        ],
+        "page_idx": 49
+    },
+    {
+        "type": "equation",
+        "text": "$$\n[ s _ {i} \\text {为奇数} ] (v _ {i + 1} - v _ {i} - 1).\n$$",
+        "text_format": "latex",
+        "bbox": [
+            397,
+            631,
+            649,
+            682
+        ],
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "\\- 只剩端点坐标本身是否为1可以通过配对改变。",
+        "bbox": [
+            86,
+            796,
+            569,
+            839
+        ],
+        "page_idx": 49
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            39,
+            70,
+            75,
+            105
+        ],
+        "page_idx": 49
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 49
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            66,
+            921,
+            207,
+            949
+        ],
+        "page_idx": 49
+    },
+    {
+        "type": "footer",
+        "text": "L - XOR Team",
+        "bbox": [
+            450,
+            921,
+            543,
+            952
+        ],
+        "page_idx": 49
+    },
+    {
+        "type": "footer",
+        "text": "Cfz 出题组",
+        "bbox": [
+            860,
+            921,
+            929,
+            949
+        ],
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "题解",
+        "text_level": 2,
+        "bbox": [
+            77,
+            113,
+            156,
+            184
+        ],
+        "page_idx": 50
+    },
+    {
+        "type": "text",
+        "text": "四模状态 DP",
+        "text_level": 2,
+        "bbox": [
+            77,
+            227,
+            262,
+            290
+        ],
+        "page_idx": 50
+    },
+    {
+        "type": "text",
+        "text": "从左到右把端点标为区间左端或右端。令 $h$ 为尚未闭合的区间数，始终要求 $h \\geq 0$ ，最后 $h = 0$ 。",
+        "bbox": [
+            83,
+            337,
+            916,
+            454
+        ],
+        "page_idx": 50
+    },
+    {
+        "type": "text",
+        "text": "在坐标 $v_{i}$ ，若有 $l$ 个端点作为左端，则",
+        "bbox": [
+            83,
+            494,
+            525,
+            549
+        ],
+        "page_idx": 50
+    },
+    {
+        "type": "equation",
+        "text": "$$\nh ^ {\\prime} = h + 2 l - c _ {i}, \\qquad b _ {v _ {i}} \\equiv h + l \\pmod {2}.\n$$",
+        "text_format": "latex",
+        "bbox": [
+            300,
+            592,
+            743,
+            647
+        ],
+        "page_idx": 50
+    },
+    {
+        "type": "text",
+        "text": "\\- 固定 $b_{v_i} = z \\in \\{0,1\\}$ 后， $l$ 的奇偶性确定；可选的 $h'$ 构成公差为 4 的连续区间。",
+        "bbox": [
+            83,
+            780,
+            940,
+            835
+        ],
+        "page_idx": 50
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 50
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            66,
+            921,
+            209,
+            952
+        ],
+        "page_idx": 50
+    },
+    {
+        "type": "footer",
+        "text": "L - XOR Team",
+        "bbox": [
+            450,
+            921,
+            545,
+            952
+        ],
+        "page_idx": 50
+    },
+    {
+        "type": "footer",
+        "text": "Cfz 出题组",
+        "bbox": [
+            860,
+            921,
+            929,
+            949
+        ],
+        "page_idx": 50
+    },
+    {
+        "type": "text",
+        "text": "题解",
+        "text_level": 2,
+        "bbox": [
+            77,
+            113,
+            156,
+            184
+        ],
+        "page_idx": 51
+    },
+    {
+        "type": "text",
+        "text": "DP 状态与转移",
+        "text_level": 2,
+        "bbox": [
+            77,
+            227,
+            293,
+            290
+        ],
+        "page_idx": 51
+    },
+    {
+        "type": "text",
+        "text": "■ DP 维护：已经产生 j 个亮端点坐标、且 $h \\equiv r \\pmod{4}$ 时，所有可达 h 的最小值和最大值。其中 $0 \\leq j, r < 4$ 。",
+        "bbox": [
+            83,
+            368,
+            942,
+            494
+        ],
+        "page_idx": 51
+    },
+    {
+        "type": "text",
+        "text": "■ 转移时枚举 $z$ ，更新对应模类的可达区间并截去负数；最终寻找最小的 $j$ 使 $h = 0$ 可达。",
+        "bbox": [
+            83,
+            513,
+            942,
+            639
+        ],
+        "page_idx": 51
+    },
+    {
+        "type": "text",
+        "text": "同一模类中的可达值始终连续，所以只保存最小值与最大值，不会丢失可行方案。",
+        "bbox": [
+            83,
+            662,
+            933,
+            784
+        ],
+        "page_idx": 51
+    },
+    {
+        "type": "page_number",
+        "text": "AC.",
+        "bbox": [
+            39,
+            70,
+            75,
+            105
+        ],
+        "page_idx": 51
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            39,
+            973,
+            98
+        ],
+        "page_idx": 51
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            66,
+            921,
+            209,
+            952
+        ],
+        "page_idx": 51
+    },
+    {
+        "type": "footer",
+        "text": "L - XOR Team",
+        "bbox": [
+            450,
+            921,
+            545,
+            952
+        ],
+        "page_idx": 51
+    },
+    {
+        "type": "footer",
+        "text": "Cfz 出题组",
+        "bbox": [
+            860,
+            921,
+            929,
+            949
+        ],
+        "page_idx": 51
+    },
+    {
+        "type": "text",
+        "text": "题解",
+        "text_level": 2,
+        "bbox": [
+            79,
+            113,
+            156,
+            184
+        ],
+        "page_idx": 52
+    },
+    {
+        "type": "text",
+        "text": "复杂度",
+        "text_level": 2,
+        "bbox": [
+            77,
+            227,
+            178,
+            290
+        ],
+        "page_idx": 52
+    },
+    {
+        "type": "text",
+        "text": "■ 可以证明总存在至多点亮 3 个端点坐标的最优配对，因此只需保留 j = 0, 1, 2, 3。",
+        "bbox": [
+            83,
+            388,
+            883,
+            513
+        ],
+        "page_idx": 52
+    },
+    {
+        "type": "text",
+        "text": "■ 每个不同坐标只做常数个状态转移；将端点排序后，DP 为线性时间。",
+        "bbox": [
+            83,
+            533,
+            909,
+            592
+        ],
+        "page_idx": 52
+    },
+    {
+        "type": "text",
+        "text": "最终答案为“所有坐标间隙的固定贡献”加“DP求出的最小端点贡献”。",
+        "bbox": [
+            83,
+            615,
+            900,
+            670
+        ],
+        "page_idx": 52
+    },
+    {
+        "type": "text",
+        "text": "■ 总时间复杂度 $\\mathcal{O}(n \\log n)$ ，空间复杂度 $\\mathcal{O}(n)$ ；答案使用 64 位整数。",
+        "bbox": [
+            83,
+            694,
+            885,
+            752
+        ],
+        "page_idx": 52
+    },
+    {
+        "type": "header",
+        "text": "AC.",
+        "bbox": [
+            39,
+            70,
+            75,
+            105
+        ],
+        "page_idx": 52
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            849,
+            43,
+            973,
+            98
+        ],
+        "page_idx": 52
+    },
+    {
+        "type": "footer",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            66,
+            921,
+            209,
+            952
+        ],
+        "page_idx": 52
+    },
+    {
+        "type": "footer",
+        "text": "L - XOR Team",
+        "bbox": [
+            450,
+            921,
+            545,
+            952
+        ],
+        "page_idx": 52
+    },
+    {
+        "type": "footer",
+        "text": "Cfz 出题组",
+        "bbox": [
+            860,
+            921,
+            929,
+            949
+        ],
+        "page_idx": 52
+    },
+    {
+        "type": "text",
+        "text": "THANKS!",
+        "text_level": 2,
+        "bbox": [
+            317,
+            443,
+            637,
+            564
+        ],
+        "page_idx": 53
+    },
+    {
+        "type": "text",
+        "text": "AC.NOWCODER.COM",
+        "bbox": [
+            373,
+            600,
+            584,
+            631
+        ],
+        "page_idx": 53
+    },
+    {
+        "type": "header",
+        "text": "牛客竞赛\nAC.NOWCODER.COM",
+        "bbox": [
+            55,
+            66,
+            200,
+            133
+        ],
+        "page_idx": 53
+    },
+    {
+        "type": "header",
+        "text": "牛客害期多校 训练营",
+        "bbox": [
+            763,
+            66,
+            960,
+            125
+        ],
+        "page_idx": 53
+    }
+]
