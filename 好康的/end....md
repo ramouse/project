@@ -49,6 +49,16 @@ pq.pop(); // 将堆顶元素删除
 pq.top(); // 返回堆顶元素，大根堆返回最大值，小根堆返回最小
 pq.empty();//检查是否为空,空返回1否则返回0
 pq.size();//获取大小
+
+//重载大根堆
+struct Node {
+    int val;
+    
+    // 重载小于号，实现小根堆（更小的值在堆顶）
+    bool operator<(const Node& o) const {
+        return val < o.val;//重载小根堆，则是 return val > o.val;
+    }
+};
 ```
 
 
@@ -1137,6 +1147,75 @@ void bfs(int st) {
 
 ​         
 
+4. 判奇环
+
+判断奇环 = 判断是否为二分图；对于每个点要求 $vis[u] \neq vis[v]$ ;如果发现 $ vis[u] = vis[v]$ 说当前 $u -> v$ 是一条冲突边，存在奇环
+
+若想找出奇环中的每一个点，只需从冲突节点开始想上找直到找到lca即止
+
+```c++
+vector<int> vis(n + 1, -1);//-1未标记，0/1染色
+ll a = -1, b = -1; //冲突节点
+
+vector<ll> fat(n + 1, 0);
+vector<ll> dep(n + 1, 0);
+
+auto dfs = [&](auto &&self, ll u, ll fa, ll d, ll t) -> void
+{
+    if (a != -1) return;
+    fat[u] = fa;
+    dep[u] = d;
+
+    for (ll v : adj[u])
+    {
+        if (v != fa)
+        {
+            if (vis[v] == -1)
+            {
+                vis[v] = t ^ 1;
+            	self(self, v, u, d + 1, t ^ 1);
+            }
+            else if (vis[v] == vis[u])
+            {
+                a = u;
+                b = v;
+                return;
+            }
+        }
+    }
+};
+
+vis[1] = 0;
+dfs(dfs, 1, 0, 0, 0);
+if (a == -1 && b == -1)
+{
+    cout << -1 << endl;//没找到冲突边就是不存在奇环
+    return;
+}
+
+vector<ll> ans1, ans2;//分别为左右两边的链
+if (dep[a] < dep[b])
+    swap(a, b);
+
+while (dep[a] != dep[b])
+{
+    ans1.pb(a);
+    a = fat[a];
+}
+
+while (a != b)
+{
+    ans1.pb(a);
+    ans2.pb(b);
+
+    a = fat[a];
+    b = fat[b];
+}
+ans1.pb(a);
+```
+
+ 
+
 ### 最短路
 
 #### dijkstra(处理非负权边的最短路)
@@ -1778,6 +1857,74 @@ struct WeightedDSU {
 };
 ```
 
+
+
+### 左偏树（可并堆）
+
+
+
+```c++
+struct LeftistHeap {
+    struct Node {
+        int l = 0;
+        int r = 0;
+        int dis = 1;
+        int val = 0;
+    };
+
+    vector<Node> tr;
+    int tot = 0;
+
+    LeftistHeap(int n = 0) {
+        tr.resize(n + 1);
+        tr[0].dis = 0;
+    }
+
+    int merge(int x, int y) {
+        if (!x || !y)
+            return x | y;
+
+        // 大根堆,小根堆则换成 >
+        if (tr[x].val < tr[y].val)
+            swap(x, y);
+
+        tr[x].r = merge(tr[x].r, y);
+
+        if (tr[tr[x].l].dis < tr[tr[x].r].dis)
+            swap(tr[x].l, tr[x].r);
+
+        tr[x].dis = tr[tr[x].r].dis + 1;
+
+        return x;
+    }
+
+    int newNode(int val) {
+        ++tot;
+
+        tr[tot].val = val;
+        tr[tot].l = tr[tot].r = 0;
+        tr[tot].dis = 1;
+
+        return tot;
+    }
+
+    void push(int &root, int val) {
+        int x = newNode(val);
+        root = merge(root, x);
+    }
+
+    int top(int root) {
+        return tr[root].val;
+    }
+
+    void pop(int &root) {
+        root = merge(tr[root].l, tr[root].r);
+    }
+};
+```
+
+
+
 ### 树状数组
 
 树状数组是一种支持 **单点修改** 和 **区间查询** 的，代码量小的数据结构．
@@ -2174,7 +2321,7 @@ auto clear_vt = [&](const vector<ll>& node) -> void {
 
 ### 强连通分量(SCC)
 
-图中两个点 $u,v$ 如果互相可达，我们则称这两个点是强连通的,{$u,v $} 是一个强连通分量 
+图中两个点 $u,v$ 如果互相可达，我们则称这两个点是强连通的,{$u,v $} 则是一个强连通分量 
 
 且scc缩点后一定是$DAG$ (有向无环图)
 
@@ -2193,7 +2340,7 @@ vector<int> dfn(n + 1), low(n + 1);
 vector<int> bel(n + 1);    // bel[u]：u 所属的 SCC 编号
 vector<int> scc_sz(n + 1); // scc_sz[i]：第 i 个 SCC 的大小
 vector<int> stk;
-vector<char> in_stk(n + 1);
+vector<int> in_stk(n + 1);
 
 int timer = 0;
 int scc_cnt = 0;
@@ -3887,6 +4034,56 @@ struct MedianFinder {
         return {maxp.top(), minp.top()};
     }
 };
+```
+
+
+
+### int128的输入与输出
+
+```c++
+using i128 = __int128_t;
+
+i128 read128() {
+    string s;
+    cin >> s;
+
+    int pos = 0;
+    bool neg = false;
+
+    if (s[0] == '-') {
+        neg = true;
+        pos = 1;
+    }
+
+    i128 x = 0;
+    for (int i = pos; i < (int)s.size(); i++) {
+        x = x * 10 + (s[i] - '0');
+    }
+
+    return neg ? -x : x;
+}
+
+void print128(i128 x) {
+    if (x == 0) {
+        cout << 0;
+        return;
+    }
+
+    if (x < 0) {
+        cout << '-';
+        x = -x;
+    }
+
+    string s;
+
+    while (x) {
+        s.push_back('0' + x % 10);
+        x /= 10;
+    }
+
+    reverse(s.begin(), s.end());
+    cout << s;
+}
 ```
 
 
