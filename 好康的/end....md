@@ -1861,14 +1861,21 @@ struct WeightedDSU {
 
 ### 左偏树（可并堆）
 
+**左偏树是一种支持快速合并的堆。**
+ 它既满足堆性质，又满足
 
+$dis_{left}$ ≥ $dis_{right}$ 
+
+从而保证**右链长度是 O(log⁡n)**。
+
+看到“**多个堆需要频繁整体合并，同时还要取最值 / 删最值**”，就可以考虑左偏树
 
 ```c++
 struct LeftistHeap {
     struct Node {
         int l = 0;
         int r = 0;
-        int dis = 1;
+        int dis = 1;  //从 u 开始往下走，到达一个空节点的最短距离。
         int val = 0;
     };
 
@@ -2508,6 +2515,39 @@ for (int i = 1; i <= scc_cnt; ++i)
 
 
 
+### 笛卡尔树
+
+
+
+```c++
+for (int i = 1; i <= n; i++)
+{
+    int last = 0;
+
+    while (!st.empty() && a[st.top()] < a[i]) // 最大笛卡尔树
+    {
+        last = st.top();
+        st.pop();
+    }
+
+    if (!st.empty())
+    {
+        rs[st.back()] = i;
+        fa[i] = st.back();
+    }
+
+    if (last)
+    {
+        ls[i] = last;
+        fa[last] = i;
+    }
+
+    st.push(i);
+}
+```
+
+
+
 
 ### ST表
 
@@ -2519,7 +2559,7 @@ for (int i = 1; i <= scc_cnt; ++i)
 
 #### 一、 核心思想：倍增（Doubling）与 DP
 
-ST 表的本质是**动态规划（DP）\**结合\**倍增**思想。
+ST 表的本质是**动态规划（DP）结合 倍增**思想。
 
 普通的暴力查询是逐个遍历区间内的元素，而 ST 表通过预先计算好长度为 $2^0, 2^1, 2^2, \dots$ 的区间的答案，在查询时用两个长度为 $2^k$ 的区间“拼凑”出目标区间。
 
