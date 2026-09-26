@@ -3,10 +3,10 @@ using namespace std;
 using ll = long long;
 using i128 = __int128_t;
 #define endl '\n'
-#define pll pair<ll,ll>
-#define T tuple<ll,ll,ll>
-#define all1(x) x.begin() + 1,x.end()
-#define all0(x) x.begin(),x.end()
+#define pll pair<ll, ll>
+#define T tuple<ll, ll, ll>
+#define all1(x) x.begin() + 1, x.end()
+#define all0(x) x.begin(), x.end()
 #define pb push_back
 #define fir first
 #define sec second
@@ -15,8 +15,17 @@ const ll MOD = 998244353;
 const ll INF = 1e18;
 
 void solve()
-{   
-    
+{
+    ll n,m;
+    cin>>n>>m;
+    string s;
+    cin>>s;
+
+    if(m >= 50 || m * 5 >= n || s[1] >= '4'){
+        cout<<"YES"<<endl;
+    }else{
+        cout<<"NO"<<endl;
+    }
 }
 
 int main()

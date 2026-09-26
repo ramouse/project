@@ -19,70 +19,38 @@ void solve()
     ll n;
     cin>>n;
     vector<ll> a(n+1,0);
-    map<ll,ll> cnt;
-    ll root = 0;
     for(int i = 1;i<=n;i++){
         cin>>a[i];
-        cnt[a[i]]++;
-        if(a[i] > a[root]){
-            root = i;
-        }
     }
 
-    vector<ll> stk;
-    vector<ll> ls(n+1,0);
-    vector<ll> rs(n+1,0);
-    vector<ll> fa(n+1,0);
-
+    ll c_pre = 0,c_suf = INF;
+    vector<ll> pre(n+1,0),suf(n+3,INF);
+    for(int i = n;i>=1;i--){
+        suf[i] = min(suf[i+1],a[i]);
+    }
     for(int i = 1;i<=n;i++){
-        ll last = 0;
-
-        while(!stk.empty() && a[stk.back()] < a[i]){
-            last = stk.back();
-            stk.pop_back();
-        }
-
-        if(!stk.empty()){
-            rs[stk.back()] = i;
-            fa[i] = stk.back();
-        }
-
-        if(last){
-            ls[i] = last;
-            fa[last] = i;
-        }
-
-        stk.pb(i);
-    }
-
-    vector<ll> ord;
-    stk.clear();
-    stk.push_back(root);
-
-    while(!stk.empty()){
-        ll u = stk.back();
-        stk.pop_back();
-        ord.pb(u);
-
-        if(ls[u]) stk.pb(ls[u]);
-        if(rs[u]) stk.pb(rs[u]);
-    }
-    
-    vector<ll> sz(n+1,1);
-    reverse(all0(ord));
-
-    for(int i = 0;i<ord.size();i++){
-        ll u = ord[i];
-
-        if(ls[u]) sz[u] += sz[ls[u]];
-        if(rs[u]) sz[u] += sz[rs[u]];
+        pre[i] = max(pre[i-1],a[i]);
     }
 
     ll ans = 0;
-    for(int i = 1;i<=n;i++){
-        if(fa[i] && a[fa[i]] > a[i]){
-            ans += sz[i];
+
+    // for(int i = 1;i<=n;i++){
+    //     cout<<pre[i]<<" ";
+    // }
+    // cout<<endl;
+    // for(int i = 1;i<=n;i++){
+    //     cout<<suf[i]<<" ";
+    // }
+    // cout<<endl;
+
+    ll r = 1;
+    for(ll l = 1;l<=n;l++){
+        while(r <= n && (c_pre <= pre[r] || c_suf >= suf[r])){
+            r++;
+            c_pre = max(c_pre,a[r]);
+            c_suf = min(c_suf,suf[r]);
         }
+        ans += r - l + 1;
     }
 
     cout<<ans<<endl;
@@ -93,8 +61,7 @@ int main()
     ios::sync_with_stdio(0);
     cin.tie(0);
     int t = 1;
-    ll n;
-    cin >> t;
+    // cin >> t; 
     while (t--){
         solve();
     }
