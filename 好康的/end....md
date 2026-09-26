@@ -3286,7 +3286,8 @@ ll A(ll n,ll k){
 ```c++
 __builtin_ctz(x) //获取x二进制后缀0的长度
 __builtin_clz(x) //获取x二进制前缀0的长度  //二者皆为接受int类型，接受ll需要后面加ll //_
-
+__builtin_popcount(x) //获取x二进制有多少个 1 
+    
 A + B = A^B + 2 * (A&B);
 A | B = (A ^ B) ^ (A & B);
 ```

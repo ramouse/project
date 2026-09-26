@@ -11,49 +11,54 @@ using i128 = __int128_t;
 #define fir first
 #define sec second
 
-const ll MOD = 998244353;
+const ll MOD = 1e9 + 7;
 const ll INF = 1e18;
+const ll N = 1e5;
+
 
 void solve()
 {
-    ll n;
-    cin>>n;
-    vector<ll> a(n+1,0);
-    for(int i = 1;i<=n;i++){
-        cin>>a[i];
-    }
+    string s;
+    cin>>s;
+    ll D;
+    cin>>D;
 
-    ll c_pre = 0,c_suf = INF;
-    vector<ll> pre(n+1,0),suf(n+3,INF);
-    for(int i = n;i>=1;i--){
-        suf[i] = min(suf[i+1],a[i]);
-    }
-    for(int i = 1;i<=n;i++){
-        pre[i] = max(pre[i-1],a[i]);
-    }
+    ll len = s.length();
+    s = " " + s;
 
-    ll ans = 0;
+    static ll memo[N+1][100] = {0};
+    static ll vis[N+1][100] = {0};
 
-    // for(int i = 1;i<=n;i++){
-    //     cout<<pre[i]<<" ";
-    // }
-    // cout<<endl;
-    // for(int i = 1;i<=n;i++){
-    //     cout<<suf[i]<<" ";
-    // }
-    // cout<<endl;
-
-    ll r = 1;
-    for(ll l = 1;l<=n;l++){
-        while(r <= n && (c_pre <= pre[r] || c_suf >= suf[r])){
-            r++;
-            c_pre = max(c_pre,a[r]);
-            c_suf = min(c_suf,suf[r]);
+    auto dfs = [&](auto &&self,bool tight,bool started,ll pos,ll rem) -> ll{
+        if(pos == len + 1){
+            if(!started) return 0;
+            return rem == 0;
         }
-        ans += r - l + 1;
-    }
 
-    cout<<ans<<endl;
+        if(!tight && started && vis[pos][rem]) return memo[pos][rem];
+
+        ll res = 0;
+        ll limt = tight ? s[pos] - '0' : 9;
+        for(int d = 0;d <= limt;d++){
+            bool ntight = tight && (d == s[pos] - '0');
+            if(!started && d == 0){
+                res = (res + self(self,ntight,0,pos+1,rem)) % MOD;
+            }else{
+                ll nrem = (rem + d) % D;
+                res = (res + self(self,ntight,1,pos + 1,nrem)) % MOD;
+            }
+        }
+
+        if(started){
+            vis[pos][rem] = 1;
+            memo[pos][rem] = res;
+        }
+
+        return res;
+    };
+
+    cout<<dfs(dfs,1,0,1,0)<<endl;
+
 }
 
 int main()
